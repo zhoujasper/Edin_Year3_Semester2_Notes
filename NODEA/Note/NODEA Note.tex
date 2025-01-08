@@ -57,6 +57,32 @@
 \fontsize{10pt}{11pt}\selectfont
 \setlength{\parindent}{8pt}
 
+
 \section{Basic Knowledge} % Basic Knowledge
+
+\textbf{Def of ODE \& ODEs}: {\scriptsize (1st order)} ODE: $\frac{dy}{dt}=f(t,y)$ \quad \& \quad ODEs: $\frac{d\mathbf{y}}{dt}=\mathbf{f}(t,\mathbf{y})$ , {\footnotesize $\mathbf{y}=(y_1,...,y_d)^T,\mathbf{f}(t,\mathbf{y})=(f_1(t,\mathbf{y}),...,f_d(t,\mathbf{y}))^T$}
+
+\textbf{Autonomous}: $\frac{d\mathbf{y}}{dt}=\mathbf{f}(\mathbf{y})$ \ $\Rightarrow$ \ autonomous ODE(s). \quad \quad \quad || $\Downarrow$ New Autonomous ODEs: $\frac{d\mathbf{y}}{ds}=\mathbf{f}(y_{d+1},\mathbf{y})$ and $\frac{dy_{d+1}}{ds}=1$
+
+$\cdot$ \textbf{Change to Autonomous}: For $\frac{d\mathbf{y}}{dt}=\mathbf{f}(t,\mathbf{y})$. Let $y_{d+1}=t$ and \textit{new} independent variable $s$ s.t. $\frac{dt}{ds}=1$ $\Uparrow$
+
+\textbf{Linearity}: ODE: $\frac{dy}{dt}=f(t,y)$ is linearity if $f(t,y)=a(t)y+b(t)$ \quad || ODEs: {\small If each ODE is linear, then the ODEs are linear.}
+
+\textbf{Picard's Theorem}: If $f(t,y)$ is continuous in $D:=\{(t,y):t_0\leq t\leq T,|y-y_0|<K\}$ and $\exists L>0$ {\footnotesize (Lipschitz constant)} s.t.
+
+$\quad$ $\forall (t,u),(t,v)\in D \quad|f(t,u)-f(t,v)|\leq L|u-v|$. And Assume that $M_f(T-t_0)\leq K,M_f:=\max\{|f(t,u)|:(t,u)\in D\}$
+
+$\quad$ $\Rightarrow$ \textbf{Then}, $\exists$ a unique continuously differentiable solution $y(t)$ to the IVP $\frac{dy}{dt}=f(t,y),y(t_0)=y_0$ on $t\in[t_0,T]$.
+
+\textbf{Existence \& Uniqueness Theorem}: IVP $\frac{d\mathbf{y}}{dt}=\mathbf{f}(t,\mathbf{y}),\mathbf{y}(t_0)=\mathbf{y}_0$. If $f(t,y)$ and $\frac{\partial f}{\partial y_i}$ are continuous in a neighborhood of $(t_0,\mathbf{y}_0)$.
+
+$\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $\exists$ a unique continuously differentiable solution $\mathbf{y}(t)$ to the IVP on $t\in I$.
+
+
+\section{Euler's Method and Taylor Series Method} % Euler's Method and Taylor Series Method
+
+
+
+
 
 \end{document}
