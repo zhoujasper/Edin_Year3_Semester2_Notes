@@ -57,6 +57,34 @@
 \fontsize{10pt}{11pt}\selectfont
 \setlength{\parindent}{8pt}
 
+
 \section{Basic Knowledge} % Basic Knowledge
+
+\textbf{Def of Matrix}: A mapping from $\{1,...,n\}\times\{1,...,m\}$ to a field $F$ is called a $n\times m$ matrix over $F$.
+
+$\cdot$ The set of all $n\times m$ matrices over $F$ is denoted by $Mat(n\times m;F):=Maps(\{1,...,n\}\times\{1,...,m\},F)$.
+
+$\cdot$ If $n=m$, we sill speak of a \textbf{Square Matrix} and shorten the notation to $Mat(n;F)$.
+
+\textbf{Solution Sets of Inhomogeneous Systems of Linear Equations}: {\small Solution = 特解(Particular Solution) + 通解(Homogeneous solution)}
+
+\textbf{Def of Group $(G,*)$}: A set $G$ with a operator $*$ is a group if: {\small \textbf{Closure}: $\forall g,h\in G$, $g*h\in G$; \textbf{Associativity}: $\forall g,h,k\in G$, $(g*h)*k=g*(h*k)$;}
+
+\hspace{85pt} {\small \textbf{Identity}: $\exists e\in G$, $\forall g\in G$, $e*g=g*e=g$; \textbf{Inverse}: $\forall g\in G$, $\exists g^{-1}\in G$, $g*g^{-1}=g^{-1}*g=e$.}
+
+\textbf{Field $(F)$}: A set $F$ is a field with two operators: \quad {\scriptsize(addition)}$+:F\times F\to F;(\lambda,\mu)\to\lambda+\mu$ \quad {\scriptsize(multiplication)}$\cdot:F\times F\to F;(\lambda,\mu)\to\lambda\mu$ \ \ if:
+
+\quad \quad \quad \quad $(F,+)$ and $(F\setminus\{0_F\}, \ \cdot \ )$ are abelian groups with identity $0_F,1_F$. \quad and \quad $\lambda(\mu+\nu)=\lambda\mu+\lambda\nu$
+
+\textbf{$F$-Vector Space (V)}: A set $V$ over a field $F$ is a vector space if: \quad $V$ is an abelian group $V=(V,\dotplus)$ and $\forall \ \vec{v},\vec{w}\in V$ \ \ $\lambda,\mu\in F$
+
+\quad \quad \quad \quad a map $F\times V\to V:(\lambda,\vec{v})\to\lambda\vec{v}$ satisfies: \textbf{I}: $\lambda(\vec{v}\dotplus\vec{w})=(\lambda\vec{v})\dotplus(\lambda\vec{w})$ \quad \textbf{II}: $(\lambda+\mu)\vec{v}=(\lambda\vec{v})\dotplus(\mu\vec{v})$
+
+\quad \quad \quad \quad \textbf{III}: $\lambda(\mu\vec{v})=(\lambda\mu)\vec{v}$ \quad \textbf{IV}: $1_F\vec{v}=\vec{v}$ \hspace{30pt} {\scriptsize ps:\textbf{I,II} are \textbf{Distributive Laws}; \textbf{III} is \textbf{Associative Law}. \hspace{30pt} \textbf{Trivial Vector Space}: $V=\vec{0}$}
+
+$\cdot$ \textbf{Properties of $F$-Vector Space (V)}: \textbf{a}. $0_F\vec{v}=\vec{0}$ \quad \textbf{b}. $(-1_F)\vec{v}=-\vec{v}$ \quad \textbf{c}. $\lambda\vec{0}=\vec{0}$ \quad \textbf{d}. If $\lambda\vec{v}=\vec{0}$, then $\lambda=0$ or $\vec{v}=\vec{0}$ or both.
+
+
+
 
 \end{document}
