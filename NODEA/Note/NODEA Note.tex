@@ -79,10 +79,34 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists$ a unique continuously differentia
 $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $\exists$ a unique continuously differentiable solution $\mathbf{y}(t)$ to the IVP on $t\in I$.
 
 
+\section{Acknowledge} % Acknowledge
+
+\vspace{-10pt}
+\begin{longtable}{|c|l||c|l|}
+    \hline
+    Notation & Meaning & Notation & Meaning \\
+    \hline
+    \hline
+    $[a,b]$ & Approximate function for $t\in[a,b]$ & {\footnotesize $t_0=a \ | \ t_N=b$} & Assume that $t_0=a,t_N=b$ \\
+    \hline
+    $N$ & number of \textbf{timesteps} \ \ {\tiny (i.e. Break up interval $[a,b]$ into $N$ equal-length sub-intervals)} & $h$ & \textbf{stepsize} \ \ {\scriptsize ($h=\frac{b-a}{N}$)} \\
+    \hline
+    $t_i$ & Define $N+1$ points: $t_0,t_1,...,t_N$ & $t_m$ & $t_m=a+h\cdot m=t_0+h\cdot m$ \\
+    \hline
+    $y_i$ & Approximation of $y$ at point $t=t_i$ \ \ (Except $y_0$) & $y(t_i)$ & Exact value of $y$ at point $t=t_i$ \\
+    \hline
+\end{longtable}
+\vspace{-10pt}
+
+
 \section{Euler's Method and Taylor Series Method} % Euler's Method and Taylor Series Method
 
+\textbf{Euler's Method Algorithm}: Approximate ODE $\frac{dy}{dt}=f(t,y),y(t_0)=y_0$ with number of steps $N$. \ (Similarly for ODEs)
 
-
+\hspace{20pt} $\Rightarrow$
+\textbf{for} $n=0,1,2,...,N-1$:
+\quad $y_{n+1}=y_n+hf(t_0+nh,y_n)$ \quad 
+\textbf{end}
 
 
 \end{document}
