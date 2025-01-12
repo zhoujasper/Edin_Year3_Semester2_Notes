@@ -72,15 +72,13 @@ $\cdot$ The set of all $n\times m$ matrices over $F$ is denoted by $Mat(n\times 
 
 \textbf{Def of Group $(G,*)$}: A set $G$ with a operator $*$ is a group if: {\small \textbf{Closure}: $\forall g,h\in G$, $g*h\in G$; \textbf{Associativity}: $\forall g,h,k\in G$, $(g*h)*k=g*(h*k)$;}
 
-\hspace{85pt} {\small \textbf{Identity}: $\exists e\in G$, $\forall g\in G$, $e*g=g*e=g$; \textbf{Inverse}: $\forall g\in G$, $\exists g^{-1}\in G$, $g*g^{-1}=g^{-1}*g=e$.}
-
-$\cdot$ \textbf{Properties of Group}: If $G,H$ are groups, then $G\times H$ also.
+\hspace{85pt} {\small \textbf{Identity}: $\exists e\in G$, $\forall g\in G$, $e*g=g*e=g$; \textbf{Inverse}: $\forall g\in G$, $\exists g^{-1}\in G$, $g*g^{-1}=g^{-1}*g=e$.} \quad {\scriptsize $G,H$ groups, then $G\times H$ also.}
 
 \textbf{Field $(F)$}: A set $F$ is a field with two operators: \quad {\scriptsize(addition)}$+:F\times F\to F;(\lambda,\mu)\to\lambda+\mu$ \quad {\scriptsize(multiplication)}$\cdot:F\times F\to F;(\lambda,\mu)\to\lambda\mu$ \ \ if:
 
 \quad \quad \quad \quad $(F,+)$ and $(F\setminus\{0_F\}, \ \cdot \ )$ are abelian groups with identity $0_F,1_F$. \quad and \quad $\lambda(\mu+\nu)=\lambda\mu+\lambda\nu$ \quad \quad $e.g. Fields:\mathbb{R},\mathbb{C},\mathbb{Q},\mathbb{Z}/p\mathbb{Z}$
 
-\textbf{Notation of 1-1,onto,bij}: For function $f:V\to W$. \quad \textbf{1-1}: $V\oto W$ \quad \textbf{onto}: $V\onto  W$ \quad \textbf{bijection}: $V\bij W$ {\tiny (ps: bij证法:1.def;2.$f f^{-1}=I,f^{-1}f=I$)}
+\textbf{Notation of 1-1,onto,bij}: For function $f:V\to W$. \quad \textbf{1-1}: $V\oto W$ \quad \textbf{onto}: $V\onto  W$ \quad \textbf{bijection}: $V\bij W$ {\tiny (ps: bij证法:1.def;2.$f f^{-1}=id,f^{-1}f=id$)}
 
 \textbf{Projections ($pr_i$)}: {\small $pr_i:X_1\times X_2\times\cdots\times X_n \to X_i$:$(x_1,...,x_n)\mapsto x_i$} \quad \textbf{Canonical Injections}: {\small $in_i:X_i\to X_1\times X_2\times\cdots\times X_n$: $x\mapsto (0,...,x,0,...,0)$}
 
@@ -93,9 +91,7 @@ $\cdot$ \textbf{Properties of Group}: If $G,H$ are groups, then $G\times H$ also
 
 \quad \quad \quad \quad a map $F\times V\to V:(\lambda,\vec{v})\to\lambda\vec{v}$ satisfies: \textbf{I}: $\lambda(\vec{v}\dotplus\vec{w})=(\lambda\vec{v})\dotplus(\lambda\vec{w})$ \quad \textbf{II}: $(\lambda+\mu)\vec{v}=(\lambda\vec{v})\dotplus(\mu\vec{v})$
 
-\quad \quad \quad \quad \textbf{III}: $\lambda(\mu\vec{v})=(\lambda\mu)\vec{v}$ \quad \textbf{IV}: $1_F\vec{v}=\vec{v}$ \hspace{30pt} {\scriptsize ps:If $\lambda\vec{v}=\vec{0}$, then $\lambda=0$ or $\vec{v}=\vec{0}$ or both. \hspace{30pt} \textbf{Trivial Vector Space}: $V=\vec{0}$}
-
-$\cdot$ If $V,W$ are $F$-vector spaces, then $V\oplus W$ is also. \ \ \ ps: $V\oplus W:=V\times W$
+\quad \quad \quad \quad \textbf{III}: $\lambda(\mu\vec{v})=(\lambda\mu)\vec{v}$ \quad \textbf{IV}: $1_F\vec{v}=\vec{v}$ \hspace{30pt} {\scriptsize ps:If $\lambda\vec{v}=\vec{0}$, then $\lambda=0$ or $\vec{v}=\vec{0}$ or both. \hspace{30pt} \textbf{Trivial VS}: $V=\vec{0}$} \quad {\scriptsize If $V,W$ are VS, then $V\times W$ is also.}
 
 \textbf{Vector Subspace (U)}: $U\subseteq V$ is a subspace of $V$ if: \quad \textbf{I}. $\vec{0}\in U$ \quad \textbf{II}. $\forall \vec{u},\vec{v}\in U$, $\forall \lambda\in F$: $\vec{u}+\vec{v}\in U$ and $\lambda\vec{u}\in U$ \quad (or: $\lambda\vec{u}+\mu\vec{v}\in U$)
 
@@ -169,10 +165,13 @@ $\cdot$ \textbf{Dimension Theorem}: Let $V$: Vector Space. $U,W$: Subspaces. \ \
 \textbf{Notation $\oplus$}: Let $U,W$ be subspaces of $V$. \quad $V_1,...,V_n$ be subspaces of $V$. \quad \quad $V_1+\cdots+V_n:=\langle V_1\cup\cdots\cup V_n\rangle$:
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Basic Case}: If $f:U\times W\bij V$ by $(\vec{u},\vec{v})\mapsto\vec{u}+\vec{v}$ then we write: $V=U\oplus W$ and called $U,W$ \textbf{Complementary}.
-    \item \textbf{Special Case}: If $f:V_1+\cdots+ V_n\to V$ by $x\mapsto x$ ? 不对把？ P18 没写完
+    \item \textbf{Complementary}: If $f:U\times W\bij V$ by $(\vec{u},\vec{v})\mapsto\vec{u}+\vec{v}$ \ $\Rightarrow$ \ $U,W$ Complementary. \quad Also say V is \textbf{interval direct sum}  of $U,W$.
+    \item \textbf{General}: If $f:V_1\times V_2\times\cdots\times V_n\to V$ by $(\vec{v_1},\vec{v_2},...,\vec{v_n})\mapsto\vec{v_1}+\vec{v_2}+...+\vec{v_n}$ \ $\Rightarrow$ \ V is \textbf{interval direct sum} $V_i$.
+    \item \textbf{External Direct Sum}: $V_1\oplus\cdots\oplus V_n:=V_1\times V_2\times\cdots\times V_n$ \quad \textbf{Remark}: If $V_i$ interval direct $V$, we also right like this. (?)
 \end{enumerate}
 
 \textbf{Classification of Vector Spaces}: For Vector Space $V$, \ $\dim V = \dim F^n=n$ $\Leftrightarrow$ $\exists\phi:F^n\bij V$ is isomorphism.
+
+\textbf{Linear mappings and bases}: Let $V,W$ $F$-Vector Spaces, $B\subset V$ is basis. Then $\phi:Hom(V,W)\bij Maps(B,W)$ by $f\mapsto f|_B$ is bij.
 
 \end{document}

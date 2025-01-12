@@ -40,12 +40,39 @@
 \setlength{\droptitle}{-2.4cm} % 负值表示向上移动
 
 % 设置标题，作者，时间
-\title{HCV Note}
+\title{HAlg Note}
 \author{}
 \date{}
 
 % 正文
 \begin{document}
+
+
+% 标题
+\maketitle
+\thispagestyle{fancy}
+\vspace{-3.5cm}
+
+% 字体大小
+\fontsize{10pt}{11pt}\selectfont
+\setlength{\parindent}{8pt}
+
+\section{Basic Knowledge} % Basic Knowledge
+
+\textbf{Useful Complex Number Properties}: $|Re(z)|,|Im(z)|\leq |z|$ \quad $Re(z)=\frac{z+\overline{z}}{2},Im(z)=\frac{z-\overline{z}}{2i},|z|^2=z\overline{z}$
+
+\textbf{Triangle (Reverse) Inequality}: $|z_1+z_2|\leq |z_1|+|z_2|$ \quad $|z_1|-|z_2|\leq|z_1-z_2|$
+
+\textbf{Argument}: $\arg(z):=\{\theta:z=|z|e^{i\theta}\}=\{Arg(z)+2\pi k:k\in\mathbb{Z}\}$ \quad \textbf{Principle Value of Argument}: $Arg(z)\in(-\pi,\pi]$
+
+\textbf{Open/Closed/Punctured $\varepsilon$-disc}: {\small $D_\varepsilon(z_0):=\{z\in\mathbb{C}:|z-z_0|<\varepsilon\}$ \quad $\overline{D}_\varepsilon(z_0):=\{z\in\mathbb{C}:|z-z_0|\leq\varepsilon\}$ \quad $D_\varepsilon'(z_0):=\{z\in\mathbb{C}:0<|z-z_0|<\varepsilon\}$}
+
+\textbf{Open/Closed Set in $\mathbb{C}$}: {\small $U\subset\mathbb{C}$ is \textbf{open} if $\forall z_0\in U,\exists\varepsilon>0,D_\varepsilon(z_0)\subseteq U$ \quad $U$ is \textbf{closed} if $\mathbb{C}\setminus U$ is open} \quad \textbf{Lemma}: $D_\varepsilon,D'_\varepsilon$ open, $\overline{D}_\varepsilon$ closed.
+
+
+\section{Holomorphic Functions} % Holomorphic Functions
+
+\textbf{}
 
 
 % 标题

@@ -56,7 +56,115 @@
 % 字体大小
 \fontsize{10pt}{11pt}\selectfont
 \setlength{\parindent}{8pt}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
 
-\section{Basic Knowledge} % Basic Knowledge
+
+\section{General Linear Programming Problem} % General Linear Programming Problem
+
+\textbf{General LP Problem}: {\small \textbf{Decision Variables}: $x_i$ \quad \textbf{parameters}: $a_{ij},b_i,c_i$ \quad \textbf{Objective Function}: $f$ \quad \textbf{Constraints}: {\small subject to 后边的部分}}
+
+\vspace{-9pt}
+\begin{multicols}{2}
+
+    LP problem can be written as:
+    \begin{align*}
+        \text{maximize} \quad \ \ f = & c_1x_1 + c_2x_2 + \cdots + c_nx_n & \\
+        \text{subject to} \quad \qquad & a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n \leq b_1 & \\
+                                & a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n \leq b_2 & \\
+                                & \vdots & \\
+                                & a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n \leq b_m & \\
+                                & x_1 \geq 0, x_2 \geq 0, \cdots, x_n \geq 0 &
+    \end{align*}
+    
+    \columnbreak
+
+    We can also write the LP problem in matrix form:
+
+    \vspace{5pt}
+    $
+    A=
+    \begin{pmatrix}
+        a_{11} & \cdots & a_{1n} \\
+        \vdots & \ddots & \vdots \\
+        a_{m1} & \cdots & a_{mn} \\
+    \end{pmatrix}
+    ,\mathbf{b}=
+    \begin{pmatrix}
+        b_1 \\
+        \vdots \\
+        b_m
+    \end{pmatrix}
+    ,\mathbf{c}=
+    \begin{pmatrix}
+        c_1 \\
+        \vdots \\
+        c_n
+    \end{pmatrix}
+    ,\mathbf{x}=
+    \begin{pmatrix}
+        x_1 \\
+        \vdots \\
+        x_n
+    \end{pmatrix}
+    $
+
+    \begin{align*}
+        \text{maximize} \quad \ \ f = & \mathbf{c}^T\mathbf{x} & \\
+        \text{subject to} \quad \qquad & A\mathbf{x} \leq \mathbf{b} & \mathbf{x} \geq 0 \\
+    \end{align*}
+
+\end{multicols}
+
+\vspace{-15pt}
+\textbf{Feasible Solution}: If $\mathbf{x}$ satisfies all constraints (i.e. $A\mathbf{x}\leq\mathbf{b}$), then $\mathbf{x}$ is a feasible solution. {\footnotesize (可行解)}
+
+$\cdot$ \textbf{Feasible Region}: The set of all feasible solutions. {\footnotesize (可行域)} \quad \textbf{Infeasible Solution}: {\footnotesize (非可行解)} \quad \textbf{Optimal Solution}: {\footnotesize (最优解) (可多个)}
+
+\textbf{Find Optimal Solution}: \textbf{Graphical Method}: {\footnotesize 略.} \quad \textbf{Vertex Enumeration}: {\footnotesize 所有顶点检查, 找出最优解.} \quad \textbf{Simplex Method}: {\footnotesize 后面详述.}
+
+\textbf{Slack Variables}: For each inequality constraint, we introduce a slack variable $x_i$ ($i>n$) to convert it to an equation. {\footnotesize (松弛变量)}
+
+\vspace{-9pt}
+\begin{multicols}{2}
+
+    LP problem can be written as: \quad \quad ps: $x_{i}\geq0$ ($i>n$).
+    \begin{align*}
+        \text{maximize} \quad \ \ f = & c_1x_1 + c_2x_2 + \cdots + c_nx_n & \\
+        \text{subject to} \quad \qquad & a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n + x_{n+1} = b_1 & \\
+                                & a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n + x_{n+2} = b_2 & \\
+                                & \vdots & \\
+                                & a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n + x_{n+m} = b_m & \\
+                                & x_1 \geq 0, x_2 \geq 0, \cdots, x_{n+m} \geq 0 &
+    \end{align*}
+    
+    \columnbreak
+
+    We can also write the LP problem in matrix form:
+
+    \vspace{5pt}
+    $
+    \overline{A}= [ \ A  \ \ I_m \ ]
+    ,\mathbf{b}=\mathbf{b}
+    ,\overline{\mathbf{c}}=
+    \begin{pmatrix}
+        \mathbf{c} \\
+        \mathbf{0}_{\tiny m\times 1}
+    \end{pmatrix}
+    ,\mathbf{x}=
+    \begin{pmatrix}
+        \mathbf{x} \\
+        \vdots \\
+        x_{\tiny n+m}
+    \end{pmatrix}
+    $
+
+    \begin{align*}
+        \text{maximize} \quad \ \ f = & \overline{\mathbf{c}}^T\mathbf{x} & \\
+        \text{subject to} \quad \qquad & \overline{A}\mathbf{x} = \mathbf{b} & \mathbf{x} \geq 0 \\
+    \end{align*}
+
+\end{multicols}
+
 
 \end{document}
