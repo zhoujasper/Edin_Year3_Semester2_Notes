@@ -40,13 +40,14 @@
 \setlength{\droptitle}{-2.4cm} % 负值表示向上移动
 
 % 设置标题，作者，时间
-\title{HAlg Note}
+\title{HCV Note}
 \author{}
 \date{}
 
 % 正文
 \begin{document}
 
+\newcommand{\np}{{\tiny $^{^{^\ominus}}$}}
 
 % 标题
 \maketitle
@@ -61,29 +62,44 @@
 
 \textbf{Useful Complex Number Properties}: $|Re(z)|,|Im(z)|\leq |z|$ \quad $Re(z)=\frac{z+\overline{z}}{2},Im(z)=\frac{z-\overline{z}}{2i},|z|^2=z\overline{z}$
 
-\textbf{Triangle (Reverse) Inequality}: $|z_1+z_2|\leq |z_1|+|z_2|$ \quad $|z_1|-|z_2|\leq|z_1-z_2|$
+\textbf{Triangle (Reverse) Inequality}: $|z_1+z_2|\leq |z_1|+|z_2|$ \quad $|z_1|-|z_2|\leq|z_1-z_2|$ \quad \quad \quad {\scriptsize\np ($Re(zw)=0\Leftrightarrow \overline{zw}=-zw$;$Im(zw)=0\Leftrightarrow zw=\overline{zw}$)}
 
 \textbf{Argument}: $\arg(z):=\{\theta:z=|z|e^{i\theta}\}=\{Arg(z)+2\pi k:k\in\mathbb{Z}\}$ \quad \textbf{Principle Value of Argument}: $Arg(z)\in(-\pi,\pi]$
+
+$\cdot$ \textbf{Operations on Argument}: $arg(z_1z_2)=arg(z_1)+arg(z_2)$ \quad $arg\left(\frac{z_1}{z_2}\right)=arg(z_1)-arg(z_2)$ \quad $arg(\overline{z})=-arg(z)$
+
+
+\section{Holomorphic Functions} % Holomorphic Functions
 
 \textbf{Open/Closed/Punctured $\varepsilon$-disc}: {\small $D_\varepsilon(z_0):=\{z\in\mathbb{C}:|z-z_0|<\varepsilon\}$ \quad $\overline{D}_\varepsilon(z_0):=\{z\in\mathbb{C}:|z-z_0|\leq\varepsilon\}$ \quad $D_\varepsilon'(z_0):=\{z\in\mathbb{C}:0<|z-z_0|<\varepsilon\}$}
 
 \textbf{Open/Closed Set in $\mathbb{C}$}: {\small $U\subset\mathbb{C}$ is \textbf{open} if $\forall z_0\in U,\exists\varepsilon>0,D_\varepsilon(z_0)\subseteq U$ \quad $U$ is \textbf{closed} if $\mathbb{C}\setminus U$ is open} \quad \textbf{Lemma}: $D_\varepsilon,D'_\varepsilon$ open, $\overline{D}_\varepsilon$ closed.
 
+\textbf{Limit Point of S}: $z_0\in\mathbb{C}$ is a limit point of $S$ if: \ $\forall\varepsilon>0,D'_\varepsilon(z_0)\cap S\neq\emptyset${\tiny 聚点} \quad \quad \textbf{Bounded}: $S$ is bounded if $\exists M>0$ s.t. $|z|\leq M,\forall z\in S$
 
-\section{Holomorphic Functions} % Holomorphic Functions
+\textbf{Closed of Set S}: $\overline{S}:=$所有S的limit point和S的点. \quad \textbf{Property}: Let $S\subseteq\mathbb{C}$, then $S$ is closed \ $\Leftrightarrow$ \ $S=\overline{S}$.
 
-\textbf{}
+\textbf{Limit of sequence}: Sequence $(z_n)_{n\in\mathbb{N}}$ has limit $z$ if $\forall\varepsilon>0,\exists N\in\mathbb{N}$ s.t. $\forall n\geq N\Rightarrow |z_n-z|<\varepsilon$. {\scriptsize limit rules 依旧成立}
 
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Lemma|Important}: $\lim z_n=z$ \ $\Leftrightarrow$ \ $\lim Re(z_n)=Re(z)$ and $\lim Im(z_n)=Im(z)$
+    \item \textbf{Cauchy}: Sequence $(z_n)_{n\in\mathbb{N}}$ is cauchy if: \ $\forall\varepsilon>0,\exists N\in\mathbb{N}$ s.t. $\forall m,n\geq N\Rightarrow |z_m-z_n|<\varepsilon$ \quad \textbf{Lemma}: Cauchy $\Leftrightarrow$ convergent.
+    \item \textbf{Lemma|Closed of Set}: $S\subseteq\mathbb{C},z\in\mathbb{C}$. $\Rightarrow$ [ \ $z\in\overline{S}$ \ $\Leftrightarrow$ \ $\exists$ sequence $(z_n)_{n\in\mathbb{N}}\in S$ s.t. $\lim z_n=z$ \ ]
+    \item \textbf{Bolzano-Weierstrass}: Every bounded sequence in $\mathbb{C}$ has a convergent subsequence.
+\end{enumerate}
 
-% 标题
-\maketitle
-\thispagestyle{fancy}
-\vspace{-3.5cm}
+\textbf{Complex Functions}: $\forall f:\mathbb{C}\to\mathbb{C}$ we can write it as: $f(z)=f(x+iy)=u(x,y)+iv(x,y)$ where $u,v:\mathbb{R}^2\to\mathbb{R}$
 
-% 字体大小
-\fontsize{10pt}{11pt}\selectfont
-\setlength{\parindent}{8pt}
+\textbf{Limit of Function}: $a_0\in\mathbb{C}$ is the limit of $f$ at $z_0$ if: \ $\forall\varepsilon>0,\exists\delta>0$ s.t. $0<|z-z_0|<\delta\Rightarrow |f(z)-a_0|<\varepsilon$ \quad {\scriptsize limit rules 依旧成立}
 
-\section{Basic Knowledge} % Basic Knowledge
+$\cdot$ \textbf{Lemma|Important}: $\lim_{z\to z_0} f(z)$ $\Leftrightarrow$ $\lim_{(x,y)\to(x_0,y_0)} u(x,y)=Re(a_0)$ and $\lim_{(x,y)\to(x_0,y_0)} v(x,y)=Im(a_0)$
+
+\textbf{continuous of Function}: $f$ is continuous at $z_0$ if: \ $\forall\varepsilon>0,\exists\delta>0$ s.t. $|z-z_0|<\delta\Rightarrow |f(z)-f(z_0)|<\varepsilon$ \quad {\scriptsize continuous rules 依旧成立}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Lemma|Important}: $f$ is continuous at $z_0$ $\Leftrightarrow$ $u,v$ are continuous at $(x_0,y_0)$
+    \item \textbf{'Extreme Value Theorem'}: $f$ is continuous on a closed and bounded set $S\subseteq\mathbb{C}$, then $f(S)$ is closed and bounded.
+    \item \textbf{Lemma|continuous$\Leftrightarrow$open}: $f$ is continuous $\Leftrightarrow$ $\forall$ open set $U$, preimage $f^{-1}(U):=\{z\in\mathbb{C}|f(z)\in U\}$ is open.
+\end{enumerate}
 
 \end{document}

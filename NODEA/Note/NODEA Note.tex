@@ -70,7 +70,7 @@ $\cdot$ \textbf{Change to Autonomous}: For $\frac{d\mathbf{y}}{dt}=\mathbf{f}(t,
 
 \textbf{Picard's Theorem}: If $f(t,y)$ is continuous in $D:=\{(t,y):t_0\leq t\leq T,|y-y_0|<K\}$ and $\exists L>0$ {\footnotesize (Lipschitz constant)} s.t.
 
-$\quad$ $\forall (t,u),(t,v)\in D \quad|f(t,u)-f(t,v)|\leq L|u-v|$. And Assume that $M_f(T-t_0)\leq K,M_f:=\max\{|f(t,u)|:(t,u)\in D\}$
+$\quad$ $\forall (t,u),(t,v)\in D \quad|f(t,u)-f(t,v)|\leq L|u-v|$ {\tiny (ps:Can use MVT)}. And Assume that $M_f(T-t_0)\leq K,M_f:=\max\{|f(t,u)|:(t,u)\in D\}$
 
 $\quad$ $\Rightarrow$ \textbf{Then}, $\exists$ a unique continuously differentiable solution $y(t)$ to the IVP $\frac{dy}{dt}=f(t,y),y(t_0)=y_0$ on $t\in[t_0,T]$.
 
@@ -107,6 +107,11 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
 \textbf{for} $n=0,1,2,...,N-1$:
 \quad $y_{n+1}=y_n+hf(t_0+nh,y_n)$ \quad 
 \textbf{end}
+
+\textbf{Boundedness Theorem}: {\small Consider IVP $\frac{dy}{dt}=f(t,y),y(a)=y_0$ and suppose there exists a unique, twice differentiable, solution $y(t)$ on $[a,b]$.}
+
+\quad \quad \quad {\small Suppose further that $y$ is continuous everywhere and $|\frac{\partial f}{\partial y}|\leq L$. \ $\Rightarrow$ \ the solution $y_n$ given Euler's method satisfies: $e_n=|y_n-y(t_n)|\leq Dh$}
+
 
 
 \end{document}

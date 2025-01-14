@@ -39,10 +39,6 @@
 \usepackage{titling}
 \setlength{\droptitle}{-2.4cm} % 负值表示向上移动
 
-\newcommand{\oto}{\hookrightarrow}
-\newcommand{\onto}{\twoheadrightarrow}
-\newcommand{\bij}{\stackrel{\sim}{\rightarrow}}
-
 % 设置标题，作者，时间
 \title{HAlg Note}
 \author{}
@@ -64,114 +60,79 @@
 
 \section{Basic Knowledge} % Basic Knowledge
 
-\textbf{Def of Matrix}: A mapping from $\{1,...,n\}\times\{1,...,m\}$ to a field $F$ is called a $n\times m$ matrix over $F$.
-
-$\cdot$ The set of all $n\times m$ matrices over $F$ is denoted by $Mat(n\times m;F):=Maps(\{1,...,n\}\times\{1,...,m\},F)$. \quad \textbf{Square Matrix}: $Mat(n;F)$
-
-\textbf{Solution Sets of Inhomogeneous Systems of Linear Equations}: {\small Solution = 特解(Particular Solution) + 通解(Homogeneous solution)}
-
-\textbf{Def of Group $(G,*)$}: A set $G$ with a operator $*$ is a group if: {\small \textbf{Closure}: $\forall g,h\in G$, $g*h\in G$; \textbf{Associativity}: $\forall g,h,k\in G$, $(g*h)*k=g*(h*k)$;}
+\textbf{Def of Group $(G,*)$}: {\small A set $G$ with a operator $*$ is a group if: \textbf{Closure}: $\forall g,h\in G$, $g*h\in G$; \textbf{Associativity}: $\forall g,h,k\in G$, $(g*h)*k=g*(h*k)$;}
 
 \hspace{85pt} {\small \textbf{Identity}: $\exists e\in G$, $\forall g\in G$, $e*g=g*e=g$; \textbf{Inverse}: $\forall g\in G$, $\exists g^{-1}\in G$, $g*g^{-1}=g^{-1}*g=e$.} \quad {\scriptsize $G,H$ groups, then $G\times H$ also.}
 
-\textbf{Field $(F)$}: A set $F$ is a field with two operators: \quad {\scriptsize(addition)}$+:F\times F\to F;(\lambda,\mu)\to\lambda+\mu$ \quad {\scriptsize(multiplication)}$\cdot:F\times F\to F;(\lambda,\mu)\to\lambda\mu$ \ \ if:
+\textbf{Field $(F)$}: {\small A set $F$ is a field with two operators: \quad {\scriptsize(addition)}$+:F\times F\to F;(\lambda,\mu)\to\lambda+\mu$ \quad {\scriptsize(multiplication)}$\cdot:F\times F\to F;(\lambda,\mu)\to\lambda\mu$ \ \ if:}
 
-\quad \quad \quad \quad $(F,+)$ and $(F\setminus\{0_F\}, \ \cdot \ )$ are abelian groups with identity $0_F,1_F$. \quad and \quad $\lambda(\mu+\nu)=\lambda\mu+\lambda\nu$ \quad \quad $e.g. Fields:\mathbb{R},\mathbb{C},\mathbb{Q},\mathbb{Z}/p\mathbb{Z}$
+\quad \quad \quad \quad {\small $(F,+)$ and $(F\setminus\{0_F\}, \ \cdot \ )$ are abelian groups with identity $0_F,1_F$. \quad and \quad $\lambda(\mu+\nu)=\lambda\mu+\lambda\nu$ \quad \quad $e.g. Fields:\mathbb{R},\mathbb{C},\mathbb{Q},\mathbb{Z}/p\mathbb{Z}$}
 
-\textbf{Notation of 1-1,onto,bij}: For function $f:V\to W$. \quad \textbf{1-1}: $V\oto W$ \quad \textbf{onto}: $V\onto  W$ \quad \textbf{bijection}: $V\bij W$ {\tiny (ps: bij证法:1.def;2.$f f^{-1}=id,f^{-1}f=id$)}
+\textbf{$F$-Vector Space (V)}: {\small A set $V$ over a field $F$ is a vector space if: \quad $V$ is an abelian group $V=(V,\dotplus)$ and $\forall \ \vec{v},\vec{w}\in V$ \ \ $\lambda,\mu\in F$}
 
-\textbf{Projections ($pr_i$)}: {\small $pr_i:X_1\times X_2\times\cdots\times X_n \to X_i$:$(x_1,...,x_n)\mapsto x_i$} \quad \textbf{Canonical Injections}: {\small $in_i:X_i\to X_1\times X_2\times\cdots\times X_n$: $x\mapsto (0,...,x,0,...,0)$}
+\quad \quad \quad \quad {\small $\exists$ map $F\times V\to V:(\lambda,\vec{v})\to\lambda\vec{v}$ satisfies: \textbf{I}: $\lambda(\vec{v}\dotplus\vec{w})=(\lambda\vec{v})\dotplus(\lambda\vec{w})$ \quad \textbf{II}: $(\lambda+\mu)\vec{v}=(\lambda\vec{v})\dotplus(\mu\vec{v})$ \textbf{III}: $\lambda(\mu\vec{v})=(\lambda\mu)\vec{v}$ \quad \textbf{IV}: $1_F\vec{v}=\vec{v}$}
+
+\textbf{Vector Subspaces Criterion}: {\small $U\subseteq V$ is a subspace of $V$ if: \quad \textbf{I}. $\vec{0}\in U$ \quad \textbf{II}. $\forall \vec{u},\vec{v}\in U$, $\forall \lambda\in F$: $\vec{u}+\vec{v}\in U$ and $\lambda\vec{u}\in U$ \quad (or: $\lambda\vec{u}+\mu\vec{v}\in U$)}
+
+$\cdot$ \textbf{property}: {\small If $U,W$ are subspaces of $V$, then $U\cap W$ and $U + W$ are also subspaces of $V$.} \quad {\small ps: $U+W:=\{\vec{u}+\vec{w}:\vec{u}\in U,\vec{w}\in W\}$}
+
+\textbf{\small Complement-wise Operations}: {\scriptsize $\phi:V_1\times V_2\to V_1\oplus V_2$ by \textbf{I}:$(\vec{v_1},\vec{u_1})+(\vec{v_2},\vec{u_2}):=(\vec{v_1}+\vec{v_1},\vec{u_1}+\vec{u_2}), \ \lambda(\vec{v},\vec{u}):=(\lambda\vec{v},\lambda\vec{u})$ {\tiny (ps:$V_1,V_2$通过$\phi$定义的map所形成的vector space记作$V_1\oplus V_2$)}}
+
+\textbf{Projections}: $pr_i:X_1\times\cdots\times X_n\to X_i$ by $(x_1,...,x_n)\mapsto x_i$ \quad \textbf{Canonical Injections}: $in_i:X_i\to X_1\times\cdots\times X_n$ by $x\mapsto(0,...,0,x,0,...,0)$
 
 
-\section{Vector Spaces} % Vector Spaces
+\section{Vector Spaces/Subspaces | Generating Set | Linear Independent | Basis} % Vector Spaces | Subspaces | Generating Set | Linear Independent
 
-\subsection{Vector Spaces | Product of Sets | Vector Subspaces | Power, Union, Intersection of Sets}
-
-\textbf{$F$-Vector Space (V)}: A set $V$ over a field $F$ is a vector space if: \quad $V$ is an abelian group $V=(V,\dotplus)$ and $\forall \ \vec{v},\vec{w}\in V$ \ \ $\lambda,\mu\in F$
-
-\quad \quad \quad \quad a map $F\times V\to V:(\lambda,\vec{v})\to\lambda\vec{v}$ satisfies: \textbf{I}: $\lambda(\vec{v}\dotplus\vec{w})=(\lambda\vec{v})\dotplus(\lambda\vec{w})$ \quad \textbf{II}: $(\lambda+\mu)\vec{v}=(\lambda\vec{v})\dotplus(\mu\vec{v})$
-
-\quad \quad \quad \quad \textbf{III}: $\lambda(\mu\vec{v})=(\lambda\mu)\vec{v}$ \quad \textbf{IV}: $1_F\vec{v}=\vec{v}$ \hspace{30pt} {\scriptsize ps:If $\lambda\vec{v}=\vec{0}$, then $\lambda=0$ or $\vec{v}=\vec{0}$ or both. \hspace{30pt} \textbf{Trivial VS}: $V=\vec{0}$} \quad {\scriptsize If $V,W$ are VS, then $V\times W$ is also.}
-
-\textbf{Vector Subspace (U)}: $U\subseteq V$ is a subspace of $V$ if: \quad \textbf{I}. $\vec{0}\in U$ \quad \textbf{II}. $\forall \vec{u},\vec{v}\in U$, $\forall \lambda\in F$: $\vec{u}+\vec{v}\in U$ and $\lambda\vec{u}\in U$ \quad (or: $\lambda\vec{u}+\mu\vec{v}\in U$)
-
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item If $U_1,U_2$ are subspaces of $V$. Then $U_1\cap U_2$ and $U_1+U_2$ are also. \quad {\scriptsize ps: $U_1+U_2:=\langle U_1\cup U_2\rangle$}
-    \item \textbf{Vector Subspace Generated by T ($\langle T \rangle$)}: {\small If $T$ is a subset of a $F$-vector space $V$. \ $\Rightarrow$ \ $\langle T \rangle$ is the smallest subspace of $V$ containing $T$.} \\
-    \quad Also, we can get: $\langle T \rangle=span(T):=\{\sum_ic_i\vec{v_i}: \vec{v_i}\in T,c_i\in F\}$ \quad \quad \quad $\forall \vec{v}\in\langle T \rangle,\langle T \cup\{\vec{v}\}\rangle=\langle T \rangle$
-    \item \textbf{Generating/Spanning Set}: If $\langle T \rangle=V$. \ $\Rightarrow$ \ $T$ is a generating set of $V$. \quad \textbf{Finitely Generated}: $\exists$ T finite set, s.t. $V=\langle T\rangle$
-\end{enumerate}
-
-\textbf{Free Vector Space on the Set X}: Set $X$, 将$X$中每一个元素都视为 基, then $\{\sum_{x\in X}a_xx:a_x\in F,F \ is \ field\}$ is FVS on $X$.
-
-\textbf{Functional Vector Space}: If $X$ be a set and $F$ be field. Then $Maps(X,F)$ is a $F$-Vector Space. \quad \quad {\tiny ps: 'almost all': all but finitely many (全部,但可以有有限个除外)}
-
-$\cdot$ $F\langle X\rangle:=\{f:X\to F \ | \ f(x)=0 \ for \ almost \ all \ x\in X\}$ \quad \quad \quad {\footnotesize ps: $F\langle X\rangle$ is a subspace of $Maps(X,F)$} \ \ \ ？没写完！
-
-\textbf{Power of Set $\mathcal{P}(X)$}: If X is a set, then $\mathcal{P}(X):=\{U:U\subseteq X\}$ {\scriptsize (set of all subsets)} \quad \quad {\small ps: $\mathcal{U}\subseteq\mathcal{P}(X)$ \ $\Rightarrow$ \ $U$ is called a \textbf{system of subsets of $X$}}.
+\textbf{Generating (subspaces) $\langle T\rangle$}: $\langle T\rangle:=\{\alpha_1\vec{v_1}+\cdots+\alpha_n\vec{v_n}:\alpha_i\in F,\vec{v_i}\in T,r\in\mathbb{N}\}$ \quad $\langle\emptyset\rangle:=\{\vec{0}\}$ \quad  If $T$ is subspace $\Rightarrow$ $\langle T\rangle=T$.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Empty System of subsets of X}: Empty System of subsets of X $:=\emptyset\in\mathcal{P}(X)$ \ {\scriptsize (NOT $\{\emptyset\}$)} \quad \quad \quad \star \ $\bigcap\emptyset=X$ \quad and \quad $\bigcup\emptyset=\emptyset$ \ \star
-    \item \textbf{Union}: {\small For $\mathcal{U}\subseteq\mathcal{P}(X)$, $\bigcup_{U\in\mathcal{U}}U:=\{x\in X:\exists U\in\mathcal{U} \ s.t. \ x\in U\}$} \quad \textbf{Intersection}: {\small For $\mathcal{U}\subseteq\mathcal{P}(X)$, $\bigcap_{U\in\mathcal{U}}U:=\{x\in X:\forall U\in\mathcal{U},x\in U\}$}
+    \item \textbf{Proposition}: $\langle T\rangle$ is the smallest subspace containing $T$. (i.e. $\langle T \rangle$ is the intersection of all subspaces containing $T$)
+    \item \textbf{Generating Set}: $V$ is vector space, $T\subseteq V$. $T$ is generating set of $V$ if $\langle T\rangle=V$. \quad \textbf{Finitely Generated}: $\exists$ finite set $T$, $\langle T\rangle=V$
+    \item \textbf{External Direct Sum}: {\small 一个"代数结构", 定义为set是$V_1\oplus\cdots\oplus V_n:=V_1\times\cdots\times V_n$且有一组运算法则component-wise operations}
+    \item \textbf{Connect to Matrix}: {\footnotesize Let $E=\{\vec{v_1},...,\vec{v_n}\}$, $E$ is GS of $V$. Let $A=[\vec{v_1},...,\vec{v_n}]$ $\Rightarrow$ $\forall\vec{b}\in V$, $\exists \vec{x}=(x_1,...,x_n)^T$ s.t. $A\vec{x}=\vec{b}$ (i.e. linear map:$\phi:\vec{x}\mapsto A\vec{x}$ is surjective)}
 \end{enumerate}
 
+\textbf{Linearly Independent}: $L=\{\vec{v_1},\vec{v_2},...,\vec{v_r}\}$ is linearly independent if: \ $\forall c_1,...,c_r\in F$, $c_1\vec{v_1}+\cdots+c_r\vec{v_r}=\vec{0}$ \ $\Rightarrow$ \ $c_1=\cdots =c_r=0$.
 
-\subsection{Linear Independence | Basis | Dimension}
+$\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $L=\{\vec{v_1},...,\vec{v_n}\}$, $L$ is LI of $V$. Let $A=[\vec{v_1},...,\vec{v_n}]$ $\Rightarrow$ $\forall\vec{x}\in F^n$, $A\vec{x}=0$ ${\scriptsize (or \ \vec{0})}$ $\Rightarrow$ $\vec{x}=0 {\scriptsize (or \ \vec{0})}$ (i.e. linear map $\phi$:$\vec{x}\mapsto A\vec{x}$ is injective)}
 
-\textbf{Linearly Independent}: $L=\{\vec{v_1},\vec{v_2},...,\vec{v_r}\}$ is linearly independent if: \ $\forall c_1,...,c_r\in F$, $c_1\vec{v_1}+...+c_r\vec{v_r}=\vec{0}$ \ $\Rightarrow$ \ $c_1=...=c_r=0$.
+\textbf{Basis \& Dimension}: If $V$ is finitely generated. $\Rightarrow$ $\exists$ subset $B\subseteq V$ which is both LI and GS. ($B$ is basis) \quad \textbf{Dim}: $\dim V:=|B|$
 
-\textbf{Linearly Dependent}: $L$ is linearly dependent if: $\exists \alpha_1,...,\alpha_r$ not all zero \ s.t. \ $\alpha_1\vec{v_1}+...+\alpha_r\vec{v_r}=\vec{0}$
+$\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v_n}\}$ is basis of $V$. Let $A=[\vec{v_1},...,\vec{v_n}]$ $\Rightarrow$ $\forall\vec{x}=(x_1,...,x_n)^T$ s.t. $\phi:\vec{x}\mapsto A\vec{x}$ is 1-1 \& onto (Bijection)}
 
-\textbf{Basis}: A basis of a vector space $V$ is a linearly \textit{independent} \textit{generating set} of $V$. \quad \quad (Finitely generated $\Leftrightarrow$ $\exists$ finite basis.)
+\textbf{Relation|GS,LI,Basis,dim}: {\small Let $V$ be vector space. $L$ is linearly independent set, $E$ is generating set, $B$ is basis set.}
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item subset $E$ is a basis \ $\Leftrightarrow$ \ $E$ is minimal generating sets \ $\Leftrightarrow$ \ $E$ is maximal linearly independent sets.
-    \item \textbf{Fundamental Estimate of Linear Algebra}: Linearly independent sets $\subseteq$ basis $\subseteq$ generating sets.
-    \item $(\vec{v}_i)_{i\in I}$ is a basis of $V$ \ $\Leftrightarrow$ \ $\forall \vec{v}\in V$, $\exists !$ $c_i\in F$ (almost all of $c_i$ are zero) \ s.t. \ $\vec{v}=\sum_{i\in I}c_i\vec{v}_i$
+    \item \textbf{GS|LI}: $|L|\leq|E|$ {\scriptsize (can get: $\dim$ unique)} \quad \textbf{LI$\to$Basis}: If $V$ finite generate $\Rightarrow$ $\forall L$ can extend to a basis. {\scriptsize If $L=\emptyset$, prove $\exists B$}
+    \item \textbf{Basis|max,min}: $B$ $\Leftrightarrow$ $B$ is minimal GS $(E)$ $\Leftrightarrow$ $B$ is maximal LI $(L)$. \quad \textbf{Uniqueness|Basis}: {\small 每个元素都可以由basis唯一表示.}
+    \item \textbf{Proper Subspaces}: {\small If $U\subset V$ is proper subspace, then $\dim U<\dim V$. \quad $\Rightarrow$ \quad If $U\subseteq V$ is subspace and $\dim U=\dim V$, then $U=V$.}
+    \item \textbf{Dimension Theorem}: $\dim(U+W)=\dim U+\dim W-\dim(U\cap W)$
 \end{enumerate}
 
-\textbf{Family of Elements of $A$ Indexed by $I$}: $(a_i)_{i\in I}:=func \ f:I\to A$ with $i\mapsto a_i$. \quad {\tiny e.g. $f(0)=1,f(1)=2,f(2)=3$ 可以用 $(a_i)_{i\in\{0,1,2\}},a_0=1,a_1=2,a_2=3$ 代替}
-
-$\cdot$ If $\{\vec{v}_i:i\in I\}$ is generating set of $V$, then $(\vec{v_i})_{i\in I}$ is called a generating set. \quad \quad {\footnotesize (同理对: $(\vec{v}_i)_{i\in I}$ is \textbf{basis indexed by $i\in I$})}
-
-\textbf{Linear Combinations of Basis}: Let $F$ be a field, \ family $(\vec{v}_i)_{1\leq i\leq r}$, \ $V$ is vector space. \ \ $\Phi:F^r\to V$ with $(c_1,...,c_r)\mapsto c_1\vec{v}_1+...+c_r\vec{v}_r$:
-
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{I}.$(\vec{v}_i)_{1\leq i\leq r}$ is generating set $\Leftrightarrow$ $\Phi$ is onto. ($F^r\onto V$) \quad \quad \quad \textbf{II}.$(\vec{v}_i)_{1\leq i\leq r}$ is linearly independent $\Leftrightarrow$ $\Phi$ is 1-1. ($F^r\oto V$)
-    \item $(\vec{v}_i)_{1\leq i\leq r}$ is basis $\Leftrightarrow$ $\Phi$ is bijection. ($F^r\bij V$)
-\end{enumerate}
-
-\textbf{Steinitz Exchange Theorem}: Let $V$ be vector space. $L$ is linearly independent set, $E$ is generating set. \ $\Rightarrow$ \ $\exists \ \text{1-1} \ \phi:L\oto E$ s.t.
-
-\hspace{130pt} $(E\setminus\phi(L))\cup L$ is generating set. {\tiny i.e. $E$中的一部分元素可以完全由$L$中的元素线性表示出来.(即$L$中的元素可以替换$E$中的部分元素)}
-
-\textbf{Dimension}: Dimension of $F$-vector space is $\dim_FV:=$ \# basis (i.e. cardinality of basis). \quad \quad \quad {\small e.g. $\dim_FF^n=n$}
-
-$\cdot$ Let $V$: Vector Space. $L$ LI set, $E$ generating set. \ \textbf{I}. $\dim L\leq \dim V\leq\dim E$ \ \textbf{II}. If $|L|=\dim V$ ($|E|=\dim V$), then $L$ ($E$) is basis.
-
-$\cdot$ \textbf{Dimension Theorem}: Let $V$: Vector Space. $U,W$: Subspaces. \ \textbf{I}. $\dim(U+W)=\dim U+\dim W-\dim(U\cap W)$ \ \textbf{II}. $\dim U\leq\dim V$
 
 
-\subsection{Linear Maps | Rank-Nullity Theorem}
 
-\textbf{Linear Maps}: $f:V\to W$ {\small (V,W vector spaces) is \textbf{$F$-linear} or \textbf{homomorphism} if: \quad $f(\vec{v}+\vec{w})=f(\vec{v})+f(\vec{w})$ \ $f(\lambda\vec{v})=\lambda f(\vec{v})$ \quad {\footnotesize $\forall \vec{v},\vec{w}\in V;\forall\lambda\in F$}}
+% \subsection{Linear Maps | Rank-Nullity Theorem}
 
-\textbf{Isomorphism}: {\small Linear map $f:V\to W$ is bij. \ \textbf{Endomorphism (End)}: Linear map $f:V\to V$. \ \textbf{Automorphism (Aut)}: Isomorphism. $f:V\to V$.}
+% \textbf{Linear Maps}: $f:V\to W$ {\small (V,W vector spaces) is \textbf{$F$-linear} or \textbf{homomorphism} if: \quad $f(\vec{v}+\vec{w})=f(\vec{v})+f(\vec{w})$ \ $f(\lambda\vec{v})=\lambda f(\vec{v})$ \quad {\footnotesize $\forall \vec{v},\vec{w}\in V;\forall\lambda\in F$}}
 
-\textbf{General Linear Group / Automorphism Group}: $GL(V)=Aut(V):=\{f:V\to V \ | \ f \ is \ isomorphism\}$ {\scriptsize (subspace)}
+% \textbf{Isomorphism}: {\small Linear map $f:V\to W$ is bij. \ \textbf{Endomorphism (End)}: Linear map $f:V\to V$. \ \textbf{Automorphism (Aut)}: Isomorphism. $f:V\to V$.}
 
-\textbf{Fixed Point}: For $f:X\to X$, if $f(x)=x$, then $x$ is fixed point of $f$. \quad \textbf{Set of Fixed Points}: $X^f:=\{x\in X:f(x)=x\}$
+% \textbf{General Linear Group / Automorphism Group}: $GL(V)=Aut(V):=\{f:V\to V \ | \ f \ is \ isomorphism\}$ {\scriptsize (subspace)}
 
-\textbf{Notation $\oplus$}: Let $U,W$ be subspaces of $V$. \quad $V_1,...,V_n$ be subspaces of $V$. \quad \quad $V_1+\cdots+V_n:=\langle V_1\cup\cdots\cup V_n\rangle$:
+% \textbf{Fixed Point}: For $f:X\to X$, if $f(x)=x$, then $x$ is fixed point of $f$. \quad \textbf{Set of Fixed Points}: $X^f:=\{x\in X:f(x)=x\}$
 
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Complementary}: If $f:U\times W\bij V$ by $(\vec{u},\vec{v})\mapsto\vec{u}+\vec{v}$ \ $\Rightarrow$ \ $U,W$ Complementary. \quad Also say V is \textbf{interval direct sum}  of $U,W$.
-    \item \textbf{General}: If $f:V_1\times V_2\times\cdots\times V_n\to V$ by $(\vec{v_1},\vec{v_2},...,\vec{v_n})\mapsto\vec{v_1}+\vec{v_2}+...+\vec{v_n}$ \ $\Rightarrow$ \ V is \textbf{interval direct sum} $V_i$.
-    \item \textbf{External Direct Sum}: $V_1\oplus\cdots\oplus V_n:=V_1\times V_2\times\cdots\times V_n$ \quad \textbf{Remark}: If $V_i$ interval direct $V$, we also right like this. (?)
-\end{enumerate}
+% \textbf{Notation $\oplus$}: Let $U,W$ be subspaces of $V$. \quad $V_1,...,V_n$ be subspaces of $V$. \quad \quad $V_1+\cdots+V_n:=\langle V_1\cup\cdots\cup V_n\rangle$:
 
-\textbf{Classification of Vector Spaces}: For Vector Space $V$, \ $\dim V = \dim F^n=n$ $\Leftrightarrow$ $\exists\phi:F^n\bij V$ is isomorphism.
+% \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+%     \item \textbf{Complementary}: If $f:U\times W\bij V$ by $(\vec{u},\vec{v})\mapsto\vec{u}+\vec{v}$ \ $\Rightarrow$ \ $U,W$ Complementary. \quad Also say V is \textbf{interval direct sum}  of $U,W$.
+%     \item \textbf{General}: If $f:V_1\times V_2\times\cdots\times V_n\to V$ by $(\vec{v_1},\vec{v_2},...,\vec{v_n})\mapsto\vec{v_1}+\vec{v_2}+...+\vec{v_n}$ \ $\Rightarrow$ \ V is \textbf{interval direct sum} $V_i$.
+%     \item \textbf{External Direct Sum}: $V_1\oplus\cdots\oplus V_n:=V_1\times V_2\times\cdots\times V_n$ \quad \textbf{Remark}: If $V_i$ interval direct $V$, we also right like this. (?)
+% \end{enumerate}
 
-\textbf{Linear mappings and bases}: Let $V,W$ $F$-Vector Spaces, $B\subset V$ is basis. Then $\phi:Hom(V,W)\bij Maps(B,W)$ by $f\mapsto f|_B$ is bij.
+% \textbf{Classification of Vector Spaces}: For Vector Space $V$, \ $\dim V = \dim F^n=n$ $\Leftrightarrow$ $\exists\phi:F^n\bij V$ is isomorphism.
+
+% \textbf{Linear mappings and bases}: Let $V,W$ $F$-Vector Spaces, $B\subset V$ is basis. Then $\phi:Hom(V,W)\bij Maps(B,W)$ by $f\mapsto f|_B$ is bij.
+
 
 \end{document}
