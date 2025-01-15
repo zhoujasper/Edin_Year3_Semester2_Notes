@@ -117,9 +117,7 @@
 \end{multicols}
 
 \vspace{-15pt}
-\textbf{Feasible Solution}: If $\mathbf{x}$ satisfies all constraints (i.e. $A\mathbf{x}\leq\mathbf{b}$), then $\mathbf{x}$ is a feasible solution. {\footnotesize (可行解)}
-
-$\cdot$ \textbf{Feasible Region}: The set of all feasible solutions. {\footnotesize (可行域)} \quad \textbf{Infeasible Solution}: {\footnotesize (非可行解)} \quad \textbf{Optimal Solution}: {\footnotesize (最优解) (可多个)}
+\textbf{Feasible Solution}: If $\mathbf{x}$ satisfies all constraints (i.e. $A\mathbf{x}\leq\mathbf{b}$), then $\mathbf{x}$ is a feasible solution. {\footnotesize (可行解)}\quad \textbf{Optimal Sol}: {\footnotesize (最优解) (可多个)}
 
 \textbf{Find Optimal Solution}: \textbf{Graphical Method}: {\footnotesize 略.} \quad \textbf{Vertex Enumeration}: {\footnotesize 所有顶点检查, 找出最优解.} \quad \textbf{Simplex Method}: {\footnotesize 后面详述.}
 
@@ -163,8 +161,22 @@ $\cdot$ \textbf{Feasible Region}: The set of all feasible solutions. {\footnotes
         \text{maximize} \quad \ \ f = & \overline{\mathbf{c}}^T\mathbf{x} & \\
         \text{subject to} \quad \qquad & \overline{A}\mathbf{x} = \mathbf{b} & \mathbf{x} \geq 0 \\
     \end{align*}
+    
+    \vspace{-20pt}
+    \textbf{Solving}: $\mathbf{x}=\mathbf{x}_b+\mathbf{v}$ where $\overline{A}\mathbf{v}=0$ and $\mathbf{x}_b=[\mathbf{0} \ \mathbf{b}]^T$
 
 \end{multicols}
+
+\vspace{-15pt}
+\textbf{Feasible Region}: {\small It's the set $K$ of the solutions to $\overline{A}\mathbf{x}=\mathbf{b}$} \quad \textbf{Convex Set}: {\small The set $K$ is convex if $\forall \mathbf{x},\mathbf{x'}\in K$, $\forall\theta\in[0,1],\mathbf{x}_{\theta}=(1-\theta)\mathbf{x}+\theta\mathbf{x'}\in K$.}
+
+\textbf{Vertex on Convex Set}: {\footnotesize A vertex of the convex set $K$ is a point $\mathbf{x}\in K$ which doesn't lie strictly inside any line segment connecting two points in $K$.}
+
+$\cdot$ \textbf{Theorem}: {\small If LP has a unique optimal solution is a vertex.} \quad \quad \textbf{Theorem}: {\small If LP has a non-unique solution, $\exists$ optimal solution at vertex}
+
+\textbf{Basic solution}: {\scriptsize 修改$x_i$顺序: $\overline{A}=[B \ N]$ with corresponding $\mathbf{x}=[\mathbf{x}_B \ \mathbf{x}_N]^T$, where $B$ is $m\times m$ invertible matrix. \quad $\overline{A}\mathbf{x}=\mathbf{b}\Leftrightarrow B\mathbf{x}_B+N\mathbf{x}_N=\mathbf{b}$ \quad $\mathbf{x}_B=B^{-1}\mathbf{b},\mathbf{x}_N=\mathbf{0}$ is basic sol.}
+
+$\cdot$ {\scriptsize We use $\mathcal{B}=$ index of $x_i$ in $B$. \quad $\mathcal{N}=$ index of $x_i$ in $N$} \quad \quad \quad {\footnotesize \textbf{Basic Feasible Solution (BFS)}: If $\mathbf{x}_B\geq0$, it is. \ + \ It's a vertex of $K$.}
 
 
 \end{document}
