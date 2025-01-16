@@ -47,6 +47,9 @@
 % 正文
 \begin{document}
 
+\newcommand{\bij}{\stackrel{\sim}{\to}}
+\newcommand{\oto}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
 
 % 标题
 \maketitle
@@ -66,9 +69,9 @@
 
 \textbf{Field $(F)$}: {\small A set $F$ is a field with two operators: \quad {\scriptsize(addition)}$+:F\times F\to F;(\lambda,\mu)\to\lambda+\mu$ \quad {\scriptsize(multiplication)}$\cdot:F\times F\to F;(\lambda,\mu)\to\lambda\mu$ \ \ if:}
 
-\quad \quad \quad \quad {\small $(F,+)$ and $(F\setminus\{0_F\}, \ \cdot \ )$ are abelian groups with identity $0_F,1_F$. \quad and \quad $\lambda(\mu+\nu)=\lambda\mu+\lambda\nu$ \quad \quad $e.g. Fields:\mathbb{R},\mathbb{C},\mathbb{Q},\mathbb{Z}/p\mathbb{Z}$}
+\quad \quad \quad \quad {\small $(F,+)$ and $(F\setminus\{0_F\}, \ \cdot \ )$ are abelian groups with identity $0_F,1_F$. \quad and \quad $\lambda(\mu+\nu)=\lambda\mu+\lambda\nu$ \quad \quad $e.g. Fields:\mathbb{R},\mathbb{C},\mathbb{Q},\mathbb{Z}/p\mathbb{Z}=\mathbb{F}_p$}
 
-\textbf{$F$-Vector Space (V)}: {\small A set $V$ over a field $F$ is a vector space if: \quad $V$ is an abelian group $V=(V,\dotplus)$ and $\forall \ \vec{v},\vec{w}\in V$ \ \ $\lambda,\mu\in F$}
+\textbf{$F$-Vector Space (V)}: {\small A set $V$ over a field $F$ is a vector space if: \quad $V$ is an abelian group $V=(V,\dotplus)$ and $\forall \ \vec{v},\vec{w}\in V$ \ \ $\lambda,\mu\in F$} \quad e.g. $Poly:\mathbb{R}[x]_{<n}$
 
 \quad \quad \quad \quad {\small $\exists$ map $F\times V\to V:(\lambda,\vec{v})\to\lambda\vec{v}$ satisfies: \textbf{I}: $\lambda(\vec{v}\dotplus\vec{w})=(\lambda\vec{v})\dotplus(\lambda\vec{w})$ \quad \textbf{II}: $(\lambda+\mu)\vec{v}=(\lambda\vec{v})\dotplus(\mu\vec{v})$ \textbf{III}: $\lambda(\mu\vec{v})=(\lambda\mu)\vec{v}$ \quad \textbf{IV}: $1_F\vec{v}=\vec{v}$}
 
@@ -109,7 +112,30 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
     \item \textbf{Dimension Theorem}: $\dim(U+W)=\dim U+\dim W-\dim(U\cap W)$
 \end{enumerate}
 
-\section{Linear Mapping | Rank-Nullity| Matrices | Change of Basis}
+
+\section{Linear Mapping | Rank-Nullity| Matrices | Change of Basis \quad {\tiny ps: 默认$V,W$ \ $F$-Vector Spaces.}}
+
+\textbf{Linear Mapping/Homomorphism(Hom)}: {\small $f:V\to W$ is \textit{linear map} if: $\forall \vec{v}_1,\vec{v}_2\in V,\forall \lambda\in F$. $f(\vec{v}_1+\vec{v}_2)=f(\vec{v}_1)+f(\vec{v}_2)$ and $f(\lambda\vec{v}_1)=\lambda f(\vec{v}_1)$}
+
+$\cdot$ {\scriptsize \textbf{Isomorphism}: $=$ LM \& Bij. \quad \textbf{Endomorphism(End)}: $=$ LM \& $V=W$. \quad \textbf{Automorphism(Aut)}: $=$ LM \& $V=W$ \quad \textbf{Monomorphism}: $=$ LM \& 1-1. \quad \textbf{Epimorphism}: $=$ LM \& onto.}
+
+\textbf{Kernel}: $\ker f:=\{\vec{v}\in V:f(\vec{v})=\vec{0}\}${\tiny (It's subspace)} \quad \textbf{Image}: $Im f:=\{f(\vec{v}):\vec{v}\in V\}${\tiny (It's subspace)} \quad \textbf{Rank}$:=\dim(Im f)$ \quad \textbf{Nullity}$:=\dim(\ker f)$
+
+\textbf{Property of Linear Map}: Let $f,g\in Hom$: \quad \textbf{a}.$f(\vec{0})=\vec{0}$ \quad \textbf{b}. $f$ is 1-1 iff $\ker f=\{\vec{0}\}$ \quad \textbf{c}. $f\circ g$ is linear map. \ \
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Determined}: $f$ is determined by $f(\vec{b_i}),\vec{b_i}\in \mathcal{B}_{basis}$ {\footnotesize (\star\textbf{i.e.} $f(\sum_{i}\lambda_i\vec{v_i}):=\sum_{i}\lambda_if(\vec{v_i})$)}
+    \item \textbf{Classification of Vector Spaces}: $\dim V=n$ \ $\Leftrightarrow$ \ $f:F^n\bij V$ by $f(\lambda_1,...,\lambda_n)\mapsto\sum_{i=1}^{n}\lambda_i\vec{v_i}$ is isomorphism.
+\end{enumerate}
+
+\textbf{Rank-Nullity Theorem}: For linear map $f:V\to W$, $\dim V=\dim(\ker f)+\dim(Im f)$ \quad \quad \quad {\footnotesize Following are properties:}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Injection}: $f$ is 1-1 $\Rightarrow$ $\dim V \leq \dim W$ \quad \textbf{Surjection}: $f$ is onto $\Rightarrow$ $\dim V \geq \dim W$ \quad Moreover, $\dim W=\dim imf$ iff $f$ is onto.
+    \item \textbf{Same Dimension}: {\small $f$ is isomorphism $\Rightarrow$ $\dim V=\dim W$} \quad \quad \quad \textbf{Matrix}: $\forall M$, column rank $c(M)$ = row rank $r(M)$.
+    \item \textbf{Relation}: {\small If $V,W$ finite generate, and $\dim V=\dim W$, \quad Then: $f$ is isomorphism $\Leftrightarrow$ $f$ is 1-1 $\Leftrightarrow$ $f$ is onto.}
+\end{enumerate}
+
 
 \section{Rings | Polynomials | Ideals | Subrings}
 
