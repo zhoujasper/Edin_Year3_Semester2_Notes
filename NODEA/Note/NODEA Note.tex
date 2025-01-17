@@ -134,8 +134,20 @@ $\cdot$ ps: {\footnotesize Taylor Series: $y(t_0+h)=y(t_0)+hy'(t_0)+\frac{h^2}{2
 \vspace{-2pt}
 \textbf{Convergence of One-Step Method}: {\small For $y'=f(y)$, and a one-step method $\Psi_h(y)$ is $^1$ consistent at order $p$ and $^2$ stable with $\widehat{L}\Uparrow$.} \ {\tiny (ps:$C=\frac{C}{\widehat{L}}(e^{T\widehat{L}}-1)$)}
 
-\textbf{Polynomial Interpolation}:
+\textbf{Construction of More General one-step Method}: For $y'=f(y),y(t_0)=y_0$ \ $\Rightarrow$ \ $y(t+h)-y(t)=\int^{t+h}_tf(y(\tau))d\tau$
 
+\textbf{Polynomial Interpolation}: For $P(x)\in\mathbb{P}_{s-1}$, if $P(c_i)=g_i,\forall i\in\{1,...,\mathbf{s}\}$. Then $P(x)$ is the \textit{unique} interpolating polynomial.
+
+$\cdot$ \textbf{Lagrange interpolating Polynomials}: $\ell_{i}(x)=\prod\limits_{j=1,j\ne i}^{s}\frac{x-c_j}{c_i-c_j}$ \quad \quad $\Rightarrow$ $P(x)$ can be written as: $P(x)=\sum\limits_{i=1}^{s}g_i\ell_i(x)$
+
+\vspace{-2pt}
+$\cdot$ \textbf{Quadrature Rule}: {\small $\int^{t_0+h}_{t_0}g(t)dt=\int^1_0g(t_0+hx)dx\approx h\sum_{i=1}^{s}b_ig(t_0+hc_i),b_i:=\int^1_0\ell_i(x)dx$} \quad {\tiny ps: $c_i\to g_i$ 从 $[0,1]$中取} \quad {\tiny If $g(t)\in\mathbb{P}_{p-1}\Rightarrow$Quadrature Rule has order $p$}
+
+\textbf{One-Step Collocation Methods}: For: $y(t_0)=y_0 \ , \ y'(t_0+c_ih)=f(y(t_0+c_ih))$, $c_i$ are chosen nodes in $[0,1]$ \ $i\in\{1,...,s\}$
+
+{\small $\Rightarrow$ \ Def $\ell_i(x)$ \ , \ $a_{ij}:=\int_0^{c_i}\ell_j(x)dx$ \ , \ $b_i:=\int_0^1\ell_i(x)dx$ \ , \ $F_i:=y'(t_0+c_ih)$} \quad Then: $F_i=f(y_n+h\sum_{j=1}^{s}a_{ij}F_j)$ and $y_{n+1}=y_n+h\sum_{i=1}^{s}b_iF_i$
+
+$\cdot$ \textbf{Remark}: {\footnotesize For choice of $c_i$: The optimal choice is attained by \textit{Gauss-Legendre collocation methods}}.
 
 
 \end{document}
