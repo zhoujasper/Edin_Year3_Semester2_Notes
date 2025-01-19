@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  13 JAN 2025 22:55
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  19 JAN 2025 19:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -761,19 +761,19 @@ LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 65.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 74.
+(Font)              scaled to size 9.00096pt on input line 76.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 74.
+(Font)              scaled to size 8.99904pt on input line 76.
  [1
 
 ] (./HCV Note.aux) ) 
 Here is how much of TeX's memory you used:
- 13207 strings out of 476683
- 294566 string characters out of 5795227
- 1873012 words of memory out of 5000000
- 33263 multiletter control sequences out of 15000+600000
- 521163 words of font info for 123 fonts, out of 8000000 for 9000
+ 13226 strings out of 476683
+ 295139 string characters out of 5795227
+ 1904012 words of memory out of 5000000
+ 33275 multiletter control sequences out of 15000+600000
+ 521219 words of font info for 130 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,11n,114p,366b,396s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,11n,114p,386b,396s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on HCV Note.pdf (1 page).

@@ -71,6 +71,8 @@ $\cdot$ \textbf{Operations on Argument}: $arg(z_1z_2)=arg(z_1)+arg(z_2)$ \quad $
 
 \section{Holomorphic Functions} % Holomorphic Functions
 
+\subsection{Open/Closed Set | Limit Point | limit of Sequence | Continuous of Function} % Open/Closed Set | Limit Point | limit of Sequence | continuous of Function
+
 \textbf{Open/Closed/Punctured $\varepsilon$-disc}: {\small $D_\varepsilon(z_0):=\{z\in\mathbb{C}:|z-z_0|<\varepsilon\}$ \quad $\overline{D}_\varepsilon(z_0):=\{z\in\mathbb{C}:|z-z_0|\leq\varepsilon\}$ \quad $D_\varepsilon'(z_0):=\{z\in\mathbb{C}:0<|z-z_0|<\varepsilon\}$}
 
 \textbf{Open/Closed Set in $\mathbb{C}$}: {\small $U\subset\mathbb{C}$ is \textbf{open} if $\forall z_0\in U,\exists\varepsilon>0,D_\varepsilon(z_0)\subseteq U$ \quad $U$ is \textbf{closed} if $\mathbb{C}\setminus U$ is open} \quad \textbf{Lemma}: $D_\varepsilon,D'_\varepsilon$ open, $\overline{D}_\varepsilon$ closed.
@@ -101,5 +103,48 @@ $\cdot$ \textbf{Lemma|Important}: $\lim_{z\to z_0} f(z)$ $\Leftrightarrow$ $\lim
     \item \textbf{'Extreme Value Theorem'}: $f$ is continuous on a closed and bounded set $S\subseteq\mathbb{C}$, then $f(S)$ is closed and bounded.
     \item \textbf{Lemma|continuous$\Leftrightarrow$open}: $f$ is continuous $\Leftrightarrow$ $\forall$ open set $U$, preimage $f^{-1}(U):=\{z\in\mathbb{C}|f(z)\in U\}$ is open.
 \end{enumerate}
+
+
+\subsection{Differentiable | Holomorphic Function} % Differentiable | Holomorphic Function
+
+\textbf{Differentiable}: Let $z_0\in\mathbb{C}$ and $U\subseteq\mathbb{C}$ be neighborhood of $z_0$, then $f:U\to\mathbb{C}$ is differentiable at $z_0$ if: \ $\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}$ exists.
+
+$\cdot$ \textbf{I}. $f$ is differentiable $\Rightarrow$ $f$ is continuous. \quad \quad \textbf{II}. \textbf{Holomorphic} $\Leftrightarrow$ {\small Differentiable + neighborhood} {\tiny (除非是一个点时不成立,$|z|$)} \quad {\scriptsize diff rules + chain rule 成立}
+
+\textbf{Cauchy-Riemann Equations}: If $z_0=x_0+iy_0$, $f(z)=u(x,y)+iv(x,y)$ is differentiable at $z_0$ \ \ $\Rightarrow$ \ \ $u_x=v_y,v_x=-u_y$ \textbf{at} $(x_0,y_0)$.
+
+$\cdot$ If $z_0=x_0+iy_0$, $f=u+iv$ satisfies: $^1u,v$ are \textit{continuously differentiable} on a neighborhood of $(x_0,y_0)$ and:
+
+\hspace{162pt} $^2u,v$ satisfies Cauchy-Riemann Equations at $(x_0,y_0)$. \ \ $\Rightarrow$ \ \ $f$ is differentiable at $z_0$.
+
+$\cdot$ {\footnotesize ps: 常见可导复数函数: $e^z,\sin z,\cos z,\log z,z^\alpha,\text{polynomial},\sinh,\cosh,\Gamma(z),|z|^2\text{(at 0)}$,\text{constant}} \quad \quad {\footnotesize ps: 常见不可导复数函数: $\overline{z},|z|\cdot\overline{z},Re(z),Im(z),\text{Arg}(z)$}
+
+\textbf{Harmonic Function}: $h:\mathbb{R}^2\to\mathbb{R}$ is harmonic if: $\forall(x,y)\in\mathbb{R}^2$ \ $\frac{\partial^2h}{\partial x^2}+\frac{\partial^2h}{\partial y^2}=0$ {\footnotesize (\textbf{Laplace Equation})}
+
+$\cdot$ \textbf{Lemma}: If $f=u+iv$ is holomorphic on $\mathbb{C}$ and $u,v$ are twice \textit{continuously differentiable}, \ \ $\Rightarrow$ \ \ $u,v$ are harmonic.
+
+\textbf{Harmonic Conjugate}: {\small Let $u,v:U\to\mathbb{R},U\subseteq\mathbb{R}^2 $ be harmonic functions. $u,v$ are harmonic conjugate if: $f=u+iv$ is holomorphic on $U$.}
+
+\textbf{Properties of Polynomial}: {\small The domain of rational function and polynomial are always open.} \quad \quad \textbf{Lemma}: If $P(z_0)=0$ then $P(\overline{z_0})=0$
+
+\textbf{First-order Operator $\partial$}: $\partial:=\frac{1}{2}\left(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\right)$ \quad \quad $\overline{\partial}:=\frac{1}{2}\left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right)$ \quad || \quad $f=u+iv$ satisfies C-R Equations \ $\Leftrightarrow$ \ $\overline{\partial}f=0$
+
+\textbf{sin/cos Functions}: $\sin z:=\frac{e^{iz}-e^{-iz}}{2i}$ \quad \quad $\cos z:=\frac{e^{iz}+e^{-iz}}{2}$ \quad \quad \textbf{Exponential Function}: $e^z=e^{x+iy}=e^x(\cos(y)+i\sin(y))$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item $\sin(x+iy)=\sin x\cosh y+i\cos x\sinh y$ \quad $\cos(x+iy)=\cos x\cosh y-i\sin x\sinh y$
+    \item $\sin(z+w)=\sin(z)\cos(w)+\cos(z)\sin(w)$ \quad $\cos(z+w)=\cos(z)\cos(w)-\sin(z)\sin(w)$ 
+    \item $\sin^2z+\cos^2z=1$ \quad $\sin(z+\frac{\pi}{2})=\cos(z)$ \quad $\sin(z+2k\pi)=sin(z)$ \quad $\cos(z+2k\pi)=\cos(z)$ \quad \quad \star $\sin z,\cos z$ NOT bounded.
+\end{enumerate}
+
+\textbf{Hyperbolic Functions}: $\sinh z:=\frac{e^z-e^{-z}}{2}$ \quad \quad $\cosh z:=\frac{e^z+e^{-z}}{2}$ \quad \quad || \quad \quad $\sinh(iz)=i\sin z$ \quad $\cosh(iz)=\cos z$
+
+\vspace{-10pt}
+\begin{longtable}{cc|cc|cc|cc|cc|cc|cc}
+    $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ \\
+    \hline
+    $z^n$ & $nz^{n-1}$ & $e^z$ & $e^z$ & $\sin(z)$ & $\cos(z)$ & $\cos(z)$ & $-\sin(z)$ & $\sinh(z)$ & $\cosh(z)$ & $\cosh(z)$ & $\sinh(z)$ & \np$\log z$ & \np$1/z$ \\
+\end{longtable}
+\vspace{-10pt}
 
 \end{document}
