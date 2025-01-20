@@ -109,8 +109,12 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
     \item \textbf{GS|LI}: $|L|\leq|E|$ {\scriptsize (can get: $\dim$ unique)} \quad \textbf{LI$\to$Basis}: If $V$ finite generate $\Rightarrow$ $\forall L$ can extend to a basis. {\scriptsize If $L=\emptyset$, prove $\exists B$}
     \item \textbf{Basis|max,min}: $B$ $\Leftrightarrow$ $B$ is minimal GS $(E)$ $\Leftrightarrow$ $B$ is maximal LI $(L)$. \quad \textbf{Uniqueness|Basis}: {\small 每个元素都可以由basis唯一表示.}
     \item \textbf{Proper Subspaces}: {\small If $U\subset V$ is proper subspace, then $\dim U<\dim V$. \quad $\Rightarrow$ \quad If $U\subseteq V$ is subspace and $\dim U=\dim V$, then $U=V$.}
-    \item \textbf{Dimension Theorem}: $\dim(U+W)=\dim U+\dim W-\dim(U\cap W)$
+    \item \textbf{Dimension Theorem}: If $U,W\subseteq V$ are subspaces of $V$, then $\dim(U+W)=\dim U+\dim W-\dim(U\cap W)$
 \end{enumerate}
+
+\textbf{Complementary}: $U,W\subseteq V$,$U,V$ subspaces are complementary ($V=U\oplus W$) if: \quad $\exists\phi:U\times W\to V$ by $(\vec{u},\vec{w})\mapsto\vec{u}+\vec{w}$
+
+\quad \quad \quad \quad \quad \quad \quad \quad i.e. $\forall\vec{v}\in V$, we have unique $\vec{u}\in U,\vec{w}\in W$ s.t. $\vec{v}=\vec{u}+\vec{w}$. \quad {\footnotesize ps: It's a linear map.}
 
 
 \section{Linear Mapping | Rank-Nullity| Matrices | Change of Basis \quad {\tiny ps: 默认$V,W$ \ $F$-Vector Spaces.}}
@@ -119,7 +123,7 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
 
 $\cdot$ {\scriptsize \textbf{Isomorphism}: $=$ LM \& Bij. \quad \textbf{Endomorphism(End)}: $=$ LM \& $V=W$. \quad \textbf{Automorphism(Aut)}: $=$ LM \& $V=W$ \quad \textbf{Monomorphism}: $=$ LM \& 1-1. \quad \textbf{Epimorphism}: $=$ LM \& onto.}
 
-\textbf{Kernel}: $\ker f:=\{\vec{v}\in V:f(\vec{v})=\vec{0}\}${\tiny (It's subspace)} \quad \textbf{Image}: $Im f:=\{f(\vec{v}):\vec{v}\in V\}${\tiny (It's subspace)} \quad \textbf{Rank}$:=\dim(Im f)$ \quad \textbf{Nullity}$:=\dim(\ker f)$
+$\cdot$ {\scriptsize \textbf{Kernel}: $\ker f:=\{\vec{v}\in V:f(\vec{v})=\vec{0}\}${\tiny (It's subspace)} \ \ \textbf{Image}: $Im f:=\{f(\vec{v}):\vec{v}\in V\}${\tiny (It's subspace)} \ \ \textbf{Rank}$:=\dim(Im f)$ \ \ \textbf{Nullity}$:=\dim(\ker f)$ \ \ \textbf{Fixed Point $X^f$}: $X^f:=\{x\in X:f(x)=x\}$}
 
 \textbf{Property of Linear Map}: Let $f,g\in Hom$: \quad \textbf{a}.$f(\vec{0})=\vec{0}$ \quad \textbf{b}. $f$ is 1-1 iff $\ker f=\{\vec{0}\}$ \quad \textbf{c}. $f\circ g$ is linear map. \ \
 
@@ -135,6 +139,16 @@ $\cdot$ {\scriptsize \textbf{Isomorphism}: $=$ LM \& Bij. \quad \textbf{Endomorp
     \item \textbf{Same Dimension}: {\small $f$ is isomorphism $\Rightarrow$ $\dim V=\dim W$} \quad \quad \quad \textbf{Matrix}: $\forall M$, column rank $c(M)$ = row rank $r(M)$.
     \item \textbf{Relation}: {\small If $V,W$ finite generate, and $\dim V=\dim W$, \quad Then: $f$ is isomorphism $\Leftrightarrow$ $f$ is 1-1 $\Leftrightarrow$ $f$ is onto.}
 \end{enumerate}
+
+\textbf{Matrix}: For $A_{n\times m},B_{m\times p}$, $AB_{n\times p}:=(AB)_{ij}=\sum_{k=1}^{m}a_{ik}b_{kj}$ \quad \textbf{Transpose}: $A^T_{m\times n}:=(A^T)_{ij}=a_{ji}$
+
+\textbf{Invertible Matrices}: $A$ is invertible if $\exists B,C$ s.t. $BA=I$ and $AC=I$
+
+\textbf{Representing matrix of linear map $_{\mathcal{B}}[f]_{\mathcal{A}}$}: $f:V\to W$ be linear map, $\mathcal{A}=\{\vec{v_1},...,\vec{v_n}\}$ is basis of $V$, $\mathcal{B}=\{\vec{w_1},...,\vec{w_m}\}$ is basis of $W$.
+
+\quad Then $_{\mathcal{B}}[f]_{\mathcal{A}}=A$ {\small (matrix)} where $f(\vec{v}_{i\in\mathcal{A}})=\sum_{j\in\mathcal{B}}A_{ji}\vec{w}_j$ \quad \quad $\exists \phi:Mat(n\times m;F)\bij Hom_{F}(F^m,F^n)$ $\Rightarrow$ $\left[ \ [f]=I\Leftrightarrow f=id \ \right]$
+
+$\cdot$ \textbf{Theorems}: $[f\circ g]=[f]\circ[g]$ \quad \quad $_{\mathcal{C}}[f\circ g]_{\mathcal{A}}=_{\mathcal{C}}[f]_{\mathcal{B}}\circ_{\mathcal{B}}[g]_{\mathcal{A}}$ \quad \quad $_{\mathcal{B}}[f(\vec{v})]=_{\mathcal{B}}[f]_{\mathcal{A}}\circ_{\mathcal{A}}[\vec{v}]$
 
 
 \section{Rings | Polynomials | Ideals | Subrings}
