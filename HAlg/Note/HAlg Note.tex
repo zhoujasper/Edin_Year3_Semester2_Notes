@@ -51,6 +51,8 @@
 \newcommand{\oto}{\hookrightarrow}
 \newcommand{\onto}{\twoheadrightarrow}
 
+\newcommand{\np}{{\tiny $^{^{^\ominus}}$}}
+
 % 标题
 \maketitle
 \thispagestyle{fancy}
@@ -128,8 +130,10 @@ $\cdot$ {\scriptsize \textbf{Kernel}: $\ker f:=\{\vec{v}\in V:f(\vec{v})=\vec{0}
 \textbf{Property of Linear Map}: Let $f,g\in Hom$: \quad \textbf{a}.$f(\vec{0})=\vec{0}$ \quad \textbf{b}. $f$ is 1-1 iff $\ker f=\{\vec{0}\}$ \quad \textbf{c}. $f\circ g$ is linear map. \ \
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Determined}: $f$ is determined by $f(\vec{b_i}),\vec{b_i}\in \mathcal{B}_{basis}$ {\footnotesize (\star\textbf{i.e.} $f(\sum_{i}\lambda_i\vec{v_i}):=\sum_{i}\lambda_if(\vec{v_i})$)}
+    \item \textbf{Determined}: $f$ is determined by $f(\vec{b_i}),\vec{b_i}\in \mathcal{B}_{basis}$ {\footnotesize (\star \ \textbf{i.e.} $f(\sum_{i}\lambda_i\vec{v_i}):=\sum_{i}\lambda_if(\vec{v_i})$)}
     \item \textbf{Classification of Vector Spaces}: $\dim V=n$ \ $\Leftrightarrow$ \ $f:F^n\bij V$ by $f(\lambda_1,...,\lambda_n)\mapsto\sum_{i=1}^{n}\lambda_i\vec{v_i}$ is isomorphism.
+    \item \textbf{Left/Right Inverse}: $f$ is 1-1 $\Rightarrow$ $\exists$ left inverse $g$ s.t. $g\circ f=id$ {\scriptsize 考虑direct sum} \quad \quad $f$ is onto $\Rightarrow$ $\exists$ right inverse $g$ s.t. $f\circ g=id$
+    \item \np\textbf{More of Left/Right Inverse}: $f\circ g=id$ $\Rightarrow$ $g$ is 1-1 and $f$ is onto. \quad {\scriptsize 使用kernel=0来证明}
 \end{enumerate}
 
 \textbf{Rank-Nullity Theorem}: For linear map $f:V\to W$, $\dim V=\dim(\ker f)+\dim(Im f)$ \quad \quad \quad {\footnotesize Following are properties:}
@@ -140,15 +144,25 @@ $\cdot$ {\scriptsize \textbf{Kernel}: $\ker f:=\{\vec{v}\in V:f(\vec{v})=\vec{0}
     \item \textbf{Relation}: {\small If $V,W$ finite generate, and $\dim V=\dim W$, \quad Then: $f$ is isomorphism $\Leftrightarrow$ $f$ is 1-1 $\Leftrightarrow$ $f$ is onto.}
 \end{enumerate}
 
-\textbf{Matrix}: For $A_{n\times m},B_{m\times p}$, $AB_{n\times p}:=(AB)_{ij}=\sum_{k=1}^{m}a_{ik}b_{kj}$ \quad \textbf{Transpose}: $A^T_{m\times n}:=(A^T)_{ij}=a_{ji}$
+\textbf{Matrix}: For $A_{n\times m},B_{m\times p}$, $AB_{n\times p}:=(AB)_{ij}=\sum_{k=1}^{m}a_{ik}b_{kj}$ \quad \textbf{Transpose}: $A^T_{m\times n}:=(A^T)_{ij}=a_{ji}$ \quad \quad \quad $[a^{-1}]=[a]^{-1}$
 
-\textbf{Invertible Matrices}: $A$ is invertible if $\exists B,C$ s.t. $BA=I$ and $AC=I$
+\textbf{Invertible Matrices}: $A$ is invertible if $\exists B,C$ s.t. $BA=I$ and $AC=I$ \quad || \quad $\exists B, \ BA=I$ $\Leftrightarrow$ $\exists C,AC=I$ $\Leftrightarrow \exists A^{-1}$
 
 \textbf{Representing matrix of linear map $_{\mathcal{B}}[f]_{\mathcal{A}}$}: $f:V\to W$ be linear map, $\mathcal{A}=\{\vec{v_1},...,\vec{v_n}\}$ is basis of $V$, $\mathcal{B}=\{\vec{w_1},...,\vec{w_m}\}$ is basis of $W$.
 
-\quad Then $_{\mathcal{B}}[f]_{\mathcal{A}}=A$ {\small (matrix)} where $f(\vec{v}_{i\in\mathcal{A}})=\sum_{j\in\mathcal{B}}A_{ji}\vec{w}_j$ \quad \quad $\exists \phi:Mat(n\times m;F)\bij Hom_{F}(F^m,F^n)$ $\Rightarrow$ $\left[ \ [f]=I\Leftrightarrow f=id \ \right]$
+\quad Then $_{\mathcal{B}}[f]_{\mathcal{A}}=A$ {\small (matrix)} where $f(\vec{v}_{i\in\mathcal{A}})=\sum_{j\in\mathcal{B}}A_{ji}\vec{w}_j$ \quad \quad $\exists \phi:Hom_{F}(V,W)\bij Mat(n\times m;F)$
 
-$\cdot$ \textbf{Theorems}: $[f\circ g]=[f]\circ[g]$ \quad \quad $_{\mathcal{C}}[f\circ g]_{\mathcal{A}}=_{\mathcal{C}}[f]_{\mathcal{B}}\circ_{\mathcal{B}}[g]_{\mathcal{A}}$ \quad \quad $_{\mathcal{B}}[f(\vec{v})]=_{\mathcal{B}}[f]_{\mathcal{A}}\circ_{\mathcal{A}}[\vec{v}]$
+$\cdot$ \textbf{Theorems}: $[f\circ g]=[f]\circ[g]$ \quad \quad $_{\mathcal{C}}[f\circ g]_{\mathcal{A}}=_{\mathcal{C}}[f]_{\mathcal{B}}\circ_{\mathcal{B}}[g]_{\mathcal{A}}$ \quad \quad $_{\mathcal{B}}[f(\vec{v})]=_{\mathcal{B}}[f]_{\mathcal{A}}\circ_{\mathcal{A}}[\vec{v}]$ \quad \quad $_{\mathcal{A}}[f]_{\mathcal{A}}=I\Leftrightarrow f=id$
+
+\textbf{Elementary Matrix}: $I+\lambda E_{ij}$ {\scriptsize (cannot $I-E_{ii}$)} {\footnotesize 就是初等矩阵,左乘代表$j$行乘$\lambda$倍加到第$i$行,右乘代表$j$列乘$\lambda$倍加到第$i$列} \quad $\Rightarrow$ \quad Invertible!
+
+$\cdot$ {\footnotesize 交换$i,j$列/行}: $P_{ij}=diag(1,...,1,-1,1,...,1)(I+E_{ij})(I-E_{ji})(I+E_{ij})$ where $-1$ in $j$th place.
+
+\vspace{-2pt}
+\textbf{Row Echelon Form|Smith Normal Form}: $\stackrel{\sim}{A}:REF$ {\footnotesize 通过左乘初等矩阵可以实现} \quad \quad $\stackrel{\approx}{A}:S(n,m,r)$ {\footnotesize 通过$\stackrel{\sim}{A}$右乘初等矩阵可以实现}
+
+$\cdot$ \textbf{Smith Normal Form}: {\small $\forall A$, $\exists \ \text{invertible} \ P,Q$ s.t. $PAQ=S(n,m,r):=$ {\footnotesize $n\times m$的矩阵,对角线前$r$个是1,后面0}. \quad \textbf{Lemma}: $r=r(A)=c(A)$}
+
 
 
 \section{Rings | Polynomials | Ideals | Subrings}
@@ -156,29 +170,6 @@ $\cdot$ \textbf{Theorems}: $[f\circ g]=[f]\circ[g]$ \quad \quad $_{\mathcal{C}}[
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint}
 
 \section{Jordan Normal Form | Spectral Theorem}
-
-
-% \subsection{Linear Maps | Rank-Nullity Theorem}
-
-% \textbf{Linear Maps}: $f:V\to W$ {\small (V,W vector spaces) is \textbf{$F$-linear} or \textbf{homomorphism} if: \quad $f(\vec{v}+\vec{w})=f(\vec{v})+f(\vec{w})$ \ $f(\lambda\vec{v})=\lambda f(\vec{v})$ \quad {\footnotesize $\forall \vec{v},\vec{w}\in V;\forall\lambda\in F$}}
-
-% \textbf{Isomorphism}: {\small Linear map $f:V\to W$ is bij. \ \textbf{Endomorphism (End)}: Linear map $f:V\to V$. \ \textbf{Automorphism (Aut)}: Isomorphism. $f:V\to V$.}
-
-% \textbf{General Linear Group / Automorphism Group}: $GL(V)=Aut(V):=\{f:V\to V \ | \ f \ is \ isomorphism\}$ {\scriptsize (subspace)}
-
-% \textbf{Fixed Point}: For $f:X\to X$, if $f(x)=x$, then $x$ is fixed point of $f$. \quad \textbf{Set of Fixed Points}: $X^f:=\{x\in X:f(x)=x\}$
-
-% \textbf{Notation $\oplus$}: Let $U,W$ be subspaces of $V$. \quad $V_1,...,V_n$ be subspaces of $V$. \quad \quad $V_1+\cdots+V_n:=\langle V_1\cup\cdots\cup V_n\rangle$:
-
-% \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-%     \item \textbf{Complementary}: If $f:U\times W\bij V$ by $(\vec{u},\vec{v})\mapsto\vec{u}+\vec{v}$ \ $\Rightarrow$ \ $U,W$ Complementary. \quad Also say V is \textbf{interval direct sum}  of $U,W$.
-%     \item \textbf{General}: If $f:V_1\times V_2\times\cdots\times V_n\to V$ by $(\vec{v_1},\vec{v_2},...,\vec{v_n})\mapsto\vec{v_1}+\vec{v_2}+...+\vec{v_n}$ \ $\Rightarrow$ \ V is \textbf{interval direct sum} $V_i$.
-%     \item \textbf{External Direct Sum}: $V_1\oplus\cdots\oplus V_n:=V_1\times V_2\times\cdots\times V_n$ \quad \textbf{Remark}: If $V_i$ interval direct $V$, we also right like this. (?)
-% \end{enumerate}
-
-% \textbf{Classification of Vector Spaces}: For Vector Space $V$, \ $\dim V = \dim F^n=n$ $\Leftrightarrow$ $\exists\phi:F^n\bij V$ is isomorphism.
-
-% \textbf{Linear mappings and bases}: Let $V,W$ $F$-Vector Spaces, $B\subset V$ is basis. Then $\phi:Hom(V,W)\bij Maps(B,W)$ by $f\mapsto f|_B$ is bij.
 
 
 \end{document}

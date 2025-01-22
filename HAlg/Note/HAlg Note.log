@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  20 JAN 2025 23:03
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  22 JAN 2025 09:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -725,61 +725,61 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 55.
+(Font)              scaled to size 12.00128pt on input line 57.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 55.
+(Font)              scaled to size 8.00085pt on input line 57.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 55.
+(Font)              scaled to size 6.00064pt on input line 57.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 55.
+(Font)              scaled to size 11.99872pt on input line 57.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 55.
+(Font)              scaled to size 7.99915pt on input line 57.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 55.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+(Font)              scaled to size 5.99936pt on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 66.
+(Font)              scaled to size 10.00107pt on input line 68.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 7.30078pt on input line 66.
+(Font)              scaled to size 7.30078pt on input line 68.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 66.
+(Font)              scaled to size 9.99893pt on input line 68.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 7.29921pt on input line 66.
+(Font)              scaled to size 7.29921pt on input line 68.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 66.
+(Font)              scaled to size 9.00096pt on input line 68.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 66.
+(Font)              scaled to size 5.00053pt on input line 68.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 66.
+(Font)              scaled to size 8.99904pt on input line 68.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 66.
+(Font)              scaled to size 4.99947pt on input line 68.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 68.
+(Font)              scaled to size 7.00075pt on input line 70.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 68.
+(Font)              scaled to size 6.99925pt on input line 70.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 100.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 102.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 100.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 102.
 
 [1
 
 ] (./HAlg Note.aux) ) 
 Here is how much of TeX's memory you used:
- 13223 strings out of 476683
- 295084 string characters out of 5795227
- 1913012 words of memory out of 5000000
- 33272 multiletter control sequences out of 15000+600000
- 521219 words of font info for 130 fonts, out of 8000000 for 9000
+ 13232 strings out of 476683
+ 295309 string characters out of 5795227
+ 1921012 words of memory out of 5000000
+ 33278 multiletter control sequences out of 15000+600000
+ 521243 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,11n,114p,413b,431s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
