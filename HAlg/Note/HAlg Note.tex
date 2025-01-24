@@ -144,25 +144,32 @@ $\cdot$ {\scriptsize \textbf{Kernel}: $\ker f:=\{\vec{v}\in V:f(\vec{v})=\vec{0}
     \item \textbf{Relation}: {\small If $V,W$ finite generate, and $\dim V=\dim W$, \quad Then: $f$ is isomorphism $\Leftrightarrow$ $f$ is 1-1 $\Leftrightarrow$ $f$ is onto.}
 \end{enumerate}
 
-\textbf{Matrix}: For $A_{n\times m},B_{m\times p}$, $AB_{n\times p}:=(AB)_{ij}=\sum_{k=1}^{m}a_{ik}b_{kj}$ \quad \textbf{Transpose}: $A^T_{m\times n}:=(A^T)_{ij}=a_{ji}$ \quad \quad \quad $[a^{-1}]=[a]^{-1}$
+\textbf{Matrix}: For $A_{n\times m},B_{m\times p}$, $AB_{n\times p}:=(AB)_{ij}=\sum_{k=1}^{m}a_{ik}b_{kj}$ \quad \textbf{Transpose}: $A^T_{m\times n}:=(A^T)_{ij}=a_{ji}$
 
-\textbf{Invertible Matrices}: $A$ is invertible if $\exists B,C$ s.t. $BA=I$ and $AC=I$ \quad || \quad $\exists B, \ BA=I$ $\Leftrightarrow$ $\exists C,AC=I$ $\Leftrightarrow \exists A^{-1}$
+\textbf{Invertible Matrices}: {\small $A$ is invertible if $\exists B,C$ s.t. $BA=I$ and $AC=I$ \quad || \quad $\exists B, \ BA=I$ $\Leftrightarrow$ $\exists C,AC=I$ $\Leftrightarrow \exists A^{-1}$} \quad {\small $_{\mathcal{B}}[f^{-1}]_{\mathcal{A}}=_{\mathcal{A}}[f]^{-1}_{\mathcal{B}}$}
 
 \textbf{Representing matrix of linear map $_{\mathcal{B}}[f]_{\mathcal{A}}$}: $f:V\to W$ be linear map, $\mathcal{A}=\{\vec{v_1},...,\vec{v_n}\}$ is basis of $V$, $\mathcal{B}=\{\vec{w_1},...,\vec{w_m}\}$ is basis of $W$.
 
-\quad Then $_{\mathcal{B}}[f]_{\mathcal{A}}=A$ {\small (matrix)} where $f(\vec{v}_{i\in\mathcal{A}})=\sum_{j\in\mathcal{B}}A_{ji}\vec{w}_j$ \quad \quad $\exists \phi:Hom_{F}(V,W)\bij Mat(n\times m;F)$
-
-$\cdot$ \textbf{Theorems}: $[f\circ g]=[f]\circ[g]$ \quad \quad $_{\mathcal{C}}[f\circ g]_{\mathcal{A}}=_{\mathcal{C}}[f]_{\mathcal{B}}\circ_{\mathcal{B}}[g]_{\mathcal{A}}$ \quad \quad $_{\mathcal{B}}[f(\vec{v})]=_{\mathcal{B}}[f]_{\mathcal{A}}\circ_{\mathcal{A}}[\vec{v}]$ \quad \quad $_{\mathcal{A}}[f]_{\mathcal{A}}=I\Leftrightarrow f=id$
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item $_{\mathcal{B}}[f]_{\mathcal{A}}:=A$ {\small (matrix)} where $f(\vec{v}_{i\in\mathcal{A}})=\sum_{j\in\mathcal{B}}A_{ji}\vec{w}_j$ \quad \quad $\exists M^{\mathcal{A}}_{\mathcal{B}}:Hom_{F}(V,W)\bij Mat(n\times m;F)$
+    \item If $\vec{v}\in V$, then $_{\mathcal{A}}[\vec{v}]:=\mathbf{b}$ {\small (vector)} where $\vec{v}=\sum_{i\in\mathcal{A}}\mathbf{b}_i\vec{v_i}$
+    \item \textbf{Theorems}: $[f\circ g]=[f]\circ[g]$ \quad \quad $_{\mathcal{C}}[f\circ g]_{\mathcal{A}}=_{\mathcal{C}}[f]_{\mathcal{B}}\circ_{\mathcal{B}}[g]_{\mathcal{A}}$ \quad \quad $_{\mathcal{B}}[f(\vec{v})]=_{\mathcal{B}}[f]_{\mathcal{A}}\circ_{\mathcal{A}}[\vec{v}]$ \quad \quad $_{\mathcal{A}}[f]_{\mathcal{A}}=I\Leftrightarrow f=id$
+    \item \textbf{Change of Basis}: {\small Define \textit{Change of Basis Matrix}$:=$$_{\mathcal{A}}[id_V]_{\mathcal{B}}$ \quad \quad {\footnotesize $_{\mathcal{B}'}[f]_{\mathcal{A}'}=_{\mathcal{B}'}[id_W]_{\mathcal{B}}\circ$$_{\mathcal{B}}[f]_{\mathcal{A}}\circ$$_{\mathcal{A}}[id_V]_{\mathcal{A}'}$ \quad \quad $_{\mathcal{A}'}[f]_{\mathcal{A'}}=_{\mathcal{A}}[id_V]_{\mathcal{A'}}^{-1}\circ$$_{\mathcal{A}}[f]_{\mathcal{A}}\circ$$_{\mathcal{A}}[id_V]_{\mathcal{A}'}$}}
+\end{enumerate}
 
 \textbf{Elementary Matrix}: $I+\lambda E_{ij}$ {\scriptsize (cannot $I-E_{ii}$)} {\footnotesize 就是初等矩阵,左乘代表$j$行乘$\lambda$倍加到第$i$行,右乘代表$j$列乘$\lambda$倍加到第$i$列} \quad $\Rightarrow$ \quad Invertible!
 
-$\cdot$ {\footnotesize 交换$i,j$列/行}: $P_{ij}=diag(1,...,1,-1,1,...,1)(I+E_{ij})(I-E_{ji})(I+E_{ij})$ where $-1$ in $j$th place.
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item {\footnotesize 交换$i,j$列/行}: $P_{ij}=diag(1,...,1,-1,1,...,1)(I+E_{ij})(I-E_{ji})(I+E_{ij})$ where $-1$ in $j$th place.
+    \vspace{-2pt}
+    \item \textbf{Row Echelon Form|Smith Normal Form}: $\stackrel{\sim}{A}:REF$ {\footnotesize 通过左乘初等矩阵可以实现} \quad \quad $\stackrel{\approx}{A}:S(n,m,r)$ {\footnotesize 通过$\stackrel{\sim}{A}$右乘初等矩阵可以实现}
+\end{enumerate}
 
-\vspace{-2pt}
-\textbf{Row Echelon Form|Smith Normal Form}: $\stackrel{\sim}{A}:REF$ {\footnotesize 通过左乘初等矩阵可以实现} \quad \quad $\stackrel{\approx}{A}:S(n,m,r)$ {\footnotesize 通过$\stackrel{\sim}{A}$右乘初等矩阵可以实现}
+\textbf{Smith Normal Form}: {\small $\forall A$, $\exists \ \text{invertible} \ P,Q$ s.t. $PAQ=S(n,m,r):=$ {\footnotesize $n\times m$的矩阵,对角线前$r$个是1,后面0}. \quad \textbf{Lemma}: $r=r(A)=c(A)$}
 
-$\cdot$ \textbf{Smith Normal Form}: {\small $\forall A$, $\exists \ \text{invertible} \ P,Q$ s.t. $PAQ=S(n,m,r):=$ {\footnotesize $n\times m$的矩阵,对角线前$r$个是1,后面0}. \quad \textbf{Lemma}: $r=r(A)=c(A)$}
+\textbf{Similar Matrices}: If $N=T^{-1}MT$, then $M,N$ are similar. \quad {\small \textit{Special Case}: If $N=$$_{\mathcal{B}}[f]_{\mathcal{B}}$, $M=$$_{\mathcal{A}}[f]_{\mathcal{A}}$, then $N=T^{-1}MT$. where $T=$$_{\mathcal{A}}[id_V]_{\mathcal{B}}$}
 
+\textbf{Trance}: $tr(A):=\sum_{i}a_{ii}$ and $tr(f):=tr(_{\mathcal{A}}[f]_{\mathcal{A}})$ \ $\big|$ \ {\small $tr(AB)=tr(BA)$ \quad $tr(\lambda A+\mu B)=\lambda tr(A)+\mu tr(B)$ \quad $tr(N)=tr(M)$ if $M,N$ similar.}
 
 
 \section{Rings | Polynomials | Ideals | Subrings}

@@ -174,9 +174,15 @@
 
 $\cdot$ \textbf{Theorem}: {\small If LP has a unique optimal solution is a vertex.} \quad \quad \textbf{Theorem}: {\small If LP has a non-unique solution, $\exists$ optimal solution at vertex}
 
-\textbf{Basic solution}: {\scriptsize 修改$x_i$顺序: $\overline{A}=[B \ N]$ with corresponding $\mathbf{x}=[\mathbf{x}_B \ \mathbf{x}_N]^T$, where $B$ is $m\times m$ invertible matrix. \quad $\overline{A}\mathbf{x}=\mathbf{b}\Leftrightarrow B\mathbf{x}_B+N\mathbf{x}_N=\mathbf{b}$ \quad $\mathbf{x}_B=B^{-1}\mathbf{b},\mathbf{x}_N=\mathbf{0}$ is basic sol.}
+\textbf{Solve LP Problem}: Assume $f=\overline{\mathbf{c}}^T\mathbf{x}$ with $\overline{A}\mathbf{x}=\mathbf{b}$ and $\mathbf{x}\geq0$.
 
-$\cdot$ {\scriptsize We use $\mathcal{B}=$ index of $x_i$ in $B$. \quad $\mathcal{N}=$ index of $x_i$ in $N$} \quad \quad \quad {\footnotesize \textbf{Basic Feasible Solution (BFS)}: If $\mathbf{x}_B\geq0$, it is. \ + \ It's a vertex of $K$.}
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item {\footnotesize 修改$x_i$/列顺序,$A$中换顺序后得到可逆的$B_{m\times m}$ \ \ $\Rightarrow$ \ \ $\overline{A}\mathbf{x}=\mathbf{b}\Leftrightarrow B\mathbf{x}_B+N\mathbf{x}_N=\mathbf{b}$ \quad $\mathbf{c}\rightarrow[\mathbf{c}_B \ \mathbf{c}_N]^T$ \ \ $\overline{A}\rightarrow[B \ N]$ \ \ $\mathbf{x}\to[\mathbf{x}_B \ \mathbf{x}_N]^T$ \quad Let $\widehat{\mathbf{b}}=B^{-1}\mathbf{b}$ \ \ $\widehat{N}=B^{-1}N$}
+    \item \textbf{Basic Solution}: $\mathbf{x}_B=\widehat{\mathbf{b}},\mathbf{x}_N=\mathbf{0}$ \quad $\Rightarrow$ \quad If $\widehat{\mathbf{b}}\geq0$. Corresponding $\mathbf{x}$ is: $^1$ vertex of $K$; \ \ $^2$ \textbf{Basic Feasible Solution (BFS)}
+    \item \textbf{Basic Costs}: $\mathbf{c}^T_B$ \quad \textbf{Nonbasic Costs}:$\mathbf{c}^T_N$ \quad \textbf{Reduced Costs}: $\widehat{\mathbf{c}}_N=\mathbf{c}_N -\widehat{N}^T\mathbf{c}_B=\mathbf{c}_N-N^TB^{-T}\mathbf{c}_B$ \quad $\widehat{f}=\mathbf{c}_B^T\widehat{\mathbf{b}}$ \quad \quad $\mathbf{x}_B,\mathbf{x}_N\geq0$
+    \item \textbf{Objective Value}: $f=\overline{\mathbf{c}}^T\mathbf{x}=\mathbf{c}^T_B\mathbf{x}_B+\mathbf{c}^T_N\mathbf{x}_N=\widehat{f}+\widehat{\mathbf{c}}_N^T\mathbf{x}_N$ \quad \quad If $\widehat{\mathbf{c}}_N\leq0$, then $f\leq\widehat{f}$ \ \ $\Rightarrow$ \ \ Corresponding $\mathbf{x}$ is optimal.
+    \item If $\widehat{\mathbf{c}}_N\leq0$ doesn't hold, we using \textbf{Simplex Algorithm}.
+\end{enumerate}
 
 
 \end{document}
