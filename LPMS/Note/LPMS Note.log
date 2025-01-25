@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  24 JAN 2025 16:32
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  25 JAN 2025 13:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -767,15 +767,19 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
 
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 156.
 
+LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line 181.
+LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 181.
 [1
 
 ] (./LPMS Note.aux) ) 
 Here is how much of TeX's memory you used:
- 13201 strings out of 476683
- 294492 string characters out of 5795227
- 1887012 words of memory out of 5000000
- 33258 multiletter control sequences out of 15000+600000
- 520565 words of font info for 120 fonts, out of 8000000 for 9000
+ 13213 strings out of 476683
+ 294867 string characters out of 5795227
+ 1889012 words of memory out of 5000000
+ 33265 multiletter control sequences out of 15000+600000
+ 521195 words of font info for 127 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,11n,114p,448b,433s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
