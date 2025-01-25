@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  25 JAN 2025 13:01
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  25 JAN 2025 17:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -768,9 +768,9 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 150.
 LaTeX Font Warning: Command \tiny invalid in math mode on input line 156.
 
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 181.
+(Font)              scaled to size 7.00075pt on input line 184.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 181.
+(Font)              scaled to size 6.99925pt on input line 184.
 [1
 
 ] (./LPMS Note.aux) ) 
