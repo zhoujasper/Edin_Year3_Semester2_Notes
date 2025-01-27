@@ -32,8 +32,8 @@
 
 % 设置 section/subsection 之间的行间距
 \usepackage{titlesec}
-\titlespacing*{\section}{0pt}{0pt}{0pt}
-\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\titlespacing*{\section}{0pt}{-2pt}{-2pt}
+\titlespacing*{\subsection}{0pt}{-2pt}{-2pt}
 
 % 调整标题上下间距
 \usepackage{titling}
@@ -105,7 +105,7 @@ $\cdot$ \textbf{Lemma|Important}: $\lim_{z\to z_0} f(z)$ $\Leftrightarrow$ $\lim
 \end{enumerate}
 
 
-\subsection{Differentiable | Holomorphic Function} % Differentiable | Holomorphic Function
+\subsection{Differentiable | Holomorphic Function | C-R Equation} % Differentiable | Holomorphic Function | C-R Equation
 
 \textbf{Differentiable}: Let $z_0\in\mathbb{C}$ and $U\subseteq\mathbb{C}$ be neighborhood of $z_0$, then $f:U\to\mathbb{C}$ is differentiable at $z_0$ if: \ $\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}$ exists.
 
@@ -117,7 +117,7 @@ $\cdot$ If $z_0=x_0+iy_0$, $f=u+iv$ satisfies: $^1u,v$ are \textit{continuously 
 
 \hspace{162pt} $^2u,v$ satisfies Cauchy-Riemann Equations at $(x_0,y_0)$. \ \ $\Rightarrow$ \ \ $f$ is differentiable at $z_0$.
 
-$\cdot$ {\footnotesize ps: 常见可导复数函数: $e^z,\sin z,\cos z,\log z,z^\alpha,\text{polynomial},\sinh,\cosh,\Gamma(z),|z|^2\text{(at 0)}$,\text{constant}} \quad \quad {\footnotesize ps: 常见不可导复数函数: $\overline{z},|z|\cdot\overline{z},Re(z),Im(z),\text{Arg}(z)$}
+$\cdot$ {\footnotesize ps: 常见可导复数函数: $\exp(z),\sin z,\cos z,\log z,z^\alpha,\text{polynomial},\sinh,\cosh,\Gamma(z),|z|^2\text{(at 0)}$,\text{constant}} \quad \quad {\footnotesize ps: 常见不可导复数函数: $\overline{z},|z|\cdot\overline{z},Re(z),Im(z),\text{Arg}(z)$}
 
 \textbf{Harmonic Function}: $h:\mathbb{R}^2\to\mathbb{R}$ is harmonic if: $\forall(x,y)\in\mathbb{R}^2$ \ $\frac{\partial^2h}{\partial x^2}+\frac{\partial^2h}{\partial y^2}=0$ {\footnotesize (\textbf{Laplace Equation})}
 
@@ -129,7 +129,7 @@ $\cdot$ \textbf{Lemma}: If $f=u+iv$ is holomorphic on $\mathbb{C}$ and $u,v$ are
 
 \textbf{First-order Operator $\partial$}: $\partial:=\frac{1}{2}\left(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\right)$ \quad \quad $\overline{\partial}:=\frac{1}{2}\left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right)$ \quad || \quad $f=u+iv$ satisfies C-R Equations \ $\Leftrightarrow$ \ $\overline{\partial}f=0$
 
-\textbf{sin/cos Functions}: $\sin z:=\frac{e^{iz}-e^{-iz}}{2i}$ \quad \quad $\cos z:=\frac{e^{iz}+e^{-iz}}{2}$ \quad \quad \textbf{Exponential Function}: $e^z=e^{x+iy}=e^x(\cos(y)+i\sin(y))$
+\textbf{sin/cos Functions}: $\sin z:=\frac{e^{iz}-e^{-iz}}{2i}$ \quad \quad $\cos z:=\frac{e^{iz}+e^{-iz}}{2}$ \quad \quad \textbf{Exponential Function}: $\exp(z)=e^x(\cos(y)+i\sin(y))$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item $\sin(x+iy)=\sin x\cosh y+i\cos x\sinh y$ \quad $\cos(x+iy)=\cos x\cosh y-i\sin x\sinh y$
@@ -137,14 +137,37 @@ $\cdot$ \textbf{Lemma}: If $f=u+iv$ is holomorphic on $\mathbb{C}$ and $u,v$ are
     \item $\sin^2z+\cos^2z=1$ \quad $\sin(z+\frac{\pi}{2})=\cos(z)$ \quad $\sin(z+2k\pi)=sin(z)$ \quad $\cos(z+2k\pi)=\cos(z)$ \quad \quad \star $\sin z,\cos z$ NOT bounded.
 \end{enumerate}
 
-\textbf{Hyperbolic Functions}: $\sinh z:=\frac{e^z-e^{-z}}{2}$ \quad \quad $\cosh z:=\frac{e^z+e^{-z}}{2}$ \quad \quad || \quad \quad $\sinh(iz)=i\sin z$ \quad $\cosh(iz)=\cos z$
+\textbf{Hyperbolic Functions}: $\sinh z:=\frac{\exp(z)-\exp(-z)}{2}$ \quad \quad $\cosh z:=\frac{\exp(z)+\exp(-z)}{2}$ \quad \quad || \quad \quad $\sinh(iz)=i\sin z$ \quad $\cosh(iz)=\cos z$
+
+\textbf{Logarithm}: Define \textit{multivalued function}: $\log{z}:=\{w\in\mathbb{C}:\exp{w}=z\}$ \quad \quad \quad \textbf{Principal Branch}: $Log(z):=\ln|z|+iArg(z)$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{I}. $\log(z)=\ln |z|+i\arg{z}=\{\ln |z|+iArg(z) +i2\pi k:k\in\mathbb{Z}\}$ \quad \quad \textbf{II}. $\log(zw)=\log(z)+\log(w)$ \quad \quad \textbf{III}. $\log(1/z)=-\log(z)$
+    \item \textbf{Branch of Logarithm}: $Log_{\phi}(z):=\ln|z|+iArg_{\phi}(z)$ \quad \quad $Log_\phi(z)$ is holomorphic on $D_{\phi}$ 
+    \item If $g:U\to\mathbb{C}$, then $Log_\phi(g(z))$ is holomorphic on $g^{-1}(D_{\phi})\cap U$
+    \item $Log(z)$ \textit{not continuous} on $\mathbb{C}$. \quad \quad $Log(z)$ not continuous on $Re(z)\leq 0,Im(z)=0$.
+\end{enumerate}
+
+\textbf{Branch Cut|Cut Plane}: \textit{Branch Cut} $L_{z_0,\phi}:=\{z\in\mathbb{C}:z=z_0+re^{i\phi},r\geq0\}$ \quad \quad \textit{Cut Plane}: $D_{z_0,\phi}:=\mathbb{C}\setminus L_{z_0,\phi}$ \quad {\footnotesize $L_{\phi}=L_{0,\phi};D_{\phi}=D_{0,\phi}$}
+
+\textbf{Branch of Argument}: $Arg_{\phi}(z):=z${\small 的辐角,但是角度限制在:} $\phi<Arg_\phi(z)\leq \phi+2\pi$. \quad \quad ps: {\footnotesize $Arg_{-\pi}(z)=Arg(z)$}
 
 \vspace{-10pt}
 \begin{longtable}{cc|cc|cc|cc|cc|cc|cc}
     $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ & $f(z)$ & $f'(z)$ \\
     \hline
-    $z^n$ & $nz^{n-1}$ & $e^z$ & $e^z$ & $\sin(z)$ & $\cos(z)$ & $\cos(z)$ & $-\sin(z)$ & $\sinh(z)$ & $\cosh(z)$ & $\cosh(z)$ & $\sinh(z)$ & \np$\log z$ & \np$1/z$ \\
+    $z^n$ & $nz^{n-1}$ & $\exp(z)$ & $\exp(z)$ & $\sin(z)$ & $\cos(z)$ & $\cos(z)$ & $-\sin(z)$ & $\sinh(z)$ & $\cosh(z)$ & $\cosh(z)$ & $\sinh(z)$ & $\log_\phi z$ & $\frac{1}{z}$ {\tiny $z\in D_{\phi}$} \\
 \end{longtable}
 \vspace{-10pt}
+
+\textbf{Complex Powers}: $z^{\alpha}:=\{\exp(\alpha w):w\in\log(z)\}=\{\exp[\alpha(\ln|z|+iArg(z)+i2k\pi)]:k\in\mathbb{Z}\}$ \quad \qquad \qquad \qquad $\frac{d}{dz}z^\alpha=\alpha z^{\alpha-1}$ {\tiny $z\in D_{\phi}$}
+
+\qquad\textbf{I}. If $\alpha\in\mathbb{Z}$, there is one value of $z^{\alpha}$ \quad \quad \textbf{II}. If $\alpha=\frac{p}{q},\gcd(p,q)=1,p,q\in\mathbb{Z},q\ne0$, there are exactly $q$ values of $z^{\alpha}$
+
+\qquad\textbf{III}. If $\alpha$ is \textit{irrational} or \textit{non-real}, there are infinitely values $z^{\alpha}$ \quad \quad \textbf{IV}. $1^{1/q},q\in\mathbb{Z},q\ne0$ is $\{1,w,...,w^{q-1}\},w=\exp(i2\pi/q)$
+
+\qquad\textbf{V}. We prefer use $\exp(z)$ to denote single-valued function, and $e^z$ to denote multi-valued function. 
+
+\qquad\textbf{Principal Branch}: $z^{\alpha}:=\exp(\alpha Log(z))$ \qquad \qquad \textbf{Operation}: $z^{\alpha}z^{\beta}=z^{\alpha+\beta}$ {\footnotesize (Using Principal Branch)}
 
 \end{document}
