@@ -32,8 +32,8 @@
 
 % 设置 section/subsection 之间的行间距
 \usepackage{titlesec}
-\titlespacing*{\section}{-2pt}{-2pt}{-2pt}
-\titlespacing*{\subsection}{-2pt}{-2pt}{0pt}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
 
 % 调整标题上下间距
 \usepackage{titling}
@@ -167,7 +167,16 @@ $\cdot$ {\scriptsize \textbf{Kernel}: $\ker f:=\{\vec{v}\in V:f(\vec{v})=\vec{0}
 
 \textbf{Smith Normal Form}: {\small $\forall A$, $\exists \ \text{invertible} \ P,Q$ s.t. $PAQ=S(n,m,r):=$ {\footnotesize $n\times m$的矩阵,对角线前$r$个是1,后面0}. \quad \textbf{Lemma}: $r=r(A)=c(A)$}
 
-\textbf{Similar Matrices}: If $N=T^{-1}MT$, then $M,N$ are similar. \quad {\small \textit{Special Case}: If $N=$$_{\mathcal{B}}[f]_{\mathcal{B}}$, $M=$$_{\mathcal{A}}[f]_{\mathcal{A}}$, then $N=T^{-1}MT$. where $T=$$_{\mathcal{A}}[id_V]_{\mathcal{B}}$}
+$\cdot$ Every linear map $f:V\to W$ can be representing by $_{\mathcal{B}}[f]_{\mathcal{A}}=S(n,m,r)$ for some basis $\mathcal{A},\mathcal{B}$ of $V,W$.
+
+\textbf{Similar Matrices}: $N=T^{-1}MT$ $\Leftrightarrow$ $M,N$ are similar. \quad {\small \textit{Special Case}: If $N=$$_{\mathcal{B}}[f]_{\mathcal{B}}$, $M=$$_{\mathcal{A}}[f]_{\mathcal{A}}$, then $N=T^{-1}MT$. where $T=$$_{\mathcal{A}}[id_V]_{\mathcal{B}}$}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item If $A\sim B$ iff $A$ is similar to $B$, then $\sim$ is an equivalence relation. \quad \quad $_{\mathcal{A}'}[f]_{\mathcal{A'}}\sim_{\mathcal{A}}[f]_{\mathcal{A}}$
+    \item If $\mathcal{B}=\{p(\vec{v_1}),...,p(\vec{v_n})\}$ and $\mathcal{A}=\{\vec{v_1},...,\vec{v_n}\}$ where $p:V\bij V$. Then $_{\mathcal{A}}[id_V]_{\mathcal{B}}=_{\mathcal{A}}[p]_{\mathcal{A}}$
+    \item If $V$ is a vector space over $F$, [$A,B$ are \textit{similar} matrices. \ \ $\Leftrightarrow$ \ \ $A=_{\mathcal{A}}[f]_{\mathcal{A}},B=_{\mathcal{B}}[f]_{\mathcal{B}}$ for some basis $\mathcal{A},\mathcal{B}$; $f:V\to V$]
+    \item {\small Set of \textit{Endomorphism} is in a bijection correspondence with the equivalence class of matrices under $\sim$. } {\scriptsize \textbf{一个自同态End就对应一个相似矩阵的等价类}}
+\end{enumerate}
 
 \textbf{Trace}: $tr(A):=\sum_{i}a_{ii}$ and $tr(f):=tr(_{\mathcal{A}}[f]_{\mathcal{A}})$ \ $\big|$ \ {\small $tr(AB)=tr(BA)$ \quad $tr(\lambda A+\mu B)=\lambda tr(A)+\mu tr(B)$ \quad $tr(N)=tr(M)$ if $M,N$ similar.}
 
