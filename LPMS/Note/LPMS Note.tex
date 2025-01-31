@@ -180,12 +180,28 @@ $\cdot$ \textbf{Theorem}: {\small If LP has a unique optimal solution is a verte
 \textbf{Solve LP Problem}: Assume $f=\overline{\mathbf{c}}^T\mathbf{x}$ with $\overline{A}\mathbf{x}=\mathbf{b}$ and $\mathbf{x}\geq0$.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item {\footnotesize 修改$x_i$/列顺序,$A$中换顺序后得到可逆的$B_{m\times m}$ \ \ $\Rightarrow$ \ \ $\overline{A}\mathbf{x}=\mathbf{b}\Leftrightarrow B\mathbf{x}_B+N\mathbf{x}_N=\mathbf{b}$ \quad $\mathbf{c}\rightarrow[\mathbf{c}_B \ \mathbf{c}_N]^T$ \ \ $\overline{A}\rightarrow[B \ N]$ \ \ $\mathbf{x}\to[\mathbf{x}_B \ \mathbf{x}_N]^T$ \quad Let $\widehat{\mathbf{b}}=B^{-1}\mathbf{b}$ \ \ $\widehat{N}=B^{-1}N$}
+    \item {\footnotesize 修改$x_i$/列顺序,$A$中换顺序后得到可逆的$B_{m\times m}$ \ \ $\Rightarrow$ \ \ $\overline{A}\mathbf{x}=\mathbf{b}\Leftrightarrow B\mathbf{x}_B+N\mathbf{x}_N=\mathbf{b}$ \quad $\overline{\mathbf{c}}\rightarrow[\mathbf{c}_B \ \mathbf{c}_N]^T$ \ \ $\overline{A}\rightarrow[B \ N]$ \ \ $\mathbf{x}\to[\mathbf{x}_B \ \mathbf{x}_N]^T$ \quad Let $\widehat{\mathbf{b}}=B^{-1}\mathbf{b}$ \ \ $\widehat{N}=B^{-1}N$}
     \item \textbf{Solution}: $\mathbf{x}_B=\widehat{\mathbf{b}}-\widehat{N}\mathbf{x}_N$ \quad \quad If $\mathbf{x}_N=0$ $\Rightarrow$ It's a basic solution. {\scriptsize (But we need to check whether $\mathbf{x}_B\geq0$)} \quad \quad {\scriptsize Using $\mathcal{B},\mathcal{N}$: Index set of independent/else.}
+    \item \textbf{Basic Variables}: $\mathbf{x}_B$ \quad \textbf{Nonbasic Variables}: $\mathbf{x}_N$
     \item \textbf{At Basic Solution}: $\mathbf{x}_B=\widehat{\mathbf{b}},\mathbf{x}_N=\mathbf{0}$ \quad $\Rightarrow$ \quad If $\widehat{\mathbf{b}}\geq0$. Corresponding $\mathbf{x}$ is: $^1$ vertex of $K$; \ \ $^2$ \textbf{Basic Feasible Solution (BFS)}
     \item \textbf{Basic Costs}: $\mathbf{c}^T_B$ \quad \textbf{Nonbasic Costs}:$\mathbf{c}^T_N$ \quad \textbf{Reduced Costs}: $\widehat{\mathbf{c}}_N=\mathbf{c}_N -\widehat{N}^T\mathbf{c}_B=\mathbf{c}_N-N^TB^{-T}\mathbf{c}_B$ \quad $\widehat{f}=\mathbf{c}_B^T\widehat{\mathbf{b}}$ \quad \quad $\mathbf{x}_B,\mathbf{x}_N\geq0$
     \item \textbf{Objective Value}: $f=\overline{\mathbf{c}}^T\mathbf{x}=\mathbf{c}^T_B\mathbf{x}_B+\mathbf{c}^T_N\mathbf{x}_N=\widehat{f}+\widehat{\mathbf{c}}_N^T\mathbf{x}_N$ \quad \quad If $\widehat{\mathbf{c}}_N\leq0$, then $f\leq\widehat{f}$ \ \ $\Rightarrow$ \ \ Corresponding $\mathbf{x}$ is optimal.
     \item If $\widehat{\mathbf{c}}_N\leq0$ doesn't hold, we using \textbf{Simplex Algorithm}.
+\end{enumerate}
+
+\textbf{Simplex Algorithm}:
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item {\small \textbf{Initial Basic Feasible Solution}: Try $\mathcal{B}=\{n+1,...,n+m\}$ and $\mathcal{N}=\{1,...,n\}$ \ \ $\Rightarrow$ \ \ $B=I,N=A$ , $\mathbf{x}_B=\widehat{\mathbf{b}}=\mathbf{b}$, $\mathbf{x}_N=\mathbf{0}$, $\mathbf{c}_B=\mathbf{0}$, $\mathbf{c}_N=\mathbf{c}$}
+    \item If $\mathbf{b}\geq0$. $\Rightarrow$ Basis is feasible + cont. \qquad Else: solved by \textbf{Two-Phase Simplex Method}.
+    \item\label{start_simplex} If $\widehat{\mathbf{c}}_N\leq0. \Rightarrow$ Optimal Solution \qquad Else: cont.
+    \item Let $q'\in\mathcal{N}$ {\small 对应$\widehat{\mathbf{c}}_N$中最大positive分量的index} \quad {\small 同理,对应的最大正分量值为$\widehat{c_q}$} \quad {\small 对应的variable为$x_{q'}$} \quad {\small 对应$N$中的[$q'$]列为$\mathbf{a}_q$}
+    \item Let $\widehat{\mathbf{a}_q}=B^{-1}\mathbf{a_q}$. \qquad If $\widehat{\mathbf{a}_q}\leq0$ $\Rightarrow$ LP is unbounded. \qquad Else: LP is bounded + cont.
+    \item Let $p'\in\mathcal{B}$ \ be the index corresponding to $p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$ {\scriptsize $p$是对应的index,not value} \qquad \quad {\small 用$\overline{\alpha}=\frac{\widehat{b_p}}{\widehat{a}_{pq}}$代表值}\\
+    $\widehat{b_i},\widehat{a}_{iq}$ {\small 代表$\widehat{\mathbf{b}}$的第$i$个分量, $\widehat{\mathbf{a}_q}$的第$i$个分量} \\
+    {\small $p'$代表能使$\frac{\widehat{b_i}}{\widehat{a}_{iq}}$的值最小的index,前提条件是$\widehat{a}_{iq}>0$} \qquad \qquad {对应的variable为$x_{p'}$}
+    \item Exchange $p'$ and $q'$ between $\mathcal{B}$ and $\mathcal{N}$ \ \ $\Rightarrow$ \ \ {\small values of new $x_{B}=\widehat{\mathbf{b}}-\overline{\alpha} \ \widehat{\mathbf{a}}_q$} \qquad Update $\mathcal{B},\mathcal{N},B,N,\mathbf{b},\widehat{\mathbf{b}},...$
+    \item Go to \ref{start_simplex}.
 \end{enumerate}
 
 

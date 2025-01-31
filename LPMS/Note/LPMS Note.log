@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  25 JAN 2025 17:18
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  31 JAN 2025 15:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -775,12 +775,12 @@ LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
 
 ] (./LPMS Note.aux) ) 
 Here is how much of TeX's memory you used:
- 13213 strings out of 476683
- 294867 string characters out of 5795227
- 1889012 words of memory out of 5000000
- 33265 multiletter control sequences out of 15000+600000
- 521195 words of font info for 127 fonts, out of 8000000 for 9000
+ 13232 strings out of 476683
+ 295373 string characters out of 5795227
+ 1901012 words of memory out of 5000000
+ 33276 multiletter control sequences out of 15000+600000
+ 521259 words of font info for 135 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,11n,114p,448b,433s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,11n,114p,459b,433s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on LPMS Note.pdf (1 page).
