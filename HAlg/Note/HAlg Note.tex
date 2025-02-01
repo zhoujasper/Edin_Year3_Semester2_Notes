@@ -185,6 +185,27 @@ $\cdot$ Every linear map $f:V\to W$ can be representing by $_{\mathcal{B}}[f]_{\
 
 \section{Rings | Polynomials | Ideals | Subrings}
 
+\textbf{Ring $(R,+,\ \cdot\ )$}: A set $R$ with two operators $+,\cdot$ is a ring if: \qquad \qquad \qquad {\tiny e.g. $Mat(n,F);R[X];\mathbb{Z}/m\mathbb{Z};\mathbb{Z}$}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item $(R,+)$ is an \textit{abelian group} with identity $0_R$. \hspace{50pt} \textbf{Commutative Ring}: add: $\forall a,b\in R$, $ab=ba$.
+    \item $(R,\cdot)$ is a \textbf{monoid} with identity $1_R$. \ \ i.e. \ \ \textbf{Associativity}: $\forall a,b,c\in R$, $(a\cdot b)\cdot c=a\cdot(b\cdot c)$. \quad \textbf{Identity}: $\forall a\in R$, $1_R\cdot a=a\cdot 1_R=a$.
+    \item \textbf{Distributive}: $\forall a,b,c\in R$: $a\cdot(b+c)=a\cdot b+a\cdot c$ and $(b+c)\cdot a=b\cdot a+c\cdot a$. \qquad \qquad {\footnotesize ps: 默认monoid是closure的}
+\end{enumerate}
+
+$\cdot$ If $R$ is ring $\Rightarrow$ [$1_R=0_R$ $\Leftrightarrow$ $R=\{0\}$] {\scriptsize i.e. For any non-zero ring, $1_R\ne 0_R$} \qquad \qquad \textbf{Field}: Commutative ring + multiplicative inverse = Field.
+
+\textbf{Properties of Ring}: $\forall a,b\in R$. \qquad \textbf{I}.$0\cdot a=a\cdot 0=0$ \qquad \textbf{II}. $(-a)\cdot b=a\cdot(-b)=-(a\cdot b)$ \qquad \textbf{III}.$(-a)\cdot(-b)=a\cdot b$
+
+\textbf{Unit}: $a\in R$ is unit if it's \textit{Invertible}. \quad i.e. $\exists a^{-1}\in R$ s.t. $aa^{-1}=a^{-1} a=1_R$ \qquad \textbf{Group of Unit} $(R^{\times},\ \cdot \ ):=\{a\in R:a$ is unit$\}$
+
+\textbf{Zero-divisors}: $a\in R$ is \textit{zero-divisor} if $\exists b\in R,b\ne0$ s.t. $ab=0$ or $ba=0$ \qquad \textit{Field has no zero-divisors.}  \quad {\scriptsize $\cdot$ e.g. $\mathbb{Z}^{\times}=\{-1,1\}$ \ ; \ $1_R$ is a unit.}
+
+\textbf{Integral Domain}: A \textit{commutative} ring $R$ is an integral domain if it has no zero-divisors.
+
+\textbf{Properties of Integral Domain}: $\forall a,b\in R$. \quad \textbf{I}. $ab=0$ $\Rightarrow$ $a=0$ or $b=0$ \quad \textbf{II}. $a,b\ne0$ $\Rightarrow$ $ab\ne0$ \qquad \textbf{III}. $ac=bc,a\ne0$ $\Rightarrow$ $b=c$
+
+$\cdot$ \textit{Field is Integral Domain} \qquad \textbf{Every finite integral domain is a field} \qquad {\scriptsize e.g.(integral domain) $\mathbb{Z};\mathbb{Z}/p\mathbb{Z}$}
 
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint}
 
