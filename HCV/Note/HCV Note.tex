@@ -224,7 +224,17 @@ $\cdot$ If $Log_{\phi}(z)$ is holomorphic on $D_{\phi}$, then $Log_{\phi}(z-a)$ 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item For mobius transformation $f(z)=\frac{az+b}{cz+d}$, if: \ $\exists z_1,z_2,z_3\in\mathbb{C}$ distinct points. $f(z_1)=z_1,f(z_2)=z_2,f(z_3)=z_3$ $\Rightarrow$ $f$ is identity.
     \item If $z_1,z_2,z_3\in\widetilde{\mathbb{C}}$ distinct points. \quad $\exists!$ mobius transformation $f(z)$ s.t. $f(z_1)=1,f(z_2)=0,f(z_3)=\infty$
+    \item If $(z_1,z_2,z_3),(w_1,w_2,w_3)\in\widetilde{\mathbb{C}}$ distinct points. Then $\exists!$ mobius transformation $f(z)$ s.t. $f(z_i)=w_i \ , \ \forall i\in\{1,2,3\}$ \\
+    \textbf{ps:Method to construct $2$}: If $z_i<\infty,f(z)=\frac{z_1-z_3}{z_1-z_2}\cdot\frac{z-z_2}{z-z_3}$ \qquad If $z_i=\infty$, {\footnotesize $f(z)=\frac{z-z_2}{z-z_3}$ {\scriptsize ,$z_1=\infty$} $f(z)=\frac{z_1-z_3}{z-z_3}$ {\scriptsize ,$z_2=\infty$} ; $f(z)=\frac{z-z_2}{z_1-z_2}$ {\scriptsize ,$z_3=\infty$} } \\
+    \textbf{ps:Method to construct $3$}: For 3: Let $f:=h^{-1}\circ g$ {\footnotesize where $g(z_i),h(w_i)=\{1,0,\infty\}$ like part 2.}
+    \vspace{1.5pt}
 \end{enumerate}
 
+\textbf{Cross-Ratio}: cross-ratio $[z_1,z_2,z_3,z_4]:=f(z_1)$ where $f$ is mobius transformation s.t. $f(z_2)=1,f(z_3)=0,f(z_4)=\infty$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Formulas}: {\footnotesize $[z_1,z_2,z_3,z_4]=\frac{z_1-z_3}{z_1-z_4}\frac{z_2-z_4}{z_2-z_3}$ \quad $[\infty,z_2,z_3,z_4]=\frac{z_2-z_4}{z_2-z_3}$ \quad $[z_1,\infty,z_3,z_4]=\frac{z_1-z_3}{z_1-z_4}$ \quad $[z_1,z_2,\infty,z_4]=\frac{z_2-z_4}{z_1-z_4} \quad [z_1,z_2,z_3,\infty]=\frac{z_1-z_3}{z_2-z_3}$}
+    \item \textbf{Theorem}: If $f$ is a mobius transformation, $[f(z_1),f(z_2),f(z_3),f(z_4)]=[z_1,z_2,z_3,z_4]$ \qquad \quad {\scriptsize \textbf{$z_i$'s in this "small section" are distinct.}}
+\end{enumerate}
 
 \end{document}
