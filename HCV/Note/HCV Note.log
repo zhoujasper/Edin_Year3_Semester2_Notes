@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  3 FEB 2025 14:37
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  4 FEB 2025 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -764,8 +764,15 @@ LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
 (Font)              scaled to size 9.00096pt on input line 76.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
 (Font)              scaled to size 8.99904pt on input line 76.
+File: Stereographic-projection.png Graphic file (type bmp)
+<Stereographic-projection.png>
 
-Overfull \hbox (13.6627pt too wide) in alignment at lines 158--162
+Overfull \hbox (25.0pt too wide) in paragraph at lines 148--157
+[]
+ []
+
+
+Overfull \hbox (13.6627pt too wide) in alignment at lines 171--175
  [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
@@ -773,12 +780,12 @@ Overfull \hbox (13.6627pt too wide) in alignment at lines 158--162
 
 ] [2] (./HCV Note.aux) ) 
 Here is how much of TeX's memory you used:
- 13233 strings out of 476683
- 295348 string characters out of 5795227
- 1922012 words of memory out of 5000000
- 33279 multiletter control sequences out of 15000+600000
- 521243 words of font info for 133 fonts, out of 8000000 for 9000
+ 13251 strings out of 476683
+ 295928 string characters out of 5795227
+ 1915012 words of memory out of 5000000
+ 33290 multiletter control sequences out of 15000+600000
+ 521275 words of font info for 137 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,11n,114p,386b,405s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,11n,114p,422b,405s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on HCV Note.pdf (2 pages).

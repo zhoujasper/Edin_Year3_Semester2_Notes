@@ -145,12 +145,25 @@ $\cdot$ \textbf{Lemma}: If $f=u+iv$ is holomorphic on $\mathbb{C}$ and $u,v$ are
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{I}. $\log(z)=\ln |z|+i\arg{z}=\{\ln |z|+iArg(z) +i2\pi k:k\in\mathbb{Z}\}$ \quad \quad \textbf{II}. $\log(zw)=\log(z)+\log(w)$ \quad \quad \textbf{III}. $\log(1/z)=-\log(z)$
-    \item \textbf{Branch of Logarithm}: $Log_{\phi}(z):=\ln|z|+iArg_{\phi}(z)$ \quad \quad $Log_\phi(z)$ is holomorphic on $D_{\phi}$ 
+    \item \textbf{Branch of Logarithm}: $Log_{\phi}(z):=\ln|z|+iArg_{\phi}(z)$ \quad \quad $Log_\phi(z)$ is holomorphic on $D_{\phi}$ \\
+    \noindent
+    \makebox[\textwidth][c]{
+        \parbox{0.83\textwidth}{
+            \raggedleft
+            \includegraphics[width=0.28\textwidth]{Stereographic-projection.png}
+        }
+    }
+    \vspace{-3cm}
     \item If $g:U\to\mathbb{C}$, then $Log_\phi(g(z))$ is holomorphic on $g^{-1}(D_{\phi})\cap U$
-    \item $Log(z)$ \textit{not continuous} on $\mathbb{C}$. \quad \quad $Log(z)$ not continuous on $Re(z)\leq 0,Im(z)=0$.
+    \item $Log(z)$ \textit{not continuous} on $\mathbb{C}$. \quad \quad $Log(z)$ not continuous on $Re(z)\leq 0,Im(z)=0$. \\
+    \textbf{Remark}: $\log(x)+\log(x)\ne 2\log(x)$
 \end{enumerate}
 
-\textbf{Branch Cut|Cut Plane}: \textit{Branch Cut} $L_{z_0,\phi}:=\{z\in\mathbb{C}:z=z_0+re^{i\phi},r\geq0\}$ \quad \quad \textit{Cut Plane}: $D_{z_0,\phi}:=\mathbb{C}\setminus L_{z_0,\phi}$ \quad {\footnotesize $L_{\phi}=L_{0,\phi};D_{\phi}=D_{0,\phi}$}
+\textbf{Branch Cut|Cut Plane}: \textit{Branch Cut} $L_{z_0,\phi}:=\{z\in\mathbb{C}:z=z_0+re^{i\phi},r\geq0\}$
+
+$\cdot$ \textit{Cut Plane}: $D_{z_0,\phi}:=\mathbb{C}\setminus L_{z_0,\phi}$ \quad {\footnotesize $L_{\phi}=L_{0,\phi};D_{\phi}=D_{0,\phi}$}
+
+$\cdot$ If $Log_{\phi}(z)$ is holomorphic on $D_{\phi}$, then $Log_{\phi}(z-a)$ is holomorphic on $D_{a,\phi}$
 
 \textbf{Branch of Argument}: $Arg_{\phi}(z):=z${\small 的辐角,但是角度限制在:} $\phi<Arg_\phi(z)\leq \phi+2\pi$. \quad \quad ps: {\footnotesize $Arg_{-\pi}(z)=Arg(z)$}
 
@@ -173,8 +186,45 @@ $\cdot$ \textbf{Lemma}: If $f=u+iv$ is holomorphic on $\mathbb{C}$ and $u,v$ are
 \qquad\textbf{Principal Branch}: $z^{\alpha}:=\exp(\alpha Log(z))$ \qquad \qquad \textbf{Operation}: $z^{\alpha}z^{\beta}=z^{\alpha+\beta}$ {\footnotesize (Using Principal Branch)} \quad {\scriptsize \textbf{NB}: $(z_1z_2)^\alpha\ne z_1^\alpha z_2^\alpha \ ; \ (z^\alpha)^\beta\ne z^{\alpha\beta}$}
 
 
-\section{}
+\section{Conformal Maps and Mobius Transformations} % Conformal Maps and Mobius Transformations
 
+\subsection{Conformal Maps \& Definition of Mobius Transformations} % Conformal Maps & Definition of Mobius Transformations
+
+\textbf{Conformal}: Let $U$ be open set and $f:U\to\mathbb{C}$. Then $f$ is conformal iff: \ \ $f$ \textit{preserves angles}. \quad {\scriptsize i.e.任意两条曲线/直线之间的角度在$f$作用下不变.}
+
+\quad \textbf{Important Theorem}: If $f:U\to\mathbb{C}$ is \textit{holomorphic}, then $\forall z_0\in U,f'(z_0)\ne0$, $f$ \textit{preserves angles}.
+
+\quad i.e. $\forall \ \text{curves} \ C_1,C_2$ in $U$. If $C_1,C_2$ intersecting at a point $z_0\in U$. {\scriptsize $C_1,C_2$在$z_0$切线的夹角与$f(C_1),f(C_2)$在$f(z_0)$切线的夹角一样.}
+
+\textbf{Extended Complex Plane}: $\widetilde{\mathbb{C}}:=\mathbb{C}\cup\{\infty\}$ and define that $a+\infty=\infty,b\cdot\infty=\infty,\frac{b}{0}=\infty,\frac{b}{\infty}=0$.
+
+\textbf{Riemann Sphere}: Consider $(X,Y,Z)\in\mathbb{R}^3$: \ \ $^1z=X+iY\in\mathbb{C}$ is the point $(X,Y,0)$ and \ \ $^2 Z=0$ is the complex plane.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item Define the Riemman Sphere: $S^2:=\{(X,Y,Z)\in\mathbb{R}^3:X^2+Y^2+Z^2=1\}$ and consider the \textbf{North Pole} is point $N:=(0,0,1)$
+    \item Define $\phi:\mathbb{C}\to S^2$ by \ \ $N$点 与 $z=(X,Y,0)$点 连线 与 $S^2$ 的交点为$\phi(z)$ \quad \quad Thus $\lim_{|z|\to\infty}\phi(z)=N$ \quad $\phi(\infty):=N$
+    \item Calculation shows that: $\phi(z)=\phi(x+iy)=\left(\frac{2x}{|z|^2+1},\frac{2y}{|z|^2+1},\frac{|z|^2-1}{|z|^2+1}\right)$ \qquad \qquad $\psi(X,Y,Z)=\begin{cases}\frac{X+iY}{1-Z} , (X,Y,Z)\ne N \\ \infty \quad \ , \ (X,Y,Z)=N\end{cases}$ \\
+    \textbf{Remark}: $\phi:\widetilde{\mathbb{C}}\to S^2$ is bijection and it's inverse $\psi:S^2\to\widetilde{\mathbb{C}}$ is the \textbf{stereographic projection}
+    \item Stereographic projection $\psi(X,Y,Z)$ maps a circle to either a circle or a straight line. (见上图)
+\end{enumerate}
+
+\textbf{Mobius Transformation}: A Mobius Transformation is a function form: $f(z)=\frac{az+b}{cz+d}$ where $a,b,c,d\in\mathbb{C} \ ; \ ad\ne bc$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Remark}: $g(z)=\frac{f(z)}{\sqrt{ad-bc}}$ satisfies $ad-bc=1$ \quad $\big|$ \quad If $a,b,c,d$ defined a mobius transformation, then $\lambda a,\lambda b,\lambda c,\lambda d$ also.
+    \item For Complex Matrix: $M=\begin{pmatrix}a & b \\ c & d\end{pmatrix}$ with $\det(M) = ad-bc=1$. \quad We define $f_{M}=\frac{az+b}{cz+d}$ \qquad $\begin{matrix}\textbf{I}. f_{M_1M_2}=f_{M_1}f_{M_2} \\ \textbf{II}. f_{M^{-1}}=f_M^{-1} \qquad \end{matrix}$
+    \item Extended $f(z)$ from $\mathbb{C}$ to $\widetilde{\mathbb{C}}$ by: $f(-\frac{d}{c})=\infty$ and $f(\infty)=\frac{a}{c}$
+    \item {\footnotesize \textbf{Translation}: $f(z)=z+b\Leftrightarrow \begin{pmatrix}1 & b \\ 0 & 1\end{pmatrix}$ \quad \textbf{Rotation}: $f(z)=az,a=e^{i\theta} \ (|a|=1)\Leftrightarrow \begin{pmatrix}e^{i\theta/2} & 0 \\ 0 & -e^{i\theta/2}\end{pmatrix}$ \quad \textbf{Dilation}: $f(z)=rz,r>0 \Leftrightarrow \begin{pmatrix}\sqrt{r} & 0 \\ 0 & 1/\sqrt{r}\end{pmatrix}$} \\
+    {\footnotesize \textbf{Inversion}: $f(z)=1/z \Leftrightarrow \begin{pmatrix}0 & i \\ i & 0\end{pmatrix}$ \quad \textbf{$f$ fixes the point at infinity}: If $f(\infty)=\infty$ \ \ {\scriptsize ps: 除了inversion其他都是fix the point at infinity.}}
+    \item {\footnotesize \textbf{Theorem}: $f(z)=\frac{az+b}{cz+d}$ be a Mobius Transformation. \ $\Rightarrow$ \ $^1$If $f(\infty)=\infty$: $f$ is a composition of \underline{finite} \textit{Translation, Rotation, Dilation} $\Rightarrow$ $c=0,f(z)=\frac{a}{d}z+\frac{b}{d}$}
+    \quad {\footnotesize $^2$ If $f(\infty)<\infty$: $f$ is composition of \underline{finite} \textit{Translation, Rotation, Dilation} and \underline{only one} \textit{inversion}. $\Rightarrow$ $f(z)=\frac{(bc-ad)/c^2}{z+d/c}+\frac{a}{c}$}
+\end{enumerate}
+
+\textbf{Properties of Mobius Transformation}: \textit{Important}: $\star$ Möbius transformations map circlines to circlines. $\star$
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item For mobius transformation $f(z)=\frac{az+b}{cz+d}$, if: \ $\exists z_1,z_2,z_3\in\mathbb{C}$ distinct points. $f(z_1)=z_1,f(z_2)=z_2,f(z_3)=z_3$ $\Rightarrow$ $f$ is identity.
+    \item If $z_1,z_2,z_3\in\widetilde{\mathbb{C}}$ distinct points. \quad $\exists!$ mobius transformation $f(z)$ s.t. $f(z_1)=1,f(z_2)=0,f(z_3)=\infty$
+\end{enumerate}
 
 
 \end{document}
