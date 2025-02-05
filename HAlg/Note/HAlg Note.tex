@@ -183,7 +183,9 @@ $\cdot$ Every linear map $f:V\to W$ can be representing by $_{\mathcal{B}}[f]_{\
 \textbf{Trace}: $tr(A):=\sum_{i}a_{ii}$ and $tr(f):=tr(_{\mathcal{A}}[f]_{\mathcal{A}})$ \ $\big|$ \ {\small $tr(AB)=tr(BA)$ \quad $tr(\lambda A+\mu B)=\lambda tr(A)+\mu tr(B)$ \quad $tr(N)=tr(M)$ if $M,N$ similar.}
 
 
-\section{Rings | Polynomials | Ideals | Subrings}
+\section{Rings | Polynomials | Ideals | Subrings} % Rings | Polynomials | Ideals | Subrings
+
+\subsection{Rings | Polynomial Rings} % Rings | Polynomial Rings
 
 \textbf{Ring $(R,+,\ \cdot\ )$}: A set $R$ with two operators $+,\cdot$ is a ring if: \qquad \qquad \qquad {\tiny e.g. $Mat(n,F);R[X];\mathbb{Z}/m\mathbb{Z};\mathbb{Z}$}
 
@@ -201,11 +203,52 @@ $\cdot$ If $R$ is ring $\Rightarrow$ [$1_R=0_R$ $\Leftrightarrow$ $R=\{0\}$] {\s
 
 \textbf{Zero-divisors}: $a\in R$ is \textit{zero-divisor} if $\exists b\in R,b\ne0$ s.t. $ab=0$ or $ba=0$ \qquad \textit{Field has no zero-divisors.}  \quad {\scriptsize $\cdot$ e.g. $\mathbb{Z}^{\times}=\{-1,1\}$ \ ; \ $1_R$ is a unit.}
 
-\textbf{Integral Domain}: A \textit{commutative} ring $R$ is an integral domain if it has no zero-divisors.
+\textbf{Integral Domain}: A \textit{commutative} ring $R$ is an integral domain if it has no zero-divisors. \qquad \quad {\scriptsize e.g. $\mathbb{Z}/p\mathbb{Z},\mathbb{R},\mathbb{Q},\mathbb{Z},...$}
 
 \textbf{Properties of Integral Domain}: $\forall a,b\in R$. \quad \textbf{I}. $ab=0$ $\Rightarrow$ $a=0$ or $b=0$ \quad \textbf{II}. $a,b\ne0$ $\Rightarrow$ $ab\ne0$ \qquad \textbf{III}. $ac=bc,a\ne0$ $\Rightarrow$ $b=c$
 
 $\cdot$ \textit{Field is Integral Domain} \qquad \textbf{Every finite integral domain is a field} \qquad $\mathbb{Z}/p\mathbb{Z}$ is field iff $p$ is prime. \qquad {\scriptsize e.g.(integral domain) $\mathbb{Z};\mathbb{Z}/p\mathbb{Z}$}
+
+\textbf{Polynomial Ring $R[X]$}: $R[X]:=\{a_nX^n+\cdots+a_1X+a_0:a_i\in R,n\in\mathbb{N}\}$ where $X$ is \textbf{indeterminate} \ $\Leftarrow$ \ $X\notin R$ and $\forall x\in R,Xa=aX$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Degree}: $\deg(P):=\max\{n\in\mathbb{N}:a_n\ne0\}$ \quad \textbf{Leading Coefficient}: $a_n$ \quad \textbf{Monic}: $a_n=1$ \quad \quad \quad {\scriptsize ps: Polynomial NOT a function}
+    \item \textbf{Lemma}: {\small $^1$ $R$ \textit{integral domain|no zero-divisors} $\Rightarrow$ $R[X]$ also. \qquad $^2$ $R$ \textit{integral domain or no zero-divisor} $\Rightarrow\deg(PQ)=\deg(P)+\deg(P)$}
+    \item \textbf{Division and Remainder}: If $R$ is \textit{integral domain} and $P,Q\in R[X]$,{\scriptsize $Q$ \textbf{monic}} $\exists!$ $A,B\in R[X]$ s.t. $P=AQ+B$ and $\deg(B)<\deg(Q)$
+    \item \textbf{Function | Factorize}: If $R$ is \textit{commutative ring} \ $\Rightarrow$ \ $^1$ $R[X]\to Maps(R,R)$ {\scriptsize (可以视作函数)} \ $^2$ $\lambda\in R$ is root of $P$ $\Leftrightarrow$ $(X-\lambda) \ | \ P(X)$
+    \item \textbf{Roots}: If $R$ is \textit{Integral domain}: $P$ has at most $\deg(P)$ roots.
+\end{enumerate}
+
+\textbf{Algebraically Closed}: $R=F$ field is \textit{algebraically closed} if every non-constant polynomial has a root in $F$. \qquad \qquad e.g. $\mathbb{C}$
+
+$\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rightarrow$ $P$ decomposes into: $P(X)=a(X-\lambda_1)\cdots(X-\lambda_n),a\in F^\times$ {\scriptsize i.e. $a\ne0$}
+
+
+\subsection{Homomorphism | Ideals | Subrings} % Homomorphism | Ideals | Subrings
+
+\textbf{Ideal $(I\trianglelefteq R)$}: A subset $I\subseteq R$ (ring) is an ideal if: \quad \textbf{I}. $I\ne\emptyset$ \quad \textbf{II}. $\forall a,b\in I$, $a-b\in I$ \quad \textbf{III}. $\forall i\in I,\forall r\in R$, $ri,ir\in I$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Generated Ideal $_R\langle T\rangle$}: $T\subseteq R$ (ring), where $R$ is \textit{commutative ring}. We define \ $_R\langle T\rangle:=\{\sum_{i=1}^{n}r_it_i:n\in\mathbb{N},r_i\in R,t_i\in T\}$ \\
+    $\cdot$ \textbf{Lemma}: $_R\langle T\rangle$ is the smallest ideal containing $T$. \quad \textbf{Principal Ideal}: $_R\langle a\rangle$ \quad \textbf{Proper Ideal}: $I\ne R$ \qquad {\scriptsize ps: $R$ 一定是commutative ring}
+    \item If $I,J$ are \textit{ideals} of $R$. Then \ \ $I+J$ \ ; \ $I\cap J$ \ \ are also ideals.
+\end{enumerate}
+
+\textbf{Subring Test}: $R'\subseteq R$ (ring) is a subring if: \ \ \textbf{I}. $1_R\in R'$ \quad \textbf{II}. $\forall a,b\in R'$, $a-b\in R'$ \quad \textbf{III}. $\forall a,b\in R'$, $ab\in R'$
+
+$\cdot$ If $f:R\to S$ is \textit{ring homomorphism}, and $R'$ is subring of $R$. \ $\Rightarrow$ \ $f(R')$ is subring of $S$.
+
+\textbf{Ring Homomorphism}: {\small $R,S$ are rings, $f:R\to S$ is \textit{ring homomorphism} if: \textbf{I}. $f(a+b)=f(a)+f(b)$ \ \textbf{II}. $f(ab)=f(a)f(b)$ \ {\scriptsize $f(1_R)=1_S$ is NOT need}}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Second Def}: $f$ is ring homomorphism if: $f:(R,+)\to (S,+)$ is group homomorphism \ \ and \ \ $f(xy)=f(x)f(y)$.
+    \item \textbf{I}. $f(0_R)=0_S$ \quad \textbf{II}. $f(-a)=-f(a)$ \quad \textbf{III}. $f(a^n)=(f(a))^n$ \quad \textbf{IV}. $f(x-y)=f(x)-f(y)$ \quad \textbf{V}. $f(mx)=mf(x)$
+    \item {\small \textbf{Kernel}: $\ker f:=\{a\in R:f(a)=0_S\}$ is an \textit{ideal} \qquad \textbf{Image}: $Im f:=\{f(a):a\in R\}$ is a \textit{subring}. \qquad \textbf{1-1}: $f$ is 1-1 $\Leftrightarrow$ $\ker f=\{0_R\}$}
+\end{enumerate}
+
+
+
+
 
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint}
 
