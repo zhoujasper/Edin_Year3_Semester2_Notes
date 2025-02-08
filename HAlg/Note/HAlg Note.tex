@@ -6,10 +6,11 @@
 \usepackage{ctex}
 \usepackage{enumitem}
 \usepackage{longtable}
+\usepackage{multirow}
 \usepackage{makecell} % 换行
 
 % 使用分栏宏包
-\usepackage{multicol} 
+\usepackage{multicol}
 \setlength{\columnseprule}{0.4pt} % 分割线
 
 % 设置字体
@@ -53,6 +54,8 @@
 
 \newcommand{\np}{{\tiny $^{^{^\ominus}}$}}
 
+\newcommand{\N}{\mathbb{N}}
+
 % 标题
 \maketitle
 \thispagestyle{fancy}
@@ -65,47 +68,91 @@
 
 \section{Basic Knowledge} % Basic Knowledge
 
-\textbf{Def of Group $(G,*)$}: {\small A set $G$ with a operator $*$ is a group if: \textbf{Closure}: $\forall g,h\in G$, $g*h\in G$; \textbf{Associativity}: $\forall g,h,k\in G$, $(g*h)*k=g*(h*k)$;}
-
-\hspace{85pt} {\small \textbf{Identity}: $\exists e\in G$, $\forall g\in G$, $e*g=g*e=g$; \textbf{Inverse}: $\forall g\in G$, $\exists g^{-1}\in G$, $g*g^{-1}=g^{-1}*g=e$.} \quad {\scriptsize $G,H$ groups, then $G\times H$ also.}
-
-\textbf{Subgroup}: {\small $H\subseteq G$ is a subgroup if: \ $\forall h_1,h_2\in H$ \ \textbf{I}: $H\ne\emptyset$; \quad \textbf{II}: $h_1*h_2\in H$; \quad \textbf{III}: $h_1^{-1}\in H$.}
-
 \textbf{Lagrange's Theorem}: {\small If $H\subseteq G$ is a subgroup, then $|H|$ divides $|G|$.} \quad \qquad {\scriptsize \textbf{I}: If $G$ is finite, then $g^{|G|}=e$ $\forall g\in G$. \quad \textbf{II}: $o(g) \ | \ |G|$ \quad \textbf{III}: If $|G|=p$ prime, $G$ is cyclic.}
 
-\textbf{Group Homomorphism}: $G,H$ be groups, $\phi:G\to H$ is a homomorphism if: $\forall g_1,g_2\in G$, $\phi(g_1*g_2)=\phi(g_1)*\phi(g_2)$
+\textbf{\small Complement-wise Operations}: {\scriptsize $\phi:V_1\times V_2\to V_1\oplus V_2$ by \textbf{I}:$(\vec{v_1},\vec{u_1})+(\vec{v_2},\vec{u_2}):=(\vec{v_1}+\vec{v_1},\vec{u_1}+\vec{u_2}), \ \lambda(\vec{v},\vec{u}):=(\lambda\vec{v},\lambda\vec{u})$ {\tiny (ps:$V_1,V_2$通过$\phi$定义的map所形成的vector space记作$V_1\oplus V_2$)}}
 
-\quad {\scriptsize \textbf{I}: $\phi(e_G)=e_H$; \quad \textbf{II}: $\phi(g^{-1})=\phi(g)^{-1}$ \quad \textbf{III}: Both $im \phi,Ker\phi$ are subgroups. \quad \textbf{IV}: If $K\subseteq G$ is a subgroup, then $\phi(K)\subseteq H$ is a subgroup. \quad \textbf{V}: $\phi$ is injective $\Leftrightarrow$ $Ker\phi=\{e_G\}$}
+\textbf{External Direct Sum}: {\small 一个"代数结构"(Vector Space), 定义为set是$V_1\oplus\cdots\oplus V_n:=V_1\times\cdots\times V_n$且有一组运算法则component-wise operations}
 
-\textbf{Normal $(H\lhd G)$}: {\small $H\subseteq G$ is normal if: $\forall g\in G$, $gH=Hg$} \qquad \quad {\scriptsize \textbf{I}: $Ker\phi\lhd G$ \quad \textbf{II}: $\phi$ is 1-1 $\Rightarrow$ $G\cong im\phi$}
+\textbf{Projections}: $pr_i:X_1\times\cdots\times X_n\to X_i$ by $(x_1,...,x_n)\mapsto x_i$ \quad \textbf{Canonical Injections}: $in_i:X_i\to X_1\times\cdots\times X_n$ by $x\mapsto(0,...,0,x,0,...,0)$
+
+
+\section{Summary}
+\vspace{-10pt}
+{\scriptsize
+\begin{longtable}{l@{\hskip 2pt}||l|l|l|l}
+    \textbf{\tiny Name}  & \textbf{Group $(G,*)$}                                                        & \textbf{Ring $(R,+,\ \cdot \ )$}                                                   & \textbf{Vector Space $(F-V)$}                                                                                              & \textbf{Module $(R-M)$}                                                                   \\
+    \hline
+    \hline
+    \textbf{\tiny Def}   & \textbf{Closure}: $g*h\in G$ \hfill{\tiny $\forall g,h,k\in G$}               & $(R,+)$ is \textit{abelian group} with $0_R$ \hfil{\tiny $\forall a,b,c\in R$}     & $(V,\dotplus)$ is \textit{abelian group} \hfill{\tiny $\forall \ \vec{v},\vec{w}\in V$}                                    & $(M,\dotplus)$ is \textit{abelian group} \hfill{\tiny $\forall \ m_1,m_2\in M$}           \\
+                         & \textbf{Associativity}: $(g*h)*k=g*(h*k)$                                     & $(R,\cdot)$ is \textbf{monoid} with $1_R$ {\tiny (monoid is closure)}              & {\tiny $\exists$ map $F\times V\to V:(\lambda,\vec{v})\to\lambda\vec{v}$} \hfill{\tiny $\forall \ \lambda,\mu\in F$}       & {\tiny $\exists$ map $R\times M\to M:(r,m)\to rm$} \hfill{\tiny $\forall \ r_1,r_2\in R$} \\
+                         & \textbf{Identity}: $\exists e\in G$, $e*g=g*e=g$                              & \qquad {\tiny i.e. \textbf{Associativity}: , $(a\cdot b)\cdot c=a\cdot(b\cdot c)$} & \textbf{I}: $\lambda(\vec{v}\dotplus\vec{w})=(\lambda\vec{v})\dotplus(\lambda\vec{w})$                                     & \textbf{I}: $r(m_1\dotplus m_2)=(\lambda m_1)\dotplus(\lambda m_2)$                       \\
+                         & \textbf{Inverse}: $\exists g^{-1}\in G$, $g*g^{-1}=g^{-1}*g=e$                & \qquad \quad \ \ {\tiny \textbf{Identity}: $1_R\cdot a=a\cdot 1_R=a$}              & \textbf{II}: $(\lambda+\mu)\vec{v}=(\lambda\vec{v})\dotplus(\mu\vec{v})$                                                   & \textbf{II}: $(r_1+r_2)m_1=(r_1m_1)\dotplus(r_1m_1)$                                      \\
+                         &                                                                               & \textbf{Distributive}: $a\cdot(b+c)=a\cdot b+a\cdot c$                             & \textbf{III}: $\lambda(\mu\vec{v})=(\lambda\mu)\vec{v}$                                                                    & \textbf{III}: $r_1(r_2m_1)=(r_1r_2)m_1$                                                   \\
+                         &                                                                               & \qquad \qquad \qquad $(b+c)\cdot a=b\cdot a+c\cdot a$                              & \textbf{IV}: $1_F\vec{v}=\vec{v}$                                                                                          & \textbf{IV}: $1_Rm_1=m_1$                                                                 \\
+    \hline
+    \textbf{\tiny Prop}  & \textbf{I}: $(gh)^{-1}=h^{-1}g^{-1}$                                          & \textbf{I}. $0\cdot a=a\cdot 0=0$ \hfill{\tiny $\forall a,b\in R$}                 & \textbf{I}. $0\vec{v}=0$ and $\vec{0}\lambda=\vec{0}$ \hfill{\tiny $\forall \vec{v}\in V,\lambda\in F$}                    & \textbf{I}. $0_Rm=0_M$ ; $r0_M=0_M$ \hfill{\tiny $\forall r\in R,m\in M$}                 \\
+                         &                                                                               & \textbf{II}. $(-a)\cdot b=a\cdot(-b)=-(a\cdot b)$                                  & \textbf{II}. $(-1)\vec{v}=-\vec{v}$                                                                                        & \textbf{II}. $(-r)m=r(-m)=-(rm)$                                                          \\
+                         &                                                                               & {\tiny \textbf{Commutative Ring}: add $\forall a,b\in R$, $ab=ba$}                 & \textbf{III}. $\lambda\vec{v}=\vec{0}$ $\Leftrightarrow$ $\lambda=0$ or $\vec{v}=\vec{0}$ $\star$                          &                                                                                           \\
+    \hline
+    \textbf{\tiny Remark}& $G,H$ groups $\Rightarrow$ $G\times H$ also.                                  & For ring $R$ [$1_R=0_R$ $\Leftrightarrow$ $R=\{0\}$]                               &                                                                                                                            &                                                                                           \\
+    \hline
+    \textbf{\tiny e.g.}  & Cyclic group; $GL_n$ ; $D_n$ ; $\mathbb{Z}$                                   & $Mat(n,F)$ ; $R[X]$ ; $\mathbb{Z}/m\mathbb{Z}$ ; $\mathbb{Z}$                      & $\mathbb{R}[x]_{<n}$ ; $Mat(n,F)$ ; $Hom(V,W)$                                                                             &                                                                                           \\
+    \hline
+    \hline
+    \textbf{\tiny Sub}     & \textbf{Subgroup ($H$)}: \hfill{\tiny $\forall h_1,h_2\in H$}               & \textbf{Subring ($R'$)}: \hfill{\tiny $\forall a,b\in R'$}                         & \textbf{Subspace ($U$)}: \hfill{\tiny $\forall \ \vec{v},\vec{u}\in U,\lambda,\mu\in F$}                                   & \textbf{Submodule ($M'$)}: \hfill{\tiny $\forall m_1,m_2\in M'$}                          \\
+    \textbf{\tiny objects} & \textbf{I}: $H\ne\emptyset$;                                                & \textbf{I}. $1_R\in R'$                                                            & \textbf{I}. $\vec{0}\in U$                                                                                                 & \textbf{I}. $0_M\in M'$ \hfill{\tiny $\forall r_1,r_2\in R$}                              \\
+                           & \textbf{II}: $h_1*h_2\in H$;                                                & \textbf{II}. $a-b\in R'$                                                           & \textbf{II}. $\vec{u}+\vec{v}\in U$ and $\lambda\vec{u}\in U$                                                              & \textbf{II}. $m_1-m_2\in M'$ and $r_1m_1\in M'$                                           \\
+                           & \textbf{III}: $h_1^{-1}\in H$.                                              & \textbf{III}. $ab\in R'$                                                           & \qquad \quad (or: $\lambda\vec{u}+\mu\vec{v}\in U$)                                                                        & \qquad \quad (or: $r_1m_1-r_2m_2\in M'$)                                                  \\
+    \hline
+    \textbf{\tiny Create}  & $H,K$ subgroups $\Rightarrow$ $H\cap K$ also.                               & $R,S$ subring $\Rightarrow$ $R\cap S$ also.                                        & $V,W$ subspaces $\Rightarrow$ $V\cap W,V+W$ also.                                                                          & $M,N$ submodules $\Rightarrow$ $M\cap N,M+N$ also.\\
+    \hline
+    \hline
+    \hline
+    \textbf{\tiny Generate}& \textbf{Generated Group $\langle T\rangle$}:                                & \textbf{Generated Ideal $_R\langle T\rangle$}: \hfill \textbf{\tiny $R$ is \textit{commutative ring}} & \textbf{Generated subspaces $\langle T\rangle$}:                                                                &         \\
+    \textbf{\tiny objects} & $\langle T\rangle:=\{g_1^{a_1}...g_k^{a_k}|k\in\N,g_i\in T,a_i\in\N\}$      & $_R\langle T\rangle:=\{\sum_{i=1}^{n}r_it_i:n\in\mathbb{N},r_i\in R,t_i\in T\}$                       & {\tiny $\langle T\rangle:=\{\alpha_1\vec{v_1}+\cdots+\alpha_n\vec{v_n}:\alpha_i\in F,\vec{v_i}\in T,r\in\N\}$}  &                    \\
+    \hline
+    \textbf{\tiny Special} & \textbf{Cyclic Group}: $\langle g\rangle=\{g^k|k\in\mathbb{Z}\}$            & \textbf{Principal Ideal}: $_R\langle a\rangle$                                                        & $\langle\emptyset\rangle:=\{\vec{0}\}$                                                                          &            \\
+    \hline
+    \textbf{\tiny Prop}    & \multicolumn{4}{c}{$\langle T\rangle$ is the smallest the \{generated things\} containing $T$. \qquad \qquad {\tiny ps: 默认 $^2T\subseteq R$ \quad $^4 T\subseteq M$}} \\
+    \hline
+    \hline
+    \hline
+    \textbf{\tiny Homo}    & \textbf{\tiny Homomorphism}:$\phi:G\to H$\hfill{\tiny $\forall g_1,g_2\in G$}& $f:R\to S$ hom: \hfill{\tiny $\forall a,b\in R$}                                  & $f:V\to W$ \hfill{\tiny $\forall \vec{v}_1,\vec{v}_2\in V, \lambda\in F$}                                                          &                              \\
+                           & \textbf{I}. $\phi(g_1*g_2)=\phi(g_1)*\phi(g_2)$                              & \textbf{I}. $f(a+b)=f(a) + f(b)$                                                  & \textbf{I}. $f(\vec{v}_1+\vec{v}_2)=f(\vec{v}_1)+f(\vec{v}_2)$                                                                     &                 \\
+                           &                                                                              & \textbf{II}.$f(ab)=f(a)f(b)$                                                      & \textbf{II}. $f(\lambda\vec{v}_1)=\lambda f(\vec{v}_1)$                                                                            &                    \\
+    \hline
+    \textbf{\tiny Prop A}  & \textbf{I}: $\phi(e_G)=e_H$                                                  & \textbf{I}. $f(0_R)=0_S$ \qquad {\tiny $f(1_R)=1_S$ NOT need}                     & \textbf{I}. $f(\vec{0})=\vec{0}$                                                                                                   &                            \\
+                           & \textbf{II}: $\phi(g^{-1})=\phi(g)^{-1}$                                     & \textbf{II}. $f(x-y)=f(x)-f(y)$                                                   & \textbf{II}. $f(\lambda\vec{v}+\mu\vec{u})=\lambda f(\vec{v})+\mu f(\vec{u})$                                                      &                       \\
+                           & \textbf{III}. $\phi$ is injective $\Leftrightarrow$ $Ker\phi=\{e_G\}$        & \textbf{III}. $f(a^n)=(f(a))^n$ \quad $f(mx)=mf(x)$                               & \textbf{III}. $f\circ g$ is linear map.                                                                                            &                               \\
+                           &                                                                              & \textbf{Iv}. $f$ is 1-1 $\Leftrightarrow$ $\ker f=\{0_R\}$                        & \textbf{IV}. $f$ is 1-1 iff $\ker f=\{\vec{0}\}$                                                                                   &                                      \\
+    \hline
+    \textbf{\tiny Ker/Im}  & \textbf{I}. $Im(\phi)$ subgroup \quad $Ker(\phi)\lhd G$ normal.              & \textbf{I}. $Im(f)$ subring. \quad $Ker(f)\trianglelefteq R$ ideal .              & \textbf{I}. $Ker(f)$ ; $Im(f)$ are subspaces.                                                                                      &                        \\
+                           & \textbf{II}. $K\subseteq G$ is subgroup \ $\Rightarrow$ \ $\phi(K)\subseteq H$ also. & \textbf{II}. $R'\subseteq R$ is subring \ $\Rightarrow$ \ $f(R')$ also.   & \textbf{II}. Rank-Nullity Theorem...                                                                                               &                       \\
+                           & \textbf{III}. $Ker(\phi)$ subgroup.                                          &                                                                                   &                                                                                                                                    &                    \\
+    \hline
+    \textbf{\tiny Remark}  & \multicolumn{4}{c}{\textbf{Isomorphism}: $=$ LM \& Bij. \ \ \textbf{Endomorphism(End)}: $=$ LM \& $V=W$. \ \ \textbf{Automorphism(Aut)}: $=$ LM \& $V=W$ \ \ \textbf{Monomorphism}: $=$ LM \& 1-1. \ \ \textbf{Epimorphism}: $=$ LM \& onto.}
+
+\end{longtable}
+}
+\vspace{-8pt}
+
+\textbf{Normal $(H\lhd G)$}: {\small $H\subseteq G$ is normal if: $\forall g\in G$, $gH=Hg$} 
+
+\qquad \textbf{Property}: \textbf{I}: $Ker\phi\lhd G$ \quad \textbf{II}: $\phi$ is 1-1 $\Rightarrow$ $G\cong im\phi$
+
+\textbf{Ideal $(I\trianglelefteq R)$}: A subset $I\subseteq R$ (ring) is an ideal if: \quad \textbf{I}. $I\ne\emptyset$ \quad \textbf{II}. $\forall a,b\in I$, $a-b\in I$ \quad \textbf{III}. $\forall i\in I,\forall r\in R$, $ri,ir\in I$
+
+\qquad \textbf{Property}: If $I,J$ are \textit{ideals} of $R$. Then \ \ $I+J$ \ ; \ $I\cap J$ \ \ are also ideals.
 
 \textbf{Field $(F)$}: {\small A set $F$ is a field with two operators: \quad {\scriptsize(addition)}$+:F\times F\to F;(\lambda,\mu)\to\lambda+\mu$ \quad {\scriptsize(multiplication)}$\cdot:F\times F\to F;(\lambda,\mu)\to\lambda\mu$ \ \ if:}
 
 \quad \quad \quad \quad {\small $(F,+)$ and $(F\setminus\{0_F\}, \ \cdot \ )$ are abelian groups with identity $0_F,1_F$. \quad and \quad $\lambda(\mu+\nu)=\lambda\mu+\lambda\nu$ \quad \quad $e.g. Fields:\mathbb{R},\mathbb{C},\mathbb{Q},\mathbb{Z}/p\mathbb{Z}=\mathbb{F}_p$}
 
-\textbf{$F$-Vector Space (V)}: {\small A set $V$ over a field $F$ is a vector space if: \quad $V$ is an abelian group $V=(V,\dotplus)$ and $\forall \ \vec{v},\vec{w}\in V$ \ \ $\lambda,\mu\in F$} \quad e.g. $Poly:\mathbb{R}[x]_{<n}$
-
-\quad \quad \quad \quad {\small $\exists$ map $F\times V\to V:(\lambda,\vec{v})\to\lambda\vec{v}$ satisfies: \textbf{I}: $\lambda(\vec{v}\dotplus\vec{w})=(\lambda\vec{v})\dotplus(\lambda\vec{w})$ \quad \textbf{II}: $(\lambda+\mu)\vec{v}=(\lambda\vec{v})\dotplus(\mu\vec{v})$ \textbf{III}: $\lambda(\mu\vec{v})=(\lambda\mu)\vec{v}$ \quad \textbf{IV}: $1_F\vec{v}=\vec{v}$}
-
-\textbf{Vector Subspaces Criterion}: {\small $U\subseteq V$ is a subspace of $V$ if: \quad \textbf{I}. $\vec{0}\in U$ \quad \textbf{II}. $\forall \vec{u},\vec{v}\in U$, $\forall \lambda\in F$: $\vec{u}+\vec{v}\in U$ and $\lambda\vec{u}\in U$ \quad (or: $\lambda\vec{u}+\mu\vec{v}\in U$)}
-
-$\cdot$ \textbf{property}: {\small If $U,W$ are subspaces of $V$, then $U\cap W$ and $U + W$ are also subspaces of $V$.} \quad {\small ps: $U+W:=\{\vec{u}+\vec{w}:\vec{u}\in U,\vec{w}\in W\}$}
-
-\textbf{\small Complement-wise Operations}: {\scriptsize $\phi:V_1\times V_2\to V_1\oplus V_2$ by \textbf{I}:$(\vec{v_1},\vec{u_1})+(\vec{v_2},\vec{u_2}):=(\vec{v_1}+\vec{v_1},\vec{u_1}+\vec{u_2}), \ \lambda(\vec{v},\vec{u}):=(\lambda\vec{v},\lambda\vec{u})$ {\tiny (ps:$V_1,V_2$通过$\phi$定义的map所形成的vector space记作$V_1\oplus V_2$)}}
-
-\textbf{Projections}: $pr_i:X_1\times\cdots\times X_n\to X_i$ by $(x_1,...,x_n)\mapsto x_i$ \quad \textbf{Canonical Injections}: $in_i:X_i\to X_1\times\cdots\times X_n$ by $x\mapsto(0,...,0,x,0,...,0)$
+\qquad \qquad  \textbf{Field}: For a ring $R$: Commutative ring + $R$ has multiplicative inverse = Field.
 
 
 \section{Vector Spaces/Subspaces | Generating Set | Linear Independent | Basis} % Vector Spaces | Subspaces | Generating Set | Linear Independent
-
-\textbf{Generating (subspaces) $\langle T\rangle$}: $\langle T\rangle:=\{\alpha_1\vec{v_1}+\cdots+\alpha_n\vec{v_n}:\alpha_i\in F,\vec{v_i}\in T,r\in\mathbb{N}\}$ \quad $\langle\emptyset\rangle:=\{\vec{0}\}$ \quad  If $T$ is subspace $\Rightarrow$ $\langle T\rangle=T$.
-
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Proposition}: $\langle T\rangle$ is the smallest subspace containing $T$. (i.e. $\langle T \rangle$ is the intersection of all subspaces containing $T$)
-    \item \textbf{Generating Set}: $V$ is vector space, $T\subseteq V$. $T$ is generating set of $V$ if $\langle T\rangle=V$. \quad \textbf{Finitely Generated}: $\exists$ finite set $T$, $\langle T\rangle=V$
-    \item \textbf{External Direct Sum}: {\small 一个"代数结构", 定义为set是$V_1\oplus\cdots\oplus V_n:=V_1\times\cdots\times V_n$且有一组运算法则component-wise operations}
-    \item \textbf{Connect to Matrix}: {\footnotesize Let $E=\{\vec{v_1},...,\vec{v_n}\}$, $E$ is GS of $V$. Let $A=[\vec{v_1},...,\vec{v_n}]$ $\Rightarrow$ $\forall\vec{b}\in V$, $\exists \vec{x}=(x_1,...,x_n)^T$ s.t. $A\vec{x}=\vec{b}$ (i.e. linear map:$\phi:\vec{x}\mapsto A\vec{x}$ is surjective)}
-\end{enumerate}
 
 \textbf{Linearly Independent}: $L=\{\vec{v_1},\vec{v_2},...,\vec{v_r}\}$ is linearly independent if: \ $\forall c_1,...,c_r\in F$, $c_1\vec{v_1}+\cdots+c_r\vec{v_r}=\vec{0}$ \ $\Rightarrow$ \ $c_1=\cdots =c_r=0$.
 
@@ -133,13 +180,7 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
 
 \subsection{Linear Mapping | Rank-Nullity} % Linear Mapping | Rank-Nullity
 
-\textbf{Linear Mapping/Homomorphism(Hom)}: {\small $f:V\to W$ is \textit{linear map} if: $\forall \vec{v}_1,\vec{v}_2\in V,\forall \lambda\in F$. $f(\vec{v}_1+\vec{v}_2)=f(\vec{v}_1)+f(\vec{v}_2)$ and $f(\lambda\vec{v}_1)=\lambda f(\vec{v}_1)$}
-
-$\cdot$ {\scriptsize \textbf{Isomorphism}: $=$ LM \& Bij. \quad \textbf{Endomorphism(End)}: $=$ LM \& $V=W$. \quad \textbf{Automorphism(Aut)}: $=$ LM \& $V=W$ \quad \textbf{Monomorphism}: $=$ LM \& 1-1. \quad \textbf{Epimorphism}: $=$ LM \& onto.}
-
-$\cdot$ {\scriptsize \textbf{Kernel}: $\ker f:=\{\vec{v}\in V:f(\vec{v})=\vec{0}\}${\tiny (It's subspace)} \ \ \textbf{Image}: $Im f:=\{f(\vec{v}):\vec{v}\in V\}${\tiny (It's subspace)} \ \ \textbf{Rank}$:=\dim(Im f)$ \ \ \textbf{Nullity}$:=\dim(\ker f)$ \ \ \textbf{Fixed Point $X^f$}: $X^f:=\{x\in X:f(x)=x\}$}
-
-\textbf{Property of Linear Map}: Let $f,g\in Hom$: \quad \textbf{a}.$f(\vec{0})=\vec{0}$ \quad \textbf{b}. $f$ is 1-1 iff $\ker f=\{\vec{0}\}$ \quad \textbf{c}. $f\circ g$ is linear map. \ \
+\textbf{Property of Linear Map}: Let $f,g\in Hom$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Determined}: $f$ is determined by $f(\vec{b_i}),\vec{b_i}\in \mathcal{B}_{basis}$ {\footnotesize (\star \ \textbf{i.e.} $f(\sum_{i}\lambda_i\vec{v_i}):=\sum_{i}\lambda_if(\vec{v_i})$)}
@@ -200,19 +241,11 @@ $\cdot$ Every linear map $f:V\to W$ can be representing by $_{\mathcal{B}}[f]_{\
 
 \subsection{Rings | Polynomial Rings} % Rings | Polynomial Rings
 
-\textbf{Ring $(R,+,\ \cdot\ )$}: A set $R$ with two operators $+,\cdot$ is a ring if: \qquad \qquad \qquad {\tiny e.g. $Mat(n,F);R[X];\mathbb{Z}/m\mathbb{Z};\mathbb{Z}$}
-
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item $(R,+)$ is an \textit{abelian group} with identity $0_R$. \hspace{50pt} \textbf{Commutative Ring}: add: $\forall a,b\in R$, $ab=ba$.
-    \item $(R,\cdot)$ is a \textbf{monoid} with identity $1_R$. \ \ i.e. \ \ \textbf{Associativity}: $\forall a,b,c\in R$, $(a\cdot b)\cdot c=a\cdot(b\cdot c)$. \quad \textbf{Identity}: $\forall a\in R$, $1_R\cdot a=a\cdot 1_R=a$.
-    \item \textbf{Distributive}: $\forall a,b,c\in R$: $a\cdot(b+c)=a\cdot b+a\cdot c$ and $(b+c)\cdot a=b\cdot a+c\cdot a$. \qquad \qquad {\footnotesize ps: 默认monoid是closure的}
-\end{enumerate}
-
-$\cdot$ If $R$ is ring $\Rightarrow$ [$1_R=0_R$ $\Leftrightarrow$ $R=\{0\}$] {\scriptsize i.e. For any non-zero ring, $1_R\ne 0_R$} \qquad \qquad \textbf{Field}: Commutative ring + multiplicative inverse = Field.
-
-\textbf{Properties of Ring}: $\forall a,b\in R$. \qquad \textbf{I}.$0\cdot a=a\cdot 0=0$ \qquad \textbf{II}. $(-a)\cdot b=a\cdot(-b)=-(a\cdot b)$ \qquad \textbf{III}.$(-a)\cdot(-b)=a\cdot b$
+\textbf{2nd Def of Ring Homomorphism}: {\small $f$ is ring homomorphism if: \quad 1. $f:(R,+)\to (S,+)$ is group homomorphism \ \ and \ \ 2. $f(xy)=f(x)f(y)$.}
 
 \textbf{Unit}: $a\in R$ is unit if it's \textit{Invertible}. \quad i.e. $\exists a^{-1}\in R$ s.t. $aa^{-1}=a^{-1} a=1_R$ \qquad \textbf{Group of Unit} $(R^{\times},\ \cdot \ ):=\{a\in R:a$ is unit$\}$
+
+$\cdot$ \textbf{Lemma}: If $^1f:R\to S$ homo, $^2f(1_R)=1_S$, $^3x$ is \textit{unit} of $R$. \ \ $\Rightarrow$ \ \ $^1f(x)$ is \textit{unit} of $S$. \quad $^2f|_{R^\times}:R^\times\to S^\times$ is \textit{group homomorphism}.
 
 \textbf{Zero-divisors}: $a\in R$ is \textit{zero-divisor} if $\exists b\in R,b\ne0$ s.t. $ab=0$ or $ba=0$ \qquad \textit{Field has no zero-divisors.}  \quad {\scriptsize $\cdot$ e.g. $\mathbb{Z}^{\times}=\{-1,1\}$ \ ; \ $1_R$ is a unit.}
 
@@ -235,30 +268,6 @@ $\cdot$ \textit{Field is Integral Domain} \qquad \textbf{Every finite integral d
 \textbf{Algebraically Closed}: $R=F$ field is \textit{algebraically closed} if every non-constant polynomial has a root in $F$. \qquad \qquad e.g. $\mathbb{C}$
 
 $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rightarrow$ $P$ decomposes into: $P(X)=a(X-\lambda_1)\cdots(X-\lambda_n),a\in F^\times$ {\scriptsize i.e. $a\ne0$}
-
-
-\subsection{Homomorphism | Ideals | Subrings} % Homomorphism | Ideals | Subrings
-
-\textbf{Ideal $(I\trianglelefteq R)$}: A subset $I\subseteq R$ (ring) is an ideal if: \quad \textbf{I}. $I\ne\emptyset$ \quad \textbf{II}. $\forall a,b\in I$, $a-b\in I$ \quad \textbf{III}. $\forall i\in I,\forall r\in R$, $ri,ir\in I$
-
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Generated Ideal $_R\langle T\rangle$}: $T\subseteq R$ (ring), where $R$ is \textit{commutative ring}. We define \ $_R\langle T\rangle:=\{\sum_{i=1}^{n}r_it_i:n\in\mathbb{N},r_i\in R,t_i\in T\}$ \\
-    $\cdot$ \textbf{Lemma}: $_R\langle T\rangle$ is the smallest ideal containing $T$. \quad \textbf{Principal Ideal}: $_R\langle a\rangle$ \quad \textbf{Proper Ideal}: $I\ne R$ \qquad {\scriptsize ps: $R$ 一定是commutative ring}
-    \item If $I,J$ are \textit{ideals} of $R$. Then \ \ $I+J$ \ ; \ $I\cap J$ \ \ are also ideals.
-\end{enumerate}
-
-\textbf{Subring Test}: $R'\subseteq R$ (ring) is a subring if: \ \ \textbf{I}. $1_R\in R'$ \quad \textbf{II}. $\forall a,b\in R'$, $a-b\in R'$ \quad \textbf{III}. $\forall a,b\in R'$, $ab\in R'$
-
-$\cdot$ If $f:R\to S$ is \textit{ring homomorphism}, and $R'$ is subring of $R$. \ $\Rightarrow$ \ $f(R')$ is subring of $S$.
-
-\textbf{Ring Homomorphism}: {\small $R,S$ are rings, $f:R\to S$ is \textit{ring homomorphism} if: \textbf{I}. $f(a+b)=f(a)+f(b)$ \ \textbf{II}. $f(ab)=f(a)f(b)$ \ {\scriptsize $f(1_R)=1_S$ is NOT need}}
-
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Second Def}: $f$ is ring homomorphism if: $f:(R,+)\to (S,+)$ is group homomorphism \ \ and \ \ $f(xy)=f(x)f(y)$.
-    \item \textbf{I}. $f(0_R)=0_S$ \quad \textbf{II}. $f(-a)=-f(a)$ \quad \textbf{III}. $f(a^n)=(f(a))^n$ \quad \textbf{IV}. $f(x-y)=f(x)-f(y)$ \quad \textbf{V}. $f(mx)=mf(x)$
-    \item {\small \textbf{Kernel}: $\ker f:=\{a\in R:f(a)=0_S\}$ is an \textit{ideal} \qquad \textbf{Image}: $Im f:=\{f(a):a\in R\}$ is a \textit{subring}. \qquad \textbf{1-1}: $f$ is 1-1 $\Leftrightarrow$ $\ker f=\{0_R\}$}
-    \item \textbf{Unit}: If $^1f(1_R)=1_S$, $^2x$ is \textit{unit} of $R$. \ \ $\Rightarrow$ \ \ $^1f(x)$ is \textit{unit} of $S$. \quad $^2f|_{R^\times}:R^\times\to S^\times$ is \textit{group homomorphism}.
-\end{enumerate}
 
 
 \subsection{Equivalence Relation}
