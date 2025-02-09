@@ -3,9 +3,11 @@
 \usepackage{graphicx} % Required for inserting images
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{ctex}
 \usepackage{enumitem}
 \usepackage{longtable}
+\usepackage{xcolor}
 \usepackage{makecell} % 换行
 
 % 使用分栏宏包
@@ -32,8 +34,8 @@
 
 % 设置 section/subsection 之间的行间距
 \usepackage{titlesec}
-\titlespacing*{\section}{0pt}{0pt}{0pt}
-\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\titlespacing*{\section}{0pt}{-3pt}{-3pt}
+\titlespacing*{\subsection}{0pt}{-3pt}{-3pt}
 
 % 调整标题上下间距
 \usepackage{titling}
@@ -60,7 +62,7 @@
 \setlength{\belowdisplayskip}{0pt}
 
 
-\section{General Linear Programming Problem} % General Linear Programming Problem
+\section{General LP} % General Linear Programming Problem
 
 \textbf{General LP Problem}: {\small \textbf{Decision Variables}: $x_i$ \quad \textbf{parameters}: $a_{ij},b_i,c_i$ \quad \textbf{Objective Function}: $f$ \quad \textbf{Constraints}: {\small subject to 后边的部分}}
 
@@ -177,6 +179,8 @@ $\cdot$ \textbf{Theorem}: {\small If LP has a unique optimal solution is a verte
 
 \section{Simplex Method} % Simplex Method
 
+\subsection{Simplex Algorithm}
+
 \textbf{Solve LP Problem}: Assume $f=\overline{\mathbf{c}}^T\mathbf{x}$ with $\overline{A}\mathbf{x}=\mathbf{b}$ and $\mathbf{x}\geq0$.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -193,21 +197,102 @@ $\cdot$ \textbf{Theorem}: {\small If LP has a unique optimal solution is a verte
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item {\small \textbf{Initial Basic Feasible Solution}: Try $\mathcal{B}=\{n+1,...,n+m\}$ and $\mathcal{N}=\{1,...,n\}$ \ \ $\Rightarrow$ \ \ $B=I,N=A$ , $\mathbf{x}_B=\widehat{\mathbf{b}}=\mathbf{b}$, $\mathbf{x}_N=\mathbf{0}$, $\mathbf{c}_B=\mathbf{0}$, $\mathbf{c}_N=\mathbf{c}$}
-    \item If $\mathbf{b}\geq0$. $\Rightarrow$ Basis is feasible + cont. \qquad Else: Go to ``Cases If $\mathbf{b}\ngeq0$``
-    \item\label{start_simplex} If $\widehat{\mathbf{c}}_N\leq0. \Rightarrow$ Optimal Solution \qquad Else: cont.
+    \item If $\mathbf{b}\geq0$. $\Rightarrow$ Basis is feasible + cont. \qquad Else: Basis $B$ is not feasible. \quad Go to ``Cases If $\mathbf{b}\ngeq0$``
+    \item If $\widehat{\mathbf{c}}_N\leq0. \Rightarrow$ Optimal Solution \qquad Else: cont.
     \item Let $q'\in\mathcal{N}$ {\small 对应$\widehat{\mathbf{c}}_N$中最大positive分量的index} \quad {\small 同理,对应的最大正分量值为$\widehat{c_q}$} \quad {\small 对应的variable为$x_{q'}$} \quad {\small 对应$N$中的[$q'$]列为$\mathbf{a}_q$}
     \item Let $\widehat{\mathbf{a}_q}=B^{-1}\mathbf{a_q}$. \qquad If $\widehat{\mathbf{a}_q}\leq0$ $\Rightarrow$ LP is unbounded. \qquad Else: LP is bounded + cont.
     \item Let $p'\in\mathcal{B}$ \ be the index corresponding to $p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$ {\scriptsize $p$是对应的index,not value} \qquad \quad {\small 用$\overline{\alpha}=\frac{\widehat{b_p}}{\widehat{a}_{pq}}$代表值}\\
     $\widehat{b_i},\widehat{a}_{iq}$ {\small 代表$\widehat{\mathbf{b}}$的第$i$个分量, $\widehat{\mathbf{a}_q}$的第$i$个分量} \\
     {\small $p'$代表能使$\frac{\widehat{b_i}}{\widehat{a}_{iq}}$的值最小的index,前提条件是$\widehat{a}_{iq}>0$} \qquad \qquad {对应的variable为$x_{p'}$}
-    \item Exchange $p'$ and $q'$ between $\mathcal{B}$ and $\mathcal{N}$ \ \ $\Rightarrow$ \ \ {\small values of new $x_{B}=\widehat{\mathbf{b}}-\overline{\alpha} \ \widehat{\mathbf{a}}_q$} \qquad Update $\mathcal{B},\mathcal{N},B,N,\widehat{\mathbf{b}},...$
-    \item Go to~\ref{start_simplex}.
+    \item Exchange $p'$ and $q'$ between $\mathcal{B}$ and $\mathcal{N}$ \ \ $\Rightarrow$ \ \ {\small values of new $x_{B}=\widehat{\mathbf{b}}-\overline{\alpha} \ \widehat{\mathbf{a}}_q$} \qquad Update $\mathcal{B},\mathcal{N},B,N,\widehat{\mathbf{b}},...$ \quad {\scriptsize ps: New $B := B + (a_q - B e_p) e_p^T$}
+    \item Go to 3.
 \end{enumerate}
 
 
-\textbf{Case: If $\mathbf{b}\ngeq0$}:
+\textbf{Case: If $\mathbf{b}\ngeq0$}: \textbf{Phase I Problem}
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item 
+    \item Subtract \textbf{artificial variables} $x_{n+m+1},...,x_{n+m+m}\geq0$ and change objective function $f$ to: \\    
+    {\centering \includegraphics[width=0.6\textwidth]{formula.png}}
+    \item Let {\small Basic Variables: $\mathbf{x}_{B}=$ 第i个元素是: $x_{n+i}=b_i$ (if $b_i\geq0$) \quad 是:$x_{n+m+i}=-b_i$ (if $b_i<0$) $\star$} \\
+    {\small Let Nonbasic Variables: $\mathbf{x}_{N}=$ 第i个元素是: $x_{n+m+i}=0$ (if $b_i\geq0$)} \quad  是:$x_{n+i}=b_i$ (if $b_i<0$)\\
+    {\small Let Basic Matrix $B=$ 第i列是: $\mathbf{e}_i$ (if $b_i\geq0$) 否则: $-\mathbf{e}_i$ 其他列是$N$的对应列 \qquad \quad Let $\widehat{\mathbf{b}}=B^{-1}\mathbf{b}=|\mathbf{b}|\geq0$} \\
+    {\small Let $\mathbf{c}_B=$ $x_B$对应的$f$中的系数  \qquad $\mathbf{c}_N=$同理 \qquad $\widehat{\mathbf{c}}_N=\mathbf{c}_N-N^TB^{-T}\mathbf{c}_B$}
+    \item \textbf{Size of Infeasibility}: is $\sum^m_{i=1}x_{n+m+i}$ \qquad $f=-\sum^m_{i=1}x_{n+m+i}\leq0$
+    \item If $f=0$, $\mathbf{x}$ is a BFS. $\Rightarrow$ Go to \textbf{Phase II Problem}{\small (恢复到之前的$f$并删除artificial variables)} \\
+    Else: Go to \textbf{Simplex Algorithm} {\small 得到辅助问题Phase I的最优解.} \quad \textbf{If $f<0$}: LP is infeasible. \quad \textbf{If $f=0$}: LP is feasible. $\Rightarrow$ \textbf{Phase II}
 \end{enumerate}
+
+\textbf{Case: If $\mathbf{b}\ngeq0$}: \textbf{Phase II Problem}
+
+
+\subsection{More thing about Simplex Algorithm}
+
+\textbf{Degeneracy}: If $\widehat{\mathbf{b}}$ has any zero component, then $\mathbf{x}$ is a \textbf{degenerate vertex}. \qquad {\scriptsize 如果$\widehat{\mathbf{b}}$的第$p$个分量$\widehat{\mathbf{b}}_p=0$,那么单纯形法可能会陷入循环.}
+
+\quad \textbf{Theorem}: If no degenerate situation, then Simplex Algorithm will terminate in a finite number of steps.
+
+\textbf{Examples}: 1.The worst case of Simplex Algorithm. \ \ 2. Cyclic case of Simplex Algorithm.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Klee-Minty Problem}: max $f=\sum^n_{j=1}10^{j-1}x_j$ \quad ; \quad s.t. $x_i+2\sum^n_{j=i+1}10^{j-i}x_j\leq100^{n-i}$ for $i=1,...,n$ \quad ; \quad $x_i\geq0$ \\
+    has $2^n$ vertices. \quad \textbf{Worst Case}: $2^n-1$ iterations.
+    \item \textbf{Hall-McKinnon Problem}: max $f=x_1-5.5x_2+0.75x_3-5.75x_4$ \quad ; \quad {\scriptsize s.t.} {\tiny $2.5x-19.5x_2-3.5x_3+19.5x_4+x_5=0$ ; $0.5x_1-3.5x_2-0.5x_3+3.5x_4+x_6=0$ ; $x_i\geq0$}
+\end{enumerate}
+
+
+\subsection{Sparsity LP Problem}
+
+\textbf{Implementation}: 计算/编程中的计算化简 \qquad Consider: $\widehat{\mathbf{b}}=B^{-1}\mathbf{b}$ \ \ $\widehat{\mathbf{c}}_N=\mathbf{c}_N-N^TB^{-T}\mathbf{c}_B$ \ \ $\widehat{\mathbf{a}}_q=B^{-1}\mathbf{a}_q$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item Solve: \( B \hat{b} = b \) \quad to get: \(\hat{b} = B^{-1}b\)
+    \item Solve: \( B^T \pi = c_B \) \quad to get: \(\pi = B^{-T}c_B\)
+    \item Solve: \(\hat{c}_N = c_N - N^T\pi\) \quad to get: \(\hat{c}_N = c_N - N^TB^{-T}c_B\)
+    \item Solve: \( B^T \hat{a}_q = a_q \) \quad to get: \(\hat{a}_q = B^{-T}a_q\)
+    \item Matrix $B$ is \textbf{sparse} and \textbf{invertible}. And in Simplex Algorithm, the next matrix $B$ obtained by $B := B + (a_q - B e_p) e_p^T$
+\end{enumerate}
+
+\textbf{Sparse LP Problem}: For LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}=\mathbf{b}$ \quad $\mathbf{x}\geq0$
+
+\qquad It is \textbf{sparse} if the matrix $A$ is sparse. (i.e. Most of the elements of $A$ are zero)
+
+\textbf{Find Inverse of $B$}: Use \textbf{Guassian Elimination} to decomposition $B$ into $LU$ where $L$ is lower triangular and $U$ is upper triangular.
+
+\quad Then we can solve $B\mathbf{x}=\mathbf{b}$ by solving $^1$ $L\mathbf{y}=\mathbf{b}$ and $^2$ $U\mathbf{x}=\mathbf{y}$
+
+\vspace{-5pt}
+{\scriptsize 
+\[
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} & a_{14} \\
+a_{21} & a_{22} & a_{23} & a_{24} \\
+a_{31} & a_{32} & a_{33} & a_{34} \\
+a_{41} & a_{42} & a_{43} & a_{44} 
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+l_{21} & 1 & 0 & 0 \\
+l_{31} & l_{32} & 1 & 0 \\
+l_{41} & l_{42} & l_{43} & 1
+\end{bmatrix}
+\begin{bmatrix}
+u_{11} & u_{12} & u_{13} & u_{14} \\
+0 & u_{22} & u_{23} & u_{24} \\
+0 & 0 & u_{33} & u_{34} \\
+0 & 0 & 0 & u_{44}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\textcolor{red}{u_{11}} & \textcolor{red}{u_{12}} & \textcolor{red}{u_{13}} & \textcolor{red}{u_{14}} \\
+\textcolor{orange}{l_{21} u_{11}} & \textcolor{olive}{l_{21} u_{12} + u_{22}} & \textcolor{olive}{l_{21} u_{13} + u_{23}} & \textcolor{olive}{l_{21} u_{14} + u_{24}} \\
+\textcolor{orange}{l_{31} u_{11}} & \textcolor{green}{l_{31} u_{12} + l_{32} u_{22}} & \textcolor{blue}{l_{31} u_{13} + l_{32} u_{23} + u_{33}} & \textcolor{blue}{l_{31} u_{14} + l_{32} u_{24} + u_{34}} \\
+\textcolor{orange}{l_{41} u_{11}} & \textcolor{green}{l_{41} u_{12} + l_{42} u_{22}} & \textcolor{black}{l_{41} u_{13} + l_{42} u_{23} + l_{43} u_{33}} & \textcolor{purple}{l_{41} u_{14} + l_{42} u_{24} + l_{43} u_{34} + u_{44}}
+\end{bmatrix}
+\]
+}
+\vspace{-5pt}
+
+\quad By Solving $\textcolor{red}{\blacksquare} \to \textcolor{orange}{\blacksquare} \to \textcolor{olive}{\blacksquare} \to \textcolor{green}{\blacksquare} \to \textcolor{blue}{\blacksquare} \to \textcolor{black}{\blacksquare} \to \textcolor{purple}{\blacksquare}  $
 
 \end{document}
