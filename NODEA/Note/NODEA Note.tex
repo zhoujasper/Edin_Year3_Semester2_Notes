@@ -10,6 +10,7 @@
 
 % 使用分栏宏包
 \usepackage{multicol} 
+\usepackage{multirow}
 \setlength{\columnseprule}{0.4pt} % 分割线
 
 % 设置字体
@@ -60,7 +61,7 @@
 
 \section{Basic Knowledge} % Basic Knowledge
 
-\textbf{Def of ODE \& ODEs}: {\scriptsize (1st order)} ODE: $\frac{dy}{dt}=f(t,y)$ \quad \& \quad ODEs: $\frac{d\mathbf{y}}{dt}=\mathbf{f}(t,\mathbf{y})$ , {\footnotesize $\mathbf{y}=(y_1,...,y_d)^T,\mathbf{f}(t,\mathbf{y})=(f_1(t,\mathbf{y}),...,f_d(t,\mathbf{y}))^T$}
+\textbf{Def of ODE \& ODEs}: { (1st order)} ODE: $\frac{dy}{dt}=f(t,y)$ \quad \& \quad ODEs: $\frac{d\mathbf{y}}{dt}=\mathbf{f}(t,\mathbf{y})$ , {\footnotesize $\mathbf{y}=(y_1,...,y_d)^T,\mathbf{f}(t,\mathbf{y})=(f_1(t,\mathbf{y}),...,f_d(t,\mathbf{y}))^T$}
 
 \textbf{Autonomous}: $\frac{d\mathbf{y}}{dt}=\mathbf{f}(\mathbf{y})$ \ $\Rightarrow$ \ autonomous ODE(s). \quad \quad \quad || $\Downarrow$ New Autonomous ODEs: $\frac{d\mathbf{y}}{ds}=\mathbf{f}(y_{d+1},\mathbf{y})$ and $\frac{dy_{d+1}}{ds}=1$
 
@@ -89,7 +90,7 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
     \hline
     $[a,b]$ & Approximate function for $t\in[a,b]$ & {\footnotesize $t_0=a \ | \ t_N=b$} & Assume that $t_0=a,t_N=b$ \\
     \hline
-    $N$ & number of \textbf{timesteps} \ \ {\tiny (i.e. Break up interval $[a,b]$ into $N$ equal-length sub-intervals)} & $h$ & \textbf{stepsize} \ \ {\scriptsize ($h=\frac{b-a}{N}$)} \\
+    $N$ & number of \textbf{timesteps} \ \ {\tiny (i.e. Break up interval $[a,b]$ into $N$ equal-length sub-intervals)} & $h$ & \textbf{stepsize} \ \ { ($h=\frac{b-a}{N}$)} \\
     \hline
     $t_i$ & Define $N+1$ points: $t_0,t_1,...,t_N$ & $t_m$ & $t_m=a+h\cdot m=t_0+h\cdot m$ \\
     \hline
@@ -106,13 +107,13 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
 \hspace{20pt} $\Rightarrow$
 \textbf{for} $n=0,1,2,...,N-1$:
 \quad $y_{n+1}=y_n+hf(t_0+nh,y_n)=y_n+hf(t_n,y_n)$ \quad 
-\textbf{end} \hspace{100pt} {\scriptsize (ps: $\Downarrow$ Can get $|y''|<M$)}
+\textbf{end} \hspace{100pt} { (ps: $\Downarrow$ Can get $|y''|<M$)}
 
 \textbf{Boundedness Theorem}: {\small For $\frac{dy}{dt}=f(t,y),y(a)=y_0$ and suppose there exists a unique, twice differentiable, solution $y(t)$ on $[a,b]$.}
 
 \quad \quad \quad {\small Suppose: $y$ is continuous and $|\frac{\partial f}{\partial y}|\leq L$. \ $\Rightarrow$ \ the solution $y_n$ given Euler's method satisfies: $e_n=|y_n-y(t_n)|\leq Dh,D=e^{(b-a)L}\frac{M}{2L}$}
 
-$\cdot$ \textbf{Lemma}: If $v_{n+1}\leq Av_n+B$, then $v_n\leq A^nv_0+\frac{A^n-1}{A-1}B$ \quad If $v_{n}=e_n:=y_n-y(t_n)$, then $A=1+hL,B=h^2M/2$ {\scriptsize (suppose $|y''|<M$)}
+$\cdot$ \textbf{Lemma}: If $v_{n+1}\leq Av_n+B$, then $v_n\leq A^nv_0+\frac{A^n-1}{A-1}B$ \quad If $v_{n}=e_n:=y_n-y(t_n)$, then $A=1+hL,B=h^2M/2$ { (suppose $|y''|<M$)}
 
 \textbf{Order Notation ($\mathcal{O}$)}: we write $z(h)=\mathcal{O}(h^p)$ if $\exists C,h_0>0$ s.t. $|z|\leq Ch^p,0<h<h_0$
 
@@ -127,7 +128,7 @@ $\cdot$ $\Phi_{t,h}(y)=y+hf(t,y)+\frac{1}{2}h^2[f_t(t,y)+f_y(t,y)f(t,y)]+\frac{1
 $\cdot$ ps: {\footnotesize Taylor Series: $y(t_0+h)=y(t_0)+hy'(t_0)+\frac{h^2}{2}y''(t_0)+\cdots+\frac{h^{n-1}}{(n-1)!}y^{(n-1)}(t_0)+\frac{h^n}{n!}y^{(n)}(t^*),t^*\in[t,t+h]$ \quad \quad  ps: $y'=f,y''=f_t+f_yf$}
 
 
-\section{Convergence of One-Step Methods {\scriptsize consider for autonomous $y'=f(y)$}} % Convergence of One-Step Methods
+\section{Convergence of One-Step Methods { consider for autonomous $y'=f(y)$}} % Convergence of One-Step Methods
 
 \subsection{Convergence | Consistent | Stable} % Convergence | Consistent | Stable
 \textbf{Global Error}: global error after $n$ steps: $e_n:=y_n-y(t_n)$ \quad \textbf{Local Error}: {\small For \textit{one-step} method is: $le(y,h)=\Psi_h(y)-\Phi_h(y)$}
@@ -151,8 +152,8 @@ $\cdot$ ps: {\footnotesize Taylor Series: $y(t_0+h)=y(t_0)+hy'(t_0)+\frac{h^2}{2
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Lagrange Interpolating Polynomials}: $\ell_{i}(x)=\prod_{j=1,j\ne i}^{s}\frac{x-c_j}{c_i-c_j}\in\mathbb{P}_{s-1}$ \quad where $c_i\in F\in\{\mathbb{Q},\mathbb{R},\mathbb{C}\}$ \\
     $\Rightarrow$ \textbf{Polynomial Interpolation}: $\forall p(x)\in \mathbb{P}_s$ with $p(c_i)=g_i\in F$ \ \ $\Rightarrow$ \ \ $\exists!$ $p(x)=\sum_{i=1}^{s}g_i\ell_i(x)$ {\tiny (Can be proved by Honour Algebra)}
-    \item \textbf{Quadrature Rule}: {\scriptsize If $g(t)\in\mathbb{P}_{p-1}\Rightarrow$ Order $p$} \quad $\big|$ \quad {\small $\int^{t_0+h}_{t_0}g(t)dt=\int^1_0g(t_0+hx)dx\approx h\sum_{i=1}^{s}b_ig(t_0+hc_i),b_i:=\int^1_0\ell_i(x)dx$} \quad {\tiny ps: $c_i$ 从 $[0,1]$中取不同的}
-    \item \textbf{Collocation Methods}: For: $y(t_0)=y_0 \ , \ y'(t_0+c_ih)=f(y(t_0+c_ih))$ {\tiny ps: $c_i$ 从 $[0,1]$中取不同的} \quad {\scriptsize Let: $a_{ij}:=\int_0^{c_i}\ell_j(x)dx$ and $b_i:=\int_0^1\ell_i(x)dx$}\\
+    \item \textbf{Quadrature Rule}: { If $g(t)\in\mathbb{P}_{p-1}\Rightarrow$ Order $p$} \quad $\big|$ \quad {\small $\int^{t_0+h}_{t_0}g(t)dt=\int^1_0g(t_0+hx)dx\approx h\sum_{i=1}^{s}b_ig(t_0+hc_i),b_i:=\int^1_0\ell_i(x)dx$} \quad {\tiny ps: $c_i$ 从 $[0,1]$中取不同的}
+    \item \textbf{Collocation Methods}: For: $y(t_0)=y_0 \ , \ y'(t_0+c_ih)=f(y(t_0+c_ih))$ {\tiny ps: $c_i$ 从 $[0,1]$中取不同的} \quad { Let: $a_{ij}:=\int_0^{c_i}\ell_j(x)dx$ and $b_i:=\int_0^1\ell_i(x)dx$}\\
     $\Rightarrow$ \ $F_i=f(y_n+h\sum_{j=1}^{s}a_{ij}F_j)$ and $y_{n+1}=y_n+h\sum_{i=1}^{s}b_iF_i$ \hspace{30pt} where $F_i:=y'(t_0+c_ih)$
 \end{enumerate}
 
@@ -161,23 +162,103 @@ $\cdot$ \textbf{Remark}: {\footnotesize For choice of $c_i$: The optimal choice 
 \textbf{Runge-Kutta Methods}: Let $y'=f(t,y)$ \quad \textbf{Stage Values}: $Y_i=y_n+h\sum_{j=1}^{s}a_{ij}f(Y_{j})$ \ \ $i\in\{1,...,s\}$ \quad $F_i=f(Y_i)$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item The RK method is the form: $y_{n+1}=y_n+h\sum_{i=1}^{s}b_if(t_n+c_i,Y_i)$ \quad for some values of $b_i,a_{ij},s,c_i$ \quad {\scriptsize for Autonomous: $c_i=\sum_{j=1}^{s}a_{ij}$}
-    \item Flow-map: $\Psi_{h}(y)=y+h\sum_{i=1}^{s}b_if(t_n+c_i,Y_{i}(y,h))$ \quad \quad \quad {\scriptsize ps:\textit{weights}: $b_i$; \ \textit{internal coefficients}: $a_{ij}$}
-    \item \small{{\scriptsize We can using \textbf{Butcher Table} to represent the RK method (Appendix)} \quad \textbf{Explicit}: $a_{ij}=0$ for $j\geq i$ {\scriptsize (严格下三角行)} \quad \textbf{Implicit}: $\exists a_{ij}\ne0$ for $j\geq i$ {\scriptsize (Not Explicit)}}
+    \item The RK method is the form: $y_{n+1}=y_n+h\sum_{i=1}^{s}b_if(t_n+c_i,Y_i)$ \quad for some values of $b_i,a_{ij},s,c_i$ \quad { for Autonomous: $c_i=\sum_{j=1}^{s}a_{ij}$}
+    \item Flow-map: $\Psi_{h}(y)=y+h\sum_{i=1}^{s}b_if(t_n+c_i,Y_{i}(y,h))$ \quad \quad \quad { ps:\textit{weights}: $b_i$; \ \textit{internal coefficients}: $a_{ij}$}
+    \item \small{{ We can using \textbf{Butcher Table} to represent the RK method (Appendix)} \quad \textbf{Explicit}: $a_{ij}=0$ for $j\geq i$ { (严格下三角行)} \quad \textbf{Implicit}: $\exists a_{ij}\ne0$ for $j\geq i$ { (Not Explicit)}}
 \end{enumerate}
 
 
 \subsection{Accuracy of RK Method | Order Condition} % Accuracy of RK Method | Order Condition
 
-\textbf{Some Notations}: If $\mathbf{y}=f'(\mathbf{y})$ where $f(\mathbf{y}):\mathbb{R}^d\to\mathbb{R}^d$. \quad Def $f'=(\frac{\partial f_i}{\partial y_j})$,{\scriptsize $1\leq i\leq d,1\leq j\leq d$} \ {\tiny (行向量)} \qquad $f''=(\frac{\partial^2 f_i}{\partial y_j\partial y_k})$,{\scriptsize $1\leq i\leq d,1\leq j,k\leq d$} 
+\textbf{Some Notations}: If $\mathbf{y}=f'(\mathbf{y})$ where $f(\mathbf{y}):\mathbb{R}^d\to\mathbb{R}^d$. \quad Def $f'=(\frac{\partial f_i}{\partial y_j})$,{ $1\leq i\leq d,1\leq j\leq d$} \ {\tiny (行向量)} \qquad $f''=(\frac{\partial^2 f_i}{\partial y_j\partial y_k})$,{ $1\leq i\leq d,1\leq j,k\leq d$} 
 
 $\cdot$ Def: {\footnotesize $f''(\mathbf{a},\mathbf{b})=\sum_{j=1}^{d}\sum_{k=1}^{d}\frac{\partial^2 f_i}{\partial y_{j} \ \partial y_{k}}a_jb_k$ \quad $\big|$ $y'=f$ \quad $y''=\sum_{j=1}^{d}\frac{\partial f_i}{\partial y_j}f_j=f'f$ \quad $y'''=\sum_{j=1}^{d}\sum_{k=1}^{d}\frac{\partial^2f_i}{\partial y_j \ \partial y_k}y'_j(t)y'_k(t)+\sum_{j=1}^{d}\frac{\partial f_i}{\partial y_j}y''_j(t)=f''(f,f)+f'f'f$}
 
 $\cdot$ $\Phi_h(y)=y+hf+\frac{h^2}{2}f'f+\frac{h^3}{6}[f''(f,f)+f'f'f]+\mathcal{O}(h^4)$
 
-\textbf{Order Condition}: {\small RK method: $y_{n+1}=y_n+h\sum_{i=1}^{s}b_if(Y_i)$, Let $z(h)=\Phi_h(y)$ \quad $\Rightarrow$ If $z'(0)=y',z''(0)=y'',...,z^{(n)}=y^{(n)}$ $\Rightarrow$ {\scriptsize \textbf{Convergent at order $n$}}}
+\textbf{Order Condition}: {\small RK method: $y_{n+1}=y_n+h\sum_{i=1}^{s}b_if(Y_i)$, Let $z(h)=\Phi_h(y)$ 
 
-$\cdot$ Order 1: $\sum_{i=1}^{s}b_i=1$ \qquad Order 2: {\scriptsize (add)} $\sum_{i=1}^{s}b_ic_i=\frac{1}{2}$ \qquad Order 3: {\scriptsize (add)} $\sum_{i=1}^{s}b_ic_i^2=\frac{1}{3}$ \ and \ $\sum_{i=1}^{s}\sum_{j=1}^{s}b_ia_{ij}c_j=\frac{1}{6}$
+\hspace{110pt} $\Rightarrow$ If $z'(0)=y',z''(0)=y'',...,z^{(n)}=y^{(n)}$ $\Rightarrow$ { \textbf{Convergent at order $n$}}}
+
+$\cdot$ Order 1: $\sum_{i=1}^{s}b_i=1$ \qquad Order 2: { (add)} $\sum_{i=1}^{s}b_ic_i=\frac{1}{2}$ \qquad Order 3: { (add)} $\sum_{i=1}^{s}b_ic_i^2=\frac{1}{3}$ \ and \ $\sum_{i=1}^{s}\sum_{j=1}^{s}b_ia_{ij}c_j=\frac{1}{6}$
+
+
+\section{Stability of Runge-Kutta Methods { consider for autonomous $y'=f(y)$}} % Stability of Runge-Kutta Methods
+
+\subsection{Basic Definition for Stability} % Basic Definition for Stability
+
+\textbf{Fixed Point-Exact}: For ODEs $\frac{dy}{dt}=f(y)$, point $y^*$ is fixed point if $f(y^*)=0$ $\Leftrightarrow$ $\Phi_t(y^*)=y^*$ {\footnotesize \ \ \textbf{Set of Fixed Points}: $\mathcal{F}=\{y^*\in\mathbb{R}^d:f(y^*)=0\}$}
+
+\textbf{Fixed Point-Numerical}: \textit{One-step} method $\Psi_h(y)$, point $y^*$ is fixed point if $y^*=\Psi_h(y^*)$ {\footnotesize \ \ \textbf{Set of Fixed Points}: $\mathcal{F}_h=\{y^*\in\mathbb{R}^d:y^*=\Psi_h(y^*)\}$}
+
+\textbf{Theorem}: For Runge-Kutta method, $\mathcal{F}\subseteq\mathcal{F}_h$ \qquad \qquad \textbf{Remark}: $\mathcal{F}_h\subseteq\mathcal{F}$ is NOT always true.
+
+$\cdot$ the point in $\mathcal{F}_h\setminus\mathcal{F}$ is called \textbf{spurious fixed point}. \qquad \qquad As $h\to\infty$, the \textit{spurious} fixed points will tends to infinity.
+
+\textbf{Stability of Fixed Points}: Fixed point $y^*$, the ODEs $\frac{dy}{dt}=f(y)$ with $y(0)=y_0$.
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Stable in the sense of Lyapunov}: Fixed point $y^*$ is stable if $\forall \varepsilon>0,\exists \delta>0$ s.t. $||y_0-y^*||<\delta\Rightarrow||y(t;y_0)-y^*||<\varepsilon$ $\forall t>0$
+    \item \textbf{Asymptotically Stable}: Fixed point $y^*$ is asymptotically stable if $\exists \delta>0$ s.t. $||y_0-y^*||<\delta\Rightarrow\lim\limits_{t\to\infty}||y(t;y_0)-y^*||=0$
+    \item \textbf{Unstable}: Fixed point $y^*$ is unstable if it's not stable. \quad i.e. $\exists \epsilon>0,\forall \delta>0$ s.t. $||y_0-y^*||<\delta\Rightarrow||y(t)-y^*||\geq\varepsilon$ for some $t$.
+\end{enumerate}
+
+
+\subsection{Classification of Fixed Points} % Classification of Fixed Points
+
+\textbf{Linearization Theorem}: Suppose $\frac{dy}{dt}=f(y)$, $y^*$ is a fixed point. Let $J=f'(y^*)$ be the Jacobian matrix of $f$ at $y^*$.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item If $\forall$ eigenvalues of $J$ in left complex half plane, then $y^*$ is \textbf{asymptotically stable}.
+    \item If $\exists$ eigenvalues of $J$ in right complex half plane, then $y^*$ is \textbf{unstable}.
+\end{enumerate}
+
+(Following is a special cases from HDE)
+
+\textbf{Classification of Critical Points at $y^*$ (Linear)}: \ \ \ \ $r_1,r_2$ be sol of $det(J-\lambda I)=0$. \ \ || \ \ $\mathbb{C}:r=\lambda\pm i\mu(\mu>0)$ 
+
+If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ || \ \ $GM=1$: $\mathbf{x}=c_1e^{rt}\xi+c_2e^{rt}(t\xi+\eta)$ \qquad {\tiny $J=\begin{pmatrix}\partial_xF(\mathbf{x}_0) & \partial_yF(\mathbf{x}_0) \\ \partial_xG(\mathbf{x}_0) & \partial_yG(\mathbf{x}_0) \\ \end{pmatrix}$} {\tiny If $f(x,y)=\begin{pmatrix}F(x,y) \\ G(x,y)\end{pmatrix}$}
+
+{\tiny
+\vspace{-8pt}
+\begin{longtable}{|c|l|l|l|l|l|}
+    \hline
+    {\tiny $\mathbb{R} / \mathbb{C}$} & { Condition || Stability} & Type || Name & Phase Plane Description & Other &  \\
+    \hline
+    \multirow{7}{*}{$\mathbb{R}$} & { $r_1<r_2<0$ || asy.stab} &  N || NSk & {\tiny 向原点,$\xi_2$直线,$\xi_1$曲线,and $\xi_1$周围$y=\pm x^3$} & { $c_2\ne0,t\to\infty$:$\xi_2$主导方向; \ $c_2=0,t\to\infty$:$\xi_1$主导方向} & \multirow{10}{*}{\tiny \makecell{PS: \\ \textbf{N} = Node \\ \textbf{PN} = Proper Node \\ \textbf{IN} = Improper \\ or: Degenerate Node \\ \textbf{SP} = Saddle Point \\ \textbf{SpP} = spiral point \\ or: Focus Point \\ \textbf{C} = Center \\ \textbf{NSk} = Nodal Sink \\ \textbf{NSo} = Nodal Source}} \\
+    \cline{2-5}
+    & { $r_1>r_2>0$ || unstable} &  N || NSo & {\tiny 原点向外,$\xi_2$直线,$\xi_1$曲线,and $\xi_1$周围$y=\pm x^3$} & { $c_1\ne0,t\to\infty$:$\xi_1$主导方向; \ $c_1=0,t\to\infty$:$\xi_2$主导方向} & \\
+    \cline{2-5}
+    & { $r_1>0>r_2$ || unstable} & SP || SP & \makecell{ $t\to\infty$,$\xi_1$从原点向外,$\xi_2$从外向原点 \\  and: 像$y=\pm\frac{1}{x}$,同进同出} & \makecell{ $t\to\pm\infty:|\mathbf{x}|\to\infty$; \ \ \ \ \ $t\to\infty:c_1,c_2\ne0,|\mathbf{x}|\to\infty$,$\xi_1$主导; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\  $t\to\infty:c_2=0,|\mathbf{x}|\to\infty$,$\xi_1$主导; \ \ \ \ $t\to\infty:c_1=0,|\mathbf{x}|\to0$,$\xi_2$主导} & \\
+    \cline{2-5}
+    & { $r_1=r_2<0$, {\tiny GM=2} || {\tiny asy.stab}} &  PN || { PN or Stable Star} & { \underline{直线}向原点} & { 直线, $u_1/u_2$ is $t$ independent} & \\
+    \cline{2-5}
+    & { $r_1=r_2>0$, {\tiny GM=2} || {\tiny unstable}} &  PN || { PN or Unstable Star} & { \underline{直线}从原点向外} & { 直线, $u_1/u_2$ is $t$ independent} & \\
+    \cline{2-5}
+    & { $r_1=r_2<0$, {\tiny GM=1} || {\tiny asy.stab}} &  IN {\tiny(AL:Type: SpP)} || { IN {\tiny (Stable)}} & { S曲线,向原点} & { $t\to\infty,|\mathbf{x}|\to0,\xi$主导 \ \ \ \ \ \ ps:旋转方向大体和$\eta+c_2\xi$方向相同} & \\
+    \cline{2-5}
+    & { $r_1=r_2>0$, {\tiny GM=1} || {\tiny unstable}} &  IN {\tiny(AL:Type: SpP)} || { IN {\tiny (Unstable)}} & { S曲线,从原点向外} & { $t\to\infty,|\mathbf{x}|\to\infty,\xi$主导 \ \ \ \ \ \ ps:旋转方向大体和$\eta+c_2\xi$方向相同} & \\
+    \cline{1-5}
+    \multirow{3}{*}{$\mathbb{C}$} & { $\lambda\ne0,\lambda>0$ || unstable} &  SpP || Unstable Focus & { 向外椭圆(elliptical)螺旋} & { $t\to\infty,|\mathbf{x}|\to\infty$ \ \ \ {\tiny ps:考虑$J=(a,b;c,d)$,如果bc>0,顺时针，如果bc<0,逆时针}} & \\
+    \cline{2-5}
+    & { $\lambda\ne0,\lambda<0$ || asy.stab} &  SpP || Stable Focus & { 向内椭圆(elliptical)螺旋} & { $t\to\infty,|\mathbf{x}|\to0$ \ \ \ {\tiny ps:考虑$J=(a,b;c,d)$,如果bc>0,顺时针,如果bc<0,逆时针}} & \\
+    \cline{2-5}
+    & { $\lambda=0$ || stable {\tiny (AL:Indeterminate)}} &  C { (AL:C or SpP)} || C & { 椭圆(elliptical) and 半长轴$\xi$实部方向} & { Bounded trajectory \ \ \ or \ \ \ $\exists$ Periodic Trajectories} & \\
+    \hline
+\end{longtable}
+\vspace{-0.4cm}
+}
+
+
+\subsection{Stability of Fixed Points of Maps (Numerical)}
+
+\textbf{Definition}: For flow map $\Psi$ from $\mathbb{R}^d\to\mathbb{R}^d$. Def $y^{n}(y_0):=$ the $n$-th iterate of $y_0$ under $\Psi$. \ \ ($y^{n}=y_n$) \qquad {\scriptsize e.g. $y^2(y_0)=\Psi(\Psi(y_0))=y_2$}
+
+\textbf{Stability of Fixed Points of Maps}: Fixed point $y^*$, the map $\Psi$ with $y^*=\Psi(y^*)$.
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Stable in the sense of Lyapunov}: $y^*$ is stable if $\forall \varepsilon>0,\exists \delta>0$ s.t. $||y_0-y^*||<\delta\Rightarrow||y^{n}(y_0)-y^*||<\varepsilon$ $\forall n\geq0$
+    \item \textbf{Asymptotically Stable}: $y^*$ is asymptotically stable if $\exists \delta>0$ s.t. $||y_0-y^*||<\delta\Rightarrow\lim\limits_{n\to\infty}||y^{n}(y_0)-y^*||=0$
+    \item \textbf{Unstable}: $y^*$ is unstable if it's not stable. \quad i.e. $\exists \epsilon>0,\forall \delta>0$ s.t. $||y_0-y^*||<\delta\Rightarrow||y^{n}(y_0)-y^*||\geq\varepsilon$ for some $n$.
+\end{enumerate}
 
 
 
@@ -207,7 +288,7 @@ $\frac{1}{1+x} = 1 - x + x^2  + \cdots = \sum_{n=0}^\infty (-1)^n x^n$ \quad $\l
             & $b_1$ & $\cdots$ & $b_s$
     \end{tabular}
     \\~\\
-    \scriptsize{Example}
+    {Example}
 \end{minipage}
 \hfill
 \begin{minipage}{0.15\linewidth}
@@ -218,7 +299,7 @@ $\frac{1}{1+x} = 1 - x + x^2  + \cdots = \sum_{n=0}^\infty (-1)^n x^n$ \quad $\l
           & 1
     \end{tabular}
     \\~\\
-    \scriptsize{RK1 \\ (Euler's Method)}
+    {RK1 \\ (Euler's Method)}
 \end{minipage}
 \hfill
 \begin{minipage}{0.15\linewidth}
@@ -230,7 +311,7 @@ $\frac{1}{1+x} = 1 - x + x^2  + \cdots = \sum_{n=0}^\infty (-1)^n x^n$ \quad $\l
             & 1/2 & 1/2
     \end{tabular}
     \\~\\
-    \scriptsize{RK2 (Heun's Method)}
+    {RK2 (Heun's Method)}
 \end{minipage}
 \hfill
 \begin{minipage}{0.2\linewidth}
@@ -243,7 +324,7 @@ $\frac{1}{1+x} = 1 - x + x^2  + \cdots = \sum_{n=0}^\infty (-1)^n x^n$ \quad $\l
             & 1/6 & 2/3 & 1/6
     \end{tabular}
     \\~\\
-    \scriptsize{RK3}
+    {RK3}
 \end{minipage}
 \hfill
 \begin{minipage}{0.3\linewidth}
@@ -257,7 +338,8 @@ $\frac{1}{1+x} = 1 - x + x^2  + \cdots = \sum_{n=0}^\infty (-1)^n x^n$ \quad $\l
             & 1/6 & 1/3 & 1/3 & 1/6
     \end{tabular}
     \\~\\
-    \scriptsize{RK4 (Classical/Famous)}
+    {RK4 (Classical/Famous)}
 \end{minipage}
+
 
 \end{document}
