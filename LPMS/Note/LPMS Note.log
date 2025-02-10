@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  9 FEB 2025 22:53
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  10 FEB 2025 23:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -40,7 +40,32 @@ File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
-) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+ (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+ (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip50
 
@@ -49,7 +74,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2021/08/26 v2.01 AMS text
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
+\@emptytoks=\toks18
 \ex@=\dimen143
 )) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -87,32 +112,23 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \dotsspace@=\muskip16
 \c@parentequation=\count196
 \dspbrk@lvl=\count197
-\tag@help=\toks18
+\tag@help=\toks19
 \row@=\count198
 \column@=\count199
 \maxfields@=\count266
-\andhelp@=\toks19
+\andhelp@=\toks20
 \eqnshift@=\dimen146
 \alignsep@=\dimen147
 \tagshift@=\dimen148
 \tagwidth@=\dimen149
 \totwidth@=\dimen150
 \lineht@=\dimen151
-\@envbody=\toks20
+\@envbody=\toks21
 \multlinegap=\skip51
 \multlinetaggap=\skip52
-\mathdisplay@stack=\toks21
+\mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/ctex/ctex.sty (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2023-02-22 L3 programming layer (loader) 
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
@@ -291,7 +307,7 @@ File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip62
 \enit@outerparindent=\dimen186
-\enit@toks=\toks22
+\enit@toks=\toks23
 \enit@inbox=\box57
 \enit@count@id=\count300
 \enitdp@description=\count301
@@ -312,22 +328,7 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LT@rows=\count304
 \c@LT@tables=\count305
 \c@LT@chunks=\count306
-\LT@p@ftn=\toks23
-) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
- (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: xetex.def on input line 227.
- (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+\LT@p@ftn=\toks24
 ) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/tools/array.sty
@@ -335,14 +336,14 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen188
 \ar@mcellbox=\box63
 \extrarowheight=\dimen189
-\NC@list=\toks24
+\NC@list=\toks25
 \extratabsurround=\skip67
 \backup@length=\skip68
 \ar@cellbox=\box64
 )
 \rotheadsize=\dimen190
 \c@nlinenum=\count307
-\TeXr@lab=\toks25
+\TeXr@lab=\toks26
 ) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \c@tracingmulticols=\count308
@@ -411,6 +412,12 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \mult@nat@firstbox=\box108
 \colbreak@box=\box109
 \mc@col@check@num=\count317
+) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip71
+\multirow@cntb=\count318
+\multirow@dima=\skip72
+\bigstrutjot=\dimen256
 ) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math.sty
 Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
@@ -418,9 +425,9 @@ Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaT
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2023-02-02 LaTeX2e option processing using LaTeX3 keys
 )
-\g__um_fam_int=\count318
-\g__um_fonts_used_int=\count319
-\l__um_primecount_int=\count320
+\g__um_fam_int=\count319
+\g__um_fonts_used_int=\count320
+\l__um_primecount_int=\count321
 \g__um_primekern_muskip=\muskip18
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
 
@@ -472,11 +479,11 @@ Package fontspec Info: Font family 'Cambria(1)' created for font 'Cambria'
 (fontspec)             <->"Cambria/BI/OT:script=latn;language=dflt;+smcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Cambria(1)/m/n on input line 20.
+(Font)                  OT1/cmr/m/n --> TU/Cambria(1)/m/n on input line 19.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Cambria(1)/m/it on input line 20.
+(Font)                  OT1/cmr/m/it --> TU/Cambria(1)/m/it on input line 19.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Cambria(1)/b/n on input line 20.
+(Font)                  OT1/cmr/bx/n --> TU/Cambria(1)/b/n on input line 19.
 
 Package fontspec Info: Could not resolve font "Cambria Math/B" (it probably
 (fontspec)             doesn't exist).
@@ -514,13 +521,13 @@ Package fontspec Info: Font family 'CambriaMath(1)' created for font 'Cambria
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 21.
+(Font)              `operators' in the math version `normal' on input line 20.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/CambriaMath(1)/m/n on input line 21.
+(Font)                  OT1/cmr/m/n --> TU/CambriaMath(1)/m/n on input line 20.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 21.
+(Font)              `operators' in the math version `bold' on input line 20.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/CambriaMath(1)/b/n on input line 21.
+(Font)                  OT1/cmr/bx/n --> TU/CambriaMath(1)/b/n on input line 20.
 
 Package fontspec Info: Cambria Math scale = 1.0001.
 
@@ -576,13 +583,13 @@ Package fontspec Info: Font family 'CambriaMath(2)' created for font 'Cambria
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 21.
+(Font)              `symbols' in the math version `normal' on input line 20.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/CambriaMath(2)/m/n on input line 21.
+(Font)                  OMS/cmsy/m/n --> TU/CambriaMath(2)/m/n on input line 20.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 21.
+(Font)              `symbols' in the math version `bold' on input line 20.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/CambriaMath(2)/b/n on input line 21.
+(Font)                  OMS/cmsy/b/n --> TU/CambriaMath(2)/b/n on input line 20.
 
 Package fontspec Info: Cambria Math scale = 0.9999.
 
@@ -626,13 +633,13 @@ Package fontspec Info: Font family 'CambriaMath(3)' created for font 'Cambria
 (fontspec)             =6.05469pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 21.
+(Font)              `largesymbols' in the math version `normal' on input line 20.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/m/n on input line 21.
+(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/m/n on input line 20.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 21.
+(Font)              `largesymbols' in the math version `bold' on input line 20.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/b/n on input line 21.
+(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/b/n on input line 20.
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -640,73 +647,73 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count321
-\Gm@cntv=\count322
-\c@Gm@tempcnt=\count323
-\Gm@bindingoffset=\dimen256
-\Gm@wd@mp=\dimen257
-\Gm@odd@mp=\dimen258
-\Gm@even@mp=\dimen259
-\Gm@layoutwidth=\dimen260
-\Gm@layoutheight=\dimen261
-\Gm@layouthoffset=\dimen262
-\Gm@layoutvoffset=\dimen263
-\Gm@dimlist=\toks26
+\Gm@cnth=\count322
+\Gm@cntv=\count323
+\c@Gm@tempcnt=\count324
+\Gm@bindingoffset=\dimen257
+\Gm@wd@mp=\dimen258
+\Gm@odd@mp=\dimen259
+\Gm@even@mp=\dimen260
+\Gm@layoutwidth=\dimen261
+\Gm@layoutheight=\dimen262
+\Gm@layouthoffset=\dimen263
+\Gm@layoutvoffset=\dimen264
+\Gm@dimlist=\toks27
 ) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
-\f@nch@headwidth=\skip71
-\f@nch@O@elh=\skip72
-\f@nch@O@erh=\skip73
-\f@nch@O@olh=\skip74
-\f@nch@O@orh=\skip75
-\f@nch@O@elf=\skip76
-\f@nch@O@erf=\skip77
-\f@nch@O@olf=\skip78
-\f@nch@O@orf=\skip79
+\f@nch@headwidth=\skip73
+\f@nch@O@elh=\skip74
+\f@nch@O@erh=\skip75
+\f@nch@O@olh=\skip76
+\f@nch@O@orh=\skip77
+\f@nch@O@elf=\skip78
+\f@nch@O@erf=\skip79
+\f@nch@O@olf=\skip80
+\f@nch@O@orf=\skip81
 ) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box110
-\beforetitleunit=\skip80
-\aftertitleunit=\skip81
-\ttl@plus=\dimen264
-\ttl@minus=\dimen265
-\ttl@toksa=\toks27
-\titlewidth=\dimen266
-\titlewidthlast=\dimen267
-\titlewidthfirst=\dimen268
+\beforetitleunit=\skip82
+\aftertitleunit=\skip83
+\ttl@plus=\dimen265
+\ttl@minus=\dimen266
+\ttl@toksa=\toks28
+\titlewidth=\dimen267
+\titlewidthlast=\dimen268
+\titlewidthfirst=\dimen269
 ) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip82
-\thanksmargin=\skip83
-\droptitle=\skip84
-) (./LPMS Note.aux)
+\thanksmarkwidth=\skip84
+\thanksmargin=\skip85
+\droptitle=\skip86
+)
+No file "LPMS Note".aux.
 \openout1 = `"LPMS Note.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 50.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 50.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 50.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 50.
-
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 49.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -742,64 +749,57 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 54.
+(Font)              scaled to size 12.00128pt on input line 53.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 54.
+(Font)              scaled to size 8.00085pt on input line 53.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 54.
+(Font)              scaled to size 6.00064pt on input line 53.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 54.
+(Font)              scaled to size 11.99872pt on input line 53.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 54.
+(Font)              scaled to size 7.99915pt on input line 53.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 54.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
+(Font)              scaled to size 5.99936pt on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
 (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 67.
+(Font)              scaled to size 9.00096pt on input line 64.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 67.
+(Font)              scaled to size 5.00053pt on input line 64.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 67.
+(Font)              scaled to size 8.99904pt on input line 64.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 67.
+(Font)              scaled to size 4.99947pt on input line 64.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 73.
+(Font)              scaled to size 10.00107pt on input line 70.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 7.30078pt on input line 73.
+(Font)              scaled to size 7.30078pt on input line 70.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 73.
+(Font)              scaled to size 9.99893pt on input line 70.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 7.29921pt on input line 73.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 152.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 158.
-
+(Font)              scaled to size 7.29921pt on input line 70.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 188.
+(Font)              scaled to size 7.00075pt on input line 192.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 188.
+(Font)              scaled to size 6.99925pt on input line 192.
 File: formula.png Graphic file (type bmp)
 <formula.png>
-[1
+ [1
 
 ] [2] (./LPMS Note.aux) ) 
 Here is how much of TeX's memory you used:
- 13995 strings out of 476683
- 304904 string characters out of 5795227
- 1906012 words of memory out of 5000000
- 34022 multiletter control sequences out of 15000+600000
+ 14060 strings out of 476683
+ 306160 string characters out of 5795227
+ 1902012 words of memory out of 5000000
+ 34086 multiletter control sequences out of 15000+600000
  521267 words of font info for 136 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,11n,114p,459b,433s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,11n,114p,459b,432s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on LPMS Note.pdf (2 pages).
