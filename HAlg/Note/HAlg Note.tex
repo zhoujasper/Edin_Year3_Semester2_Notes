@@ -97,7 +97,7 @@
     \hline
     \textbf{\tiny Remark}& $G,H$ groups $\Rightarrow$ $G\times H$ also.                                  & For ring $R$ [$1_R=0_R$ $\Leftrightarrow$ $R=\{0\}$]                               &                                                                                                                            &                                                                                           \\
     \hline
-    \textbf{\tiny e.g.}  & Cyclic group; $GL_n$ ; $D_n$ ; $\mathbb{Z}$                                   & $Mat(n,F)$ ; $R[X]$ ; $\mathbb{Z}/m\mathbb{Z}$ ; $\mathbb{Z}$                      & $\mathbb{R}[x]_{<n}$ ; $Mat(n,F)$ ; $Hom(V,W)$                                                                             &                                                                                           \\
+    \textbf{\tiny e.g.}  & Cyclic group; $GL_n$ ; $D_n$ ; $\mathbb{Z}$                                   & $Mat(n,F)$ ; $R[X]$ ; $\mathbb{Z}/m\mathbb{Z}$ ; $\mathbb{Z}$                      & $\mathbb{R}[x]_{<n}$ ; $Mat(n,F)$ ; $Hom(V,W)$                                                                             & {\tiny $R=\mathbb{Z}$ Abelian Group; $R=F$ Vector Space}                                  \\
     \hline
     \hline
     \textbf{\tiny Sub}     & \textbf{Subgroup ($H$)}: \hfill{\tiny $\forall h_1,h_2\in H$}               & \textbf{Subring ($R'$)}: \hfill{\tiny $\forall a,b\in R'$}                         & \textbf{Subspace ($U$)}: \hfill{\tiny $\forall \ \vec{v},\vec{u}\in U,\lambda,\mu\in F$}                                   & \textbf{Submodule ($M'$)}: \hfill{\tiny $\forall m_1,m_2\in M'$}                          \\
@@ -109,27 +109,27 @@
     \hline
     \hline
     \hline
-    \textbf{\tiny Generate}& \textbf{Generated Group $\langle T\rangle$}:                                & \textbf{Generated Ideal $_R\langle T\rangle$}: \hfill \textbf{\tiny $R$ is \textit{commutative ring}} & \textbf{Generated subspaces $\langle T\rangle$}:                                                                &         \\
-    \textbf{\tiny objects} & $\langle T\rangle:=\{g_1^{a_1}...g_k^{a_k}|k\in\N,g_i\in T,a_i\in\N\}$      & $_R\langle T\rangle:=\{\sum_{i=1}^{n}r_it_i:n\in\mathbb{N},r_i\in R,t_i\in T\}$                       & {\tiny $\langle T\rangle:=\{\alpha_1\vec{v_1}+\cdots+\alpha_n\vec{v_n}:\alpha_i\in F,\vec{v_i}\in T,r\in\N\}$}  &                    \\
+    \textbf{\tiny Generate}& \textbf{Generated Group $\langle T\rangle$}:                                & \textbf{Generated Ideal $_R\langle T\rangle$}: \hfill \textbf{\tiny $R$ is \textit{commutative ring}} & \textbf{Generated subspaces $\langle T\rangle$}:                                                                & \textbf{Generated submodules} $_R\langle T\rangle$                                \\
+    \textbf{\tiny objects} & $\langle T\rangle:=\{g_1^{a_1}...g_k^{a_k}|k\in\N,g_i\in T,a_i\in\N\}$      & $_R\langle T\rangle:=\{\sum_{i=1}^{n}r_it_i:n\in\mathbb{N},r_i\in R,t_i\in T\}$                       & {\tiny $\langle T\rangle:=\{\alpha_1\vec{v_1}+\cdots+\alpha_n\vec{v_n}:\alpha_i\in F,\vec{v_i}\in T,n\in\N\}$}  & {\tiny $\langle T\rangle:=\{r_1t_1+\cdots+rt_n:r_i\in R,t_i\in T,n\in\N\}$}       \\
     \hline
-    \textbf{\tiny Special} & \textbf{Cyclic Group}: $\langle g\rangle=\{g^k|k\in\mathbb{Z}\}$            & \textbf{Principal Ideal}: $_R\langle a\rangle$                                                        & $\langle\emptyset\rangle:=\{\vec{0}\}$                                                                          &            \\
+    \textbf{\tiny Special} & \textbf{Cyclic Group}: $\langle g\rangle=\{g^k|k\in\mathbb{Z}\}$            & \textbf{Principal Ideal}: $_R\langle a\rangle$ \quad i.e. $aR$                                        & $\langle\emptyset\rangle:=\{\vec{0}\}$                                                                          & \textbf{Cyclic submodule}: If $M=_R\langle t\rangle$                              \\
     \hline
     \textbf{\tiny Prop}    & \multicolumn{4}{c}{$\langle T\rangle$ is the smallest the \{generated things\} containing $T$. \qquad \qquad {\tiny ps: 默认 $^2T\subseteq R$ \quad $^4 T\subseteq M$}} \\
     \hline
     \hline
     \hline
-    \textbf{\tiny Homo}    & \textbf{\tiny Homomorphism}:$\phi:G\to H$\hfill{\tiny $\forall g_1,g_2\in G$}& $f:R\to S$ hom: \hfill{\tiny $\forall a,b\in R$}                                  & $f:V\to W$ \hfill{\tiny $\forall \vec{v}_1,\vec{v}_2\in V, \lambda\in F$}                                                          &                              \\
-                           & \textbf{I}. $\phi(g_1*g_2)=\phi(g_1)*\phi(g_2)$                              & \textbf{I}. $f(a+b)=f(a) + f(b)$                                                  & \textbf{I}. $f(\vec{v}_1+\vec{v}_2)=f(\vec{v}_1)+f(\vec{v}_2)$                                                                     &                 \\
-                           &                                                                              & \textbf{II}.$f(ab)=f(a)f(b)$                                                      & \textbf{II}. $f(\lambda\vec{v}_1)=\lambda f(\vec{v}_1)$                                                                            &                    \\
+    \textbf{\tiny Homo}    & \textbf{\tiny Homomorphism}:$\phi:G\to H$\hfill{\tiny $\forall g_1,g_2\in G$}& $f:R\to S$ hom: \hfill{\tiny $\forall a,b\in R$}                                  & $f:V\to W$ \hfill{\tiny $\forall \vec{v}_1,\vec{v}_2\in V, \lambda\in F$}                                                          & \textbf{R-Hom}: $f:M\to N$\hfill{\tiny $\forall a,b\in M$, $r\in R$}              \\
+                           & \textbf{I}. $\phi(g_1*g_2)=\phi(g_1)*\phi(g_2)$                              & \textbf{I}. $f(a+b)=f(a) + f(b)$                                                  & \textbf{I}. $f(\vec{v}_1+\vec{v}_2)=f(\vec{v}_1)+f(\vec{v}_2)$                                                                     & \textbf{I}. $f(a+b)=f(a)+f(b)$                                                    \\
+                           &                                                                              & \textbf{II}.$f(ab)=f(a)f(b)$                                                      & \textbf{II}. $f(\lambda\vec{v}_1)=\lambda f(\vec{v}_1)$                                                                            & \textbf{II}. $f(ra)=rf(a)$                                                        \\
     \hline
-    \textbf{\tiny Prop A}  & \textbf{I}: $\phi(e_G)=e_H$                                                  & \textbf{I}. $f(0_R)=0_S$ \qquad {\tiny $f(1_R)=1_S$ NOT need}                     & \textbf{I}. $f(\vec{0})=\vec{0}$                                                                                                   &                            \\
-                           & \textbf{II}: $\phi(g^{-1})=\phi(g)^{-1}$                                     & \textbf{II}. $f(x-y)=f(x)-f(y)$                                                   & \textbf{II}. $f(\lambda\vec{v}+\mu\vec{u})=\lambda f(\vec{v})+\mu f(\vec{u})$                                                      &                       \\
-                           & \textbf{III}. $\phi$ is injective $\Leftrightarrow$ $Ker\phi=\{e_G\}$        & \textbf{III}. $f(a^n)=(f(a))^n$ \quad $f(mx)=mf(x)$                               & \textbf{III}. $f\circ g$ is linear map.                                                                                            &                               \\
-                           &                                                                              & \textbf{Iv}. $f$ is 1-1 $\Leftrightarrow$ $\ker f=\{0_R\}$                        & \textbf{IV}. $f$ is 1-1 iff $\ker f=\{\vec{0}\}$                                                                                   &                                      \\
+    \textbf{\tiny Prop A}  & \textbf{I}: $\phi(e_G)=e_H$                                                  & \textbf{I}. $f(0_R)=0_S$ \qquad {\tiny $f(1_R)=1_S$ NOT need}                     & \textbf{I}. $f(\vec{0})=\vec{0}$                                                                                                   & \textbf{I}. $f(0_M)=0_N$ \qquad {\tiny $f(1_R)=1_S$ NOT need}                     \\
+                           & \textbf{II}: $\phi(g^{-1})=\phi(g)^{-1}$                                     & \textbf{II}. $f(x-y)=f(x)-f(y)$                                                   & \textbf{II}. $f(\lambda\vec{v}+\mu\vec{u})=\lambda f(\vec{v})+\mu f(\vec{u})$                                                      & \textbf{II}. $f(a-b)=f(a)-f(b)$                                                   \\
+                           &                                                                              & \textbf{III}. $f(a^n)=(f(a))^n$ \quad $f(mx)=mf(x)$                               & \textbf{III}. $f\circ g$ is linear map.                                                                                            &                                                                                   \\
+                           & \textbf{III}. $\phi$ is 1-1 $\Leftrightarrow$ $\ker\phi=\{e_G\}$             & \textbf{Iv}. $f$ is 1-1 $\Leftrightarrow$ $\ker f=\{0_R\}$                        & \textbf{IV}. $f$ is 1-1 iff $\ker f=\{\vec{0}\}$                                                                                   & \textbf{III}. $f$ is 1-1 iff $\ker f=\{0\}$                                       \\
     \hline
-    \textbf{\tiny Ker/Im}  & \textbf{I}. $Im(\phi)$ subgroup \quad $Ker(\phi)\lhd G$ normal.              & \textbf{I}. $Im(f)$ subring. \quad $Ker(f)\trianglelefteq R$ ideal .              & \textbf{I}. $Ker(f)$ ; $Im(f)$ are subspaces.                                                                                      &                        \\
-                           & \textbf{II}. $K\subseteq G$ is subgroup \ $\Rightarrow$ \ $\phi(K)\subseteq H$ also. & \textbf{II}. $R'\subseteq R$ is subring \ $\Rightarrow$ \ $f(R')$ also.   & \textbf{II}. Rank-Nullity Theorem...                                                                                               &                       \\
-                           & \textbf{III}. $Ker(\phi)$ subgroup.                                          &                                                                                   &                                                                                                                                    &                    \\
+    \textbf{\tiny Ker/Im}  & \textbf{I}. $Im(\phi)$ subgroup \quad $\ker(\phi)\lhd G$ normal.             & \textbf{I}. $Im(f)$ subring. \quad $\ker(f)\trianglelefteq R$ ideal .             & \textbf{I}. $\ker(f)$ ; $Im(f)$ are subspaces.                                                                                     & \textbf{I}.$\ker f,Im f$ are submodules.                                          \\
+                           & \textbf{II}. $K\subseteq G$ is subgroup \ $\Rightarrow$ \ $\phi(K)\subseteq H$ also. & \textbf{II}. $R'\subseteq R$ is subring \ $\Rightarrow$ \ $f(R')$ also.   & \textbf{II}. Rank-Nullity Theorem...                                                                                               &                                                                                   \\
+                           & \textbf{III}. $Ker(\phi)$ subgroup.                                          &                                                                                   &                                                                                                                                    &                                                                                   \\
     \hline
     \textbf{\tiny Remark}  & \multicolumn{4}{c}{\textbf{Isomorphism}: $=$ LM \& Bij. \ \ \textbf{Endomorphism(End)}: $=$ LM \& $V=W$. \ \ \textbf{Automorphism(Aut)}: $=$ LM \& $V=W$ \ \ \textbf{Monomorphism}: $=$ LM \& 1-1. \ \ \textbf{Epimorphism}: $=$ LM \& onto.}
 
@@ -272,6 +272,71 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \subsection{Equivalence Relation}
 
+\textbf{Equivalence Relation}: A relation $R$ on a set $X$ is a subset $R\subseteq X\times X$. If $(x,y)\in R$, we write $xRy$, {\footnotesize if $R$ is Equivalence Relation, then:}
+
+\quad \textbf{Reflexive}: $xRx$ {\scriptsize ($x\sim x$)} \quad \textbf{Symmetric}: $xRy\Rightarrow y Rx$ {\scriptsize ($x\sim y \Rightarrow y\sim x$)} \quad \textbf{Transitive}: $xRy,yRz\Rightarrow xRz$ {\scriptsize ($x\sim y,y\sim z\Rightarrow x\sim z$)}
+
+\textbf{Partial Order}: A relation $R$ on a set $X$, $xRy$. {\footnotesize If $R$ is partial order, then:}
+
+\quad \textbf{Reflexive}: $xRx$ {\scriptsize ($x\sim x$)} \quad \textbf{Anti-symmetric}: $xRy,yRx\Rightarrow x = y$ {\scriptsize ($x\sim y,y\sim x\Rightarrow x=y$)} \quad \textbf{Transitive}: $xRy,yRz\Rightarrow xRz$ {\scriptsize ($x\sim y,y\sim z\Rightarrow x\sim z$)}
+
+\textbf{Property of Equivalence Relation}: If $R$ $(\sim)$ is equivalence relation on $X$.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item $\sim$ Define the \textbf{equivalence classes} of $x\in X$ as $E(x):=\{y\in X:x\sim y\}$
+    \item $\sim$ \textbf{Partition} $X$ into disjoint subsets $X=\bigcup_{i}X_i$, $X_i$ is equivalence class of $x\in X$.
+    \item $x\sim y$ \quad $\Leftrightarrow$ \quad $E(x)=E(y)$ \quad $\Leftrightarrow$ \quad $E(x)\cap E(y)\ne\emptyset$.
+\end{enumerate}
+
+\textbf{Set of Equivalence Classes $(X/\sim)$}: $(X/\sim):=\{E(x):x\in X\}$ \qquad \textbf{Canonical Projection}: $can:X\to (X/\sim)$ by $x\mapsto E(x)$
+
+\quad \textbf{System of Representatives}: $Z\subseteq X$ is a system of representatives if {\footnotesize 每个等价类都恰好有一个元素代表在$Z$中}
+
+\quad \textbf{Examples}: {\tiny $^1$ If $V$ $F-$vector space, $W$ subspace. Then $V/W$ is \textbf{quotient vector space}. \quad $^2$ If $G$ group, $H$ normal. Then $G/H$ is \textbf{quotient group}. \quad $^3$ If $R$ ring, $I$ ideal. Then $R/I$ is \textbf{quotient ring}.}
+
+\textbf{Universal Property of the set of Equivalence Classes}: If $f:X\to Z$ is a map s.t. $x\sim y$ $\Leftrightarrow$ $f(x)=f(y)$. {\tiny ($\sim$ is Equivalence relation) \textbf{Important}}
+
+\quad Then, $\exists!$ map $\overline{f}:(X/\sim)\to Z$ s.t. $f=\overline{f}\circ can$ \quad with \quad $\overline{f}(E(x))=f(x)$ is \textit{well-defined}. \qquad Further more, $\overline{f}:(X/\sim)\bij Im(f)$
+
+\quad ps: Often, if we want to prove $g:(X/\sim)\to Z$ is well-defined, we need to prove $x\sim y$ $\Leftrightarrow$ $g(x)=g(y)$ holds.
+
+
+\subsection{Factor Ring | First Isomorphism Theorem} % Factor Ring | First Isomorphism Theorem
+
+\textbf{Coset of Ideal}: Let $I$ be an ideal of $R$. Then $a+I$ is a coset of $I$. \quad The $\sim$ is defined by $a\sim b$ $\Leftrightarrow$ $a-b\in I$ is an equivalence relation.
+
+\textbf{Factor Ring}: Let $I$ be ideal of $R$. $R/I:=\{a+I:a\in R\}$ is the set of cosets of $I$. \ \ {\small (i.e. $R/I$ is the set of equivalence classes of $R$ under $\sim$) }
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item By \textit{well-defined} operators: $(x+I)\dotplus(y+I)=(x+y) + I$ and $(x+I)\cdot(y+I)=xy+I$ \quad $\Rightarrow$ \quad $R/I$ is a ring.
+    \item $x+I=y+I \quad \Leftrightarrow \quad x\sim y \quad \Leftrightarrow \quad x-y\in I$ \qquad || \qquad {\footnotesize $R$ is commutative $\Rightarrow$ $R/I$ also.} \qquad || \qquad {\footnotesize $R/I\ne\{0+I\}$ iff $I\ne R$}
+    \item The Identity of $R/I$: $1_R+I$ \quad The Zero of $R/I$: $0_R+I$
+\end{enumerate}
+
+\textbf{Universal Property of Factor Ring}: Let $R$ be a ring and $I$ be an ideal of $R$.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{can}: Mapping $can:R\to R/I$ by $x\mapsto x+I$ is $^1$ surjection, $^2$ $ker(can)=I$, $^3$ $can$ is ring homomorphism.
+    \item \textbf{$\textbf{f}$}: If $^1f:R\to S$ is \textit{ring homomorphism} and $^2I\subseteq ker(f)$, then \ \ $\exists!$ $^1\overline{f}:R/I\to S$ s.t. $f=\overline{f}\circ can$ is \textit{ring homomorphism}.
+    \item \textbf{First Isomorphism Theorem}: If $f:R\to S$ is \textit{ring homomorphism} $\Rightarrow$ $\exists!$ $\overline{f}:R/ker(f)\bij im(f)$ is  (\textit{ring isomorphism}).
+\end{enumerate}
+
+\textbf{Universal Property of Quotient Group}: Let $G$ be a group and $H$ be a normal subgroup of $G$.
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{can}: Mapping $can:G\to G/H$ by $x\mapsto xH$ is $^1$ surjection, $^2$ $ker(can)=H$, $^3$ $can$ is group homomorphism.
+    \item \textbf{$\textbf{f}$}: If $^1f:G\to S$ is \textit{group homomorphism} and $^2H\subseteq ker(f)$, then \ \ $\exists!$ $^1\overline{f}:G/H\to S$ s.t. $f=\overline{f}\circ can$ is \textit{group homomorphism}.
+    \item \textbf{First Isomorphism Theorem}: If $f:G\to S$ is \textit{group homomorphism} $\Rightarrow$ $\exists!$ $\overline{f}:G/ker(f)\bij im(f)$ is  (\textit{group isomorphism}).
+\end{enumerate}
+
+\textbf{Universal Property of Module Quotient}: Let $M$ be a module and $N$ be a submodule of $M$.
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{can}: Mapping $can:M\to M/N$ by $x\mapsto x+N$ is $^1$ surjection, $^2$ $ker(can)=N$, $^3$ $can$ is module homomorphism.
+    \item \textbf{$\textbf{f}$}: If $^1f:M\to S$ is \textit{module homomorphism} and $^2N\subseteq ker(f)$, then \ \ $\exists!$ $^1\overline{f}:M/N\to S$ s.t. $f=\overline{f}\circ can$ is \textit{module homomorphism}.
+    \item \textbf{First Isomorphism Theorem}: If $f:M\to S$ is \textit{module homomorphism} $\Rightarrow$ $\exists!$ $\overline{f}:M/ker(f)\bij im(f)$ is  (\textit{module isomorphism}).
+\end{enumerate}
+
+
+\subsection{Modules | Submodules | All of That} % Modules | Submodules | All of That
 
 
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint}
