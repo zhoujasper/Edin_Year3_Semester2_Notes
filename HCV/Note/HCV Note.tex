@@ -248,7 +248,9 @@ $\cdot$ If $Log_{\phi}(z)$ is holomorphic on $D_{\phi}$, then $Log_{\phi}(z-a)$ 
 
 \section{Complex Integration} % Complex Integration
 
-\textbf{Integrable}: $f:[a,b]\to \mathbb{C}$ as $f=u+iv$ is integrable if: \ \ $u,v$ are both integrable on $[a,b]$ and for $f(t)$:
+\subsection{Line Integral} % Line Integral
+
+\textbf{Integrable}: $f:[a,b]\to \mathbb{C}$ as $f(t)=u(t)+iv(t)$ is integrable if: \ \ $u,v$ are both integrable on $[a,b]$ and for $f(t)$:
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Def}: $\int_a^b f(t)dt:=\int_a^b u(t)dt+i\int_a^b v(t)dt$
@@ -257,5 +259,54 @@ $\cdot$ If $Log_{\phi}(z)$ is holomorphic on $D_{\phi}$, then $Log_{\phi}(z-a)$ 
     \item \textbf{Property III}. If $f$ is \textit{continuous} \ $\Rightarrow$ \ $\left|\int_a^b f(t)dt\right|\leq\int_a^b|f(t)|dt$.
 \end{enumerate}
 
+\textbf{Parameters Curves}: A parametrized curve connecting $z_0$ to $z_1$ is a \textit{continuous} function $\gamma:[t_0,t_1]\to\mathbb{C}$ s.t. $\gamma(t_0)=z_0,\gamma(t_1)=z_1$
+
+\quad If {\footnotesize $z_0=x_0+iy_0,z_1=x_1+iy_1$, then $\gamma(t)=x(t)+iy(t)$ \textit{continuous} functions. s.t. $x(t_0)=x_0,x(t_1)=x_1,y(t_0)=y_0,y(t_1)=y_1$}
+
+\quad \textbf{Regular}: $\gamma$ is regular if $\gamma'(t)\ne0$ for all $t\in[t_0,t_1]$ \qquad \textbf{Remark}: Curve $\gamma([t_0,t_1])=\Gamma$ is \textit{closed and bdd}.
+
+\textbf{Integral Along Curve}: Let $\gamma:[t_0,t_1]\to\mathbb{C}$ be a \textit{regular} curve s.t. $\gamma([t_0,t_1])=\Gamma$ and $f:\Gamma\to\mathbb{C}$ is \textit{continuous}.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Def}: $\int_{\Gamma}f(z)dz:=\int_{t_0}^{t_1}f(\gamma(t))\gamma'(t)dt$
+    \item \textbf{Circle at zero}: \textit{Circle Centred at 0 with radius R}: $\gamma:[0,1]\to\mathbb{C}$ by $\gamma(t)=R\exp(2\pi it)$
+    \item \textbf{Constant Function}: If $f(z)=c$ ; $\gamma:[a,b]\in\mathbb{C}$. Then $\int_{\Gamma}f(z)dz=\int^a_b c\cdot\gamma'(z) dz = c\cdot(\gamma(b)-\gamma(a))$
+\end{enumerate}
+
+\textbf{Arclength of Curve}: {\small Let $\gamma:[t_0,t_1]\to\mathbb{C}$ be a \textit{regular} curve. $\gamma(t)=x(t)+iy(t)$ Then arclength $\ell(\Gamma):=\int_{t_0}^{t_1}|\gamma'(t)|dt=\int^{t_1}_{t_0}\sqrt{x'(t)^2+y'(t)^2}dt$}
+
+\quad \textbf{Lemma}: If $\Gamma$ is an arc of a circle of radius $r$ traced though angle $\theta$, then $\ell(\Gamma)=r\theta$ {\small (扇形弧长)}
+
+\textbf{Properties of Integral Along Curve}: Let $\Gamma$ be a \textit{regular} curve and $f,g:\Gamma\to\mathbb{C}$ be \textit{continuous}, and $\alpha,\beta\in\mathbb{C}$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{M-L Lemma}: $|\int_{\Gamma}f(z)dz|\leq \max_{z\in\Gamma}|f(z)|\ell(\Gamma)$
+    \item \textbf{Lemma}: $\int_{\Gamma}(\alpha f+\beta g)dz=\alpha\int_{\Gamma}f(z)dz+\beta\int_{\Gamma}g(z)dz$ \qquad $\int_{-\Gamma}f(z)dz=-\int_{\Gamma}f(z)dz$ \ \ {\scriptsize Here: $\widetilde{\gamma}(t):=\gamma(b-t)$ have $\widetilde{\gamma}([a,b])=-\Gamma$}
+    \item \textbf{Change of Variables}: {\small If $^1\gamma:[a,b]\to\Gamma$, and $\widetilde{\gamma}:[\widetilde{a},\widetilde{b}]\to\Gamma$ are \textit{two parametrizations} of $\Gamma$;} \\
+    {\small $^2$ $\exists\lambda:[\widetilde{a},\widetilde{b}]\to[a,b]$ s.t. $\lambda'(t)>0$ and $\widetilde{\gamma}(t)=\gamma(\lambda(t))$ \ \ {\scriptsize (防止曲线回头)} \ \ \ $\Rightarrow$ \ \ \ $\int^b_a f(\gamma(t))\gamma'(t)dt=\int^{\widetilde{b}}_{\widetilde{a}}f(\widetilde{\gamma}(t))\widetilde{\gamma}'(t)dt$}.
+\end{enumerate}
+
+\textbf{Contour}: A curve $\Gamma$ is \textit{contour} if it's \textit{finite union of regular curves} $\Gamma_1,\Gamma_2,...,\Gamma_n$. \quad \quad {\footnotesize Each $\Gamma_i$ is \textbf{regular component} of $\Gamma$}
+
+\quad \textbf{Contour Integral}: If $f:\Gamma\to\mathbb{C}$ is \textit{continuous} and $\Gamma$ is a \textit{contour}. Then $\int_{\Gamma}f(z)dz:=\sum^n_{i=1}\int_{\Gamma_i}f(z)dz$
+
+
+\subsection{Independent of Path} % Independent of Path
+
+\textbf{Domain}: $D\subseteq\mathbb{C}$ is a \textit{domain} if it's \textit{open} and \textit{connected}. {\small (i.e. 任意两点都存在contour($\Gamma$)将其连接,并都在$D$里面)}
+
+\textbf{Lemma}: Let $D\subseteq\mathbb{C}$ be a domain. If $u:D\to\mathbb{C}$ is \textit{differentiable}, with $\frac{\partial u}{\partial x}=\frac{\partial u}{\partial y}=0$. \ $\Rightarrow$ \ $u$ is \textit{constant} on $D$. \qquad \quad {\scriptsize $\Downarrow$ Clearly, $F$ is \textit{holomorphic}}
+
+\textbf{Antiderivative}: {\small Let $D$ be a domain. For $f:D\to\mathbb{C}$ be \textit{continuous} and $F:D\to\mathbb{C}$ s.t. $F'(z)=f(z)$ for all $z\in D$. Then $F$ is an \textit{antiderivative} of $f$.}
+
+\textbf{Fundamental Theorem of Calculus}: {\small $D$ domain; $f:D\to\mathbb{C}$ \textit{continuous}; $F:D\to\mathbb{C}$ \textit{antiderivative} of $f$. Contour $\Gamma$ in $D$ connecting $z_0$ to $z_1$.}
+
+\hspace{160pt} Then $\int_{\Gamma}f(z)dz = F(z_1)-F(z_0)$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item $D$ domain, if $f:D\to\mathbb{C}$ is \textit{holomorphic} and $f'(z)=0,\forall z\in D$. \ $\Rightarrow$ \ $f$ is \textit{constant} on $D$.
+    \item \textbf{Path-Independence Lemma}: $D$ domain, $f$ \textit{continuous} on $D$. \ Then: \\
+    $f$ has \textit{antiderivative} on $D$ \ \ $\Leftrightarrow$ \ \ $\int_{\Gamma}f(z)dz=0$ $\forall$ \textit{closed contours} $\Gamma$ in $D$ \ \ $\Leftrightarrow$ \ \ $\int_{\Gamma}f(z)dz$ is \textit{path-independent}.
+\end{enumerate}
 
 \end{document}
