@@ -208,7 +208,7 @@ $\cdot$ \textbf{Theorem}: {\small If LP has a unique optimal solution is a verte
     \item Let $p'\in\mathcal{B}$ \ be the index corresponding to $p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$ {\scriptsize $p$是对应的index,not value} \qquad \quad {\small 用$\overline{\alpha}=\frac{\widehat{b_p}}{\widehat{a}_{pq}}$代表值}\\
     $\widehat{b_i},\widehat{a}_{iq}$ {\small 代表$\widehat{\mathbf{b}}$的第$i$个分量, $\widehat{\mathbf{a}_q}$的第$i$个分量} \\
     {\small $p'$代表能使$\frac{\widehat{b_i}}{\widehat{a}_{iq}}$的值最小的index,前提条件是$\widehat{a}_{iq}>0$} \qquad \qquad {对应的variable为$x_{p'}$}
-    \item Exchange $p'$ and $q'$ between $\mathcal{B}$ and $\mathcal{N}$ \ \ $\Rightarrow$ \ \ {\small values of new $x_{B}=\widehat{\mathbf{b}}-\overline{\alpha} \ \widehat{\mathbf{a}}_q$} \qquad Update $\mathcal{B},\mathcal{N},B,N,\widehat{\mathbf{b}},...$ \quad {\scriptsize ps: New $B := B + (a_q - B e_p) e_p^T$}
+    \item Exchange $p'$ and $q'$ between $\mathcal{B}$ and $\mathcal{N}$ \ \ $\Rightarrow$ \qquad Update $\mathcal{B},\mathcal{N},B,N,\widehat{\mathbf{b}},...$ \quad {\scriptsize ps: New $B := B + (a_q - B e_p) e_p^T$}
     \item Go to 3.
 \end{enumerate}
 

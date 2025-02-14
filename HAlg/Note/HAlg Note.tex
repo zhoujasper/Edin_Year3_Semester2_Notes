@@ -328,6 +328,21 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \item \textbf{First Isomorphism Theorem}: If $f:G\to S$ is \textit{group homomorphism} $\Rightarrow$ $\exists!$ $\overline{f}:G/ker(f)\bij im(f)$ is  (\textit{group isomorphism}).
 \end{enumerate}
 
+
+\subsection{Modules | Submodules | All of That} % Modules | Submodules | All of That
+
+\textbf{Restrict with Scalar}: Let $f:R\to S$ is a \textit{ring homomorphism}, $f(1_R)=1_S$ and $M$ is a $S-$Module, then $M$ is also a $R-$Module by:
+
+\quad Define the restrict our scalar: $rm:=f(r)m$ \quad $\forall r\in R,m\in M$ \quad {\footnotesize ps: $f(1_R)=1_S$}
+
+\textbf{Free Module}: Let $M$ be a $R-$Module. $M$ is \textit{free} if: $\forall m\in M$, $\exists!$ $r_1,...,r_n\in R$ s.t. $m=r_1m_1+\cdots+r_nm_n$ \quad {\footnotesize ps: $m_1,...,m_n$ is basis of $M$}
+
+\textbf{Coset of Submodule}: Let $N$ submodule of $M$. Then $m+N$ coset of $N$. \quad {\small $\sim$ is defined by $m\sim n$ $\Leftrightarrow$ $m-n\in N$ is an equivalence relation.}
+
+\textbf{Factor Module}: Let $N$ submodule of $M$. $M/N:=\{m+N:m\in M\}$ is the set of cosets of $N$.
+
+\quad {\small ps: All properties of $M/N$ are similar to $R/I$}
+
 \textbf{Universal Property of Module Quotient}: Let $M$ be a module and $N$ be a submodule of $M$. \qquad {\scriptsize ps:$\overline{f}(x+N)=f(x)$}
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{can}: Mapping $can:M\to M/N$ by $x\mapsto x+N$ is $^1$ surjection, $^2$ $ker(can)=N$, $^3$ $can$ is module homomorphism.
@@ -335,8 +350,15 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \item \textbf{First Isomorphism Theorem}: If $f:M\to S$ is \textit{module homomorphism} $\Rightarrow$ $\exists!$ $\overline{f}:M/ker(f)\bij im(f)$ is  (\textit{module isomorphism}).
 \end{enumerate}
 
+\vspace{2pt}
+\np\textbf{Second Isomorphism Theorem for Modules}: Let $N,K$ be submodules of $R$-module $M$ \ \ $\Rightarrow$ \ \ $N/(N\cap K)\cong (N+K)/K$
 
-\subsection{Modules | Submodules | All of That} % Modules | Submodules | All of That
+\quad ps: {\footnotesize consider $f:N\to (N+K)/K$ and then we can find $ker(f)=N\cap K$}
+
+\vspace{2pt}
+\np\textbf{Third Isomorphism Theorem for Modules}: Let $N,K$ be submodules of $R$-module $M$ ; $K\subseteq N$ \ \ $\Rightarrow$ \ \ $\frac{M/K}{N/K}\cong M/N$
+
+\quad ps: {\footnotesize consider $f:M/K\to M/N$ and then we can find $ker(f)=N/K$}
 
 
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint} % Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint
