@@ -107,7 +107,7 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
 \hspace{20pt} $\Rightarrow$
 \textbf{for} $n=0,1,2,...,N-1$:
 \quad $y_{n+1}=y_n+hf(t_0+nh,y_n)=y_n+hf(t_n,y_n)$ \quad 
-\textbf{end} \hspace{100pt} { (ps: $\Downarrow$ Can get $|y''|<M$)}
+\textbf{end} \hspace{80pt} { (ps: $\Downarrow$ Can get $|y''|<M$)}
 
 \textbf{Boundedness Theorem}: {\small For $\frac{dy}{dt}=f(t,y),y(a)=y_0$ and suppose there exists a unique, twice differentiable, solution $y(t)$ on $[a,b]$.}
 
@@ -152,8 +152,8 @@ $\cdot$ ps: {\footnotesize Taylor Series: $y(t_0+h)=y(t_0)+hy'(t_0)+\frac{h^2}{2
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Lagrange Interpolating Polynomials}: $\ell_{i}(x)=\prod_{j=1,j\ne i}^{s}\frac{x-c_j}{c_i-c_j}\in\mathbb{P}_{s-1}$ \quad where $c_i\in F\in\{\mathbb{Q},\mathbb{R},\mathbb{C}\}$ \\
     $\Rightarrow$ \textbf{Polynomial Interpolation}: $\forall p(x)\in \mathbb{P}_s$ with $p(c_i)=g_i\in F$ \ \ $\Rightarrow$ \ \ $\exists!$ $p(x)=\sum_{i=1}^{s}g_i\ell_i(x)$ {\tiny (Can be proved by Honour Algebra)}
-    \item \textbf{Quadrature Rule}: { If $g(t)\in\mathbb{P}_{p-1}\Rightarrow$ Order $p$} \quad $\big|$ \quad {\small $\int^{t_0+h}_{t_0}g(t)dt=\int^1_0g(t_0+hx)dx\approx h\sum_{i=1}^{s}b_ig(t_0+hc_i),b_i:=\int^1_0\ell_i(x)dx$} \quad {\tiny ps: $c_i$ 从 $[0,1]$中取不同的}
-    \item \textbf{Collocation Methods}: For: $y(t_0)=y_0 \ , \ y'(t_0+c_ih)=f(y(t_0+c_ih))$ {\tiny ps: $c_i$ 从 $[0,1]$中取不同的} \quad { Let: $a_{ij}:=\int_0^{c_i}\ell_j(x)dx$ and $b_i:=\int_0^1\ell_i(x)dx$}\\
+    \item \textbf{Quadrature Rule}: {\small If $g(t)\in\mathbb{P}_{p-1}$} \ \ $\big|$ \ \ {\small $\int^{t_0+h}_{t_0}g(t)dt=\int^1_0g(t_0+hx)dx\approx h\sum_{i=1}^{s}b_ig(t_0+hc_i),b_i:=\int^1_0\ell_i(x)dx$} \quad {\tiny ps: $c_i$ 从 $[0,1]$中取不同的}
+    \item \textbf{Collocation Methods}: For: $y(t_0)=y_0 \ , \ y'(t_0+c_ih)=f(y(t_0+c_ih))$ {\tiny ps: $c_i$ 从 $[0,1]$中取不同的} \quad {\small Let: $a_{ij}:=\int_0^{c_i}\ell_j(x)dx$ and $b_i:=\int_0^1\ell_i(x)dx$}\\
     $\Rightarrow$ \ $F_i=f(y_n+h\sum_{j=1}^{s}a_{ij}F_j)$ and $y_{n+1}=y_n+h\sum_{i=1}^{s}b_iF_i$ \hspace{30pt} where $F_i:=y'(t_0+c_ih)$
 \end{enumerate}
 
@@ -162,15 +162,15 @@ $\cdot$ \textbf{Remark}: {\footnotesize For choice of $c_i$: The optimal choice 
 \textbf{Runge-Kutta Methods}: Let $y'=f(t,y)$ \quad \textbf{Stage Values}: $Y_i=y_n+h\sum_{j=1}^{s}a_{ij}f(Y_{j})$ \ \ $i\in\{1,...,s\}$ \quad $F_i=f(Y_i)$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item The RK method is the form: $y_{n+1}=y_n+h\sum_{i=1}^{s}b_if(t_n+c_i,Y_i)$ \quad for some values of $b_i,a_{ij},s,c_i$ \quad { for Autonomous: $c_i=\sum_{j=1}^{s}a_{ij}$}
-    \item Flow-map: $\Psi_{h}(y)=y+h\sum_{i=1}^{s}b_if(t_n+c_i,Y_{i}(y,h))$ \quad \quad \quad { ps:\textit{weights}: $b_i$; \ \textit{internal coefficients}: $a_{ij}$}
+    \item The RK method is the form: $y_{n+1}=y_n+h\sum_{i=1}^{s}b_if(Y_i(y_n,h))$ \quad for some values of $b_i,a_{ij},s,c_i$ \quad { for Autonomous: $c_i=\sum_{j=1}^{s}a_{ij}$}
+    \item Flow-map: $\Psi_{h}(y)=y+h\sum_{i=1}^{s}b_if(Y_{i}(y,h))$ \quad \quad \quad { ps:\textit{weights}: $b_i$; \ \textit{internal coefficients}: $a_{ij}$}
     \item \small{{ We can using \textbf{Butcher Table} to represent the RK method (Appendix)} \quad \textbf{Explicit}: $a_{ij}=0$ for $j\geq i$ { (严格下三角行)} \quad \textbf{Implicit}: $\exists a_{ij}\ne0$ for $j\geq i$ { (Not Explicit)}}
 \end{enumerate}
 
 
 \subsection{Accuracy of RK Method | Order Condition} % Accuracy of RK Method | Order Condition
 
-\textbf{Some Notations}: If $\mathbf{y}=f'(\mathbf{y})$ where $f(\mathbf{y}):\mathbb{R}^d\to\mathbb{R}^d$. \quad Def $f'=(\frac{\partial f_i}{\partial y_j})$,{ $1\leq i\leq d,1\leq j\leq d$} \ {\tiny (行向量)} \qquad $f''=(\frac{\partial^2 f_i}{\partial y_j\partial y_k})$,{ $1\leq i\leq d,1\leq j,k\leq d$} 
+\textbf{Some Notations}: If $\mathbf{y}=f'(\mathbf{y})$ where $f(\mathbf{y}):\mathbb{R}^d\to\mathbb{R}^d$. \quad Def $f'=(\frac{\partial f_i}{\partial y_j})$,{\scriptsize $1\leq i\leq d,1\leq j\leq d$} \ {\tiny (行向量)} \qquad $f''=(\frac{\partial^2 f_i}{\partial y_j\partial y_k})$,{\scriptsize $1\leq i\leq d,1\leq j,k\leq d$} 
 
 $\cdot$ Def: {\footnotesize $f''(\mathbf{a},\mathbf{b})=\sum_{j=1}^{d}\sum_{k=1}^{d}\frac{\partial^2 f_i}{\partial y_{j} \ \partial y_{k}}a_jb_k$ \quad $\big|$ $y'=f$ \quad $y''=\sum_{j=1}^{d}\frac{\partial f_i}{\partial y_j}f_j=f'f$ \quad $y'''=\sum_{j=1}^{d}\sum_{k=1}^{d}\frac{\partial^2f_i}{\partial y_j \ \partial y_k}y'_j(t)y'_k(t)+\sum_{j=1}^{d}\frac{\partial f_i}{\partial y_j}y''_j(t)=f''(f,f)+f'f'f$}
 
@@ -214,6 +214,10 @@ $\cdot$ the point in $\mathcal{F}_h\setminus\mathcal{F}$ is called \textbf{spuri
 
 (Following is a special cases from HDE)
 
+\textbf{Generalized Eigenvectors}: If $\lambda$ is an repeated eigenvalue with eigenvalue $\xi$ then:
+
+\quad Generalized Eigenvectors: $\eta$ s.t. $(A-\lambda I)\eta=\xi$ \quad \quad More generallyL $(A-\lambda I)\eta_n=\eta_{n-1}$
+
 \textbf{Classification of Critical Points at $y^*$ (Linear)}: \ \ \ \ $r_1,r_2$ be sol of $det(J-\lambda I)=0$. \ \ || \ \ $\mathbb{C}:r=\lambda\pm i\mu(\mu>0)$ 
 
 If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ || \ \ $GM=1$: $\mathbf{x}=c_1e^{rt}\xi+c_2e^{rt}(t\xi+\eta)$ \qquad {\tiny $J=\begin{pmatrix}\partial_xF(\mathbf{x}_0) & \partial_yF(\mathbf{x}_0) \\ \partial_xG(\mathbf{x}_0) & \partial_yG(\mathbf{x}_0) \\ \end{pmatrix}$} {\tiny If $f(x,y)=\begin{pmatrix}F(x,y) \\ G(x,y)\end{pmatrix}$}
@@ -251,7 +255,7 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
 
 \subsection{Stability of Fixed Points of Maps (Numerical)}
 
-\textbf{Definition}: For flow map $\Psi$ from $\mathbb{R}^d\to\mathbb{R}^d$. Def $y^{n}(y_0):=$ the $n$-th iterate of $y_0$ under $\Psi$. \ \ ($y^{n}=y_n$) \qquad {\scriptsize e.g. $y^2(y_0)=\Psi(\Psi(y_0))=y_2$}
+\textbf{Definition}: For flow map $\Psi$ from $\mathbb{R}^d\to\mathbb{R}^d$. Def $y^{n}(y_0):=$ the $n$-th iterate of $y_0$ under $\Psi$. \ \ {\footnotesize i.e. $y^{n}=y_n$ ; $y_n=\Psi(y_{n-1})$}
 
 \textbf{Stability of Fixed Points of Maps}: Fixed point $y^*$, the map $\Psi$ with $y^*=\Psi(y^*)$.
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -260,6 +264,73 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
     \item \textbf{Unstable}: $y^*$ is unstable if it's not stable. \quad i.e. $\exists \epsilon>0,\forall \delta>0$ s.t. $||y_0-y^*||<\delta\Rightarrow||y^{n}(y_0)-y^*||\geq\varepsilon$ for some $n$.
 \end{enumerate}
 
+\textbf{Spectral Radius}: For matrix $K$, $\rho(K)=\max\{|\lambda|:\lambda \ \text{is eigenvalue of} \ K\}$
+
+\textbf{Theorem|Spectral Radius}: Let $z_n=||K^ny_0||$, where $K\in\mathbb{R}^{d\times d}$ is the matrix. Then:
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item $\rho(K)<1$ $\Leftrightarrow$ $\lim\limits_{n\to\infty}z_n=0$
+    \item $\rho(K)>1$ $\Leftrightarrow$ $\lim\limits_{n\to\infty}z_n=\infty$
+    \item If $\rho(K)=1$ and \textit{eigenvalues} of $K$ are \textit{semisimple} {\scriptsize (i.e. No generalized eigenvector)}, then $\{z_n\}$ is bounded.
+\end{enumerate}
+
+\textbf{Theorem|Connect to Stability}: For map $\Psi$, $y^*=\Psi(y^*)$. Let $K=\Psi'(y^*)$, then: 
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item $\rho(K)<1$ $\Rightarrow$ $y^*$ is \textit{asymptotically stable}
+    \item $\rho(K)>1$ $\Rightarrow$ $y^*$ is \textit{unstable}
+\end{enumerate}
+
+
+\subsection{Linear Stability of Numerical Methods} % Linear Stability of Numerical Methods
+
+\textbf{Special Case|Euler Method}: For $\frac{dy}{dt}=By$, the Euler method is $y_{n+1}=(I+hB)y_n$. where $\lambda_i$ is eigenvalues of $B$.
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item The origin is \textit{stable} if $||I+h\lambda_i||\leq1$ $\forall i$ \qquad \textit{asymptotically stable} if $||I+h\lambda_i||<1$ $\forall i$
+    \item The origin is \textit{unstable} if $||I+hB||>1$ \qquad {\footnotesize ps: 即$h\lambda_i$在 复平面上以$z=-1$为圆心,半径为1的圆内$\leftarrow$称为\textbf{Region of absolute stability}}
+\end{enumerate}
+
+\textbf{Stability function $R,P$}: Let $P$ be polynomial function and $R$ be rational function.
+
+\quad {\small If RK is \textit{explicit}, then $y_{n+1}=P(\mu)y_n$ \quad ; \quad If RK is \textit{implicit}, then $y_{n+1}=R(\mu)y_n$ \qquad where $\mu=h\lambda$}
+
+\textbf{Stability function $R(\mu)$|Special Case}: For $\frac{dy}{dt}=\lambda y$ \quad {\footnotesize All RK methods can be written as:} \quad {\footnotesize where: $b^T,A$ are from \textit{Butcher Table}. \ \ $\mathbf{1}=[1,...,1]^T$}
+
+\quad \textbf{I}.$Y_i=y_n+\mu\sum^s_{j=1}a_{ij}Y_j$ \quad ($Y=y_n\mathbf{1}+\mu AY$) \qquad $y_{n+1}=y_n+\mu\sum^s_{b=1}b_iY_j=y_n+\mu b^TY$
+
+\quad \textbf{II}.$R(\mu)=1+\mu b^T(I-\mu A)^{-1}\mathbf{1}$ \hspace{80pt} \textbf{III}. $y_{n+1}=R(\mu)y_n$ \qquad where $\mu=h\lambda$
+
+\textbf{Stability function $R(\mu)$|General}: For $\frac{dy}{dt}=By$ \quad {\footnotesize where: $b^T,A$ are from \textit{Butcher Table}. \ \ $\Lambda,U$是B的特征值分解$U^{-1}BU=\Lambda$} \quad {\scriptsize 此时$z_n,y_n$ 是向量}
+
+\quad \textbf{I}. Let $y_n=U z_n$ and $Y_i=UZ_i$:
+
+\qquad Then $Z_{i}=z_n+h\sum_{j=1}^{s}a_{ij}\Lambda Z_j$ \quad {\footnotesize ($Z_j^{(i)}=z_n^{(i)}\mathbf{1}+\mu AZ^{(i)}_j$ \ \ $\forall i$)} \qquad $z_{n+1}=z_n+h\sum_{i=1}^{s}b_i\Lambda Z_i$ \ \ {\footnotesize ($z_{n+1}^{(i)}=z_{n}^{(i)}+\mu\sum^s_{j=1}b_jZ_j^{(i)}$)}
+
+\quad \textbf{II}. $\frac{dz}{dt}=\Lambda z$ \quad $\Rightarrow$ \quad $\frac{dz^{(i)}}{dt}=\lambda_i z^{(i)}$ \quad $\Rightarrow$ \quad $z_{n+1}^{(i)} = R(\mu)z_n^{(i)}$ \quad where $\mu=h\lambda_i$ \qquad {\footnotesize (回到前一个)}
+
+\textbf{Theorem}: For $\frac{dy}{dt}=By$ with $\lambda_1,...,\lambda_d$ be eigenvalues of $B$. The RK method is \textit{stable}|\textit{asy.stab} at \textit{origin} iff:
+
+\quad The Same method also \textit{stable}|\textit{asy.stab} at \textit{origin} for $\frac{dz}{dt}=\lambda_iz$ $\forall i$
+
+\textbf{Corollary}: For $\frac{dy}{dt}=By$ with $B$ diagonalizable. \ \ An RK Method with \textit{stability function} $R(\mu)$ is \textit{stable}|\textit{asy.stab}|\textit{unstable} at \textit{origin} iff:
+
+\quad $|R(\mu)|\leq1$ \ \ or \ \ $|R(\mu)|<1$ \ \ or \ \ $|R(\mu)|>1$ \quad $\forall \mu=h\lambda_i$ $\forall i$ \qquad {\scriptsize we can write $\sigma(B)=\{\lambda_1,...,\lambda_d\}$ the set of eigenvalues of $B$}
+
+\quad \textbf{Remark}: 这里的$R(\mu)$是指$B$分解后的每一个特征值$\lambda_i$的$R(\mu)$,而不是$B$的$R(\mu)$
+
+
+\subsection{Stability Region and A-stability} % Stability Region and A-stability
+
+\textbf{Stability Region}: {\small For $\frac{dy}{dt}=By$. An RK method, the \textit{stability region} is the set of $\mu$ where $\widehat{R}(\mu)=|R(\mu)|<1$.} {\tiny (如$y$是向量,$R(\mu)$按上面corollary的remark所说)}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item Euler's Method: $\widehat{R}(\mu)=|1+\mu|$ \quad $\Rightarrow$ \quad $\mu\in\{z\in\mathbb{C}:|1+z|<1\}$ {\scriptsize (-1处半径为1的圆)}
+    \item Trapezoidal Rule: $\widehat{R}(\mu)=\left|\frac{1+\mu/2}{1-\mu/2}\right|$ \quad $\Rightarrow$ \quad $\mu\in\{z\in\mathbb{C}:|1+z/2|<|1-z/2|\}$ {\scriptsize (left complex half-plane, A-stable)}
+    \item Implicit Euler: $\widehat{R}(\mu)=|1-\mu|^{-1}$ \quad $\Rightarrow$ \quad $\mu\in\{z\in\mathbb{C}:|1-z|>1\}$ {\scriptsize (-1处半径为1的圆外侧)}
+    \item RK4: $\widehat{R}(\mu)=\left|1+\mu+\frac{\mu^2}{2}+\frac{\mu^3}{6}+\frac{\mu^4}{24}\right|$ \quad $\Rightarrow$ \quad Using $R(\mu)=e^{i\theta}$ to find the region.
+\end{enumerate}
+
+\textbf{A-Stable}: An RK method is \textit{A-stable} if its \textit{stability region} contains the entire \textit{left complex half-plane}. {\scriptsize (i.e. $\Re(z)<0$)}
 
 
 \section{Appendix} 
