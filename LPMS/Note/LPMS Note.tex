@@ -300,4 +300,59 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \quad By Solving $\textcolor{red}{\blacksquare} \to \textcolor{orange}{\blacksquare} \to \textcolor{olive}{\blacksquare} \to \textcolor{green}{\blacksquare} \to \textcolor{blue}{\blacksquare} \to \textcolor{black}{\blacksquare} \to \textcolor{purple}{\blacksquare}  $
 
 
+\section{Example of format written in LP}
+
+\textbf{Example|构建LP问题模板}:
+
+\vspace{-10pt}
+\begin{multicols}{2}
+\begin{quote}
+    \color{gray}
+    \fontsize{7pt}{5pt}\selectfont
+    \textbf{Defining decision variables}:
+
+    \quad Let $x_1$ be the number of 1kg packets of Breakfast Blend made each day.
+
+    \quad Let $x_2$ be the number of 1kg packets of Dinner Blend made each day.
+    
+    \textbf{Total income is}: $f_I = 1.16x_1 + 1.42x_2.$
+
+    \textbf{Total cost is}: $f_C = 0.18x_1 + 0.36x_2 + 0.28x_1 + 0.16x_2 = 0.46x_1 + 0.52x_2.$
+
+    \textbf{Thus, total profit is}:$f_I - f_C = 1.16x_1 + 1.42x_2 - 0.46x_1 - 0.52x_2 = 0.7x_1 + 0.9x_2.$
+
+    \textbf{The objective is to maximize total profit \( f = 0.7x_1 + 0.9x_2 \)}
+
+    \textbf{Constraints}:
+    \begin{enumerate}[itemsep=-1pt, topsep=-1pt]
+        \item The number of kilos of arabica used, \( 0.3x_1 + 0.6x_2 \), must not exceed the supply of 1200kg.
+        \item The number of kilos of robusta used, \( 0.7x_1 + 0.4x_2 \), must not exceed the supply of 1500kg.
+        \item The total number of kilos of coffee made, \( x_1 + x_2 \), must not exceed the capacity of 2400kg.
+    \end{enumerate}
+    
+    \textbf{Thus, the LP Problem to be solved is}:
+    \[
+    \begin{aligned}
+        \text{maximize} \qquad \ \ \ f = 0.7x_1 + 0.9x_2, \\
+        \text{subject to} \quad 0.3x_1 + 0.6x_2 \leq 1200, \\
+        0.7x_1 + 0.4x_2 \leq 1500, \\
+        x_1 + x_2 \leq 2400, \\
+        x_1, x_2 \geq 0.
+    \end{aligned}
+    \]
+    
+    \textbf{Introducing Slack Variables}:  
+    \[
+    \begin{aligned}
+        \text{maximize} \qquad \qquad \quad f = 0.7x_1 + 0.9x_2, \\
+        \text{subject to} \quad 0.3x_1 + 0.6x_2 + x_3 = 1200, \\
+        0.7x_1 + 0.4x_2 + x_4 = 1500, \\
+        x_1 + x_2 + x_5 = 2400, \\
+        x_1, x_2, x_3, x_4, x_5 \geq 0.
+    \end{aligned}
+    \]
+\end{quote}
+\end{multicols}
+\vspace{-10pt}
+
 \end{document}
