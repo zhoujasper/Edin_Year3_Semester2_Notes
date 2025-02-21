@@ -203,7 +203,7 @@ $\cdot$ \textbf{Theorem}: {\small If LP has a unique optimal solution is a verte
     \item {\small \textbf{Initial Basic Feasible Solution}: Try $\mathcal{B}=\{n+1,...,n+m\}$ and $\mathcal{N}=\{1,...,n\}$ \ \ $\Rightarrow$ \ \ $B=I,N=A$ , $\mathbf{x}_B=\widehat{\mathbf{b}}=\mathbf{b}$, $\mathbf{x}_N=\mathbf{0}$, $\mathbf{c}_B=\mathbf{0}$, $\mathbf{c}_N=\mathbf{c}$}
     \item If $\mathbf{b}\geq0$. $\Rightarrow$ Basis is feasible + cont. \qquad Else: Basis $B$ is not feasible. \quad Go to ``Cases If $\mathbf{b}\ngeq0$``
     \item If $\widehat{\mathbf{c}}_N\leq0. \Rightarrow$ Optimal Solution \qquad Else: cont.
-    \item Let $q'\in\mathcal{N}$ {\small 对应$\widehat{\mathbf{c}}_N$中最大positive分量的index} \quad {\small 同理,对应的最大正分量值为$\widehat{c_q}$} \quad {\small 对应的variable为$x_{q'}$} \quad {\small 对应$N$中的[$q'$]列为$\mathbf{a}_q$}
+    \item Let $q'\in\mathcal{N}$ {\small 对应$\widehat{\mathbf{c}}_N$中最大positive分量的index} \quad {\small 同理,对应的最大正分量值为$\widehat{c_q}$} \quad {\small 对应的variable为$x_{q'}$} \quad {\small 对应$N$中的[$q$]列为$\mathbf{a}_q$}
     \item Let $\widehat{\mathbf{a}_q}=B^{-1}\mathbf{a_q}$. \qquad If $\widehat{\mathbf{a}_q}\leq0$ $\Rightarrow$ LP is unbounded. \qquad Else: LP is bounded + cont.
     \item Let $p'\in\mathcal{B}$ \ be the index corresponding to $p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$ {\scriptsize $p$是对应的index,not value} \qquad \quad {\small 用$\overline{\alpha}=\frac{\widehat{b_p}}{\widehat{a}_{pq}}$代表值}\\
     $\widehat{b_i},\widehat{a}_{iq}$ {\small 代表$\widehat{\mathbf{b}}$的第$i$个分量, $\widehat{\mathbf{a}_q}$的第$i$个分量} \\
