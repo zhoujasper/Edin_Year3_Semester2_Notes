@@ -361,6 +361,69 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \quad ps: {\footnotesize consider $f:M/K\to M/N$ and then we can find $ker(f)=N/K$}
 
 
+\section{Permutation | Determinants | Eigenvalues and Eigenvectors} % Permutation | Determinants | Eigenvalues and Eigenvectors
+
+\subsection{Permutation | Determinants} % Permutation | Determinants
+
+\textbf{Permutation}: A bijection $\sigma:\{1,...,n\}\bij\{1,...,n\}$ is a permutation. \qquad \qquad All permutations of $n$ elements form a group $\mathfrak{S}_n$.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item {\scriptsize \textbf{Transposition}: A transposition is a permutation that exchanges two elements. \qquad \textbf{Inversion}: A pair of elements $(i,j)$ is an inversion of $\sigma\in\mathfrak{S}_n$ if $i<j$ but $\sigma(i)>\sigma(j)$}
+    \item {\scriptsize \textbf{Length}: The length of a permutation $\sigma$ is the number of inversions. (i.e. $\ell(\sigma):=\left|\ \{(i,j):i<j,\sigma(i)>\sigma(j)\}\ \right|$) \qquad \textbf{Sign}: $\text{sgn}(\sigma):=(-1)^{\ell(\sigma)}$ \qquad $\text{sgn}=1,even \ ; \ \text{sgn}=-1,odd$}
+    \item $\text{sgn}(a_1a_2)=-1$ \quad $\text{sgn}(a_1...a_n)=(-1)^{n-1}$ \quad $\text{sgn}(\sigma\tau)=\text{sgn}(\sigma)\text{sgn}(\tau)$ \quad $\big|$ \quad \textbf{Alternating Group}: $A_n:=\{\sigma\in\mathfrak{S}_n:\text{sgn}(\sigma)=1\}$
+    \item \textbf{Graph Meaning of Inversion}: {\small Inversion is \# edges that cross each other in the graph of permutation. {\footnotesize (i.e. 画出的图中,线段交叉的次数)}}
+\end{enumerate}
+
+\textbf{Determinant}: For matrix $A_{n\times n}$, with $A_{ij}=a_{ij}$. \quad $\det(A):=\sum_{\sigma\in\mathfrak{S}_n}\text{sgn}(\sigma)a_{1\sigma(1)}\cdots a_{n\sigma(n)}$ (\textbf{Leibniz Formula}) \qquad $\det(I_0):=1$
+
+\textbf{Geometric Meaning of Determinant}: Let $\text{area}(U)$ denote the area|volume of $U$. \quad Let $A$ denote a matrix.
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item {\footnotesize $\det(A)$ 对 U 操作后的面积|体积 = $|\det(A)|\times\text{area}(U)$} \quad 2. \ {\footnotesize $\text{sgn}(\det A)$ 决定了方向是否改变(+1不变,-1变). {\scriptsize (i.e. 顺逆时针变化,左右|上下变化,手性变化)}}
+\end{enumerate}
+
+\vspace{3pt}
+\textbf{Bilinear|Multilinear form}: {\small $U,V,V_i,W$ be F-vector space. \quad A mapping \ \ $H: U\times V\to W$ \ \ or \ \ $H:V_1\times \cdots\times V_n\to W$ \ \ is \ \ \textit{bilinear | multilinear} if:}
+
+\vspace{2pt}
+\noindent
+\begin{minipage}{0.4\linewidth}
+    \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+        \item $H(\lambda u,v)=\lambda H(u,v)$
+        \item $H(u+v,w)=H(u,w)+H(v,w)$
+        \item $H(u,\lambda v)=\lambda H(u,v)$
+        \item $H(u,v+w)=H(u,v)+H(u,w)$
+    \end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.6\linewidth}
+    \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+        \item $H(u_1,...,\lambda v_i,...,u_n)=\lambda H(u_1,...,v_i,...,u_n)$ \quad $\forall i$
+        \item $H(u_1,...,v_i+v_j,...,u_n)=H(u_1,...,v_i,...,u_n)+H(u_1,...,v_j,...,u_n)$ \quad $\forall i$ \\
+        {\scriptsize (左边bilinear,右边multilinear)}
+    \end{enumerate}
+\end{minipage}
+
+\vspace{3pt}
+\quad H is \textbf{Symmetric} if (bilinear): $^1U=V$, \quad $^2H(u,v)=H(v,u)$ \ \ $\forall u,v\in U$
+
+\hspace{78pt} if (multilinear): $^1V_i$ same, \quad $^2H(v_1,...,v_n)=H(v_{\sigma(1)},...,v_{\sigma(n)})$ \ \ $\forall \sigma\in\mathfrak{S}_n$
+
+\quad H is \textbf{Alternating|Antisymmetric} if (bilinear): $^1U=V$, \quad $^2H(u,u)=0$ \ \ $\forall u\in U$
+
+\hspace{153pt} if (multilinear): $^1V_i$ same, \quad $^2H(v_1,...,v_n)=0$ \ \ $\forall v_i=v_j$ \quad {\scriptsize (i.e. 只要存在两个及以上相同的, $H$结果为0)}
+
+\quad \textbf{Lemma}: If $H$ is \textit{alternating}, then \quad $H(u,v)=-H(v,u)$ \qquad $H(v_1,...,v_i,...,v_j,...,v_n)=-H(v_1,...,v_j,...,v_i,...,v_n)$ \qquad {\scriptsize ($\Leftarrow$不一定成立)}
+
+\textbf{Property of Determinant}: Let $A,B$ be $n\times n$ matrices. \quad $F$ be field. \quad $R$ be \textit{commutative ring}.
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Unique on Field}: $\det:F^n\times \cdots\times F^n\to F$ \textit{or} $\det: Mat(n;F) \to F$ is the $^1$\textit{unique} $^2$\textit{alternating} $^3$\textit{multilinear form} s.t. $\det(I_n)=1_F$
+    \item \textbf{Invertible on Field}: For $Mat(n;F)$, $A$ is invertible $\Leftrightarrow$ $\det(A)\ne0$ \qquad {\scriptsize 对于communitative ring, 这个结论成立如果$\det(A)$在$R$中有逆}
+    \item \textbf{Operations}: {\scriptsize If $R$ is \textit{commutative ring}}, then $\det(AB)=\det(A)\det(B)$ \quad $\det(A^T)=\det(A)$ \quad $\det(A^{-1})=\det(A)^{-1}$
+    \item \textbf{Similar}: {\scriptsize If $R$ is \textit{commutative ring}}, $A\sim B$ $\Rightarrow$ $\det(A)=det(P^{-1}BP)=\det(B)$ \qquad Thus, we can define: $det(f)$ for $f:V\to V$
+\end{enumerate}
+
+
+
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint} % Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint
 
 
