@@ -316,7 +316,7 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 
 \qquad ps: 如果$b_i\to b_i+\delta$ 对应的$\mathcal{B}$中的第$i$个变量是basic slack, 那么$\pi_i=0$. (simply no fair price price for more of the resource)
 
-\qquad ps: 如果$b_i\to b_i+\delta$ 对应的$\mathcal{B}$中的第$i$个变量是basic variables {\tiny (Same as $x_{n+i}$ is nonbasic slack)}, 那么$\pi_i=-\widehat{c_i}$.
+\qquad ps: 如果$b_i\to b_i+\delta$ 对应的$\mathcal{B}$中的第$i$个变量不是slack, {\tiny (Same as $x_{n+i}$ is nonbasic slack)}, 那么$\pi_i=-\widehat{c_i}$.
 
 \qquad $\star$ Range of $\delta$ is \textit{lower|upper bound Sensitivity}, \quad $\star$ \textit{Feasible Region} increases when $\overline{\delta}$ increases and $\underline{\delta}$ decreases.
 
@@ -334,8 +334,6 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
     \item 如果影响的变量在$\mathcal{B}$中(basic variables): $B$ may become singular, the optimal solution may change, etc.
     \item 如果影响的变量在$\mathcal{N}$中(nonbasic variables): One \textit{reduced cost} will change, $N$ will change.
 \end{enumerate}
-
-
 
 
 \section{Example of format written in LP}

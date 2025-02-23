@@ -268,7 +268,7 @@ $\cdot$ If $Log_{\phi}(z)$ is holomorphic on $D_{\phi}$, then $Log_{\phi}(z-a)$ 
 \textbf{Integral Along Curve}: Let $\gamma:[t_0,t_1]\to\mathbb{C}$ be a \textit{regular} curve s.t. $\gamma([t_0,t_1])=\Gamma$ and $f:\Gamma\to\mathbb{C}$ is \textit{continuous}.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Def}: $\int_{\Gamma}f(z)dz:=\int_{t_0}^{t_1}f(\gamma(t))\gamma'(t)dt$
+    \item $\star$ \textbf{Def}: $\int_{\Gamma}f(z)dz:=\int_{t_0}^{t_1}f(\gamma(t))\gamma'(t)dt$ $\star$
     \item \textbf{Circle at zero}: \textit{Circle Centred at 0 with radius R}: $\gamma:[0,1]\to\mathbb{C}$ by $\gamma(t)=R\exp(2\pi it)$
     \item \textbf{Constant Function}: If $f(z)=c$ ; $\gamma:[a,b]\to\mathbb{C}$. Then $\int_{\Gamma}f(z)dz=\int^a_b c\cdot\gamma'(z) dz = c\cdot(\gamma(b)-\gamma(a))$
 \end{enumerate}
@@ -283,7 +283,8 @@ $\cdot$ If $Log_{\phi}(z)$ is holomorphic on $D_{\phi}$, then $Log_{\phi}(z-a)$ 
     \item \textbf{M-L Lemma}: $|\int_{\Gamma}f(z)dz|\leq \max_{z\in\Gamma}|f(z)|\ell(\Gamma)$
     \item \textbf{Lemma}: $\int_{\Gamma}(\alpha f+\beta g)dz=\alpha\int_{\Gamma}f(z)dz+\beta\int_{\Gamma}g(z)dz$ \qquad $\int_{-\Gamma}f(z)dz=-\int_{\Gamma}f(z)dz$ \ \ {\scriptsize Here: $\widetilde{\gamma}(t):=\gamma(b-t)$ have $\widetilde{\gamma}([a,b])=-\Gamma$}
     \item \textbf{Change of Variables}: {\small If $^1\gamma:[a,b]\to\Gamma$, and $\widetilde{\gamma}:[\widetilde{a},\widetilde{b}]\to\Gamma$ are \textit{two parametrizations} of $\Gamma$;} \\
-    {\small $^2$ $\exists\lambda:[\widetilde{a},\widetilde{b}]\to[a,b]$ s.t. $\lambda'(t)>0$ and $\widetilde{\gamma}(t)=\gamma(\lambda(t))$ \ \ {\scriptsize (防止曲线回头)} \ \ \ $\Rightarrow$ \ \ \ $\int^b_a f(\gamma(t))\gamma'(t)dt=\int^{\widetilde{b}}_{\widetilde{a}}f(\widetilde{\gamma}(t))\widetilde{\gamma}'(t)dt$}.
+    {\small $^2$ $\exists\lambda:[\widetilde{a},\widetilde{b}]\to[a,b]$ s.t. $\lambda'(t)>0$ and $\widetilde{\gamma}(t)=\gamma(\lambda(t))$ \ \ {\scriptsize (防止曲线回头)} \ \ \ $\Rightarrow$ \ \ \ $\int^b_a f(\gamma(t))\gamma'(t)dt=\int^{\widetilde{b}}_{\widetilde{a}}f(\widetilde{\gamma}(t))\widetilde{\gamma}'(t)dt$}. \\
+    {\small (特别的,如果$\Gamma$是closed,$f$在$\Gamma$上的积分与哪里选择起/终点无关)}
 \end{enumerate}
 
 \textbf{Contour}: A curve $\Gamma$ is \textit{contour} if it's \textit{finite union of regular curves} $\Gamma_1,\Gamma_2,...,\Gamma_n$. \quad \quad {\footnotesize Each $\Gamma_i$ is \textbf{regular component} of $\Gamma$}
@@ -308,6 +309,42 @@ $\cdot$ If $Log_{\phi}(z)$ is holomorphic on $D_{\phi}$, then $Log_{\phi}(z-a)$ 
     \item \textbf{Path-Independence Lemma}: $D$ domain, $f$ \textit{continuous} on $D$. \ Then: \\
     $f$ has \textit{antiderivative} on $D$ \ \ $\Leftrightarrow$ \ \ $\int_{\Gamma}f(z)dz=0$ $\forall$ \textit{closed contours} $\Gamma$ in $D$ \ \ $\Leftrightarrow$ \ \ $\int_{\Gamma}f(z)dz$ is \textit{path-independent}.
 \end{enumerate}
+
+
+\subsection{Cauchy's Theorem} % Cauchy's Theorem
+
+\textbf{Simple}: {\small A \textit{contour} $\Gamma$ is \textit{simple} if it doesn't intersect itself except at the endpoints.} \quad \textbf{Loop}: {\small A \textit{contour} $\Gamma$ is a \textit{loop} if it's \textit{simple} and $\Gamma(t_0)=\Gamma(t_1)$}
+
+\textbf{Jordan Curve Theorem}: {\small $\forall \ \Gamma$ be \textit{Loop} \ \ \textbf{Interior $Int(\Gamma)$}: {\footnotesize $\Gamma$ 的内部,bounded.} \ \ \textbf{Exterior $Ext(\Gamma)$}: {\footnotesize $\Gamma$ 的外部,unbounded.} \ \ \textbf{Boundary} {\footnotesize $\Gamma$ 的边界, $\Gamma$ itself.}}
+
+\quad And $Int(\Gamma)$ is bounded \textit{domain} \quad $Ext(\Gamma)$ is unbounded \textit{domain}. \quad \textbf{Remark}: $Int(\Gamma)$ is \textit{open} and $Ext(\Gamma)$ is \textit{open} also.
+
+$\cdot$ \textbf{Common Loop}: $C_r(z_0)$ is a circle of radius $r$ centered at $z_0$ \quad Corresponding $\gamma(t)=z_0+r\exp(2\pi i t)$ $t\in[0,1]$
+
+$\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then $\Gamma$ is \textit{positive-oriented} if:} \ \ {\scriptsize 按方向走时,内部在左边} {\tiny (as we move along the curve in the direction of parametrization, the interior is on the left-hand side.)}
+
+\quad \textbf{Remark}: Unless otherwise stated, all loops shall be \textit{positively-oriented}.
+
+\textbf{Simply-Connected}: A domain $D$ is \textit{simply-connected} if: \ \ $\forall$ \textit{loop} $\Gamma$ in $D$, $Int(\Gamma)\subseteq D$ \qquad {\footnotesize (即没有洞的domain/open set)}
+
+\textbf{Cauchy Integral Theorem}: If $\Gamma$ is \textit{Loop}, $f$ is holomorphic in $Int(\Gamma)\cup \Gamma$ {\scriptsize (Inside and on $\Gamma$)}, then $\int_{\Gamma}f(z)dz=0$
+
+\quad \textbf{Corollary}: If $D$ is \textit{simply-connected} domain and $f:D\to\mathbb{C}$ is \textit{holomorphic} on $D$. Then $f(z)$ has \textit{antiderivative} on $D$. $\star$ 
+
+\qquad\qquad\quad {\scriptsize 即:在没有洞的open set上如果都是holomorphic,那么都有antiderivative.}
+
+\quad \textbf{Remark}: {\small 如果loop $\Gamma$上和以内没有穿过任何非holomorphic点,那么$f(z)$的积分值不变.}
+
+\textbf{Theorem}: Let $z_0\in\mathbb{C}$, $\Gamma$ be \textit{Loop}. Then $\int_\Gamma \frac{1}{z-z_0}=\begin{cases}2\pi i & if \ z_0\in\text{Int}(\Gamma) \\ 0 & \text{otherwise} \end{cases}$
+
+\textbf{Deformation Theorem}: {\footnotesize Let $\Gamma_1,\Gamma_2$ be \textit{loops}, and $f$ is \textit{holomorphic} on $\left(Int(\Gamma_1)\setminus Int(\Gamma_2)\right)\bigcup\left(Int(\Gamma_2)\setminus Int(\Gamma_1)\right) \ , \ \Gamma_1 \ , \ \Gamma_2$. Then $\int_{\Gamma_1}f(z)dz=\int_{\Gamma_2}f(z)dz$}
+
+\quad {\small 即: 两个\textit{loop} $\Gamma_1$ 和 $\Gamma_2$ 及它们围成的区域中(除公共区域)上,函数$f(z)$全纯, 那么它们的路径积分相等} \quad {\scriptsize ps: 可以是内外loop,也可以是交叉的loop}
+
+
+\subsection{Cauchy's Integral Formula} % Cauchy's Integral Formula
+
+
 
 
 \end{document}
