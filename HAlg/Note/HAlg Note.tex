@@ -376,6 +376,8 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \textbf{Determinant}: For matrix $A_{n\times n}$, with $A_{ij}=a_{ij}$. \quad $\det(A):=\sum_{\sigma\in\mathfrak{S}_n}\text{sgn}(\sigma)a_{1\sigma(1)}\cdots a_{n\sigma(n)}$ (\textbf{Leibniz Formula}) \qquad $\det(I_0):=1$
 
+\hspace{200pt} {\scriptsize or:} $\det(A):=\sum_{\sigma^{-1}\in\mathfrak{S}_n}\text{sgn}(\sigma^{-1})a_{\sigma^{-1}(1)1}\cdots a_{\sigma^{-1}(n)n}$
+
 \textbf{Geometric Meaning of Determinant}: Let $\text{area}(U)$ denote the area|volume of $U$. \quad Let $A$ denote a matrix.
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item {\footnotesize $\det(A)$ 对 U 操作后的面积|体积 = $|\det(A)|\times\text{area}(U)$} \quad 2. \ {\footnotesize $\text{sgn}(\det A)$ 决定了方向是否改变(+1不变,-1变). {\scriptsize (i.e. 顺逆时针变化,左右|上下变化,手性变化)}}
@@ -412,16 +414,26 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \hspace{153pt} if (multilinear): $^1V_i$ same, \quad $^2H(v_1,...,v_n)=0$ \ \ $\forall v_i=v_j$ \quad {\scriptsize (i.e. 只要存在两个及以上相同的, $H$结果为0)}
 
-\quad \textbf{Lemma}: If $H$ is \textit{alternating}, then \quad $H(u,v)=-H(v,u)$ \qquad $H(v_1,...,v_i,...,v_j,...,v_n)=-H(v_1,...,v_j,...,v_i,...,v_n)$ \qquad {\scriptsize ($\Leftarrow$不一定成立)}
+\quad \textbf{Lemma I}: If $H$ is \textit{alternating}, then \quad $H(u,v)=-H(v,u)$ \qquad $H(v_1,...,v_i,...,v_j,...,v_n)=-H(v_1,...,v_j,...,v_i,...,v_n)$ \qquad {\scriptsize ($\Leftarrow$不一定成立)}
+
+\quad \textbf{Lemma II}: If $H$ is \textit{alternating}, then \quad $H(v_1,...,v_n)=\text{sgn}(\sigma)H(v_{\sigma(1)},...,v_{\sigma(n)})$ \qquad {\scriptsize ($\sigma$ is a permutation)}
 
 \textbf{Property of Determinant}: Let $A,B$ be $n\times n$ matrices. \quad $F$ be field. \quad $R$ be \textit{commutative ring}.
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Unique on Field}: $\det:F^n\times \cdots\times F^n\to F$ \textit{or} $\det: Mat(n;F) \to F$ is the $^1$\textit{unique} $^2$\textit{alternating} $^3$\textit{multilinear form} s.t. $\det(I_n)=1_F$
-    \item \textbf{Invertible on Field}: For $Mat(n;F)$, $A$ is invertible $\Leftrightarrow$ $\det(A)\ne0$ \qquad {\scriptsize 对于communitative ring, 这个结论成立如果$\det(A)$在$R$中有逆}
-    \item \textbf{Operations}: {\scriptsize If $R$ is \textit{commutative ring}}, then $\det(AB)=\det(A)\det(B)$ \quad $\det(A^T)=\det(A)$ \quad $\det(A^{-1})=\det(A)^{-1}$
-    \item \textbf{Similar}: {\scriptsize If $R$ is \textit{commutative ring}}, $A\sim B$ $\Rightarrow$ $\det(A)=det(P^{-1}BP)=\det(B)$ \qquad Thus, we can define: $det(f)$ for $f:V\to V$
+    \item \textbf{Invertible on Field}: For $Mat(n;F)$, $A$ is invertible $\Leftrightarrow$ $\det(A)\ne0$ \quad $\det(A^{-1})=\det(A)^{-1}$ \quad {\scriptsize 交换环, 结论成立如果$\det(A)$在$R$中有逆}
+    \item \textbf{Similar on Field}: For $F$ field. \quad $A\sim B$ $\Rightarrow$ $\det(A)=det(P^{-1}BP)=\det(B)$ \qquad Thus, we can define: $det(f)$ for $f:V\to V$
+    \item \textbf{Operations}: {\scriptsize If $R$ is \textit{commutative ring}}, then $\det(AB)=\det(A)\det(B)$ \quad $\det(A^T)=\det(A)$  \quad $\det(A^{-1})=\det(A)^{-1}$
 \end{enumerate}
 
+\textbf{Common Theorems in Determinant}: Let $A$ be $n\times n$ matrix. \quad $F$ be field. \quad $R$ be \textit{commutative ring}.
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item {\small \textbf{Cofactor}: In $R$, \ \ $C_{ij}:=(-1)^{i+j}\det(A\langle i,j\rangle)$ \quad {\tiny where $A\langle i,j\rangle$ 是$A$去掉第$i$行第$j$列的矩阵.} \quad \textbf{Laplace's Expansion}: In $R$, \ \ $\det(A)=\sum_{j=1}^n a_{ij}C_{ij}= \sum_{i=1}^n a_{ij}C_{ij}$}
+    \item {\small \textbf{Adjugate Matrix}: In $R$ \ \ $\text{adj}(A)$ matrix, $\text{adj}(A)_{ij}:=C_{ji}$ \quad \textbf{Cramer's Rule}: In $R$ \ \ $A\cdot\text{adj}(A)=(\det A)I_n$ \quad In $F$, $x_i=\frac{\det(A_i)}{\det(A)}$ {\tiny $A_i$代表$A$的第$i$列替换为$b$}}
+    \item \np \textbf{Theorem|Need proof}: In $R$, \ \ $\text{adj}(A^T)=\text{adj}(A)^T$ \quad {\tiny Hint: $\text{adj}(A^T)_{ij}=C_{ij}^{A^T}=(-1)^{i+j}\det(A^T\langle i,j\rangle)=(-1)^{i+j}\det(A\langle j,i\rangle^T)=(-1)^{i+j}\det(A\langle j,i\rangle)=C_{ji}^{A}=\text{adj}(A)_{ji}=\text{adj}(A)_{ij}^T$}
+    \item $\star$ \textbf{Invertibility of Matrix}: In $R$, matrix $A$ is invertible $\Leftrightarrow$ $\det(A)\in R^\times$ \qquad {\scriptsize e.g. $\mathbb{Z}^\times=\{\pm 1\} \ \ ; \ \ \mathbb{C}^\times,\mathbb{R}^\times,\mathbb{Q}^\times=\mathbb{C}^*,\mathbb{R}^*,\mathbb{Q}^* \ \ ; \ \ \mathbb{F}_p^\times=\mathbb{F}_p\setminus\{0\} \ \ ; \ \ \mathbb{Z}[i]=\{\pm1,\pm i\}$}
+    \item \textbf{Jacobi's Formula}, Let matrix $A$ s.t. $a_{ij}(t)$ are functions of $t$. \quad Then, $\frac{d}{dt}\det(A)=\text{tr}\left(\text{adj}A\cdot\frac{dA}{dt}\right)$
+\end{enumerate}
 
 
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint} % Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint

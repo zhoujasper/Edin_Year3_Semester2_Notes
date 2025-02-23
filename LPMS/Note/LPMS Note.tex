@@ -300,6 +300,44 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \quad By Solving $\textcolor{red}{\blacksquare} \to \textcolor{orange}{\blacksquare} \to \textcolor{olive}{\blacksquare} \to \textcolor{green}{\blacksquare} \to \textcolor{blue}{\blacksquare} \to \textcolor{black}{\blacksquare} \to \textcolor{purple}{\blacksquare}  $
 
 
+\section{Sensitive Analysis} % Sensitive Analysis
+
+\textbf{RHS Sensitivity}: {\small Consider $b_i\to b_i+\delta$ \quad $\big|$ \quad $\max f=\mathbf{c}^T\mathbf{x}$ subject to $A\mathbf{x}\leq \mathbf{b},\mathbf{x}\geq0$ \quad $\Rightarrow$ {\tiny (Add Slack variables)} \quad $\max f=\overline{\mathbf{c}}^T\mathbf{x}$ subject to $\overline{A}\mathbf{x}=\mathbf{b},\mathbf{x}\geq0$}
+
+\qquad Assume $\mathcal{B},\mathcal{N},B,N$ yield an \textit{optimal solution}, with $\mathbf{x}_B=\widehat{\mathbf{b}},\mathbf{x}_N=\mathbf{0}$
+
+\qquad Then, the new optimal values is: \quad $\mathbf{x}_B=B^{-1}(\mathbf{b}+\delta \mathbf{e}_i)=\widehat{\mathbf{b}}+\delta B^{-1}\mathbf{e_i}$ \quad if $\mathbf{x}_B\geq0$
+
+\qquad With range of $\delta\in[ \ \underline{\delta} \ , \ \overline{\delta} \ ]$ \quad $\underline{\delta}=\max\limits_{[B^{-1}]_{ij}>0}-\frac{\widehat{b}_j}{[B^{-1}]_{ij}}$ \quad $\overline{\delta}=\min\limits_{[B^{-1}]_{ij}<0}-\frac{\widehat{b}_j}{[B^{-1}]_{ij}}$ \hspace{30pt} {\tiny $\Downarrow \text{nonbasic slack}:\pi_i=-\widehat{c_i}$, $\widehat{c_i}$ 指 reduced cost $\widehat{\mathbf{c}}_N$ 的第$i$个分量;basic slack: $\pi_i=0$}
+
+\qquad \textbf{Fair Prices}: The objective function will change by $\delta$ as: $f=\widehat{f}+\delta\pi_i$ \quad where $\widehat{f}=\mathbf{c}_B^T\widehat{\mathbf{b}}$ \quad $\pi_i=\mathbf{c}_B^TB^{-1}\mathbf{e}_i$ (fair price)
+
+\qquad If \textit{price of unit amount} $<$ $\pi_i$, buying more of the resource is attractive. \qquad If $>$, is unattractive.
+
+\qquad ps: 如果$b_i\to b_i+\delta$ 对应的$\mathcal{B}$中的第$i$个变量是basic slack, 那么$\pi_i=0$. (simply no fair price price for more of the resource)
+
+\qquad ps: 如果$b_i\to b_i+\delta$ 对应的$\mathcal{B}$中的第$i$个变量是basic variables {\tiny (Same as $x_{n+i}$ is nonbasic slack)}, 那么$\pi_i=-\widehat{c_i}$.
+
+\qquad $\star$ Range of $\delta$ is \textit{lower|upper bound Sensitivity}, \quad $\star$ \textit{Feasible Region} increases when $\overline{\delta}$ increases and $\underline{\delta}$ decreases.
+
+\textbf{Cost Sensitivity}: 即$c_i\to c_i+\delta$. \quad $\max f=\mathbf{c}^T\mathbf{x}$ subject to $A\mathbf{x}\leq \mathbf{b},\mathbf{x}\geq0$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item 小范围的变化不会改变最优解. {\scriptsize (If an LP cost coefficient is changed by a small amount, the optimal solution will not change.)}
+    \item 如果$c_i\to c_i+\delta$ 对应的$i$变量在$\mathcal{B}$中(basic variables), 那么 all reduced costs will change.
+    \item 如果$c_i\to c_i+\delta$ 对应的$i$变量在$\mathcal{N}$中(nonbasic variables), 那么 only the reduced cost of \textit{that} variables will change.
+\end{enumerate}
+
+\textbf{Coefficient Sensitivity}: 即$a_{ij}\to a_{ij}+\delta$. \quad $\max f=\mathbf{c}^T\mathbf{x}$ subject to $A\mathbf{x}\leq \mathbf{b},\mathbf{x}\geq0$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item 如果影响的变量在$\mathcal{B}$中(basic variables): $B$ may become singular, the optimal solution may change, etc.
+    \item 如果影响的变量在$\mathcal{N}$中(nonbasic variables): One \textit{reduced cost} will change, $N$ will change.
+\end{enumerate}
+
+
+
+
 \section{Example of format written in LP}
 
 \textbf{Example|构建LP问题模板}:
