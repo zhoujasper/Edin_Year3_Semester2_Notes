@@ -123,7 +123,7 @@ $\cdot$ {\footnotesize ps: 常见可导复数函数: $\exp(z),\sin z,\cos z,\log
 
 \textbf{Harmonic Function}: $h:\mathbb{R}^2\to\mathbb{R}$ is harmonic if: $\forall(x,y)\in\mathbb{R}^2$ \ $\frac{\partial^2h}{\partial x^2}+\frac{\partial^2h}{\partial y^2}=0$ {\footnotesize (\textbf{Laplace Equation})}
 
-$\cdot$ \textbf{Lemma}: If $f=u+iv$ is holomorphic on $\mathbb{C}$ and $u,v$ are twice \textit{continuously differentiable}, \ \ $\Rightarrow$ \ \ $u,v$ are harmonic.
+$\cdot$ \textbf{Lemma}: If $f=u+iv$ is holomorphic on $\mathbb{C}$ {\tiny (and $u,v$ are twice \textit{continuously differentiable}) 可以不用}, \ \ $\Rightarrow$ \ \ $u,v$ are harmonic.
 
 \textbf{Harmonic Conjugate}: {\small Let $u,v:U\to\mathbb{R},U\subseteq\mathbb{R}^2 $ be harmonic functions. $u,v$ are harmonic conjugate if: $f=u+iv$ is holomorphic on $U$.}
 
@@ -344,6 +344,23 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 
 \subsection{Cauchy's Integral Formula} % Cauchy's Integral Formula
 
+\textbf{Cauchy's Integral Formula}: $\Gamma$ \textit{Loop}, $f(z)$ \textit{holomorphic} inside and on $\Gamma$, $z_0\in Int(\Gamma)$, \quad $\Rightarrow$ \quad $f(z_0)=\frac{1}{2\pi i}\int_{\Gamma}\frac{f(z)}{z-z_0}dz$
+
+\quad {\small ps: We always use it to calculate: $\int_{\Gamma}\frac{f(z)}{z-z_0}dz$ if $f(z)$ is holomorphic on and inside $\Gamma$ (\textit{loop}), and $z_0\in Int(\Gamma)$. \quad $\Rightarrow$ \quad $\int_{\Gamma}\frac{f(z)}{z-z_0}dz=2\pi i f(z_0)$}
+
+\textbf{Theorem}: $D$ be \textit{domain}, $\Gamma$ be \textit{contour} in $D$, $g:D\to\mathbb{C}$ \textit{continuous} on $\Gamma$, Then:
+
+\hspace{46pt} Function Defined as: $G:D\setminus\Gamma\to\mathbb{C}$ by \quad $G(z)=\int_{\Gamma}\frac{g(w)}{w-z}dw$ is \textit{holomorphic} on $D\setminus\Gamma$ \quad and \quad $G'(z)=\int_{\Gamma}\frac{g(w)}{(w-z)^2}dw$
+
+\hspace{46pt} Moreover, function $H:D\setminus\Gamma\to\mathbb{C}$ by \quad $H(z)=\int_{\Gamma}\frac{g(w)}{(w-z)^n}dw$ is \textit{holomorphic} on $D\setminus\Gamma$ \quad and \quad $H'(z)=n\int_{\Gamma}\frac{g(w)}{(w-z)^{n+1}}dw$
+
+\quad $\star$   \textbf{Corollary}: {\small If $D$ is \textit{domain} and $f$ is \textit{holomorphic} on $D$, then $f$ is \textit{infinitely differentiable} on $D$, and all of its derivatives are \textit{holomorphic} on $D$.}
+
+\textbf{Generalized Cauchy's Integral Formula}: {\footnotesize $\Gamma$ \textit{Loop}, $f(z)$ \textit{holomorphic} inside and on $\Gamma$, $z\in Int(\Gamma)$, $n\in\mathbb{N}$,} \quad $\Rightarrow$ \quad $f^{(n)}(z)=\frac{n!}{2\pi i}\int_{\Gamma}\frac{f(w)}{(w-z)^{n+1}}dw$
+
+\quad {\small ps: We always use it to calculate: $\int_{\Gamma}\frac{f(z)}{(z-z_0)^{n+1}}dz$ {\footnotesize if $f(z)$ is holomorphic on and inside $\Gamma$ (\textit{loop}), and $z_0\in Int(\Gamma)$.} \quad $\Rightarrow$ \quad $\int_{\Gamma}\frac{f(z)}{(z-z_0)^{n+1}}dz=\frac{2\pi i}{n!}f^{(n)}(z_0)$}
+
+\textbf{Morera Theorem}: Let $D$ is \textit{domain}, if $f:D\to\mathbb{C}$ is \textit{continuous} and $\int_{\Gamma}f(z)dz=0$ for all \textit{loop} $\Gamma$ in $D$. \ $\Rightarrow$ \ $f$ is \textit{holomorphic} on $D$.
 
 
 
