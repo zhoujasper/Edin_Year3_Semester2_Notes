@@ -336,6 +336,38 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \end{enumerate}
 
 
+
+\section{Duality} % Duality
+
+\textbf{Duality}: For LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}\leq \mathbf{b}, \quad\mathbf{x}\geq0$ \quad \textbf{Primal} problem \qquad $(P)$
+
+\qquad \ \ The \textbf{dual} problem is: min $f=\mathbf{b}^T\mathbf{y}$ \quad s.t. $A^T\mathbf{y}\geq \mathbf{c}, \quad\mathbf{y}\geq0$ \quad \textbf{Dual} problem \qquad $(D)$
+
+\qquad \ \ - It is \textit{equivalence} to: max $f=-\mathbf{b}^T\mathbf{y}$ \quad s.t. $-A^T\mathbf{y}\leq -\mathbf{c}, \quad\mathbf{y}\geq0$
+
+\qquad \ \ The \textbf{dual} of $(D)$ is: min $f=-\mathbf{c}^T\mathbf{z}$ \quad s.t. $(-A^T)^T\mathbf{z}\geq (-\mathbf{b}), \ \ (\text{i.e.} \ -A\mathbf{z}\geq -\mathbf{b})$, $\quad\mathbf{z}\geq0$
+
+\qquad \ \ - It is \textit{equivalence} to: max $f=\mathbf{c}^T\mathbf{z}$ \quad s.t. $A\mathbf{z}\leq \mathbf{b}, \quad\mathbf{z}\geq0$, which is the \textbf{Primal} problem $(P)$.
+
+\textbf{Weak Duality Theorem}: If $\mathbf{x}$ is feasible for $(P)$ and $\mathbf{y}$ is feasible for $(D)$, then $\mathbf{c}^T\mathbf{x}\leq\mathbf{b}^T\mathbf{y}$.
+
+\quad \textbf{Corollary}: {\footnotesize If $\mathbf{x}$ for $(P)$ and $\mathbf{y}$ for $(D)$}, then: \qquad If $(P)$ is unbounded \ \ $\Rightarrow$ \ \ $(D)$ is infeasible. \qquad If $(D)$ is unbounded \ \ $\Rightarrow$ \ \ $(P)$ is infeasible.
+
+\textbf{Strong Duality Theorem}: If $\mathbf{x}^*$ is optimal (basic) solution for $(P)$, then:
+
+\qquad $\mathbf{y}^*=\pi=B^{-T}\mathbf{c}_B$ is optimal solution for $(D)$, \quad and $\mathbf{c}^T\mathbf{x}^*=\mathbf{b}^T\mathbf{y}^*$.
+
+\textbf{Application}: If LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}\leq \mathbf{b}, \quad\mathbf{x}\geq0$ \quad $(P)$
+
+\qquad is changed to a \textbf{tightening} LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $\begin{bmatrix} A \\ \mathbf{a}^T \end{bmatrix}\mathbf{x}\leq\begin{bmatrix}\mathbf{b} \\ b\end{bmatrix}$, $\quad\mathbf{x}\geq0$ \quad $(P')$
+
+\qquad Then, the \textbf{relaxation dual} problem is: min $f=\mathbf{b}^T\mathbf{y}+by$ \quad s.t. $A^T\mathbf{y}+\mathbf{a}y\geq \mathbf{c}, \quad\mathbf{y}\geq0, \quad y\geq0$ \quad $(D')$
+
+\qquad - It is \textit{equivalence} to: max $f=-\mathbf{b}^T\mathbf{y}-by$ \quad s.t. $-A^T\mathbf{y}-\mathbf{a}y\leq -\mathbf{c}, \quad\mathbf{y}\geq0, \quad y\geq0$
+
+\qquad 此时,计算$(P')$的最优解可以通过计算$(D')$的最优解来得到. {\footnotesize (通过 \textbf{dual simplex method} 计算或equivalence to 一般的计算)}
+
+
 \section{Example of format written in LP}
 
 \textbf{Example|构建LP问题模板}:
@@ -344,7 +376,7 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \begin{multicols}{2}
 \begin{quote}
     \color{gray}
-    \fontsize{7pt}{5pt}\selectfont
+    \fontsize{7pt}{4pt}\selectfont
     \textbf{Defining decision variables}:
 
     \quad Let $x_1$ be the number of 1kg packets of Breakfast Blend made each day.
@@ -390,5 +422,7 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \end{quote}
 \end{multicols}
 \vspace{-10pt}
+
+
 
 \end{document}
