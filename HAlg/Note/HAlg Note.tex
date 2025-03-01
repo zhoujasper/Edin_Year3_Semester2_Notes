@@ -76,6 +76,10 @@
 
 \textbf{Projections}: $pr_i:X_1\times\cdots\times X_n\to X_i$ by $(x_1,...,x_n)\mapsto x_i$ \quad \textbf{Canonical Injections}: $in_i:X_i\to X_1\times\cdots\times X_n$ by $x\mapsto(0,...,0,x,0,...,0)$
 
+\textbf{Useful Way of Thinking Matrix}: {\scriptsize $A_{n\times m}B_{m\times n}=A\begin{pmatrix}\mathbf{b}_{*1} & \mathbf{b}_{*2} & \cdots \mathbf{b}_{*n} \end{pmatrix}=\begin{pmatrix}A\mathbf{b}_{*1} & A\mathbf{b}_{*2} & \cdots A\mathbf{b}_{*n} \end{pmatrix}$} \qquad\quad {\footnotesize $rank(\mathbf{a}_{*k}\mathbf{b}^T_{k*})\leq1$}
+
+\qquad\qquad {\scriptsize $A_{n\times m}B_{m\times n}=\begin{pmatrix} \mathbf{a}^T_{1*} \\ \vdots \\ \mathbf{a}^T_{n*}  \end{pmatrix}B=\begin{pmatrix} \mathbf{a}^T_{1*}B \\ \vdots \\ \mathbf{a}^T_{n*}B  \end{pmatrix}$ \qquad\qquad $A_{n\times m}=A_{n\times m}I_m \quad \begin{matrix} = A (\vec{e_1} & \vec{e_2} & \cdots & \vec{e_n}) \\ = (A \vec{e_1} & A \vec{e_2} & \cdots & A \vec{e_n}) \end{matrix}$ \qquad $A_{n\times m}B_{m\times n}=\begin{pmatrix} \mathbf{a}_{*1}\cdots \mathbf{a}_{*m}\end{pmatrix}\begin{pmatrix}\mathbf{b}^T_{1*} \\ \vdots \\ \mathbf{b}^T_{m*}\end{pmatrix}=\sum^m_{k=1}\mathbf{a}_{*k}\mathbf{b}^T_{k*}$}
+
 
 \section{Summary}
 \vspace{-10pt}
@@ -424,6 +428,7 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \item \textbf{Invertible on Field}: For $Mat(n;F)$, $A$ is invertible $\Leftrightarrow$ $\det(A)\ne0$ \quad $\det(A^{-1})=\det(A)^{-1}$ \quad {\scriptsize 交换环, 结论成立如果$\det(A)$在$R$中有逆}
     \item \textbf{Similar on Field}: For $F$ field. \quad $A\sim B$ $\Rightarrow$ $\det(A)=det(P^{-1}BP)=\det(B)$ \qquad Thus, we can define: $det(f)$ for $f:V\to V$
     \item \textbf{Operations}: {\scriptsize If $R$ is \textit{commutative ring}}, then $\det(AB)=\det(A)\det(B)$ \quad $\det(A^T)=\det(A)$  \quad $\det(A^{-1})=\det(A)^{-1}$
+    \item \textbf{Block Triangular}: If $A$ is block triangular, then $\det(A)=\prod_{i=1}^n\det(A_i)$ \quad {\scriptsize 即矩阵分块后如果是对角阵,行列式等于各个块的行列式乘积}
 \end{enumerate}
 
 \textbf{Common Theorems in Determinant}: Let $A$ be $n\times n$ matrix. \quad $F$ be field. \quad $R$ be \textit{commutative ring}.
@@ -436,10 +441,66 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \end{enumerate}
 
 
+\subsection{Eigenvalues | Eigenvectors | Diagonalization} % Eigenvalues | Eigenvectors | Diagonalization
+
+\textbf{Eigenspace $E(\lambda,f)$}: Let $f:V\to V$ linear map (End), $\lambda\in F$. \quad $E(\lambda,f):=\{\vec{v}\in V:f(\vec{v})=\lambda\vec{v}\}$. \quad $\lambda$ is \textit{eigenvalue} if $E(\lambda,f)\ne\{0\}$
+
+\quad ps: $\ker(f-\lambda id_V)$ is the eigenspace of $E(\lambda,f)$ and it has a basis of eigenvectors $\{\vec{v}_1,...,\vec{v}_r\}$.
+
+\textbf{Existence of Eigenvalues}: For all $f:V\to V$ linear map. \ \ $^1V$ is finite-dimensional. \ \ $^1F$ is \textit{algebraically closed}. \quad $\Rightarrow$ \quad $\exists$ eigenvalues.
+
+\textbf{Characteristic Polynomial $\chi_A(x)$}: Let $R$ be \textit{commutative ring}. $A\in Mat(n;R)$. \quad $\chi_A(x):=\det(xI_n-A)\in R[x]$
+
+\quad \textbf{Relation with Eigenvalues}: If $F$ is \textit{field}, \ $A\in Mat(n;F)$. \quad $\lambda$ is eigenvalue of $A$ $\Leftrightarrow$ $\chi_A(\lambda)=0$
+
+\quad \textbf{Similar Matrix}: If $R$ is \textit{commutative ring}, \ $A,B\in Mat(n;R)$ similar. \quad $\Rightarrow$ \quad $\chi_A(x)=\chi_B(x)$ \qquad Thus: $\chi_f(x):=\chi_{_{\mathcal{A}}[f]_{\mathcal{A}}}(x)$
+
+\quad \textbf{Remark}: {\scriptsize If $W\subseteq V$ is subspace. $f:V\to V$  is End. $f(W)\subseteq W$. \quad Let $\mathcal{A}=(\vec{w}_1,...,\vec{w}_m)$ basis $W$. \quad $\mathcal{B}=(\vec{w_1},...,\vec{w_m},\vec{v_{m+1}},...,\vec{v_n})$ basis $V$. \quad $\mathcal{C}=(\vec{v}_{m+1}+W,...,\vec{v_n}+W)$ basis $V/W$.}
+
+\qquad \qquad \quad \ {\scriptsize Suppose $f(\vec{v_k})=\sum_{i=1}^m c_{ik}\vec{w_i}+\sum_{j=m+1}^n b_{jk}\vec{v_j}$ \quad  Let $g:W\to W$ by $w\mapsto f(w)$ \quad $h:V/W\to V/W$ by $v+W\mapsto f(v)+W$ \quad $e:V/W\to W$ by $v_k + W\mapsto \sum_{i=1}^m c_{ik}\vec{w_i}$}
+
+\qquad \qquad \quad \ {\scriptsize Then: \quad $\chi_{f}(x)=\chi_{g}(x)\chi_h(x)$ \quad and \quad $_{\mathcal{B}}[f]_{\mathcal{B}}=\begin{pmatrix} _{\mathcal{A}}[g]_{\mathcal{A}} & _{\mathcal{A}}[e]_{\mathcal{C}} \\ 0 & _{\mathcal{C}}[h]_{\mathcal{C}} \end{pmatrix}= \begin{pmatrix} a_{ij} & c_{ik} \\ 0 & b_{jk} \end{pmatrix}$ \qquad ps: $f(\vec{w_j})=\sum_{i=1}^m a_{ij}\vec{w_i}$}
+
+\textbf{Triangularisability}: Let $f:V\to V$ be End. $V$ is finite-dimensional. the following are equivalent:
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item $\exists \mathcal{B}=(\vec{v}_1,...,\vec{v}_n)$ basis s.t. $f(\vec{v}_i)=\sum_{j=1}^ia_{ji}\vec{v}_j$ \quad {\scriptsize (i.e. $_{\mathcal{B}}[f]_{\mathcal{B}}$ is upper triangular.)} \qquad we say $f$ is \textit{triangularisable}
+    \item The characteristic polynomial $\chi_f(x)$ can be factored into \underline{linear factors} over $F$. \qquad {\scriptsize (ps: If $F$ is algebraically closed, then $f$ is triangularisable)}
+\end{enumerate}
+
+\quad \textbf{Corollary I}: Let $A,B \in Mat(n;F)$. \quad $A$ is \textit{triangularisable} $\Leftrightarrow$ $A$ is similar (Conjugate) to a \textit{upper triangular} matrix $B$.
+
+\quad \textbf{Corollary II}: {\small Let $f:V\to V$ be End. $V$ is finite-dimensional. \quad $f$ is \textit{triangularisable} $\Leftrightarrow$ $\exists$ subspaces $V_0=\{0\}\subset V_1\subset\cdots\subset V_n=V$ s.t. $f(V_i)\subseteq V_i$.}
+
+\quad \textbf{Corollary III}: For $A\in Mat(n;F)$. $A$ is \textit{nilpotent} (i.e. $A^k=0$ for some $k$) $\Leftrightarrow$ $\chi_A(x)=x^n$
+
+\quad \textbf{Application}: {\scriptsize 矩阵$A$换基到上三角矩阵,通过找$A$特征值及其对应的特征向量,组成新的基(可能需要广义特征向量/或拓展基),然后计算$A$在新基下的矩阵表示.}
+
+\textbf{Diagonalisable}: Let $f:V\to V$ be End, $V$ is \textit{diagonalisable} iff $\exists$ basis of $V$ consisting of eigenvectors of $f$.
+
+\quad \textbf{Diagonalisable|Finite}: {\small For $V$ is finite-dimensional. \quad $V$ is \textit{diagonalisable} $\Leftrightarrow$ $\exists$ basis $\mathcal{B}$ s.t. $_{\mathcal{B}}[f]_{\mathcal{B}}=diag(\lambda_1,...,\lambda_n)$, \quad where: $f(\vec{v}_i)=\lambda_i\vec{v}_i$}
+
+\quad \textbf{Property}: In finite case, $\exists P$ consisting of eigenvectors s.t. $P^{-1}AP=diag(\lambda_1,...,\lambda_n)$
+
+\textbf{LI of Eigenvectors}: {\footnotesize Let $f:V\to V$ be End. $V$ is finite-dimensional. \quad If $\lambda_1,...,\lambda_n$ are distinct $\Rightarrow$ Corresponding eigenvectors are linearly independent.}
+
+\textbf{Cayley-Hamilton Theorem}: Let $R$ be \textit{commutative ring}. $A\in Mat(n;R)$. \quad Then: for $\chi_A(x)$ \quad $\chi_A(A)=0$
+
+
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint} % Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint
 
 
 \section{Jordan Normal Form | Spectral Theorem} % Jordan Normal Form | Spectral Theorem
+
+
+\section{Appendix} % Appendix
+
+\textbf{Vieta's formulas}: For polynomial $P(x)=a_nx^n+\cdots+a_1x+a_0$. \quad Let $x_1,...,x_n$ be roots of $P(x)$.
+
+\qquad  $x_1+\cdots+x_n=-\frac{a_{n-1}}{a_n}$ \quad $x_1\cdots x_n=(-1)^n\frac{a_0}{a_n}$ \quad $x_1x_2+x_1x_3+\cdots+x_{n-1}x_n=\frac{a_{n-2}}{a_n}$
+
+\vspace{-13pt}
+\textbf{Determinant of Vandermonde Matrix}: Let $x_1,...,x_n$ be distinct elements of $F$. \quad Then \quad {\scriptsize $\det\begin{pmatrix} 1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\ 1 & x_2 & x_2^2 & \cdots & x_2^{n-1} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_n & x_n^2 & \cdots & x_n^{n-1} \end{pmatrix}=\prod_{1\le i<j\le n}(x_j-x_i)$}
+\vspace{-13pt}
 
 
 \end{document}
