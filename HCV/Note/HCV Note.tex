@@ -363,5 +363,20 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \textbf{Morera Theorem}: Let $D$ is \textit{domain}, if $f:D\to\mathbb{C}$ is \textit{continuous} and $\int_{\Gamma}f(z)dz=0$ for all \textit{loop} $\Gamma$ in $D$. \ $\Rightarrow$ \ $f$ is \textit{holomorphic} on $D$.
 
 
+\subsection{Liouville's Theorem, FTA and Maximum Modulus Principle} % Liouville's Theorem, FTA and Maximum Modulus Principle
+
+\textbf{Useful Formula}: If $^1D$ domain; $^2\exists R>0,z_0\in\mathbb{C}$ s.t. $\overline{D}_{R}(z_0)\subseteq D$; $^3f$ is holomorphic on $D$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item Then $f(z_0)=\frac{1}{2\pi}\int_0^{2\pi}f(z_0+R\exp(it))dt$.
+    \item If $|f(z)|<M,\forall z\in D$. Then $|f^{(n)}(z_0)|\leq\frac{n!M}{R^n}$.
+    \item If $\max_{{z\in}\overline{D}_{R}(z_0)}|f(z)|=|f(z_0)|$. Then $f$ is \textit{constant} on $\overline{D}_{R}(z_0)$.
+\end{enumerate}
+
+\textbf{Liouville's Theorem}: If $f:\mathbb{C}\to\mathbb{C}$ is \textit{holomorphic} and \textit{bounded} ($|f(z)|<M$) for all $z\in\mathbb{C}$. \ $\Rightarrow$ \ $f$ is \textit{constant}.
+
+\textbf{Fundamental Theorem of Algebra}: If $P:\mathbb{C}\to\mathbb{C}$ is a non-constant \textit{polynomial}. \ $\Rightarrow$ \ $P$ has a at least one \textit{root} in $\mathbb{C}$.
+
+
 
 \end{document}
