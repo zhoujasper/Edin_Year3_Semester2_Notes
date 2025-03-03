@@ -102,7 +102,7 @@ $\cdot$ \textbf{Useful Formula}: $\lim_{z\to z_0}g(\ \overline{z} \ )=\lim_{z\to
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Lemma|Important}: $f$ is continuous at $z_0$ $\Leftrightarrow$ $u,v$ are continuous at $(x_0,y_0)$
-    \item \textbf{'Extreme Value Theorem'}: $f$ is continuous on a closed and bounded set $S\subseteq\mathbb{C}$, then $f(S)$ is closed and bounded.
+    \item \textbf{`Extreme Value Theorem'}: $f$ is continuous on a closed and bounded set $S\subseteq\mathbb{C}$, then $f(S)$ is closed and bounded.
     \item \textbf{Lemma|continuous$\Leftrightarrow$open}: $f$ is continuous $\Leftrightarrow$ $\forall$ open set $U$, preimage $f^{-1}(U):=\{z\in\mathbb{C}|f(z)\in U\}$ is open.
 \end{enumerate}
 
@@ -373,9 +373,59 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
     \item If $\max_{{z\in}\overline{D}_{R}(z_0)}|f(z)|=|f(z_0)|$. Then $f$ is \textit{constant} on $\overline{D}_{R}(z_0)$.
 \end{enumerate}
 
-\textbf{Liouville's Theorem}: If $f:\mathbb{C}\to\mathbb{C}$ is \textit{holomorphic} and \textit{bounded} ($|f(z)|<M$) for all $z\in\mathbb{C}$. \ $\Rightarrow$ \ $f$ is \textit{constant}.
+\textbf{Criteria Constant Function}: If $f:\mathbb{C}(or \ D)\to\mathbb{C}$ is \textit{holomorphic} and \textit{bounded} on: \qquad\qquad $D$ domain
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Liouville's Theorem}: $|f(z)|<M$ \textit{bounded} on $\forall z \in \mathbb{C}$, \ $\Rightarrow$ \ $f(z)$ is \textit{constant}.
+    \item \textbf{Maximum Modulus Principle}: $|f(z)|$ \textit{bounded} on $\forall z \in D$, and $|f(z)|$ has \textit{maximum} at $z_0\in D$. \ $\Rightarrow$ \ $f(z)$ is \textit{constant}.
+    \textbf{Remark I}: {\footnotesize 意思是对于$f(z)$ holomorphic且在domain上bounded,如果 $|f(z)|$ 在domain上有最大值(非边界),那么$f(z)$是constant.} \\
+    \textbf{Remark II} : $\star$ If function $f$ is \textit{holomorphic} on a \textit{bounded domain} $D$ and \textit{continuous} up to the boundary of $D$. \\
+    $\Rightarrow$ \ $f$ has \textit{maximum} modulus on the boundary of $D$. \qquad {\tiny 若\( f \) 在 \( D \) 内全纯,且在 \( \partial D \) 上连续,则 \( f \) 在$D\cup\partial D$最大值一定在边界上.特别地,若 \( f \) 不是常数,则最大值只能在边界上取到.}
+    \item {\small \textbf{Maximum/Minimum Principle for Harmonic Functions}: If $D$ domain, $\phi:D\to\mathbb{R}$ is \textit{harmonic}, and $\phi$ is \textit{bounded above/below} on $D$ by $M$,} \\
+    {\small with $\phi(z_0)=M$ for some $z_0\in D$.} \ $\Rightarrow$ \ $\phi$ is \textit{constant} on $D$. \\
+    \textbf{Remark}: {\footnotesize 对于调和函数$\phi:D\to\mathbb{R}$,如果$f$不是常数,那么最大值只能在边界上取到.}
+\end{enumerate}
 
 \textbf{Fundamental Theorem of Algebra}: If $P:\mathbb{C}\to\mathbb{C}$ is a non-constant \textit{polynomial}. \ $\Rightarrow$ \ $P$ has a at least one \textit{root} in $\mathbb{C}$.
+
+
+\section{infinity Series} % Infinity Series
+
+\subsection{Basic Properties, Convergence Test, Series of Functions and M-Test} % Basic Properties, Convergence Test, Series of Functions and M-Test
+
+\textbf{Partial Sum}: A Series $\sum_{n=0}^{\infty}z_n$ is \textit{convergent} if \textit{partial sums} $S_n = \sum_{k=0}^{n}z_k$ is \textit{convergent}. \quad \textbf{Remark}: $\sum z_n$ is \textit{convergent} $\Rightarrow$ $\lim z_n=0$.
+
+\textbf{Comparison Test}: If $|z_n|\leq M_n$ for all $n\in\mathbb{N}$ and $\sum M_n$ is \textit{convergent}. \ $\Rightarrow$ \ $\sum z_n$ is \textit{convergent}.
+
+\textbf{Lemma|`Geometric Series'}: For $c\in\mathbb{C}$, $\sum_{n=0}^\infty c^n$ is \textit{convergent} $\Leftrightarrow$ $|c|<1$. \quad \textbf{Remark}: $\sum_{n=0}^\infty c^n=\frac{1}{1-c}$
+
+\textbf{Ratio Test}: {\small For $\sum z_n$, let $L = \lim_{n\to\infty}\left|\frac{z_{n+1}}{z_n}\right|$. \quad If $L<1$, then $\sum z_n$ is \textit{convergent}. \quad If $L>1$, then $\sum z_n$ is \textit{divergent}.} \quad {\footnotesize If $L=1$, conclude nothing.}
+
+\textbf{Converge Pointwise}: {\small Seq $f_n: S\to\mathbb{C}$ \textit{pointwise convergent} to $f:S\to\mathbb{C}$ if \quad $\forall \varepsilon>0, \forall z \in S, \exists N_{\varepsilon,z}\in\mathbb{N}$ s.t. $|f_n(z)-f(z)|<\varepsilon$ for all $n\geq N$}
+
+\textbf{Uniform Convergence}: {\small Seq $f_n: S\to\mathbb{C}$ \textit{uniformly convergent} to $f:S\to\mathbb{C}$ if \quad $\forall \varepsilon>0, \exists N_{\varepsilon}\in\mathbb{N}$ s.t. $|f_n(z)-f(z)|<\varepsilon$ for all $n\geq N$ and $\forall z\in S$}
+
+\quad \textbf{Lemma}: If $f_n:S\to\mathbb{C}$ is \textit{uniformly convergent} and \textit{continuous} to $f:S\to\mathbb{C}$, then $f$ is \textit{continuous} on $S$.\quad {\footnotesize (i.e. Uniform 保留 连续性)}
+
+\textbf{Weierstrass M-Test}: 
+
+
+\section{Appendix}
+
+\subsection{Convergence Test for Real Series} % Convergence Test for Real Series
+
+\textbf{Divergence Test}: If $\lim a_n\ne 0 \Rightarrow \sum a_n$ diverges. \ \ (If $\sum a_n$ convergent $\Rightarrow \lim a_n=0.$) \qquad \textbf{p-Test}: $\sum \frac{1}{n^p}$ convergent iff $p>1$
+
+\textbf{Comparison Test}: If $0<a_n<b_n$, $\sum b_n$ convergent $\Rightarrow \sum a_n$ also ; $\sum a_n$ divergent $\Rightarrow \sum b_n$ also.
+
+\textbf{Integral Test}: Let $f:[1,\infty)\rightarrow\mathbb{R}$ is 非负递减, $a_n=f(n)$. Then $\sum a_n$ converges iff $\int_{1}^{\infty}f(x)dx<\infty.$
+
+\textbf{Absolutely Convergence}: $\sum a_n$ convergent absolutely iff $\sum |a_n|$ convergent. \ \ \textbf{If convergent abs $\Rightarrow$ convergent.}
+
+\textbf{Alternating Series Test}: If $a_n$ decreasing, $a_n\geq 0,\lim a_n = 0$. Then $\sum (-1)^{n-1}a_n$ convergent.
+
+\textbf{Cauchy's Condensation Test}: If $a_n\geq 0,a_n$ decreasing, $\Rightarrow \ [\ \sum a_n convergent \Leftrightarrow \sum 2^na_{2^n} \ also \ ]$
+
 
 
 
