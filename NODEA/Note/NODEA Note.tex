@@ -288,7 +288,7 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
 
 \subsection{Linear Stability of Numerical Methods} % Linear Stability of Numerical Methods
 
-\textbf{Special Case|Euler Method}: For $\frac{dy}{dt}=By$, the Euler method is $y_{n+1}=(I+hB)y_n$. where $\lambda_i$ is eigenvalues of $B$. \quad Assume $f(y)=\lambda y$
+\textbf{Special Case|Euler Method}: {\small For $\frac{dy}{dt}=By$, Using Euler method: $y_{n+1}=(I+hB)y_n$. where $\lambda_i$ is eigenvalues of $B$. \quad Assume $f(y)=\lambda y$}
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item The origin is \textit{stable} if $||I+h\lambda_i||\leq1$ $\forall i$
     \item The origin is \textit{asymptotically stable} if $||I+h\lambda_i||<1$ $\forall i$
@@ -318,7 +318,7 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
 
 \quad The Same method also \textit{stable}|\textit{asy.stab} at \textit{origin} for $\frac{dz}{dt}=\lambda_iz$ $\forall i$
 
-\textbf{Corollary}: For $\frac{dy}{dt}=By$ with $B$ diagonalizable. \ \ An RK Method with \textit{stability function} $R(\mu)$ is \textit{stable}|\textit{asy.stab}|\textit{unstable} at \textit{origin} iff: \qquad Assume $f(y)=\lambda_i y$
+\textbf{Corollary}: {\small For $\frac{dy}{dt}=By$ with $B$ diagonalizable. \ \ An RK Method with \textit{stability function} $R(\mu)$ is \textit{stable}|\textit{asy.stab}|\textit{unstable} at \textit{origin} iff: \quad {\tiny Assume $f(y)=\lambda_i y$}}
 
 \quad $|R(\mu)|\leq1$ \ \ or \ \ $|R(\mu)|<1$ \ \ or \ \ $|R(\mu)|>1$ \quad $\forall \mu=h\lambda_i$ $\forall i$ \qquad {\scriptsize we can write $\sigma(B)=\{\lambda_1,...,\lambda_d\}$ the set of eigenvalues of $B$}
 
@@ -327,7 +327,7 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
 
 \subsection{Stability Region and A-stability} % Stability Region and A-stability
 
-\textbf{Stability Region}: {\small For $\frac{dy}{dt}=By$. An RK method, the \textit{stability region} is the set of $\mu$ where $\widehat{R}(\mu)=|R(\mu)|<1$.} {\tiny ($f(y)=\lambda y$,如$y$是向量,$R(\mu)$按上面corollary的remark所说)} 
+\textbf{Stability Region}: {\small $\frac{dy}{dt}=By$. An RK method, the \textit{stability region} is the set of $\mu$ where $\widehat{R}(\mu)=|R(\mu)|<1$.} {\tiny ($f(y)=\lambda y$,如$y$是向量,$R(\mu)$按上面corollary的remark所说)} 
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item Euler's Method: $\widehat{R}(\mu)=|1+\mu|$ \quad $\Rightarrow$ \quad $\mu\in\{z\in\mathbb{C}:|1+z|<1\}$ {\scriptsize (-1处半径为1的圆)}
