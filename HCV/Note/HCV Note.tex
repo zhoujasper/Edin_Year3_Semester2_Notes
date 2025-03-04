@@ -405,9 +405,17 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 
 \textbf{Uniform Convergence}: {\small Seq $f_n: S\to\mathbb{C}$ \textit{uniformly convergent} to $f:S\to\mathbb{C}$ if \quad $\forall \varepsilon>0, \exists N_{\varepsilon}\in\mathbb{N}$ s.t. $|f_n(z)-f(z)|<\varepsilon$ for all $n\geq N$ and $\forall z\in S$}
 
-\quad \textbf{Lemma}: If $f_n:S\to\mathbb{C}$ is \textit{uniformly convergent} and \textit{continuous} to $f:S\to\mathbb{C}$, then $f$ is \textit{continuous} on $S$.\quad {\footnotesize (i.e. Uniform 保留 连续性)}
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Lemma|Continuous}: If $f_n:S\to\mathbb{C}$ is \textit{uniformly convergent} and \textit{continuous} to $f:S\to\mathbb{C}$, then $f$ is \textit{continuous} on $S$.
+    \item \textbf{Lemma|Integral}: If $f_n:S\to\mathbb{C}$ is \textit{uniformly convergent} and \textit{continuous} to $f:S\to\mathbb{C}$, then $\int_{\Gamma}f_n(z)dz$ \textit{convergent} to $\int_{\Gamma}f(z)dz$.
+    \item \textbf{Lemma|Integral}: If $f_n:S\to\mathbb{C}$ is \textit{continuous} s.t. $\sum^\infty_{n=0}f_n(z)$ is \textit{uniformly convergent} on $S$, then $\int_{\Gamma}\sum^\infty_{n=0}f_n(z)dz=\sum^\infty_{n=0}\int_{\Gamma}f_n(z)dz$.
+    \item \textbf{Lemma|Holomorphic}: {\small If $D$ is \textit{simply-connected} domain, $f_n:D\to\mathbb{C}$ is \textit{holomorphic} and \textit{uniformly convergent} to $f$. $\Rightarrow$ $f$ \textit{holomorphic} on $D$.}
+\end{enumerate}
 
-\textbf{Weierstrass M-Test}: 
+\textbf{Weierstrass M-Test}: For $f_n:S\to\mathbb{C}$, if $\exists M_n\geq 0,n_0\in\mathbb{N}$ s.t. $|f_n(z)|\leq M_n$ for $\forall z\in S,n\geq n_0$. 
+
+\hspace{156pt}If $\sum^\infty_{n=0}M_n$ is \textit{convergent}. \ $\Rightarrow$ \ $\sum^\infty_{n=0}f_n(z)$ is \textit{uniformly convergent} on $S$.
+
 
 
 \section{Appendix}
