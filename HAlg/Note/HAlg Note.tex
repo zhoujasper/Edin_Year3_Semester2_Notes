@@ -175,9 +175,11 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
     \item \textbf{Dimension Theorem}: If $U,W\subseteq V$ are subspaces of $V$, then $\dim(U+W)=\dim U+\dim W-\dim(U\cap W)$
 \end{enumerate}
 
-\textbf{Complementary}: $U,W\subseteq V$,$U,V$ subspaces are complementary ($V=U\oplus W$) if: \quad $\exists\phi:U\times W\to V$ by $(\vec{u},\vec{w})\mapsto\vec{u}+\vec{w}$
+\textbf{Complementary}: $U,W\subseteq V$,$U,V$ subspaces are complementary ($V=U\oplus W$) if: \quad $\exists\phi:U\times W\to V$ by $(\vec{u},\vec{w})\bij\vec{u}+\vec{w}$ is isom.
 
 \quad \quad \quad \quad \quad \quad \quad \quad i.e. $\forall\vec{v}\in V$, we have unique $\vec{u}\in U,\vec{w}\in W$ s.t. $\vec{v}=\vec{u}+\vec{w}$. \quad {\footnotesize ps: It's a linear map.}
+
+\np\textbf{Criteria Lemma}: If $U$, $W$ are subspace of $V$, then $V=U\oplus W$ $\Leftrightarrow$ $V=U+W$ and $U\cap W=\{0\}$. {\scriptsize (需要证明)}
 
 
 \section{Linear Mapping | Rank-Nullity| Matrices | Change of Basis \quad {\tiny ps: 默认$V,W$ \ $F$-Vector Spaces.}}
@@ -454,6 +456,8 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \quad \textbf{Relation with Eigenvalues}: If $F$ is \textit{field}, \ $A\in Mat(n;F)$. \quad $\lambda$ is eigenvalue of $A$ $\Leftrightarrow$ $\chi_A(\lambda)=0$
 
 \quad \textbf{Similar Matrix}: If $R$ is \textit{commutative ring}, \ $A,B\in Mat(n;R)$ similar. \quad $\Rightarrow$ \quad $\chi_A(x)=\chi_B(x)$ \qquad Thus: $\chi_f(x):=\chi_{_{\mathcal{A}}[f]_{\mathcal{A}}}(x)$
+
+\qquad \qquad \qquad \qquad \ Moreover, if $_{\mathcal{A}}[f]_{\mathcal{A}}=A$ and $A$ is similar to $B$. \quad Then, $\exists$ basis $\mathcal{B}$ s.t. $_{\mathcal{B}}[f]_{\mathcal{B}}=B$
 
 \quad \textbf{Remark}: {\scriptsize If $W\subseteq V$ is subspace. $f:V\to V$  is End. $f(W)\subseteq W$. \quad Let $\mathcal{A}=(\vec{w}_1,...,\vec{w}_m)$ basis $W$. \quad $\mathcal{B}=(\vec{w_1},...,\vec{w_m},\vec{v_{m+1}},...,\vec{v_n})$ basis $V$. \quad $\mathcal{C}=(\vec{v}_{m+1}+W,...,\vec{v_n}+W)$ basis $V/W$.}
 

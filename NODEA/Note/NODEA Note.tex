@@ -195,7 +195,7 @@ $\cdot$ Order 1: $\sum_{i=1}^{s}b_i=1$ \qquad Order 2: { (add)} $\sum_{i=1}^{s}b
 
 \textbf{Fixed Point-Numerical}: \textit{One-step} method $\Psi_h(y)$, point $y^*$ is fixed point if $y^*=\Psi_h(y^*)$ {\footnotesize \ \ \textbf{Set of Fixed Points}: $\mathcal{F}_h=\{y^*\in\mathbb{R}^d:y^*=\Psi_h(y^*)\}$}
 
-\textbf{Theorem}: For Runge-Kutta method, $\mathcal{F}\subseteq\mathcal{F}_h$ \qquad \qquad \textbf{Remark}: $\mathcal{F}_h\subseteq\mathcal{F}$ is NOT always true.
+\textbf{Theorem}: For Runge-Kutta method, $\mathcal{F}\subseteq\mathcal{F}_h$ \qquad \qquad \textbf{Remark}: {\small $\mathcal{F}_h\subseteq\mathcal{F}$ is NOT always true. \qquad If $\mathcal{F}_h=\mathcal{F}$, then the method is \textbf{regular}.}
 
 $\cdot$ the point in $\mathcal{F}_h\setminus\mathcal{F}$ is called \textbf{spurious fixed point}. \qquad \qquad As $h\to\infty$, the \textit{spurious} fixed points will tends to infinity.
 
@@ -339,7 +339,9 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
 \textbf{A-Stable}: An RK method is \textit{A-stable} if its \textit{stability region} contains the entire \textit{left complex half-plane}. {\scriptsize (i.e. $\Re(z)<0$)}
 
 
-\section{}
+\section{Linear Multistep Methods} % Linear Multistep Methods
+
+
 
 
 \section{Appendix} 
