@@ -461,7 +461,9 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \qquad \qquad \quad \ {\scriptsize Then: \quad $\chi_{f}(x)=\chi_{g}(x)\chi_h(x)$ \quad and \quad $_{\mathcal{B}}[f]_{\mathcal{B}}=\begin{pmatrix} _{\mathcal{A}}[g]_{\mathcal{A}} & _{\mathcal{A}}[e]_{\mathcal{C}} \\ 0 & _{\mathcal{C}}[h]_{\mathcal{C}} \end{pmatrix}= \begin{pmatrix} a_{ij} & c_{ik} \\ 0 & b_{jk} \end{pmatrix}$ \qquad ps: $f(\vec{w_j})=\sum_{i=1}^m a_{ij}\vec{w_i}$}
 
-\textbf{Triangularisability}: Let $f:V\to V$ be End. $V$ is finite-dimensional. the following are equivalent:
+\textbf{Triangularisability|$A$}: Let $A\in Mat(n;F)$, it is \textit{triangularisable} if $\exists P$ invertible s.t. $P^{-1}AP=U$ is upper triangular.
+
+\textbf{Triangularisability|$f$}: Let $f:V\to V$ be End. $V$ is finite-dimensional. the following are equivalent:
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item $\exists \mathcal{B}=(\vec{v}_1,...,\vec{v}_n)$ basis s.t. $f(\vec{v}_i)=\sum_{j=1}^ia_{ji}\vec{v}_j$ \quad {\scriptsize (i.e. $_{\mathcal{B}}[f]_{\mathcal{B}}$ is upper triangular.)} \qquad we say $f$ is \textit{triangularisable}
     \item The characteristic polynomial $\chi_f(x)$ can be factored into \underline{linear factors} over $F$. \qquad {\scriptsize (ps: If $F$ is algebraically closed, then $f$ is triangularisable)}
@@ -475,11 +477,15 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \quad \textbf{Application}: {\tiny 将矩阵$A$进行三角化,可以通过:1. 求特征值,特征向量; 2. 选择一个特征向量为基(通常选最大的); 3. 拓展为$V$的基; 4. 求$A$在新基下的矩阵$B$,此时$B$按分块矩阵看应有一部分三角化; 5.对$B$未三角化的部分重复.}
 
-\textbf{Diagonalisable}: Let $f:V\to V$ be End, $V$ is \textit{diagonalisable} iff $\exists$ basis of $V$ consisting of eigenvectors of $f$.
+\textbf{Diagonalisable|$A$}: Let $A\in Mat(n;F)$. $A$ is \textit{diagonalisable} iff $\exists$ matrix $P$ s.t. $P^{-1}AP=diag$
+
+\textbf{Diagonalisable|$f$}: Let $f:V\to V$ be End, $V$ is \textit{diagonalisable} iff $\exists$ basis of $V$ consisting of eigenvectors of $f$.
 
 \quad \textbf{Diagonalisable|Finite}: {\small For $V$ is finite-dimensional. \quad $V$ is \textit{diagonalisable} $\Leftrightarrow$ $\exists$ basis $\mathcal{B}$ s.t. $_{\mathcal{B}}[f]_{\mathcal{B}}=diag(\lambda_1,...,\lambda_n)$, \quad where: $f(\vec{v}_i)=\lambda_i\vec{v}_i$}
 
 \quad \textbf{Property}: In finite case, $\exists P$ consisting of eigenvectors s.t. $P^{-1}AP=diag(\lambda_1,...,\lambda_n)$
+
+\quad \textbf{Corollary}: If all roots of $\chi_f(x)$ are distinct, then $f$ is \textit{diagonalisable}.
 
 \textbf{LI of Eigenvectors}: {\footnotesize Let $f:V\to V$ be End. $V$ is finite-dimensional. \quad If $\lambda_1,...,\lambda_n$ are distinct $\Rightarrow$ Corresponding eigenvectors are linearly independent.}
 
