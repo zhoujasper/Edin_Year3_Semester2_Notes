@@ -498,6 +498,31 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint} % Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint
 
+\section{Inner Product Spaces | Orthogonal Complement / Proj} % Inner Product Spaces | Orthogonal Complement / Proj
+
+\textbf{Real|Complex Inner Product Space}: Let $V$ vector space over $F=\mathbb{R}| \mathbb{C}$. It is an \textit{inner product space} if $\exists$ mapping $V\times V\to \mathbb{R}| \mathbb{C}$ s.t.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Linear in 1st Variable}: $(\lambda \vec{x} + \mu \vec{y},\vec{z})=\lambda(\vec{x},\vec{z})+\mu(\vec{y},\vec{z})$ \quad {\tiny $\forall \lambda,\mu\in F,\vec{x},\vec{y},\vec{z}\in V$}
+    \item \textbf{(Conjugate) Symmetric}: $(\vec{x},\vec{y})=\overline{(\vec{y},\vec{x})}$ \quad {\scriptsize for real, $(\vec{x},\vec{y})=(\vec{y},\vec{x})$} \quad $\big|$ {\footnotesize Real: \textit{linear} in 2nd variable. \qquad Complex: \textit{conjugate linear} in 2nd variable.}
+    \item \textbf{Positive Definite}: $(\vec{x},\vec{x})\ge0$ and $(\vec{x},\vec{x})=0$ iff $\vec{x}=\vec{0}$ \qquad \quad \quad $\big|$ \qquad \qquad \qquad \qquad \qquad \quad \ {\footnotesize Complex: $(\vec{z},\lambda \vec{x} + \mu \vec{y})=\overline{\lambda}(\vec{z},\vec{x})+\overline{\mu}(\vec{z},\vec{y})$} \\
+    ps: \textbf{Standard Inner Product in $\mathbb{R}^n$|$\mathbb{C}^n$}: $(\vec{x},\vec{y})=\sum_{i=1}^n x_iy_i$ \quad $(\vec{x},\vec{y})=\sum_{i=1}^n x_i\overline{y_i}$ \qquad {\scriptsize (i.e. dot product $\vec{x}\cdot\vec{y}=\vec{x}^T\vec{y}$)}
+\end{enumerate}
+
+\textbf{Special Inner Product}: {\small If $(\vec{x},\vec{y})=\sum_{i,j} a_{ij}x_i\overline{y_j}=\vec{x}^TA\overline{\vec{y}}$ \quad where $A_{ij}=a_{ij}$. $\Rightarrow$ It is an inner product if $^1\overline{A^T}=A$ and $^2\vec{x}^TA\overline{\vec{x}}\ge0,\forall \vec{x}\in\mathbb{R}^n|\mathbb{C}^n$.}
+
+\textbf{Norms}: For $\vec{x},\vec{y}\in V$ in inner product space. \quad $\|\vec{x}\|:=\sqrt{(\vec{x},\vec{x})}\geq0$ \qquad \ \ \ \textbf{Orthogonal}: $\vec{x}\perp\vec{y}$ iff $(\vec{x},\vec{y})=0$
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Pythagoras' Theorem}: If $\vec{x}\perp\vec{y}$, then $\|\vec{x}+\vec{y}\|^2=\|\vec{x}\|^2+\|\vec{y}\|^2$. \qquad \textbf{Metric Space}: $d(\vec{x},\vec{y}):=\|\vec{x}-\vec{y}\|$.
+    \item \textbf{Cauchy-Schwarz Inequality}: $|(\vec{x},\vec{y})|\leq\|\vec{x}\|\|\vec{y}\|$ \qquad \textbf{Triangle Inequality}: $\|\vec{x}+\vec{y}\|\leq\|\vec{x}\|+\|\vec{y}\|$ \qquad \textbf{Scalar}: $\|\lambda\vec{x}\|=|\lambda|\|\vec{x}\|$
+\end{enumerate}
+
+\textbf{Orthonormal Family}: $\{\vec{v}_1,...,\vec{v}_n\}$ is \textit{orthonormal} if $^1\|\vec{v}_i\|=1$ and $^2\vec{v}_i\perp\vec{v}_j$ for $i\ne j$. {\scriptsize (i.e. $(\vec{v}_i,\vec{v}_j)=\delta_{ij}$)} \quad {\scriptsize If it is basis, then it is \textbf{orthonormal basis}.}
+
+\quad \textbf{Remark}: For $\{\vec{v}_1,...,\vec{v}_n\}$ orthonormal basis. \quad $\vec{v}=\sum_{i=1}^n(\vec{v},\vec{v}_i)\vec{v}_i$. \textbf{Theorem}: Every \underline{finite}-dimensional inner product space has an orthonormal basis.
+
+
 
 \section{Jordan Normal Form | Spectral Theorem} % Jordan Normal Form | Spectral Theorem
 
