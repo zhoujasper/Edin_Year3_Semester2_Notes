@@ -102,16 +102,9 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
 
 \section{Euler's Method and Taylor Series Method} % Euler's Method and Taylor Series Method
 
-\textbf{Euler's Method Algorithm}: Approximate ODE $\frac{dy}{dt}=f(t,y),y(t_0)=y_0$ with number of steps $N$. \ (Similarly for ODEs)
+\textbf{Euler's Method Algorithm}: Approx $\frac{dy}{dt}=f(t,y),y(t_0)=y_0$ \quad Euler Method: $y_{n+1}=y_n+hf(t_0+nh,y_n)=y_n+hf(t_n,y_n)$
 
-\hspace{20pt} $\Rightarrow$
-\textbf{for} $n=0,1,2,...,N-1$:
-\quad $y_{n+1}=y_n+hf(t_0+nh,y_n)=y_n+hf(t_n,y_n)$ \quad 
-\textbf{end}
-
-\textbf{Lemma}: If $v_{n+1}\leq Av_n+B$, then $v_n\leq A^nv_0+\frac{A^n-1}{A-1}B$
-
-\qquad \qquad  Moreover, suppose $|y''|<M$ and $v_{n}=e_n:=y_n-y(t_n)$, then $A=1+hL,B=h^2M/2$
+\textbf{Lemma}: If $v_{n+1}\leq Av_n+B$ \quad $\Rightarrow$ \quad Then $v_n\leq A^nv_0+\frac{A^n-1}{A-1}B$ \qquad {\scriptsize If $|y''|<M$ and $v_{n}=e_n:=y_n-y(t_n)$, then $A=1+hL,B=h^2M/2$}
 
 \textbf{Boundedness Theorem|Euler Method}: For $\frac{dy}{dt}=f(t,y),y(a)=y_0$:
 
@@ -121,15 +114,22 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
 
 \textbf{Order Notation ($\mathcal{O}$)}: we write $z(h)=\mathcal{O}(h^p)$ if $\exists C,h_0>0$ s.t. $|z|\leq Ch^p,0<h<h_0$
 
-\textbf{Flow Map ($\Phi,\Psi$)}: $\Phi_{t_0,h}(y_0)=y(t_0+h)$ \quad Clearly, $\Phi(t_n+h)=y(t_n+h)=\Phi_h(y(t_n))=y(t_{n+1})$.
+\textbf{Flow Map ($\Phi,\Psi$)}: Consider $\frac{dy}{dt}=f(t,y)$.
 
-\quad $\cdot$ $\Psi_{t_n,h}(y_n)=y_{n+1}$:= Numerical method for ODE \quad Clearly, $\Psi(t_n+h)=y_{n+1}=\Psi_h(y_{n})$
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Exact Flow Map ($\Phi$)}: $\Phi_{t_n,h}(y_n)=y(t_n+h)$ \quad {\scriptsize 代表假设 $y(t_n)=y_n$ 的情况下，输入 $y_n$ 在 $t_n+h$ 时刻的精确值; {\tiny 当不写$t_n$角标时,默认要算的前一个时间点已知/精确}}
+    \item \textbf{Numerical Flow Map ($\Psi$)}: $\Psi_{t_n,h}(y_n)=y_{n+1}$ \quad {\scriptsize 代表假设 $y(t_n)=y_n$ 的情况下，输入 $y_n$ 在 $t_n+h$ 时刻的数值解; {\tiny 当不写$t_n$角标时,默认要算的前一个时间点已知/精确}} \\
+    \textbf{Remark}: $\Phi_h(y(t_n))=y(t_n+h)$ \quad \quad $\Psi_h(y(t_n))=y_{n+1}$ \\
+    \textbf{Find}: Generally, use $\Phi_{t_0,h}(y_0)=y(t_0+h)$ to find $y(t_0+h)$; \quad and $\Psi(y)$: Numerical method for ODE.
+\end{enumerate}
 
-\textbf{Taylor Series Method}: {\small Approximate ODE $\frac{dy}{dt}=f(t,y),y(t_0)=y_0$ with \textit{n-order Methods}: 用 Taylor Series 在 $t_0+h$ 处展开 保留到 $n$ 阶}
+\textbf{Find Numerical Method|Taylor Series Method}: {\small Approx $\frac{dy}{dt}=f(t,y),y(t_0)=y_0$ with \textit{n-order Methods}}
 
-\quad $\cdot$ $\Phi_{t,h}(y)=y+hf(t,y)+\frac{1}{2}h^2[f_t(t,y)+f_y(t,y)f(t,y)]+\frac{1}{6}y'''(t,y)h^3+\cdots$ \qquad (For one variable $y$)
-
-\quad $\cdot$ ps: {\footnotesize Taylor Series: $y(t_0+h)=y(t_0)+hy'(t_0)+\frac{h^2}{2}y''(t_0)+\cdots+\frac{h^{n-1}}{(n-1)!}y^{(n-1)}(t_0)+\frac{h^n}{n!}y^{(n)}(t^*),t^*\in[t,t+h]$ \quad \quad  ps: $y'=f,y''=f_t+f_yf$}
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Method}: {\small 通过泰勒展开精确解, 取前$n$项作为近似解, 从而得到数值解.}
+    \item \textbf{Taylor Series for $\Phi$}: $\Phi_{t,h}(y)=y+hf(t,y)+\frac{1}{2}h^2[f_t(t,y)+f_y(t,y)f(t,y)]+\frac{1}{6}y'''(t,y)h^3+\cdots$ \quad {\scriptsize (For one variable $y$)} {\tiny ps: $y'=f,y''=f_t+f_yf$}
+    \item \textbf{Taylor Series}: $y(t_0+h)=y(t_0)+hy'(t_0)+\frac{h^2}{2}y''(t_0)+\cdots+\frac{h^{n-1}}{(n-1)!}y^{(n-1)}(t_0)+\frac{h^n}{n!}y^{(n)}(t^*),t^*\in[t,t+h]$
+\end{enumerate}
 
 
 \section{Convergence of One-Step Methods {\scriptsize consider for autonomous $y'=f(y)$}} % Convergence of One-Step Methods
@@ -149,26 +149,41 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
 
 \textbf{Construction of More General one-step Method}: For $y'=f(y),y(t_0)=y_0$ \ $\Rightarrow$ \ $y(t+h)-y(t)=\int^{t+h}_tf(y(\tau))d\tau$
 
-\textbf{Trapezoidal Method}: $y_{n+1}=y_n+\frac{h}{2}(f(y_n)+f(y_{n+1}))$ \quad \quad \textbf{Midpoint Method}: {\small $y_{n+1}=y_n+hf(\frac{y_n+y_{n+1}}{2})$}
+\textbf{Lagrange Interpolating Polynomials}: For function $p(x)$. Consider points: $(c_1,g_1),...,(c_s,g_s)$. where $p(c_i)=g_i$.
 
-\textbf{One-Step Collocation Methods (By Lagrange Interpolating Polynomials)}:
-
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Lagrange Interpolating Polynomials}: $\ell_{i}(x)=\prod_{j=1,j\ne i}^{s}\frac{x-c_j}{c_i-c_j}\in\mathbb{P}_{s-1}$ \quad where $c_i\in F\in\{\mathbb{Q},\mathbb{R},\mathbb{C}\}$ \\
-    $\Rightarrow$ \textbf{Polynomial Interpolation}: $\forall p(x)\in \mathbb{P}_s$ with $p(c_i)=g_i\in F$ \ \ $\Rightarrow$ \ \ $\exists!$ $p(x)=\sum_{i=1}^{s}g_i\ell_i(x)$ {\tiny (Can be proved by Honour Algebra)}
-    \item \textbf{Quadrature Rule}: {\small If $g(t)\in\mathbb{P}_{p-1}$} \ \ $\big|$ \ \ {\small $\int^{t_0+h}_{t_0}g(t)dt=\int^1_0g(t_0+hx)dx\approx h\sum_{i=1}^{s}b_ig(t_0+hc_i),b_i:=\int^1_0\ell_i(x)dx$} \quad {\tiny ps: $c_i$ 从 $[0,1]$中取不同的}
-    \item \textbf{Collocation Methods}: For: $y(t_0)=y_0 \ , \ y'(t_0+c_ih)=f(y(t_0+c_ih))$ {\tiny ps: $c_i$ 从 $[0,1]$中取不同的} \quad {\small Let: $a_{ij}:=\int_0^{c_i}\ell_j(x)dx$ and $b_i:=\int_0^1\ell_i(x)dx$}\\
-    $\Rightarrow$ \ $F_i=f(y_n+h\sum_{j=1}^{s}a_{ij}F_j)$ and $y_{n+1}=y_n+h\sum_{i=1}^{s}b_iF_i$ \hspace{30pt} where $F_i:=y'(t_0+c_ih)$
+\begin{enumerate}[itemsep=-2pt, topsep=-1pt]
+    \item \textbf{Lagrange Interpolating Polynomials}: Let $\ell_{i}(x)=\prod_{j=1,j\ne i}^{s}\frac{x-c_j}{c_i-c_j}\in\mathbb{P}_{s-1}$
+    \item \textbf{Polynomial Interpolation}: $\exists!$ $p(x)=\sum_{i=1}^{s}g_i\ell_i(x)$ {\tiny (Can be proved by Honour Algebra)}
 \end{enumerate}
 
-$\cdot$ \textbf{Remark}: {\footnotesize For choice of $c_i$: The optimal choice is attained by \textit{Gauss-Legendre collocation methods}}.
+\vspace{1pt}
+\textbf{Interpolatory Quadrature}: {\footnotesize 对于函数$g(t)\in\mathbb{P}_{p-1}$, 我可以通过插值求积的方法来近似求解积分；以下展示$[a,b]$上的插值求积。}
 
-\textbf{Runge-Kutta Methods}: Let $y'=f(t,y)$ \quad \textbf{Stage Values}: $Y_i=y_n+h\sum_{j=1}^{s}a_{ij}f(t_n+c_jh,Y_{j})$ \ \ $i\in\{1,...,s\}$ \quad $F_i=f(Y_i)$
+\begin{enumerate}[itemsep=-2pt, topsep=-1pt]
+    \item Choose $c_i$ points in $[a,b]$: $c_1,\dots,c_s$. \quad Let $g_i = g(c_i)$. \quad By using $c_i,g_i$, we can get $\ell_i(x)$.
+    \item Define weights: $b_i := \int_a^b \ell_i(x)\,dx$. \quad Then $\int_a^b g(t)\,dt \;\approx\;\sum_{i=1}^{s} b_i\,g(c_i)$.
+\end{enumerate}
+
+
+\textbf{One-Step Collocation Methods}: {\footnotesize 对于$y'=f(y)$, $y_{n+1}=y_n+\int_{t_n}^{t_{n+1}}f(y(t))dt$, 通过Interpolatory Quadrature来近似求解积分.}{\tiny 为了简化,考虑autonomous的情况}
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item The RK method is the form: $y_{n+1}=y_n+h\sum_{i=1}^{s}b_if(t_n+c_ih,Y_i(y_n))$ \quad for some values of $b_i,a_{ij},s,c_i$ \quad { for Autonomous: $c_i=\sum_{j=1}^{s}a_{ij}$}
-    \item Flow-map: $\Psi_{h}(y)=y+h\sum_{i=1}^{s}b_if(t_n+c_ih,Y_i(y))$ \quad \quad \quad { ps:\textit{weights}: $b_i$; \ \textit{internal coefficients}: $a_{ij}$}
-    \item \small{{ We can using \textbf{Butcher Table} to represent the RK method (Appendix)} \quad \textbf{Explicit}: $a_{ij}=0$ for $j\geq i$ { (严格下三角行)} \quad \textbf{Implicit}: $\exists a_{ij}\ne0$ for $j\geq i$ { (Not Explicit)}}
+    \item Choose $c_1,...,c_s$ in $[0,1]$, consider $t_i=t_n+c_ih$, then $t_i\in[t_n,t_{n+1}]$.
+    \item Let $F_i=f(y(t_i))$, then we can get $\ell_i(x)$ which pass through $(c_i,F_i)$.
+    \item Let weights: $b_i=\int_0^1\ell_i(x)dx$, and $a_{ij}=\int_0^{c_i}\ell_j(x)dx$. \quad \textbf{Then} $\star$ $y_{n+1}=y_n+h\sum_{i=1}^{s}b_iF_i$. $\star$
+    \item Moreover, we can get: $F_i=f(Y_i)$, where $Y_i=y_n+h\sum_{j=1}^{s}a_{ij}F_j$. \\
+    \textbf{Remark}: {\footnotesize For choice of $c_i$: The optimal choice is attained by \textit{Gauss-Legendre collocation methods}}. \\
+    {\scriptsize e.g. $s=1$: $c_1=\frac{1}{2}$;\qquad $s=2$: $c_1=\frac{1}{2}-\frac{\sqrt{3}}{6},c_2=\frac{1}{2}+\frac{\sqrt{3}}{6}$;\qquad $s=3$: $c_1=\frac{1}{2}-\frac{\sqrt{15}}{10},c_2=\frac{1}{2},c_3=\frac{1}{2}+\frac{\sqrt{15}}{10}$}
+\end{enumerate}
+
+\textbf{Runge-Kutta Methods}: Let $y'=f(y)$ here we consider the autonomous case. The RK method has following form:
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Stage Values}: $Y_i=y_n+h\sum_{j=1}^{s}a_{ij}f(Y_{j})$ \ \ $i\in\{1,...,s\}$ \qquad $F_i=f(Y_i)$
+    \item \textbf{Update}: $y_{n+1}=y_n+h\sum_{i=1}^{s}b_iF_i=y_n+h\sum_{i=1}^{s}b_if(Y_i)$ \quad {\small For Autonomous: $c_i=\sum_{j=1}^{s}a_{ij}$} \\
+    \textbf{Remark}: Flow-map: $\Psi_{h}(y)=y+h\sum_{i=1}^{s}b_if(Y_i(y))$ \qquad \ {\scriptsize ps:\textit{weights}: $b_i$; \ \textit{internal coefficients}: $a_{ij}$} \\
+    \small{ps: We can using \textbf{Butcher Table} to represent the RK method (Appendix) \\
+    \textbf{Explicit}: $a_{ij}=0$ for $j\geq i$ { (严格下三角行)} \quad \textbf{Implicit}: $\exists a_{ij}\ne0$ for $j\geq i$ (Not Explicit)}
 \end{enumerate}
 
 
@@ -339,14 +354,63 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
 \textbf{A-Stable}: An RK method is \textit{A-stable} if its \textit{stability region} contains the entire \textit{left complex half-plane}. {\scriptsize (i.e. $\Re(z)<0$)}
 
 
-\section{Linear Multistep Methods} % Linear Multistep Methods
+\section{Linear Multistep Methods {\scriptsize consider for autonomous $y'=f(y)$}} % Linear Multistep Methods
+
+\vspace{-6pt}
+\quad {\scriptsize Assume $\frac{dy}{dt}=f(y)$ with $y(t_0)=y_0$. \quad Let $y_n'$ denote $f(y_n)$.}
+\vspace{-6pt}
+
+\subsection{Derivation of LMM | Algebra Operators} % Derivation of LMM | Algebra Operators
+
+\textbf{Linear Multistep Methods (LMM)}: {\small For $k$-step LMM:} $\alpha_k y_{n+k}+\sum_{j=0}^{k-1}\alpha_jy_{n+j}=h\sum_{j=0}^{k}\beta_jf(y_{n+j})$ \quad {\footnotesize where $^1\alpha_k\ne0$, $^2$ $\alpha_0\ne0$ or $\beta_0\ne0$}
+
+$\cdot$ ps: Usually, coefficients are \textit{normalized} to have $\alpha_k=1$ or $\sum_{j=0}^{k}\beta_j=1$. \quad \textbf{Implicit}: If $\beta_k\ne0$ \quad \textbf{Explicit}: If $\beta_k=0$
+
+\textbf{AB Schemes Construction|Using Interpolation}: {\footnotesize Adams-Bashforth schemes can be constructed by: Consider $k$ points $(t_{n+j}, y'_{n+j})$ for $j=0,...,k-1$.}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item Let $\prod_{k}^{f}(t)$ be the \textit{Lagrange polynomial} which passes through $(t_{n+j}, y'_{n+j})$.
+    \item The AB scheme is: $y_{n+k}=y_{n+k-1}+\int_{t_{n+k-1}}^{t_{n+k}}\prod_{k}^{f}(t)dt$ \\
+    \textbf{Remark}: Adams-Moulton schemes {\footnotesize 同理: 考虑} $k+1$ points $(t_{n+j}, y'_{n+j})$ for $j=0,...,k$. \\
+    Then, we can found $\widehat{\prod}_{k}^{f}(t)$, and \quad $y_{n+k}=y_{n+k-1}+\int_{t_{n+k-1}}^{t_{n+k}}\widehat{\prod}_{k}^{f}(t)dt$
+\end{enumerate}
+
+\textbf{Algebra Operators}: Algebra Operators is a function which maps a function to another function.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{shift operator}: $E_hg(t)=g(t+h)$ \qquad \textbf{forward difference operator}: $\Delta_hg(t)=g(t+h)-g(t)$
+    \item \textbf{Identity Operator}: $1g(t)=g(t)$ \qquad \ \ \textbf{Differentiation operator}: $Dg(t)=g'(t)$
+    \item \textbf{backward difference operator}: $\nabla_hg(t)=g(t)-g(t-h)$ 
+\end{enumerate}
+
+\textbf{Properties of Algebra Operators}:
+
+\begin{longtable}[alignment]{|c|c|c|c|c|c|}
+    \hline
+    $\Delta_h=E_h-1$ & $E_h=e^{hD}$ & $e^{hD}=1+\Delta_h$ & $D=\frac{1}{h}\ln[1+\Delta_h]$ & $g(t)=e^{(t-t_n)D}g(t_n)$ & $g(t_{n+1})=e^{hD}g(t_n)$ \\
+    \hline
+    $E_h^{-1} = e^{-hD}$ & \multicolumn{2}{c|}{$D=-\frac{1}{h}\ln[E^{-1}_h]=-\frac{1}{h}\ln[1-\nabla_h]$} & $1-E^{-1}_h=\nabla_h$ & \multicolumn{2}{c|}{$D=\frac{1}{h}[\nabla_h+\frac{1}{2}\nabla^2_h+\frac{1}{3}\nabla^3_h+\cdots]$} \\
+    \hline
+    \multicolumn{3}{|c|}{\small $e^{hD}g(t)=g(t+h)=g(t)+hDg(t)+\frac{h^2}{2}D^2g(t)+\cdots$} & \multicolumn{3}{c|}{\small $g(t) = \left[1 + \frac{t-t_n}{1!\cdot h}\Delta_h + \frac{(t-t_n)(t-t_n-h)}{2!\cdot h^2}\Delta_h^2 + \frac{(t-t_n)(t-t_n-h)(t-t_n-2h)}{3!\cdot h^3}\Delta_h^3 + \cdots\right]g(t_n)$} \\
+    \hline
+\end{longtable}
+\vspace{-5pt}
+
+\textbf{BDF Method}: For $y'=f(t,y(t))$. \qquad Since $Dy(t)=y'(t)$ and $D=\frac{1}{h}[\nabla_h+\frac{1}{2}\nabla^2_h+\frac{1}{3}\nabla^3_h+\cdots]$.
+
+\qquad\qquad\qquad \ we can get the BDF method by $\frac{1}{h}[\nabla_h+\frac{1}{2}\nabla^2_h+\frac{1}{3}\nabla^3_h+\cdots]y(t)=f(t,y(t))$. {\footnotesize 选择$D$的前几项作为估计.}
 
 
+\subsection{Order of Accuracy}
 
+
+\newpage
 
 \section{Appendix} 
 
 \subsection{Common Numerical Method | Order Condition} % Common Numerical Method | Order Condition
+
+\textbf{One-step Methods}:
 
 \vspace{-10pt}
 \begin{table}[ht]
@@ -361,7 +425,7 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
     \( y_{n+1} = y_n + h\,f(t_{n+1},y_{n+1}) \) & 1 & \( \left\lvert\frac{1}{1-h\lambda}\right\rvert < 1 \) (A-stable) \\ \hline
     Trapezoidal Rule & 
     \( y_{n+1} = y_n + \frac{h}{2}\Big[f(t_n,y_n)+f(t_{n+1},y_{n+1})\Big] \) & 2 & A-stable; \( R(z)=\frac{1+z/2}{1-z/2} \) \\ \hline
-    Explicit Midpoint & 
+    Midpoint Method & 
     \( y_{n+1}=y_n+h\,f\Big(t_n+\frac{h}{2},y_n+\frac{h}{2}f(t_n,y_n)\Big) \) & 2 & \( \left|1+h\lambda+\frac{(h\lambda)^2}{2}\right| < 1 \) \\ \hline
     Heun's Method & 
     \( y_{n+1}=y_n+\frac{h}{2}\Big[f(t_n,y_n)+f\Big(t_{n+1},y_n+h\,f(t_n,y_n)\Big)\Big] \) & 2 & \( \left|1+h\lambda+\frac{(h\lambda)^2}{2}\right| < 1 \) \\ \hline
@@ -383,6 +447,28 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
     \end{tabular}
 \end{table}
 \vspace{-10pt}
+
+\textbf{Multi-step Methods}:
+
+\begin{longtable}{|l|l|c|l|}
+    \hline
+    \textbf{Name} & \textbf{Formula} & \textbf{Step} & \textbf{Accuracy} \\
+    \hline
+    Leapfrog Method & \( y_{n+2} = y_n + 2h\,f(t_{n+1},y_{n+1}) \) & 2 & \\
+    \hline
+    Adams-Bashforth Method 1 & \( y_{n+1} = y_n + h\,f(t_n,y_n) \) & 1 & \\
+    \hline
+    Adams-Bashforth Method 2 & \( y_{n+2} = y_{n+1} + \frac{h}{2}\Big[3f(t_{n+1},y_{n+1})-f(t_n,y_n)\Big] \) & 2 & \\
+    \hline
+    Adams-Bashforth Method 3 & \( y_{n+3} = y_{n+2} + \frac{h}{12}\Big[23f(t_{n+2},y_{n+2})-16f(t_{n+1},y_{n+1})+5f(t_n,y_n)\Big] \) & 3 & \\
+    \hline
+    Backward Differentiation Formula 2 & \( y_{n+2} = \frac{4}{3}y_{n+1} - \frac{1}{3}y_n + \frac{2h}{3}f(t_{n+2},y_{n+2}) \) & 2 & \\
+    \hline
+    Backward Differentiation Formula 3 & \( y_{n+3} = \frac{18}{11}y_{n+2} - \frac{9}{11}y_{n+1} + \frac{2}{11}y_n + \frac{6h}{11}f(t_{n+3},y_{n+3}) \) & 3 & \\
+    \hline
+    \multicolumn{4}{|c|}{\footnotesize Class of Adams-Moulton Methods: $\alpha_k=1,\alpha_{k-1}=-1$, $\alpha_j=0,\forall j<k-1$ \qquad $\big|$ Class of Backward Differentiation Formula (BDF): $\beta_j=0,\forall j<k$} \\
+    \hline
+\end{longtable}
 
 \textbf{RK Order Condition}
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
