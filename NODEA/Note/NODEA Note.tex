@@ -357,7 +357,7 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
 \section{Linear Multistep Methods {\scriptsize consider for autonomous $y'=f(y)$}} % Linear Multistep Methods
 
 \vspace{-6pt}
-\quad {\scriptsize Assume $\frac{dy}{dt}=f(y)$ with $y(t_0)=y_0$. \quad Let $y_n'$ denote $f(y_n)$.}
+\quad {\scriptsize Assume $\frac{dy}{dt}=f(y)$ with $y(t_0)=y_0$. \quad Let $y_n'$ denote $f(y_n)$;\qquad Let $y'(t_n)$ denote $f(y(t_n))$}
 \vspace{-6pt}
 
 \subsection{Derivation of LMM | Algebra Operators} % Derivation of LMM | Algebra Operators
@@ -403,6 +403,28 @@ $\cdot$ ps: Usually, coefficients are \textit{normalized} to have $\alpha_k=1$ o
 
 \subsection{Order of Accuracy}
 
+\textbf{First/Second Characteristic Polynomials}: For $k$-step LMM: $\sum_{j=0}^{k}\alpha_jy_{n+j}=h\sum_{j=0}^{k}\beta_jf(y_{n+j})$, we define:
+
+\hspace{190pt}\textbf{First Poly}: $\rho(\zeta)=\sum_{j=0}^{k}\alpha_j\zeta^j$ \qquad\qquad \textbf{Second Poly}: $\sigma(\zeta)=\sum_{j=0}^{k}\beta_j\zeta^j$
+
+\textbf{Linear Case}: For scalar, linear, test equation $y'=\lambda y$, we have $\rho(\zeta)-h\lambda \sigma(\zeta)=0$.
+
+\qquad\qquad\quad \ \ ``General Solution'': $y_n=C_1\zeta_1^n+...+C_k\zeta_k^n$ \quad {\scriptsize where $\zeta_1,...,\zeta_k$ are roots of $\rho(\zeta)-h\lambda \sigma(\zeta)=0$.}
+
+\textbf{Residual}: $r_n:=\sum_{j=0}^{k}\alpha_jy(t_{n+j})-h\sum_{j=0}^{k}\beta_jy'(t_{n+j})$ \qquad {\scriptsize Residual accumulated(累积) in the $n+k-1$-th step.}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Taylor Series Expansion|$y(t_{n+j})$}: $y(t_{n+j})=y(t_n)+jhy'(t_n)+\frac{j^2h^2}{2}y''(t_n)+\cdots=\sum_{i=0}^{\infty}\frac{(jh)^i}{i!}y^{(i)}(t_n)$
+    \item \textbf{Taylor Series Expansion|$y'(t_{n+j})$}: $y'(t_{n+j})=y'(t_n)+jhy''(t_n)+\frac{j^2h^2}{2}y'''(t_n)+\cdots=\sum_{i=0}^{\infty}\frac{(jh)^i}{i!}y^{(i+1)}(t_n)$
+\end{enumerate}
+
+\textbf{Consistency}: An LMM is \textit{consistent} if $r_n=\mathcal{O}(h^{p+1})$ for all sufficiently smooth $f$. \quad with $p$ be the order of the method.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Test I}: LMM is \textit{consistent} with order $p$ if: $\sum_{j=0}^{k}\alpha_j=0$ and $\sum_{j=0}^{k}j^i\alpha_j=i\sum_{j=0}^{k}j^{i-1}\beta_j$ for $i=1,...,p$
+    \item \textbf{Test II}: LMM is \textit{consistent} with order $p$ if: $\rho(e^{z})-z\sigma(e^{z})=\mathcal{O}(z^{p+1})$.
+    \item \textbf{Test III}: LMM is \textit{consistent} with order $p$ if: $\frac{\rho(z)}{\log(z)}-\sigma(z)=\mathcal{O}((z-1)^p)$.
+\end{enumerate}
 
 \newpage
 
