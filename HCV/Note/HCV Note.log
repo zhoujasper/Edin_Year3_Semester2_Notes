@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  7 MAR 2025 13:27
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  10 MAR 2025 08:50
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -778,12 +778,7 @@ Overfull \hbox (13.6627pt too wide) in alignment at lines 171--175
 
 [1
 
-] [2] [3]
-Overfull \hbox (6.83725pt too wide) in paragraph at lines 410--411
-[]\TU/Cambria(0)/b/n/10 Lemma|Integral\TU/Cambria(0)/m/n/10 : If $[][] [] [] [] []$ is \TU/Cambria(0)/m/it/10 continuous \TU/Cambria(0)/m/n/10 s.t. $[][] [][][][][]$ is \TU/Cambria(0)/m/it/10 uniformly convergent \TU/Cambria(0)/m/n/10 on $[]$, then $[][] [][] [][][][][][][] [] [][] [][] [][][][][][][]$. 
- []
-
-[4] (./HCV Note.aux) ) 
+] [2] [3] [4] (./HCV Note.aux) ) 
 Here is how much of TeX's memory you used:
  13257 strings out of 476683
  296171 string characters out of 5795227

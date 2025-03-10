@@ -407,7 +407,7 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Lemma|Continuous}: If $f_n:S\to\mathbb{C}$ is \textit{uniformly convergent} and \textit{continuous} to $f:S\to\mathbb{C}$, then $f$ is \textit{continuous} on $S$.
     \item \textbf{Lemma|Integral}: If $f_n:S\to\mathbb{C}$ is \textit{uniformly convergent} and \textit{continuous} to $f:S\to\mathbb{C}$, then $\int_{\Gamma}f_n(z)dz$ \textit{convergent} to $\int_{\Gamma}f(z)dz$.
-    \item \textbf{Lemma|Integral}: If $f_n:S\to\mathbb{C}$ is \textit{continuous} s.t. $\sum^\infty_{n=0}f_n(z)$ is \textit{uniformly convergent} on $S$, then $\int_{\Gamma}\sum^\infty_{n=0}f_n(z)dz=\sum^\infty_{n=0}\int_{\Gamma}f_n(z)dz$.
+    \item \textbf{Lemma|Integral}: If $f_n:S\to\mathbb{C}$ is \textit{continuous}, $\sum^\infty_{n=0}f_n(z)$ is \textit{uniformly convergent} on $S$, then $\int_{\Gamma}\sum^\infty_{n=0}f_n(z)dz=\sum^\infty_{n=0}\int_{\Gamma}f_n(z)dz$.
     \item \textbf{Lemma|Holomorphic}: {\small If $D$ is \textit{simply-connected} domain, $f_n:D\to\mathbb{C}$ is \textit{holomorphic} and \textit{uniformly convergent} to $f$. $\Rightarrow$ $f$ \textit{holomorphic} on $D$.}
 \end{enumerate}
 
@@ -415,6 +415,14 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 
 \hspace{156pt}If $\sum^\infty_{n=0}M_n$ is \textit{convergent}. \ $\Rightarrow$ \ $\sum^\infty_{n=0}f_n(z)$ is \textit{uniformly convergent} on $S$.
 
+\textbf{Power Series \& Radius of Convergence}: Power Series is: $\sum^\infty_{n=0}a_n(z-z_0)^n$. \quad and there is a number $R\in[0,\infty)\cup\{\infty\}$ s.t.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item The Series is \textit{convergent} on $D_{R}(z_0)$, \qquad\qquad\qquad\qquad\qquad\qquad The Series is \textit{divergent} on $\mathbb{C}\setminus \overline{D}_{R}(z_0)$.
+    \item The Series is \textit{uniformly convergent} on $\overline{D}_{r}(z_0)$ for all $r\in[0,R)$.
+    \item \textbf{Theorem|Holomorphic}: Then $f(z)$ is \textit{holomorphic} on $D_{R}(z_0)$, where $R$ is the \textit{radius of convergence}. \\
+    \textbf{Remark}: By using Ratio Test, we can find $R=lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right|$. {\scriptsize if this limit exists. 可以取0和$\infty$}
+\end{enumerate}
 
 
 \section{Appendix}
