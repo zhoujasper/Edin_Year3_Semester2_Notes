@@ -415,14 +415,58 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 
 \hspace{156pt}If $\sum^\infty_{n=0}M_n$ is \textit{convergent}. \ $\Rightarrow$ \ $\sum^\infty_{n=0}f_n(z)$ is \textit{uniformly convergent} on $S$.
 
-\textbf{Power Series \& Radius of Convergence}: Power Series is: $\sum^\infty_{n=0}a_n(z-z_0)^n$. \quad and there is a number $R\in[0,\infty)\cup\{\infty\}$ s.t.
+\textbf{Power Series \& Radius of Convergence}: Power Series is: $f(z)=\sum^\infty_{n=0}a_n(z-z_0)^n$. \quad and there is a number $R\in[0,\infty)\cup\{\infty\}$ s.t.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item The Series is \textit{convergent} on $D_{R}(z_0)$, \qquad\qquad\qquad\qquad\qquad\qquad The Series is \textit{divergent} on $\mathbb{C}\setminus \overline{D}_{R}(z_0)$.
+    \item The Series is \textit{convergent} on $D_{R}(z_0)$.
+    \item The Series is \textit{divergent} on $\mathbb{C}\setminus \overline{D}_{R}(z_0)$.
     \item The Series is \textit{uniformly convergent} on $\overline{D}_{r}(z_0)$ for all $r\in[0,R)$.
     \item \textbf{Theorem|Holomorphic}: Then $f(z)$ is \textit{holomorphic} on $D_{R}(z_0)$, where $R$ is the \textit{radius of convergence}. \\
-    \textbf{Remark}: By using Ratio Test, we can find $R=lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right|$. {\scriptsize if this limit exists. 可以取0和$\infty$}
+    \textbf{Remark}: By using Ratio Test, we can find $R=\lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right|$. {\scriptsize if this limit exists. 可以取0和$\infty$}
 \end{enumerate}
+
+
+\subsection{Taylor Series and Laurent Series} % Taylor Series and Laurent Series
+
+\textbf{Taylor Series}: Let $z_0\in\mathbb{C}$ and $f$ is holomorphic at $z_0$. Then the \textit{Taylor Series} of $f$ at $z_0$ is: \quad {\small $\sum^\infty_{n=0}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n$}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Theorem|Convergence}: {\footnotesize If $f$ is holomorphic on $D_{R}(z_0)$, then $^1$ the \textit{Taylor Series} of $f$ at $z_0$} \textit{converges} to $f(z)$ on $D_{R}(z_0)$.
+    \item \textbf{Theorem|Convergence}: {\footnotesize If $f$ is holomorphic on $D_{R}(z_0)$, then $^2$ the \textit{Taylor Series} of $f$ at $z_0$} \textit{converges uniformly} to $f(z)$ on $\overline{D}_{r}(z_0)$ {\scriptsize $r\in[0,R)$}.
+\end{enumerate}
+
+\textbf{Analytic}: {\small Let $U$ open, $f:U\to\mathbb{C}$ is \textit{analytic} if $\forall z\in U$, $\exists$ some \textit{disc centered at $z$} s.t. $f$ can be expressed as a \textit{convergent power series centred at $z$}.}
+
+\quad \textbf{Homo$\rightarrow$Analytic}: If $f$ is \textit{holomorphic} on $U$, then $f$ is \textit{analytic} on $U$.
+
+\textbf{Properties of Taylor Series|Series}: Let $z_0\in\mathbb{C}$, $R>0$, $f,g$ is holomorphic on $D_{R}(z_0)$, then for $\star$ $\forall z\in D_{R}(z_0)$ $\star$:
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Termwise Differentiation}: {\small $f(z)=\sum\limits^\infty_{n=0}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n$ {\tiny $\forall z\in D_{R}(z_0)$} \ \ and \ \ $f'(z)=\sum\limits^\infty_{n=1}\frac{f^{(n)}(z_0)}{(n-1)!}(z-z_0)^{n-1}= \sum\limits^\infty_{n=0}\frac{f^{(n+1)}(z_0)}{n!}(z-z_0)^n$ {\tiny $\forall z\in D_{R}(z_0)$}}
+    \vspace{-5pt}
+    \item \textbf{Lemma|Linear Combination}: $(\alpha f+\beta g)(z)=\sum\limits^\infty_{n=0}\left(\frac{\alpha f^{(n)}(z_0)+\beta g^{(n)}(z_0)}{n!}\right)(z-z_0)^n$ {\tiny $\forall z\in D_{R}(z_0)$}
+    \vspace{-5pt}
+    \item \textbf{Lemma|Product}: $(fg)(z)=\sum\limits^\infty_{n=0}\left(\sum\limits^n_{k=0}\frac{f^{(k)}(z_0)g^{(n-k)}(z_0)}{k!(n-k)!}\right)(z-z_0)^n=\sum\limits^\infty_{n=0}\frac{1}{n!}\left(\sum\limits^n_{k=0}\binom{n}{k}f^{(k)}(z_0)g^{(n-k)}(z_0)\right)(z-z_0)^n$ {\tiny $\forall z\in D_{R}(z_0)$}
+    \vspace{-1pt}
+    \item \textbf{Uniqueness of Taylor series}: {\footnotesize $f(z)$ has a \textit{power series representation} at $z_0$, with radius of convergence $R>0$. \ $\Rightarrow$ \ Then it must be the \textit{Taylor series} of $f$ at $z_0$, and will equal to $f(z)$ on $D_{R}(z_0)$.} \qquad {\scriptsize i.e. 假设某个函数$f(z)$ 能够由幂级数展开，那么这个展开是唯一的,且在收敛区间内等于$f(z)$.}
+\end{enumerate}
+
+\textbf{Laurent Series}: A \textit{Laurent Series} centered at $z_0$ is the series form: $\sum^\infty_{n=-\infty}a_n(z-z_0)^n=\sum^\infty_{n=0}a_n(z-z_0)^n+\sum^\infty_{n=1}a_{-n}(z-z_0)^{-n}$
+
+\qquad \textbf{Convergence}: The \textit{Laurent Series} is \textit{convergent} if both $\sum^\infty_{n=0}a_n(z-z_0)^n$ and $\sum^\infty_{n=1}a_{-n}(z-z_0)^{-n}$ are \textit{convergent}.
+
+\qquad \textbf{Remark}: {\small If \textit{radius of convergence} of $\sum^\infty_{n=0}a_n(z-z_0)^n$ and $\sum^\infty_{n=1}a_{-n}(z-z_0)^{-n}$ are $R$ and $S$. $\Rightarrow$ \textit{Laurent Series} \textit{convergent} on $S^{-1}<|z-z_0|<R$.}
+
+\textbf{Annulus}: \textbf{Open annulus}: $A_{r,R}(z_0)=\{z\in\mathbb{C}:r<|z-z_0|<R\}$ \quad \textbf{Closed annulus}: $\overline{A}_{r,R}(z_0)=\{z\in\mathbb{C}:r\leq|z-z_0|\leq R\}$
+
+\textbf{Laurent Series|For function}: Let $z_0\in\mathbb{C}$, $0\leq r<R\leq\infty$, $f$ is holomorphic on $A_{r,R}(z_0)$. Then:
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item {\footnotesize $f$ can be expressed as a \textit{Laurent Series} on $A_{r,R}(z_0)$,} $^1$ \textit{convergent} on $A_{r,R}(z_0)$. $^2$ \textit{uniformly convergent} on $\overline{A}_{r',R'}(z_0)$ for $r<r'\leq R'<R$.
+    \item \textbf{Coefficient}: $a_n=\frac{1}{2\pi i}\int_{\Gamma}\frac{f(z)}{(z-z_0)^{n+1}}dz$ for any \textit{loop} $\Gamma$ in $A_{r,R}(z_0)$ and contain $z_0$ in its interior.
+    \item \textbf{Uniqueness}: {\footnotesize If $f(z)$ has a \textit{Laurent Series} on $A_{r,R}(z_0)$, then it must be the \textit{Laurent Series} of $f$ on $A_{r,R}(z_0)$, and will equal to $f(z)$ on $A_{r,R}(z_0)$.}
+\end{enumerate}
+
 
 
 \section{Appendix}
@@ -442,6 +486,12 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \textbf{Cauchy's Condensation Test}: If $a_n\geq 0,a_n$ decreasing, $\Rightarrow \ [\ \sum a_n convergent \Leftrightarrow \sum 2^na_{2^n} \ also \ ]$
 
 
+\subsection{Series}
 
+\textbf{Technical to write Taylor Series}: {\scriptsize Since $\frac{1}{1-z}=\sum_{n=0}^{\infty}z^n$ for $|z|<1$. \quad for any $^1\frac{a}{b-cx}$, $\Rightarrow$ $\frac{a}{b}\cdot\frac{1}{1-\frac{c}{b}x}=\frac{a}{b}\sum_{n=0}^{\infty}\left(\frac{c}{b}x\right)^n$ \quad $^2$for $\frac{1}{(1-z)^2} \ \Rightarrow \ =\frac{d}{dz}\left(\frac{1}{1-z}\right)$}
+
+{\scriptsize \qquad Moreover, need try to construct $\frac{1}{1-(\frac{z-z_0}{R})}$ if it's holomorphic on $D_{R}(z_0)$. \qquad or: $\frac{1}{1-\frac{1}{z-z_0}}$ if it's holomorphic on $A_{1,\infty}(z_0)$.}
+
+\textbf{Taylor Series for Familiar functions}: {\scriptsize $\exp(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!}$ \quad $\sin(z)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}z^{2n+1}$ \quad $\cos(z)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}z^{2n}$ all of them have \textit{infinite radius of convergence}.}
 
 \end{document}

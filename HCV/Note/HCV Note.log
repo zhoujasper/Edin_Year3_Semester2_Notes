@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  10 MAR 2025 08:50
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  11 MAR 2025 12:07
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -778,14 +778,14 @@ Overfull \hbox (13.6627pt too wide) in alignment at lines 171--175
 
 [1
 
-] [2] [3] [4] (./HCV Note.aux) ) 
+] [2] [3] [4] [5] (./HCV Note.aux) ) 
 Here is how much of TeX's memory you used:
- 13257 strings out of 476683
- 296171 string characters out of 5795227
+ 13269 strings out of 476683
+ 296887 string characters out of 5795227
  1923012 words of memory out of 5000000
- 33293 multiletter control sequences out of 15000+600000
+ 33305 multiletter control sequences out of 15000+600000
  521299 words of font info for 140 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,12n,114p,422b,460s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,12n,114p,433b,460s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on HCV Note.pdf (4 pages).
+Output written on HCV Note.pdf (5 pages).
