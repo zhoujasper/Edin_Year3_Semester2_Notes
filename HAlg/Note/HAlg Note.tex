@@ -179,7 +179,7 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
 
 \quad \quad \quad \quad \quad \quad \quad \quad i.e. $\forall\vec{v}\in V$, we have unique $\vec{u}\in U,\vec{w}\in W$ s.t. $\vec{v}=\vec{u}+\vec{w}$. \quad {\footnotesize ps: It's a linear map.}
 
-\np\textbf{Criteria Lemma}: If $U$, $W$ are subspace of $V$, then $V=U\oplus W$ $\Leftrightarrow$ $V=U+W$ and $U\cap W=\{0\}$. {\scriptsize (需要证明)}
+\textbf{Criteria Lemma}: If $U$, $W$ are subspace of $V$, then $V=U\oplus W$ $\Leftrightarrow$ $V=U+W$ and $U\cap W=\{0\}$. {\scriptsize (需要证明)}
 
 
 \section{Linear Mapping | Rank-Nullity| Matrices | Change of Basis \quad {\tiny ps: 默认$V,W$ \ $F$-Vector Spaces.}}
@@ -520,11 +520,37 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \textbf{Orthonormal Family}: $\{\vec{v}_1,...,\vec{v}_n\}$ is \textit{orthonormal} if $^1\|\vec{v}_i\|=1$ and $^2\vec{v}_i\perp\vec{v}_j$ for $i\ne j$. {\scriptsize (i.e. $(\vec{v}_i,\vec{v}_j)=\delta_{ij}$)} \quad {\scriptsize If it is basis, then it is \textbf{orthonormal basis}.}
 
-\quad \textbf{Remark}: For $\{\vec{v}_1,...,\vec{v}_n\}$ orthonormal basis. \quad $\vec{v}=\sum_{i=1}^n(\vec{v},\vec{v}_i)\vec{v}_i$. 
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Observations}: \textbf{I}. {\small For $\{\vec{v}_1,...,\vec{v}_n\}$ orthonormal basis. \quad $\vec{v}=\sum_{i=1}^n(\vec{v},\vec{v}_i)\vec{v}_i$.} \qquad \textbf{II}. {\scriptsize For orthonormal Family, 可直接用勾股定理. $\Rightarrow$ 证明basis只需要证span.}
+    \item \textbf{Theorem}: {\small Every \underline{finite}-dimensional inner product space has an orthonormal basis.}
+    \item \textbf{Gram-Schmidt Process}: Let $\{\vec{v}_1,...,\vec{v}_n\}$ be basis of $V$. By using following way to get orthonormal basis: \\
+    \vspace{-25pt}
+    \begin{multicols}{2}
+        \textbf{a}. $\vec{e}_1=\frac{\vec{v}_1}{\|\vec{v}_1\|}$ \hspace{100pt} $\text{Proj}_{\vec{e}_k}\vec{v}_j=(\vec{v}_j,\vec{e}_k)\vec{e}_k$ \\
+        \textbf{b}. $\vec{u}_2=\vec{v}_2-\text{Proj}_{\vec{e}_1}\vec{v}_2$ \hspace{60pt} $\vec{e}_2=\frac{\vec{u}_2}{\|\vec{u}_2\|}$ \\
+        \textbf{c}. $\vec{u}_3=\vec{v}_3-\text{Proj}_{\vec{e}_1}\vec{v}_3-\text{Proj}_{\vec{e}_2}\vec{v}_3$ \quad \ \ \ $\vec{e}_3=\frac{\vec{u}_3}{\|\vec{u}_3\|}$ \\
+        \textbf{d}. $\vec{u}_n=\vec{v}_n-\sum_{i=1}^{n-1}\text{Proj}_{\vec{e}_i}\vec{v}_n$ \qquad\qquad $\vec{e}_n=\frac{\vec{u}_n}{\|\vec{u}_n\|}$
+        
+        \columnbreak
 
-\quad \textbf{Theorem}: {\small Every \underline{finite}-dimensional inner product space has an orthonormal basis.}
+        ~\\All-In-One:\\~\\$\vec{e}_{k+1}=\frac{\vec{v}_{k+1}-\sum_{i=1}^k\text{Proj}_{\vec{e}_i}\vec{v}_{k+1}}{\left\|\vec{v}_{k+1}-\sum_{i=1}^k\text{Proj}_{\vec{e}_i}\vec{v}_{k+1}\right\|}$
+    \end{multicols}
+    \vspace{-10pt}
+\end{enumerate}
 
+\textbf{Orthogonal Set}: For subset $T$ of vector space $V$. \textbf{Set Orthogonal to $A$} is $A^\perp:=\{\vec{v}\in V:\vec{v}\perp\vec{a},\forall\vec{a}\in A\}$
 
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{I}. $A^\perp$ is always subspace of $V$. \qquad \textbf{II}. $A^\perp=\langle A\rangle^\perp$
+    \item \textbf{Orthogonal Decomposition Theorem}: Let $V$ be inner product space. \quad $W$ be subspace of $V$. \quad Then: $V=W\oplus W^\perp$
+\end{enumerate}
+
+\textbf{Orthogonal Projection}: Let $V$ be inner product space. \quad $U$ be subspace of $V$, with orthonormal basis $\{\vec{e}_1,...,\vec{e}_m\}$. 
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item Then: \textit{orthogonal projection} $\pi_U:V\to V$ by $\vec{v}\mapsto\sum_{i=1}^m(\vec{v},\vec{e}_i)\vec{e}_i$
+    \item \textbf{I}. $\pi^2_U=\pi_U$ \qquad \textbf{II}. $\ker(\pi_U)=U^\perp$ \quad and \quad $\text{Im}(\pi_U)=U$ \qquad \textbf{III}. $\pi_U|_U=id_U$
+\end{enumerate}
 
 \section{Jordan Normal Form | Spectral Theorem} % Jordan Normal Form | Spectral Theorem
 
