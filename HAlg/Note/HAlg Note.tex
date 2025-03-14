@@ -213,8 +213,8 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
 \textbf{Representing matrix of linear map $_{\mathcal{B}}[f]_{\mathcal{A}}$}: $f:V\to W$ be linear map, $\mathcal{A}=\{\vec{v_1},...,\vec{v_n}\}$ is basis of $V$, $\mathcal{B}=\{\vec{w_1},...,\vec{w_m}\}$ is basis of $W$.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item $_{\mathcal{B}}[f]_{\mathcal{A}}:=A$ {\small (matrix)} where $f(\vec{v}_{i\in\mathcal{A}})=\sum_{j\in\mathcal{B}}A_{ji}\vec{w}_j$ \quad \quad $\exists M^{\mathcal{A}}_{\mathcal{B}}:Hom_{F}(V,W)\bij Mat(n\times m;F)$
-    \item If $\vec{v}\in V$, then $_{\mathcal{A}}[\vec{v}]:=\mathbf{b}$ {\small (vector)} where $\vec{v}=\sum_{i\in\mathcal{A}}\mathbf{b}_i\vec{v_i}$
+    \item $_{\mathcal{B}}[f]_{\mathcal{A}}:=A$ {\small (matrix)} where $f(\vec{v}_{i})=\sum_{j}A_{ji}\vec{w}_j$ \quad \quad $\exists M^{\mathcal{A}}_{\mathcal{B}}:Hom_{F}(V,W)\bij Mat(n\times m;F)$
+    \item If $\vec{v}\in V$, then $_{\mathcal{A}}[\vec{v}]:=\mathbf{b}$ {\small (vector)} where $\vec{v}=\sum_{i}b_i\vec{v_i}$
     \item \textbf{Theorems}: $[f\circ g]=[f]\circ[g]$ \quad \quad $_{\mathcal{C}}[f\circ g]_{\mathcal{A}}=_{\mathcal{C}}[f]_{\mathcal{B}}\circ_{\mathcal{B}}[g]_{\mathcal{A}}$ \quad \quad $_{\mathcal{B}}[f(\vec{v})]=_{\mathcal{B}}[f]_{\mathcal{A}}\circ_{\mathcal{A}}[\vec{v}]$ \quad \quad $_{\mathcal{A}}[f]_{\mathcal{A}}=I\Leftrightarrow f=id$
     \item \textbf{Change of Basis}: {\small Define \textit{Change of Basis Matrix}$:=$$_{\mathcal{A}}[id_V]_{\mathcal{B}}$ \quad \quad {\footnotesize $_{\mathcal{B}'}[f]_{\mathcal{A}'}=_{\mathcal{B}'}[id_W]_{\mathcal{B}}\circ$$_{\mathcal{B}}[f]_{\mathcal{A}}\circ$$_{\mathcal{A}}[id_V]_{\mathcal{A}'}$ \quad \quad $_{\mathcal{A}'}[f]_{\mathcal{A'}}=_{\mathcal{A}}[id_V]_{\mathcal{A'}}^{-1}\circ$$_{\mathcal{A}}[f]_{\mathcal{A}}\circ$$_{\mathcal{A}}[id_V]_{\mathcal{A}'}$}}
 \end{enumerate}
@@ -550,7 +550,50 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item Then: \textit{orthogonal projection} $\pi_U:V\to V$ by $\vec{v}\mapsto\sum_{i=1}^m(\vec{v},\vec{e}_i)\vec{e}_i$
     \item \textbf{I}. $\pi^2_U=\pi_U$ \qquad \textbf{II}. $\ker(\pi_U)=U^\perp$ \quad and \quad $\text{Im}(\pi_U)=U$ \qquad \textbf{III}. $\pi_U|_U=id_U$
+    \item \textbf{Orthogonal Decomposition}: For all $\vec{v}\in V$, $\vec{v}=(\vec{v}-\pi_U(\vec{v}))+\pi_U(\vec{v})$ where $(\vec{v}-\pi_U(\vec{v}))\perp \pi_U(\vec{v})$.
+    \item \textbf{Closest Approximation}: Since $\|\vec{v}-\vec{u}\|^2=\|\vec{v}-\pi_U(\vec{v})\|^2+\|\pi_U(\vec{v})-\vec{u}\|^2$ \quad $\Rightarrow$ \quad $\vec{u}=\pi_U(\vec{v})$ is the closest vector in $U$ to $\vec{v}$.
 \end{enumerate}
+
+
+\subsection{Adjoint and Self-Adjoint} % Adjoint and Self-Adjoint
+
+\textbf{Orthogonal}: {\small matrix $A$ is \textit{orthogonal} if $A^TA=I_n$. \quad {\scriptsize (i.e. $A^{-1}=A^T$)}} \qquad \textbf{Unitary}: {\small matrix $A$ is \textit{unitary} if $\overline{A}^TA$ or $A^T\overline{A}=I_n$. \quad {\scriptsize (i.e. $A^{-1}=\overline{A}^T$)}}
+
+\textbf{Hermitian}: {\small matrix $A$ is \textit{Hermitian} if $\overline{A}^T=A$. \quad {\scriptsize (i.e. $A$ is \textit{self-adjoint} in $\mathbb{C}$)}} \ \ \ \textbf{Symmetric}: {\small matrix $A$ is \textit{symmetric} if $A^T=A$.} \quad {\scriptsize (i.e. $A$ is \textit{self-adjoint in $\mathbb{R}$})}
+
+\textbf{Useful Tool}: If $T:V\to W$ is linear map. \quad For matrix $_{\mathcal{B}}[T]_{\mathcal{A}}$, The entry $[_{\mathcal{B}}[T]_{\mathcal{A}}]_{ij}=(T\vec{e}_j,\vec{f}_i)$
+
+\textbf{IPS isomorphism of $V$}: {\small A linear map $T:V\to W$ is \textit{IPS isomorphism} of $V$ (and $W$) if: \ \ $^1$ $T$ is isomorphism \quad $^2$ $(T\vec{v}_1,T\vec{v}_2)=(\vec{v}_1,\vec{v}_2)$ \quad $\forall \vec{v}_1,\vec{v}_2\in V$}
+
+\textbf{Properties of IPS isomorphism}: {\small Let $V,W$ be \textit{inner product spaces}, $\mathcal{A}=\{\vec{e}_1,...,\vec{e}_m\},\mathcal{B}=\{\vec{f}_1,...,\vec{f}_n\}$ are orthonormal basis of $V$, $W$.}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item {\small {\scriptsize Linear map} $T:V\to W$ is \textit{IPS isomorphism} of $V$ {\tiny (i.e. $T$ is iso \& $(T\vec{v}_1,T\vec{v}_2)=(\vec{v}_1,\vec{v}_2)$)} \quad $\Leftrightarrow$ \quad {\scriptsize Linear map} $T:V\to W$ maps some orthonormal basis to another.}
+    \item $T:V\to V$ is \textit{IPS isomorphism} \quad $\Leftrightarrow$ \quad $_{\mathcal{A}}[T]_{\mathcal{A}}$ is \textit{orthogonal}$_{\mathbb{R}}$ or \textit{unitary}$_{\mathbb{C}}$ matrix.
+    \item \textbf{Similar}: If matrix $A=_{\mathcal{A}}[f]_{\mathcal{A}}$ and $B=_{\mathcal{B}}[f]_{\mathcal{B}}$ \quad $\Leftrightarrow$ \quad $B=P^{-1}AP$ and $P$ is is \textit{orthogonal}$_{\mathbb{R}}$ or \textit{unitary}$_{\mathbb{C}}$ matrix.
+\end{enumerate}
+
+\textbf{Adjoint}: {\small {\scriptsize $V$ is inner product space. $T,S:V\to V$ are linear maps.} \qquad $T,S$ are called \textit{adjoint} to one another if $(T\vec{v},\vec{w})=(\vec{v},S\vec{w})$ \quad $\forall \vec{v},\vec{w}\in V$.}
+
+\textbf{Self-adjoint}: If $T=T^*$, then $T$ is \textit{self-adjoint}. \quad {\scriptsize (i.e. $(T\vec{v},\vec{w})=(\vec{v},T\vec{w})$)}
+
+\textbf{Properties of Adjoint}: Let $V$ be \textit{inner product spaces}, $\mathcal{A}=\{\vec{e}_1,...,\vec{e}_n\}$ are orthonormal basis of $V$. \ \ $T:V\to V$ is linear map.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item Then, $\exists!$ linear map $T^*:V\to V$ s.t. $(T\vec{v},\vec{w})=(\vec{v},T^*\vec{w})$ \quad $\forall \vec{v},\vec{w}\in V$.
+    \item \textbf{I}. $_{\mathcal{A}}[T^*]_{\mathcal{A}}=\overline{(_{\mathcal{A}}[T]_{\mathcal{A}})}^T$ \qquad \textbf{II}. If $T=T^*$ {\scriptsize (self-adjoint)} \ \ $\Leftrightarrow$ \ \ $_{\mathcal{A}}[T]_{\mathcal{A}}=\overline{(_{\mathcal{A}}[T]_{\mathcal{A}})}^T$ {\scriptsize Hermitian/Symmetric} \qquad \textbf{III}. $(T^*)^*=T$
+    \item \textbf{IPS isomorphism}: $T:V\to V$ is \textit{IPS isomorphism} \quad $\Leftrightarrow$ \quad $TT^*=T^*T=\text{id}_V$ \quad $\Leftrightarrow$ \quad $_{\mathcal{A}}[T]_{\mathcal{A}}$ is \textit{unitary}$_{\mathbb{C}}$ or \textit{orthogonal}$_{\mathbb{R}}$ matrix.
+\end{enumerate}
+
+\textbf{Normal}: Linear map $T:V\to V$ is \textit{normal} if $TT^*=T^*T$.
+
+\textbf{Properties of Normal}: Let $V$ be \textit{inner product spaces}, $\mathcal{A}=\{\vec{e}_1,...,\vec{e}_n\}$ are orthonormal basis of $V$. \ \ $T:V\to V$ is linear map.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item $T$ is \textit{normal} $\Leftrightarrow$ $\overline{_{\mathcal{A}}[T]_{\mathcal{A}}}^T\cdot_{\mathcal{A}}[T]_{\mathcal{A}}=_{\mathcal{A}}[T]_{\mathcal{A}}\cdot\overline{_{\mathcal{A}}[T]_{\mathcal{A}}}^T$
+    \item \textbf{I}.$T$ is \textit{self-adjoint} $\Rightarrow$ $T$ is \textit{normal} \qquad \textbf{II}. $T$ is \textit{IPS isomorphism} $\Rightarrow$ $T$ is \textit{normal}.
+\end{enumerate}
+
 
 \section{Jordan Normal Form | Spectral Theorem} % Jordan Normal Form | Spectral Theorem
 
