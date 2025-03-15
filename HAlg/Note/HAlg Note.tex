@@ -509,13 +509,16 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     ps: \textbf{Standard Inner Product in $\mathbb{R}^n$|$\mathbb{C}^n$}: $(\vec{x},\vec{y})=\sum_{i=1}^n x_iy_i$ \quad $(\vec{x},\vec{y})=\sum_{i=1}^n x_i\overline{y_i}$ \qquad {\scriptsize (i.e. dot product $\vec{x}\cdot\vec{y}=\vec{x}^T\vec{y}$)}
 \end{enumerate}
 
-\textbf{Special Inner Product}: {\small If $(\vec{x},\vec{y})=\sum_{i,j} a_{ij}x_i\overline{y_j}=\vec{x}^TA\overline{\vec{y}}$ \quad where $A_{ij}=a_{ij}$. $\Rightarrow$ It is an inner product if $^1\overline{A^T}=A$ and $^2\vec{x}^TA\overline{\vec{x}}\ge0,\forall \vec{x}\in\mathbb{R}^n|\mathbb{C}^n$.}
+\textbf{Special Inner Product}: If $(\vec{x},\vec{y})=\sum_{i,j} a_{ij}x_i\overline{y_j}=\vec{x}^TA\overline{\vec{y}}$ \quad where $A_{ij}=a_{ij}$
+
+\hspace{103pt} $\Rightarrow$ It is an inner product if: \ \ $^1\overline{A^T}=A$ \quad $^2\vec{x}^TA\overline{\vec{x}}\ge0,\forall \vec{x}\in\mathbb{R}^n|\mathbb{C}^n$ \quad $^3(\vec{x},\vec{x})=0$ iff $\vec{x}=\vec{0}$
 
 \textbf{Norms}: For $\vec{x},\vec{y}\in V$ in inner product space. \quad $\|\vec{x}\|:=\sqrt{(\vec{x},\vec{x})}\geq0$ \qquad \ \ \ \textbf{Orthogonal}: $\vec{x}\perp\vec{y}$ iff $(\vec{x},\vec{y})=0$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Pythagoras' Theorem}: If $\vec{x}\perp\vec{y}$, then $\|\vec{x}+\vec{y}\|^2=\|\vec{x}\|^2+\|\vec{y}\|^2$. \qquad \textbf{Metric Space}: $d(\vec{x},\vec{y}):=\|\vec{x}-\vec{y}\|$.
-    \item \textbf{Cauchy-Schwarz Inequality}: $|(\vec{x},\vec{y})|\leq\|\vec{x}\|\|\vec{y}\|$ \qquad \textbf{Triangle Inequality}: $\|\vec{x}+\vec{y}\|\leq\|\vec{x}\|+\|\vec{y}\|$ \qquad \textbf{Scalar}: $\|\lambda\vec{x}\|=|\lambda|\|\vec{x}\|$
+    \item \textbf{Cauchy-Schwarz Inequality}: $|(\vec{x},\vec{y})|\leq\|\vec{x}\|\|\vec{y}\|$ \qquad \textbf{Triangle Inequality}: $\|\vec{x}+\vec{y}\|\leq\|\vec{x}\|+\|\vec{y}\|$ \qquad \textbf{Scalar}: $\|\lambda\vec{x}\|=|\lambda|\|\vec{x}\|$ \\
+    \textbf{Remark}: {\scriptsize \textit{Cauchy-Schwarz Inequality}, "=" iff $\vec{x},\vec{y}$ are linearly dependent. \quad \textit{Triangle Inequality}, "=" iff $\vec{x},\vec{y}$ are linearly dependent, and they have same direction. (i.e. $\vec{x}=\lambda\vec{y},\lambda\ge0$)}
 \end{enumerate}
 
 \textbf{Orthonormal Family}: $\{\vec{v}_1,...,\vec{v}_n\}$ is \textit{orthonormal} if $^1\|\vec{v}_i\|=1$ and $^2\vec{v}_i\perp\vec{v}_j$ for $i\ne j$. {\scriptsize (i.e. $(\vec{v}_i,\vec{v}_j)=\delta_{ij}$)} \quad {\scriptsize If it is basis, then it is \textbf{orthonormal basis}.}

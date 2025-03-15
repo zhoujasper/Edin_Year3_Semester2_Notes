@@ -401,7 +401,7 @@ $\cdot$ ps: Usually, coefficients are \textit{normalized} to have $\alpha_k=1$ o
 \qquad\qquad\qquad \ we can get the BDF method by $\frac{1}{h}[\nabla_h+\frac{1}{2}\nabla^2_h+\frac{1}{3}\nabla^3_h+\cdots]y(t)=f(t,y(t))$. {\footnotesize 选择$D$的前几项作为估计.}
 
 
-\subsection{Order of Accuracy}
+\subsection{Order of Accuracy|Consistency} % Order of Accuracy|Consistency
 
 \textbf{First/Second Characteristic Polynomials}: For $k$-step LMM: $\sum_{j=0}^{k}\alpha_jy_{n+j}=h\sum_{j=0}^{k}\beta_jf(y_{n+j})$, we define:
 
@@ -423,10 +423,44 @@ $\cdot$ ps: Usually, coefficients are \textit{normalized} to have $\alpha_k=1$ o
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Test I}: LMM is \textit{consistent} with order $p$ if: $\sum_{j=0}^{k}\alpha_j=0$ and $\sum_{j=0}^{k}j^i\alpha_j=i\sum_{j=0}^{k}j^{i-1}\beta_j$ for $i=1,...,p$
     \item \textbf{Test II}: LMM is \textit{consistent} with order $p$ if: $\rho(e^{z})-z\sigma(e^{z})=\mathcal{O}(z^{p+1})$.
-    \item \textbf{Test III}: LMM is \textit{consistent} with order $p$ if: $\frac{\rho(z)}{\log(z)}-\sigma(z)=\mathcal{O}((z-1)^p)$.
+    \item \textbf{Test III}: LMM is \textit{consistent} with order $p$ if: $\frac{\rho(z)}{\log(z)}-\sigma(z)=\mathcal{O}((z-1)^p)$. \\
+    \textbf{Remark}: Test I shows that: $\rho(1)=0$ $\Rightarrow$ 1 is always a root of $\rho(\zeta)=0$.
 \end{enumerate}
 
+
+\subsection{Convergence of LMM} % Convergence of LMM
+
+\textbf{Starting Procedure}: A LLM is incomplete without a starting procedure. \quad {\footnotesize (i.e. 需要初始值 $y_1,...,y_{k-1}$)}
+
+\textbf{Root Condition}: A LMM satisfies the \textit{root condition} if: \ \ $^1$ all roots of $\rho(\zeta)=0$ have modulus $|\zeta|\leq1$. 
+
+\hspace{235pt} $^2$ only one root of $\rho(\zeta)=0$ has modulus $|\zeta|=1$.
+
+\textbf{Convergence Theorem}: {\small A k-step LMM with starting procedure satisfying $\lim_{h\to0}y_j=y(t_0+jh)$ for $j=1,...,k-1$. {\tiny (i.e. 初始值$y_j$收敛到精确值$y(t_0+jh)$)}}
+
+\quad The LMM is convergent \ \ $\Leftrightarrow$ \ \ LMM is consistent with $p\geq1$ and satisfies the root condition.
+
+\quad {\small \textbf{Remark}: If starting procedure is p-th order accurate {\scriptsize (i.e. $y_j=y(t_0+jh)+\mathcal{O}(h^p)$)} \ $\Rightarrow$ \ The LMM is convergent (with order $p$) {\tiny i.e. $\max_{0\leq n\leq N}|y_n-y(t_n)|\leq Ch^p$}}
+
+\textbf{Order of Convergence}: The \textit{maximum} order $p$ of a k-step LLM \textit{satisfying the root condition} is:
+
+\quad $p=k$ (Explicit Method);\quad $p=k+1$ (Implicit Method|odd $k$);\quad $p=k+2$ (Implicit Method|even $k$).
+
+
+\subsection{Stability}
+
+\textbf{Stability Region}: For a test problem $y'=\lambda y$, let $z=h\lambda$, then k-step LMM have, we consider the equation: $\rho(\zeta)-z\sigma(\zeta)=0$.
+
+\quad The \textit{stability region} is $\mathcal{S}=\{ z\in\mathbb{C}:\rho(\zeta)-z\sigma(\zeta)=0 \ \text{has all roots} \ \zeta \ \text{with} \ |\zeta|<1 \}$
+
+\quad The \textit{boundary of stability region} is $\partial\mathcal{S}=\left\{ z\in\mathbb{C}: z=\frac{\rho(e^{i\theta})}{\sigma(e^{i\theta})} \ , \theta\in[-\pi,\pi] \right\}$
+
+\textbf{A-Stable|Unconditionally Stable}: A LMM is \textit{A-stable} if its \textit{stability region} contains the entire \textit{left complex half-plane}. {\scriptsize (i.e. $\Re(z)<0$)}
+
+\textbf{Theorem}: An A-stable LMM has order $p\leq 2$.
+
 \newpage
+
 
 \section{Appendix} 
 
