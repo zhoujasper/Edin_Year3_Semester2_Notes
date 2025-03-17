@@ -484,7 +484,8 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item If $z_0$ is a \textit{zero of finite order}, then $z_0$ is \textit{isolated} {\footnotesize (zero)}.
-    \item If $\exists$ \textit{distinct} points $z_n\in U$ s.t. $z_n\to z_0$ and $f(z_n)=0$. \ $\Rightarrow$ \ $\exists R>0$ s.t. $f(z)=0$ for all $z\in D_{R}(z_0)$ {\tiny (identically zero on some disc centred at $z_0$)}.
+    \item If $\exists$ \textit{distinct} points $z_n\in U$ s.t. $z_n\to z_0$ and $f(z_n)=0$. \ $\Rightarrow$ \ $\exists R>0$ s.t. $f(z)=0$ for all $z\in D_{R}(z_0)$ {\tiny (identically zero on some disc centred at $z_0$)}. \\
+    \textbf{Remark}: If $\exists$ \textit{distinct} points $z_n\in U$ s.t. $z_n\to z_0$ and $z_n$ \textit{Zero}, then $z_0$ cannot be a \textit{isolated zero}.
 \end{enumerate}
 
 \textbf{Removable|Order|Essential Singularity}: Let $z_0\in\mathbb{C}$ is an \underline{isolated singularity} of a function $f$, which is holomorphic on $D_{R}'(z_0)$.
@@ -500,11 +501,51 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \textbf{Properties of Singularity}: Let $z_0\in\mathbb{C}$.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Singularity of rational function}: If $z_0$ is \textit{singularity} of \textit{rational function} $f$, then $z_0$ is \textit{isolated}.
+    \item \textbf{Singularity of rational function|Isolated}: If $z_0$ is \textit{singularity} of \textit{rational function} $f$, then $z_0$ is \textit{isolated}.
+    \item \np\textbf{Sequence$\to$Isolated}: If $\exists$ \textit{distinct} points $z_n\in U$ s.t. $z_n\to z_0$ and $z_n$ \textit{Singularity}, then $z_0$ cannot be a \textit{removable singularity}.
     \item \textbf{Extended}: {\scriptsize $f$ is holomorphic on $D_{R}'(z_0)$.} If $z_0$ is a \textit{removable singularity}, $f$ can be \textit{redefined} at $z_0$ to be \textit{holomorphic} at $z_0$. \qquad {\scriptsize ($f(z_0)=a_0$)}
-    \item \textbf{Rational Function}: If $f,g$ holomorphic at 
+    \item \textbf{Functions}: If $f,g$ holomorphic at $z_0$, $z_0$ is a zero of $g$, with order $m$. Then:
+    \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+        \item If $z_0$ is not a zero of $f$ \ \ $\Rightarrow$ \ \ $\frac{f}{g}$ has a \textit{pole of order} $m$ at $z_0$.
+        \item If $z_0$ is a zero of order $k$ of $f$ and $k<m$ \ \ $\Rightarrow$ \ \ $\frac{f}{g}$ has a \textit{pole of order} $m-k$ at $z_0$.
+        \item If $z_0$ is a zero of order $k$ of $f$ and $k\geq m$ \ \ $\Rightarrow$ \ \ $\frac{f}{g}$ has a \textit{removable singularity} at $z_0$.
+    \end{enumerate}
 \end{enumerate}
 
+\textbf{Analytic Continuation}: Let $D\subseteq\widetilde{D}\subseteq\mathbb{C}$, $f:D\to\mathbb{C}$ is \textit{holomorphic}, and $F:\widetilde{D}\to\mathbb{C}$ is \textit{holomorphic}.\quad $F(z)=f(z)$ for all $z\in D$.
+
+\textbf{Identity Theorem|Disk-zero}: Let $D$ \textit{domain}, $z_0\in D$, $f$ is \textit{holomorphic} on $D$, $f(z)=0,\forall z\in D_{R}(z_0)$ \ \ $\Rightarrow$ \ \ $f(z)=0,\forall z\in D$.
+
+\quad\textbf{Corollary|Disk-func}: Let $D$ \textit{domain}, $f,g$ are \textit{holomorphic} on $D$, $f(z)=g(z),\forall z\in D_{R}(z_0)$ \ \ $\Rightarrow$ \ \ $f(z)=g(z),\forall z\in D$.
+
+\quad\textbf{Corollary|Sequence-zero}: Let $D$ \textit{domain}, distinct $z_n\in D$, $z_n\to z_0\in D$ s.t. $f(z_n)=0,\forall n\in\mathbb{N}$ \ \ $\Rightarrow$ \ \ $f(z)=0,\forall z\in D$.
+
+\quad\textbf{Corollary|Sequence-func}: Let $D$ \textit{domain}, distinct $z_n\in D$, $z_n\to z_0\in D$ s.t. $f(z_n)=g(z_n),\forall n\in\mathbb{N}$ \ \ $\Rightarrow$ \ \ $f(z)=g(z),\forall z\in D$.
+
+
+\section{Residue Theorem} % Residue Theorem
+
+\subsection{Residue and Cauchy Residue Theorem} % Residue and Cauchy Residue Theorem
+
+\textbf{Theorem}: Let $f$ be holomorphic on $D'_{R}(z_0)$. {\scriptsize (i.e. $z_0$ is an isolated singularity of $f$)}. Let $\Gamma$ \textit{loop} in $D_{R}'(z_0)$, $z_0\in\text{Int}(\Gamma)$
+
+\qquad\qquad\quad Then: $\int_{\Gamma}f(z)dz=2\pi i a_{-1}$, {\footnotesize where $a_{-1}$ is the coefficient of $(z-z_0)^{-1}$ in the \textit{Laurent Series} of $f$ at $z_0$.} \qquad \qquad \qquad \ \ $\leftarrow$
+
+\textbf{Residue}: Let $f$ be holomorphic on $D'_{R}(z_0)$. {\scriptsize (i.e. $z_0$ is an isolated singularity of $f$)}. Then \textit{residual}: $\text{Res}(f,z_0)=a_{-1}$. \quad {\footnotesize where $a_{-1}$ $\uparrow$}
+
+\textbf{Properties of Residue}: Let $z_0\in\mathbb{C}$, $f$ is \textit{holomorphic} on $D'_{R}(z_0)$.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item If $z_0$ is a \textit{removable singularity}, then $\text{Res}(f,z_0)=0$.
+    \item If $z_0$ is a \textit{pole of order} $m$, then $\text{Res}(f,z_0)=a_{-1}$, where $a_{-1}=\frac{1}{(m-1)!}\lim_{z\to z_0}\frac{d^{m-1}}{dz^{m-1}}\left[(z-z_0)^mf(z)\right]$.
+    \item If $f,g$ are \textit{holomorphic} on $D_{R}(z_0)$, $g$ has a \textit{simple zero} at $z_0$. {\scriptsize (i.e. $g(z_0)=0$ and $g'(z_0)\ne 0$)}. Then $\text{Res}\left(\frac{f}{g},z_0\right)=\frac{f(z_0)}{g'(z_0)}$.
+\end{enumerate}
+
+\newpage
+
+\textbf{Cauchy Residue Theorem}: Let $\Gamma$ \textit{loop}, $f$ is \textit{holomorphic} \textit{inside and on} $\Gamma$, expect for a \textit{finite isolated singularities} $z_1,z_2,\cdots,z_k\in\text{Int}(\Gamma)$
+
+\quad Then: $\int_{\Gamma}f(z)dz=2\pi i\sum^k_{j=1}\text{Res}(f,z_j)$ \quad {\footnotesize where $\text{Res}(f,z_j)$ is the \textit{residue} of $f$ at $z_j$.}
 
 
 \section{Appendix}
