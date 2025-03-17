@@ -468,6 +468,44 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \end{enumerate}
 
 
+\subsection{Singularities and Identity Theorem} % Singularities and Identity Theorem
+
+\textbf{Singularity}: {\small A point $z_0\in\mathbb{C}$ is a \textit{singularity} of $f$ if $f$ is \textit{not holomorphic} at $z_0$.} \qquad \textbf{Zero}: {\small A point $z_0\in\mathbb{C}$ is a \textit{zero} of $f$ if $f(z_0)=0$.}
+
+\textbf{Isolated Singularity}: {\small A \textit{singularity} $z_0$ of $f$ is \textit{isolated} if $\exists R>0$ s.t. $f$ is \textit{holomorphic} on $D_{R}'(z_0)$.}
+
+\textbf{Isolated Zero}: {\small A zero $z_0$ is \textit{isolated} if $\exists R>0$ s.t. $f(z)\ne 0$ for all $z\in D_{R}'(z_0)$}
+
+\textbf{Zero of finite order}: {\small If $f(z_0)=f'(z_0)=\cdots=f^{(n-1)}(z_0)=0$ and $f^{(n)}(z_0)\ne 0$, then $z_0$ is a \textit{zero of order $n$}.}
+
+\textbf{Simple Zero}: {\small A zero of order 1 is called a \textit{simple zero}. {\scriptsize i.e. $f(z_0)=0$ and $f'(z_0)\ne 0$.}}
+
+\textbf{Properties of Zeros}: Let $z_0\in\mathbb{C}$, $U$ be a \textit{neighborhood} of $z_0$, $f$ is holomorphic on $U$.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item If $z_0$ is a \textit{zero of finite order}, then $z_0$ is \textit{isolated} {\footnotesize (zero)}.
+    \item If $\exists$ \textit{distinct} points $z_n\in U$ s.t. $z_n\to z_0$ and $f(z_n)=0$. \ $\Rightarrow$ \ $\exists R>0$ s.t. $f(z)=0$ for all $z\in D_{R}(z_0)$ {\tiny (identically zero on some disc centred at $z_0$)}.
+\end{enumerate}
+
+\textbf{Removable|Order|Essential Singularity}: Let $z_0\in\mathbb{C}$ is an \underline{isolated singularity} of a function $f$, which is holomorphic on $D_{R}'(z_0)$.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item Let the \textit{Laurent Series} of $f$ at $z_0$ be $\sum^\infty_{n=-\infty}a_n(z-z_0)^n$ \qquad valid on $A_{0,R}(z_0)$
+    \item \textbf{removable singularity}: If $a_n=0$ for all $n<0$, then $z_0$ is a \textit{removable singularity} of $f$. {\scriptsize (i.e. 负的部分都是0,和泰勒展开很像)}
+    \item \textbf{Pole of Order}: If $a_{-m}\ne0$ and $a_{-n}=0,\forall n>m$, then $z_0$ is a \textit{pole of order $m$} of $f$.  {\scriptsize (i.e. 有限个负的非0项,且最小的非0项是$-m$)}
+    \item \textbf{Essential Singularity}: If $a_n\ne0$ for infinitely many $n<0$. \ $\Rightarrow$ \ $z_0$ is an \textit{essential singularity} of $f$. {\scriptsize (i.e. 无限多个负的非0项)} \\
+    \textbf{Remark}: Poles of order 1, 2, and 3 are also known as a simple, double, and triple poles, respectively.
+\end{enumerate}
+
+\textbf{Properties of Singularity}: Let $z_0\in\mathbb{C}$.
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Singularity of rational function}: If $z_0$ is \textit{singularity} of \textit{rational function} $f$, then $z_0$ is \textit{isolated}.
+    \item \textbf{Extended}: {\scriptsize $f$ is holomorphic on $D_{R}'(z_0)$.} If $z_0$ is a \textit{removable singularity}, $f$ can be \textit{redefined} at $z_0$ to be \textit{holomorphic} at $z_0$. \qquad {\scriptsize ($f(z_0)=a_0$)}
+    \item \textbf{Rational Function}: If $f,g$ holomorphic at 
+\end{enumerate}
+
+
 
 \section{Appendix}
 
@@ -493,5 +531,6 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 {\scriptsize \qquad Moreover, need try to construct $\frac{1}{1-(\frac{z-z_0}{R})}$ if it's holomorphic on $D_{R}(z_0)$. \qquad or: $\frac{1}{1-\frac{1}{z-z_0}}$ if it's holomorphic on $A_{1,\infty}(z_0)$.}
 
 \textbf{Taylor Series for Familiar functions}: {\scriptsize $\exp(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!}$ \quad $\sin(z)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}z^{2n+1}$ \quad $\cos(z)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}z^{2n}$ all of them have \textit{infinite radius of convergence}.}
+
 
 \end{document}
