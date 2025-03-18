@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  15 MAR 2025 12:23
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  18 MAR 2025 16:32
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -317,6 +317,21 @@ Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@cntb=\count307
 \multirow@dima=\skip68
 \bigstrutjot=\dimen188
+) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+ (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+ (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 ) (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/tools/array.sty
@@ -461,11 +476,11 @@ Package fontspec Info: Font family 'Cambria(1)' created for font 'Cambria'
 (fontspec)             <->"Cambria/BI/OT:script=latn;language=dflt;+smcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Cambria(1)/m/n on input line 19.
+(Font)                  OT1/cmr/m/n --> TU/Cambria(1)/m/n on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Cambria(1)/m/it on input line 19.
+(Font)                  OT1/cmr/m/it --> TU/Cambria(1)/m/it on input line 20.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Cambria(1)/b/n on input line 19.
+(Font)                  OT1/cmr/bx/n --> TU/Cambria(1)/b/n on input line 20.
 
 Package fontspec Info: Could not resolve font "Cambria Math/B" (it probably
 (fontspec)             doesn't exist).
@@ -503,13 +518,13 @@ Package fontspec Info: Font family 'CambriaMath(1)' created for font 'Cambria
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 20.
+(Font)              `operators' in the math version `normal' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/CambriaMath(1)/m/n on input line 20.
+(Font)                  OT1/cmr/m/n --> TU/CambriaMath(1)/m/n on input line 21.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 20.
+(Font)              `operators' in the math version `bold' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/CambriaMath(1)/b/n on input line 20.
+(Font)                  OT1/cmr/bx/n --> TU/CambriaMath(1)/b/n on input line 21.
 
 Package fontspec Info: Cambria Math scale = 1.0001.
 
@@ -565,13 +580,13 @@ Package fontspec Info: Font family 'CambriaMath(2)' created for font 'Cambria
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 20.
+(Font)              `symbols' in the math version `normal' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/CambriaMath(2)/m/n on input line 20.
+(Font)                  OMS/cmsy/m/n --> TU/CambriaMath(2)/m/n on input line 21.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 20.
+(Font)              `symbols' in the math version `bold' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/CambriaMath(2)/b/n on input line 20.
+(Font)                  OMS/cmsy/b/n --> TU/CambriaMath(2)/b/n on input line 21.
 
 Package fontspec Info: Cambria Math scale = 0.9999.
 
@@ -615,13 +630,13 @@ Package fontspec Info: Font family 'CambriaMath(3)' created for font 'Cambria
 (fontspec)             =6.05469pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 20.
+(Font)              `largesymbols' in the math version `normal' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/m/n on input line 20.
+(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/m/n on input line 21.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 20.
+(Font)              `largesymbols' in the math version `bold' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/b/n on input line 20.
+(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/b/n on input line 21.
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -671,30 +686,30 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 ) (./HAlg Note.aux)
 \openout1 = `"HAlg Note.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 49.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 50.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 49.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 50.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 49.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 50.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 49.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 50.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -731,65 +746,90 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 60.
+(Font)              scaled to size 12.00128pt on input line 61.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 60.
+(Font)              scaled to size 8.00085pt on input line 61.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 60.
+(Font)              scaled to size 6.00064pt on input line 61.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 60.
+(Font)              scaled to size 11.99872pt on input line 61.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 60.
+(Font)              scaled to size 7.99915pt on input line 61.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 60.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
+(Font)              scaled to size 5.99936pt on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
 (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
  (d:/Program Files (x86)/texlive/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 71.
+(Font)              scaled to size 9.00096pt on input line 72.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 71.
+(Font)              scaled to size 5.00053pt on input line 72.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 71.
+(Font)              scaled to size 8.99904pt on input line 72.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 71.
+(Font)              scaled to size 4.99947pt on input line 72.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 71.
+(Font)              scaled to size 7.00075pt on input line 72.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 71.
+(Font)              scaled to size 6.99925pt on input line 72.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 77.
+(Font)              scaled to size 10.00107pt on input line 78.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 7.30078pt on input line 77.
+(Font)              scaled to size 7.30078pt on input line 78.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 77.
+(Font)              scaled to size 9.99893pt on input line 78.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 7.29921pt on input line 77.
+(Font)              scaled to size 7.29921pt on input line 78.
 
-Overfull \hbox (6.5489pt too wide) in alignment at lines 87--140
+Overfull \hbox (6.5489pt too wide) in alignment at lines 88--141
  [] [] [] [] [] 
  []
 
 [1
 
 ] [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
 
  []
 
-[5] [6] (./HAlg Note.aux) ) 
+
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 570--571
+[][] 
+ []
+
+
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 584--585
+[][] 
+ []
+
+
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 598--599
+[][] 
+ []
+
+
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 609--610
+[][] 
+ []
+
+[5]
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 628--629
+[][] 
+ []
+
+[6] (./HAlg Note.aux) ) 
 Here is how much of TeX's memory you used:
- 13340 strings out of 476683
- 297913 string characters out of 5795227
- 1947012 words of memory out of 5000000
- 33366 multiletter control sequences out of 15000+600000
+ 13832 strings out of 476683
+ 304129 string characters out of 5795227
+ 1948012 words of memory out of 5000000
+ 33848 multiletter control sequences out of 15000+600000
  521371 words of font info for 149 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,12n,114p,675b,445s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,12n,114p,675b,460s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on HAlg Note.pdf (6 pages).

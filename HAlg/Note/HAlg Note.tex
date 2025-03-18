@@ -7,6 +7,7 @@
 \usepackage{enumitem}
 \usepackage{longtable}
 \usepackage{multirow}
+\usepackage{xcolor}
 \usepackage{makecell} % 换行
 
 % 使用分栏宏包
@@ -286,6 +287,8 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \quad \textbf{Reflexive}: $xRx$ {\scriptsize ($x\sim x$)} \quad \textbf{Anti-symmetric}: $xRy,yRx\Rightarrow x = y$ {\scriptsize ($x\sim y,y\sim x\Rightarrow x=y$)} \quad \textbf{Transitive}: $xRy,yRz\Rightarrow xRz$ {\scriptsize ($x\sim y,y\sim z\Rightarrow x\sim z$)}
 
+\newpage
+
 \textbf{Property of Equivalence Relation}: If $R$ $(\sim)$ is equivalence relation on $X$.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -558,24 +561,29 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \end{enumerate}
 
 
-\subsection{Adjoint and Self-Adjoint} % Adjoint and Self-Adjoint
+\subsection{Basic Properties of Adjoint and Self-Adjoint} % Basic Properties of Adjoint and Self-Adjoint
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Orthogonal}: {\small matrix $A$ is \textit{orthogonal} if $A^TA=I_n$. \quad {\scriptsize (i.e. $A^{-1}=A^T$)}} \qquad \textbf{Unitary}: {\small matrix $A$ is \textit{unitary} if $\overline{A}^TA$ or $A^T\overline{A}=I_n$. \quad {\scriptsize (i.e. $A^{-1}=\overline{A}^T$)}}
 
 \textbf{Hermitian}: {\small matrix $A$ is \textit{Hermitian} if $\overline{A}^T=A$. \quad {\scriptsize (i.e. $A$ is \textit{self-adjoint} in $\mathbb{C}$)}} \ \ \ \textbf{Symmetric}: {\small matrix $A$ is \textit{symmetric} if $A^T=A$.} \quad {\scriptsize (i.e. $A$ is \textit{self-adjoint in $\mathbb{R}$})}
+}}
 
 \textbf{Useful Tool}: If $T:V\to W$ is linear map. \quad For matrix $_{\mathcal{B}}[T]_{\mathcal{A}}$, The entry $[_{\mathcal{B}}[T]_{\mathcal{A}}]_{ij}=(T\vec{e}_j,\vec{f}_i)$
 
-\textbf{IPS isomorphism of $V$}: {\small A linear map $T:V\to W$ is \textit{IPS isomorphism} of $V$ (and $W$) if: \ \ $^1$ $T$ is isomorphism \quad $^2$ $(T\vec{v}_1,T\vec{v}_2)=(\vec{v}_1,\vec{v}_2)$ \quad $\forall \vec{v}_1,\vec{v}_2\in V$}
+\fbox{\parbox[c]{0.98\textwidth}{
+\textbf{IPS isomorphism of $V$}: {\small A linear map $T:V\to W$ is \textit{IPS isomorphism} of $V$ (and $W$) if: \ \ $^1$ $T$ is isomorphism \quad $^2$ $(T\vec{v}_1,T\vec{v}_2)=(\vec{v}_1,\vec{v}_2)$ \ \ {\tiny $\forall \vec{v}_1,\vec{v}_2\in V$}}
 
 \textbf{Properties of IPS isomorphism}: {\small Let $V,W$ be \textit{inner product spaces}, $\mathcal{A}=\{\vec{e}_1,...,\vec{e}_m\},\mathcal{B}=\{\vec{f}_1,...,\vec{f}_n\}$ are orthonormal basis of $V$, $W$.}
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item {\small {\scriptsize Linear map} $T:V\to W$ is \textit{IPS isomorphism} of $V$ {\tiny (i.e. $T$ is iso \& $(T\vec{v}_1,T\vec{v}_2)=(\vec{v}_1,\vec{v}_2)$)} \quad $\Leftrightarrow$ \quad {\scriptsize Linear map} $T:V\to W$ maps some orthonormal basis to another.}
     \item $T:V\to V$ is \textit{IPS isomorphism} \quad $\Leftrightarrow$ \quad $_{\mathcal{A}}[T]_{\mathcal{A}}$ is \textit{orthogonal}$_{\mathbb{R}}$ or \textit{unitary}$_{\mathbb{C}}$ matrix.
-    \item \textbf{Similar}: If matrix $A=_{\mathcal{A}}[f]_{\mathcal{A}}$ and $B=_{\mathcal{B}}[f]_{\mathcal{B}}$ \quad $\Leftrightarrow$ \quad $B=P^{-1}AP$ and $P$ is is \textit{orthogonal}$_{\mathbb{R}}$ or \textit{unitary}$_{\mathbb{C}}$ matrix.
+    \item $\star$ \textbf{Similar}: If matrix $A=_{\mathcal{A}}[f]_{\mathcal{A}}$ and $B=_{\mathcal{B}}[f]_{\mathcal{B}}$ \quad $\Leftrightarrow$ \quad $B=P^{-1}AP$ and $P$ is is \textit{orthogonal}$_{\mathbb{R}}$ or \textit{unitary}$_{\mathbb{C}}$ matrix.
 \end{enumerate}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Adjoint}: {\small {\scriptsize $V$ is inner product space. $T,S:V\to V$ are linear maps.} \qquad $T,S$ are called \textit{adjoint} to one another if $(T\vec{v},\vec{w})=(\vec{v},S\vec{w})$ \quad $\forall \vec{v},\vec{w}\in V$.}
 
 \textbf{Self-adjoint}: If $T=T^*$, then $T$ is \textit{self-adjoint}. \quad {\scriptsize (i.e. $(T\vec{v},\vec{w})=(\vec{v},T\vec{w})$)}
@@ -587,7 +595,9 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \item \textbf{I}. $_{\mathcal{A}}[T^*]_{\mathcal{A}}=\overline{(_{\mathcal{A}}[T]_{\mathcal{A}})}^T$ \qquad \textbf{II}. If $T=T^*$ {\scriptsize (self-adjoint)} \ \ $\Leftrightarrow$ \ \ $_{\mathcal{A}}[T]_{\mathcal{A}}=\overline{(_{\mathcal{A}}[T]_{\mathcal{A}})}^T$ {\scriptsize Hermitian/Symmetric} \qquad \textbf{III}. $(T^*)^*=T$
     \item \textbf{IPS isomorphism}: $T:V\to V$ is \textit{IPS isomorphism} \quad $\Leftrightarrow$ \quad $TT^*=T^*T=\text{id}_V$ \quad $\Leftrightarrow$ \quad $_{\mathcal{A}}[T]_{\mathcal{A}}$ is \textit{unitary}$_{\mathbb{C}}$ or \textit{orthogonal}$_{\mathbb{R}}$ matrix.
 \end{enumerate}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Normal}: Linear map $T:V\to V$ is \textit{normal} if $TT^*=T^*T$.
 
 \textbf{Properties of Normal}: Let $V$ be \textit{inner product spaces}, $\mathcal{A}=\{\vec{e}_1,...,\vec{e}_n\}$ are orthonormal basis of $V$. \ \ $T:V\to V$ is linear map.
@@ -596,9 +606,42 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \item $T$ is \textit{normal} $\Leftrightarrow$ $\overline{_{\mathcal{A}}[T]_{\mathcal{A}}}^T\cdot_{\mathcal{A}}[T]_{\mathcal{A}}=_{\mathcal{A}}[T]_{\mathcal{A}}\cdot\overline{_{\mathcal{A}}[T]_{\mathcal{A}}}^T$
     \item \textbf{I}.$T$ is \textit{self-adjoint} $\Rightarrow$ $T$ is \textit{normal} \qquad \textbf{II}. $T$ is \textit{IPS isomorphism} $\Rightarrow$ $T$ is \textit{normal}.
 \end{enumerate}
+}}
 
 
-\section{Jordan Normal Form | Spectral Theorem} % Jordan Normal Form | Spectral Theorem
+\subsection{Advanced Properties of Adjoint and Self-Adjoint} % Advanced Properties of Adjoint and Self-Adjoint
+
+\newpage
+
+\fbox{\parbox[c]{0.98\textwidth}{
+\textbf{Properties of Self-adjoint}: Let $T:V\to V$ be a \textit{self-adjoint} linear map on \textit{inner product space} $V$. Then: {\tiny \color{red}注意:inner product space限制了$F=\mathbb{R}| \mathbb{C}$}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Spectral Theorem}: If $V$ is \textit{finite-dimensional}, then $T$ has \textit{orthonormal basis} of \textit{eigenvectors}. {\scriptsize 存在特征值/向量,且正交为基.}
+    \item \textbf{Real}: Every eigenvalues of $T$ are real. \qquad \textbf{Orthogonal|$\lambda$}: Eigenvectors of \textit{distinct eigenvalues} are orthogonal.
+    \item \textbf{Orthogonal|$T$}: If $\vec{v} \perp \vec{w}$, and $\vec{v}$ is \textit{eigenvector} of $T$. \quad Then, $T\vec{w}\perp \vec{v}$. {\scriptsize \np also: $\vec{w}\perp T\vec{v}$}
+\end{enumerate}
+
+\textbf{Spectral for $\mathbb{R}|\mathbb{C}$ Matrix}: If $A\in\text{Mat}(n,\mathbb{R}|\mathbb{C})$ \textit{symmetric}|\textit{hermitian}. Then $A$ has $n$ \textit{real} eigenvalues $\lambda_1,...,\lambda_n$ {\scriptsize (can be repeated)}.
+
+\hspace{10pt} Moreover, $\exists$ orthogonal|Unitary matrix $P$ \ \ s.t. \ \ $P^{T}AP|\overline{P}^TAP=P^{-1}AP=diag(\lambda_1,...,\lambda_n)$.
+}}
+
+\textbf{\underline{Real} Quadratic forms}: $Q(x_1,...,x_n):=\sum_{i=1}^n a_{ii}x_i^2+2\sum_{1\le i<j\le n}a_{ij}x_ix_j=\vec{x}^TA\vec{x}$ \quad {\small where $A$ is \textit{real symmetric} matrix, variables $\vec{x}\in\mathbb{R}^n$}
+
+\vspace{-1pt}
+\quad {\scriptsize Can be written as $Q(\vec{x})=(A\vec{x},\vec{x})$ where $(\vec{x},\vec{y})=\vec{x}^T\vec{y}$ is \textit{standard inner product}.}
+\quad {\scriptsize \textbf{Corollary}: If $A$ is real symmetric matrix. \ \ $\Rightarrow$ \ \ $A=P^T\Lambda P$ \ \ $\Rightarrow$ \ \ $Q(\vec{x})=\sum_{i=1}^n \lambda_i y_i^2$ where $\vec{y}=P\vec{x}$}
+
+\quad \textbf{Theorem}: $Q(\vec{x})=(A\vec{x},\vec{x})\geq0$ (positive definite) $\Leftrightarrow$ all eigenvalues of $A$ are positive. \qquad {\scriptsize ps: $A$ is real symmetric matrix.}
+
+\textbf{Level Set}: {\footnotesize The set $\{\vec{x}\in\mathbb{R}^n:Q(\vec{x})=(A\vec{x},\vec{x})=1\}$ \ \ $\Rightarrow$ \ \ is the image of ellipsoid, 轴为$\sqrt{\frac{1}{\lambda_1}},...,\sqrt{\frac{1}{\lambda_n}}$} {\scriptsize ps: $A$ is real symmetric matrix,$\lambda_i$为A的特征向量.}
+
+\vspace{-1pt}
+\quad {\scriptsize 意思是: $A=P^T\Lambda P$ \ \ $\Rightarrow$ \ \ $Q(\vec{x})=\sum_{i=1}^n \lambda_i y_i^2$ \ \ $\Rightarrow$ \ \ $Q(\vec{x})=1$ 是一个``椭圆'' ellipsoid, ``轴''(e.g.半长轴,半短轴)为$\sqrt{\frac{1}{\lambda_1}},...,\sqrt{\frac{1}{\lambda_n}}$.}
+
+
+\section{Jordan Normal Form} % Jordan Normal Form
 
 
 \section{Appendix} % Appendix
@@ -610,6 +653,8 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \vspace{-13pt}
 \textbf{Determinant of Vandermonde Matrix}: Let $x_1,...,x_n$ be distinct elements of $F$. \quad Then \quad {\scriptsize $\det\begin{pmatrix} 1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\ 1 & x_2 & x_2^2 & \cdots & x_2^{n-1} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_n & x_n^2 & \cdots & x_n^{n-1} \end{pmatrix}=\prod_{1\le i<j\le n}(x_j-x_i)$}
 \vspace{-13pt}
+
+\textbf{Relate Matrix to Linear Map}: For a Matrix $A$, define $T:F^n\to F^n$ by $T\vec{v}=A\vec{v}$. Then $[T]=A$
 
 
 \end{document}
