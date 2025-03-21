@@ -432,7 +432,7 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \item \textbf{Unique on Field}: $\det:F^n\times \cdots\times F^n\to F$ \textit{or} $\det: Mat(n;F) \to F$ is the $^1$\textit{unique} $^2$\textit{alternating} $^3$\textit{multilinear form} s.t. $\det(I_n)=1_F$
     \item \textbf{Invertible on Field}: For $Mat(n;F)$, $A$ is invertible $\Leftrightarrow$ $\det(A)\ne0$ \quad $\det(A^{-1})=\det(A)^{-1}$ \quad {\scriptsize 交换环, 结论成立如果$\det(A)$在$R$中有逆}
     \item \textbf{Similar on Field}: For $F$ field. \quad $A\sim B$ $\Rightarrow$ $\det(A)=det(P^{-1}BP)=\det(B)$ \qquad Thus, we can define: $det(f)$ for $f:V\to V$
-    \item \textbf{Operations}: {\scriptsize If $R$ is \textit{commutative ring}}, then $\det(AB)=\det(A)\det(B)$ \quad $\det(A^T)=\det(A)$  \quad $\det(A^{-1})=\det(A)^{-1}$
+    \item \textbf{Operations}: {\scriptsize If $R$ is \textit{commutative ring}}, then $\det(AB)=\det(A)\det(B)$ \quad $\det(A^T)=\det(A)$  \quad $\det(A^{-1})=\det(A)^{-1}$ \quad $\det(\overline{A})=\overline{\det(A)}$
     \item \textbf{Block Triangular}: If $A$ is block triangular, then $\det(A)=\prod_{i=1}^n\det(A_i)$ \quad {\scriptsize 即矩阵分块后如果是对角阵,行列式等于各个块的行列式乘积}
 \end{enumerate}
 
@@ -480,7 +480,7 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \quad \textbf{Corollary II}: {\small Let $f:V\to V$ be End. $V$ is finite-dimensional. \quad $f$ is \textit{triangularisable} $\Leftrightarrow$ $\exists$ subspaces $V_0=\{0\}\subset V_1\subset\cdots\subset V_n=V$ s.t. $f(V_i)\subseteq V_i$.}
 
-\quad \textbf{Corollary III}: For $A\in Mat(n;F)$. $A$ is \textit{nilpotent} (i.e. $A^k=0$ for some $k$) $\Leftrightarrow$ $\chi_A(x)=x^n$
+\quad \textbf{Corollary III|nilpotent}: For $A\in Mat(n;F)$. $A$ is \textit{nilpotent} (i.e. $A^k=0$ for some $k$) $\Leftrightarrow$ $\chi_A(x)=x^n$
 
 \quad \textbf{Application}: {\tiny 将矩阵$A$进行三角化,可以通过:1. 求特征值,特征向量; 2. 选择一个特征向量为基(通常选最大的); 3. 拓展为$V$的基; 4. 求$A$在新基下的矩阵$B$,此时$B$按分块矩阵看应有一部分三角化; 5.对$B$未三角化的部分重复.}
 
@@ -578,8 +578,7 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item {\small {\scriptsize Linear map} $T:V\to W$ is \textit{IPS isomorphism} of $V$ {\tiny (i.e. $T$ is iso \& $(T\vec{v}_1,T\vec{v}_2)=(\vec{v}_1,\vec{v}_2)$)} \quad $\Leftrightarrow$ \quad {\scriptsize Linear map} $T:V\to W$ maps some orthonormal basis to another.}
-    \item $T:V\to V$ is \textit{IPS isomorphism} \quad $\Leftrightarrow$ \quad $_{\mathcal{A}}[T]_{\mathcal{A}}$ is \textit{orthogonal}$_{\mathbb{R}}$ or \textit{unitary}$_{\mathbb{C}}$ matrix.
-    \item $\star$ \textbf{Similar}: If matrix $A=_{\mathcal{A}}[f]_{\mathcal{A}}$ and $B=_{\mathcal{B}}[f]_{\mathcal{B}}$ \quad $\Leftrightarrow$ \quad $B=P^{-1}AP$ and $P$ is is \textit{orthogonal}$_{\mathbb{R}}$ or \textit{unitary}$_{\mathbb{C}}$ matrix.
+    \item \textbf{IPS isomorphism}: $T:V\to V$ is \textit{IPS isomorphism} \quad $\Leftrightarrow$ \quad $TT^*=T^*T=\text{id}_V$ \quad $\Leftrightarrow$ \quad $_{\mathcal{A}}[T]_{\mathcal{A}}$ is \textit{unitary}$_{\mathbb{C}}$ or \textit{orthogonal}$_{\mathbb{R}}$ matrix.
 \end{enumerate}
 }}
 
@@ -592,8 +591,9 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item Then, $\exists!$ linear map $T^*:V\to V$ s.t. $(T\vec{v},\vec{w})=(\vec{v},T^*\vec{w})$ \quad $\forall \vec{v},\vec{w}\in V$.
-    \item \textbf{I}. $_{\mathcal{A}}[T^*]_{\mathcal{A}}=\overline{(_{\mathcal{A}}[T]_{\mathcal{A}})}^T$ \qquad \textbf{II}. If $T=T^*$ {\scriptsize (self-adjoint)} \ \ $\Leftrightarrow$ \ \ $_{\mathcal{A}}[T]_{\mathcal{A}}=\overline{(_{\mathcal{A}}[T]_{\mathcal{A}})}^T$ {\scriptsize Hermitian/Symmetric} \qquad \textbf{III}. $(T^*)^*=T$
-    \item \textbf{IPS isomorphism}: $T:V\to V$ is \textit{IPS isomorphism} \quad $\Leftrightarrow$ \quad $TT^*=T^*T=\text{id}_V$ \quad $\Leftrightarrow$ \quad $_{\mathcal{A}}[T]_{\mathcal{A}}$ is \textit{unitary}$_{\mathbb{C}}$ or \textit{orthogonal}$_{\mathbb{R}}$ matrix.
+    \item \textbf{I}. $_{\mathcal{A}}[T^*]_{\mathcal{A}}=\overline{(_{\mathcal{A}}[T]_{\mathcal{A}})}^T$ \qquad \textbf{II}. $(T^*)^*=T$
+    \item \textbf{Self-Adjoint}: {\footnotesize $\exists$ orthonormal basis of eigenvectors|Finite $V$} {\scriptsize (Spectral)}\ \ $\Leftrightarrow$ \ \ If $T=T^*$ {\scriptsize (self-adjoint)} \ \ $\Leftrightarrow$ \ \ $_{\mathcal{A}}[T]_{\mathcal{A}}=\overline{(_{\mathcal{A}}[T]_{\mathcal{A}})}^T$ {\scriptsize Hermitian/Symmetric}
+    \item $\star$ \textbf{Similar}: If matrix $A=_{\mathcal{A}}[f]_{\mathcal{A}}$ and $B=_{\mathcal{B}}[f]_{\mathcal{B}}$ \quad $\Leftrightarrow$ \quad $B=P^{-1}AP$ and $P$ is is \textit{orthogonal}$_{\mathbb{R}}$ or \textit{unitary}$_{\mathbb{C}}$ matrix.
 \end{enumerate}
 }}
 
