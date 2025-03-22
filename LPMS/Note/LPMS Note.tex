@@ -336,7 +336,6 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \end{enumerate}
 
 
-
 \section{Duality} % Duality
 
 \textbf{Duality}: For LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}\leq \mathbf{b}, \quad\mathbf{x}\geq0$ \quad \textbf{Primal} problem \qquad $(P)$
@@ -424,5 +423,24 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \vspace{-10pt}
 
 
+\textbf{Example|Iteration in Simplex Method|No Phase I,II}:
+
+\vspace{-10pt}
+\begin{quote}
+    \color{gray}
+    \fontsize{7pt}{4pt}\selectfont
+    The RHS \( \mathbf{b} = \begin{bmatrix} 100\\ 1\end{bmatrix}\) is positive, so the ``all-slack'' basis \( \mathcal{B}=\{3,4\} \) and \(\mathcal{N}=\{1,2\}\) yields a basic feasible solution. \\
+    \textbf{Iteration 1}:
+    \begin{itemize}[itemsep=-1pt, topsep=-1pt]
+        \item For \( \mathcal{B}=\{3,4\} \) and \( \mathcal{N}=\{1,2\} \), \(B= I\), \(N=\begin{bmatrix} 1 & 20 \\ 0 & 1\end{bmatrix}\), \( \mathbf{c}_B=\mathbf{0} \) and \( \mathbf{c}_N=\begin{bmatrix} 1 \\ 10\end{bmatrix}\), \\
+        giving \( \widehat{\mathbf{b}}=B^{-1}\mathbf{b}=\begin{bmatrix} 100 \\ 1\end{bmatrix} \), and \( \widehat{\mathbf{c}}_N=\mathbf{c}_N-N^TB^{-T}\mathbf{c}_B=\begin{bmatrix} 1 \\ 10\end{bmatrix} \).
+        \item Choose \(q=2\) since \( \widehat{c}_q= 10 \), and hence \( q'=2 \)
+        \item Thus \(\mathbf{a}_q=\begin{bmatrix}20 \\ 0\end{bmatrix}\). Form \( \widehat{\mathbf{a}}_q=B^{-1}\mathbf{a}_q=\begin{bmatrix} 20 \\ 1\end{bmatrix} \). Since \( \widehat{\mathbf{a}}_q \) is positive, the LP is bounded.
+        \item Choose \(p=\text{argmin}\left\{ \begin{matrix}\frac{100}{20} \\ (i=1)\end{matrix}, \begin{matrix}\frac{1}{1} \\ (i=2)\end{matrix}  \right\}=2 \) and hence \( p'=4 \)
+    \end{itemize}
+    \textbf{Iteration 2}: \(\cdots\)
+    \textbf{Iteration 4}: 第一行一样, + \(\cdots\) Since \( \widehat{\mathbf{c}}_N \leq 0 \), the optimal solution is \( \mathbf{x}=\cdots \), where values of \( x_i,... = 0\) since \(\mathcal{N} = ...\)
+\end{quote}
+\vspace{-10pt}
 
 \end{document}
