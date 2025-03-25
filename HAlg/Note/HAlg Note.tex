@@ -641,7 +641,113 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \quad {\scriptsize 意思是: $A=P^T\Lambda P$ \ \ $\Rightarrow$ \ \ $Q(\vec{x})=\sum_{i=1}^n \lambda_i y_i^2$ \ \ $\Rightarrow$ \ \ $Q(\vec{x})=1$ 是一个``椭圆'' ellipsoid, ``轴''(e.g.半长轴,半短轴)为$\sqrt{\frac{1}{\lambda_1}},...,\sqrt{\frac{1}{\lambda_n}}$.}
 
 
-\section{Jordan Normal Form} % Jordan Normal Form
+\section{Jordan Normal Form {\scriptsize 默认$F$:algebraically closed}} % Jordan Normal Form
+
+\textbf{$2\times2$ Matrices}: If $A\in\text{Mat}(2;F)$, $F$ field. \quad Then: $A$ is diagonalisable $\Leftrightarrow$ $A$ has distinct eigenvalues \ \ or \ \ $A=\lambda I$.
+
+\textbf{Matrix Exponential}: {\small $e^{A}=\sum_{n=0}^{\infty}\frac{1}{n!}A^n$} \quad \textbf{Properties}: {\footnotesize \textbf{I}.If $AB=BA$ $\Rightarrow$ $e^{A+B}=e^{A}e^{B}$ \quad \textbf{II}. $e^{P^{-1}AP}=P^{-1}e^{A}P$ \quad \textbf{III}. $e^{\text{diag}(\lambda_1,...,\lambda_n)}=\text{diag}(e^{\lambda_1},...,e^{\lambda_n})$}
+
+\begin{minipage}[t]{0.23\textwidth}
+    
+{\footnotesize \textbf{Nilpotent Jordan Block}: $J(r)^k=0$}
+
+{\tiny $J(r):=\begin{pmatrix} 0 & 1 & 0 & \cdots & 0 \\ 0 & 0 & 1 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & \cdots & 0 \end{pmatrix}_{r\times r}$}
+
+{\footnotesize \textbf{Superdiagonal}: $x_{i,i+1}$ \quad {\tiny 对角线上面的元素}}
+
+\end{minipage}
+\hfill
+\vrule width 0.3pt
+\hfill
+\begin{minipage}[t]{0.37\textwidth}
+
+{\footnotesize \textbf{Useful Properties}:}
+
+{\tiny $\begin{pmatrix} 0 & x_1 & 0 & \cdots & 0 \\ 0 & 0 & x_2 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & \cdots & x_{r-1} \\ 0 & 0 & 0 & \cdots & 0 \end{pmatrix}_{r\times r}^2=\begin{pmatrix} 0 & 0 & x_1x_2 & 0 & \cdots & 0 \\ 0 & 0 & 0 & x_2x_3 & \cdots & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 0 \\ 0 & 0 & 0 & 0 & \cdots & 0 \end{pmatrix}_{r\times r}$}
+
+\end{minipage}
+\hfill
+\vrule width 0.3pt
+\hfill
+\begin{minipage}[t]{0.28\textwidth}
+
+{\footnotesize \textbf{Jordan Block of size $r$, eigenvalue $\lambda$}:}
+
+{\tiny $J(r,\lambda):=\begin{pmatrix} \lambda & 1 & 0 & \cdots & 0 \\ 0 & \lambda & 1 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & \cdots & \lambda \end{pmatrix}_{r\times r}$}
+
+{\tiny $J(r,\lambda)=\lambda I_r+J(r)=D+N$ \ \ $DN=ND$ \ \ ps: 对于J也成立.}
+
+\end{minipage}
+
+\textbf{Generalised Eigenspace}: For $\phi:V\to V$ linear map with eigenvalue $\lambda$. \quad $E^{\text{gen}}(\lambda_i,\phi):=\{\vec{v}\in V:(\phi-\lambda_i\text{id}_V)^{a_i}(\vec{v})=0\}$
+
+\quad \textbf{Arithmetic Multiplicity}: $\dim E^{\text{gen}}(\lambda_i,\phi)$ \ \ $\geq$ \ \ \textbf{Geometric Multiplicity}: $\dim E(\lambda_i,\phi)$ \quad {\scriptsize ps: If $\chi_{\phi}(x)=\prod_{i=1}^s(x-\lambda_i)^{a_i}$, then $\dim E^{\text{gen}}(\lambda_i,\phi)=a_i$}
+
+\quad {\tiny \np 对于linear map/matrix, $\{0\}\subseteq\ker(f)\subseteq\ker(f^2)\subseteq\cdots\subseteq\ker(f^n)$. If $\ker(f^k)=\ker(f^{k+1})$, then $\ker(f^k)=\ker(f^{k+1})=\cdots=\ker(f^n)$. 由此$E^{\text{gen}}$的$a_i$是一个上界(当等于characteristic对应的),但不一定是最小的.}
+
+\textbf{Stable}: Let $f:X\to X$ be mapping from a set $X$ to itself. \ \ If $Y\subseteq X$ and $f(Y)\subseteq Y$, then $Y$ is \textit{stable} under $f$. 
+
+\textbf{The Direct Sum Decomposition}: For $\phi:V\to V$ linear map. The characteristic polynomial of $\phi$ is $\chi_{\phi}(x)=\prod_{i=1}^s(x-\lambda_i)^{a_i}$. 
+
+\quad Then: \textbf{I}. $V=\bigoplus_{i=1}^s E^{\text{gen}}(\lambda_i,\phi)$ \qquad \textbf{II}. $\phi(E^{\text{gen}}(\lambda_i,\phi))\subseteq E^{\text{gen}}(\lambda_i,\phi)$ (stable)
+
+\quad \qquad \ \ \ \textbf{III}. Let $\mathcal{B}=\mathcal{B}_1\cup\cdots\cup\mathcal{B}_s$ where $\mathcal{B}_i$ is basis of $E^{\text{gen}}(\lambda_i,\phi)$ \ \ $\Rightarrow$ \ \ $_{\mathcal{B}}[\phi]_{\mathcal{B}}=\text{diag}(_{\mathcal{B}_1}[\phi]_{\mathcal{B}_1},...,_{\mathcal{B}_s}[\phi]_{\mathcal{B}_s})$
+
+{\tiny \np \textbf{Properties of Nilpotent}: if $\phi:V\to V$ is linear map and $\phi^m\vec{v}=0,\phi^{m-1}\vec{v}\ne0$. \quad Then: \textbf{I}. $\vec{v},\phi\vec{v},...,\phi^{m-1}\vec{v}$ is linearly independent. \quad \textbf{II}. $_{\mathcal{B}}[\phi]_{\mathcal{B}}$ is \textit{nilpotent Jordan block} where $\mathcal{B}=\{\phi^{m-1}\vec{v},\phi^{m-2}\vec{v},...,\vec{v}\}$}
+
+\textbf{Jordan Normal Form}: {\small Let $F$ be an algebraically closed field. Let $V$ be finite dimensional vector space. Let $\phi:V\to V$ s.t. $\chi_{\phi}=\prod_{i=1}^s(x-\lambda_i)^{a_i}$.}
+
+\textbf{I}.$\exists$ basis $\mathcal{B}$ of $V$ s.t. $_{\mathcal{B}}[\phi]_{\mathcal{B}}=\text{diag}(J(r_{11},\lambda_1), ... , J(r_{1m_1},\lambda_1), J(r_{21},\lambda_2), ... , J(r_{s1},\lambda_s), ... , J(r_{sm_s},\lambda_s))$
+
+\textbf{II}. $\exists! \ \phi_D:V\to V$ and $\phi_N:V\to V$ s.t. $\phi=\phi_D+\phi_N$ where $\phi_D$ is diagonalisable and $\phi_N$ is nilpotent. \quad Furthermore, $\phi_D\phi_N=\phi_N\phi_D$.
+
+\textbf{III}. $\exists$ basis $\mathcal{B}$ of $V$ s.t. $_{\mathcal{B}}[{\phi}]_{\mathcal{B}}=D+N$ \ \ where $D$ diagonalisable and $N$ nilpotent, and $DN=ND$.
+
+\quad {\small ps:Jordan form 的形状为一,但里面的顺序不一定要一样. (J is unique up to reordering of the Jordan blocks.)}
+
+{\footnotesize \np\textbf{Jordan Decomposition}: Let $A\in\text{Mat}(n;F)$, $F$ algebraically closed field. \quad Then: $\exists! \ D, N$ s.t. $A=D+N$, $D$ diagonalisable, $N$ nilpotent, $DN=ND$.}
+
+{\tiny 由Direct Sum Decomposition $\rightarrow$ $P^{-1}AP=\text{diag}(B_1,...,B_s)$ where $B_i=_{{\mathcal{B}_i}}[\phi]_{{\mathcal{B}_i}}$ $\rightarrow$ 根据nilpotent的性质, $B_i$是nilpotent + diag $\rightarrow$ $B_i=D_i+N_i$ $\rightarrow$ $D=P\text{diag}(D_1,...,D_s)P^{-1}$ $N=P\text{diag}(N_1,...,N_s)P^{-1}$}
+
+\textbf{Description of Jordan Normal Form}: Let $A\in\text{Mat}(n;F)$, $F$ algebraically closed field. The $\chi_A(x)=\prod_{i=1}^s(x-\lambda_i)^{a_i}$.
+
+\vspace{-10pt}
+\begin{multicols}{3}
+    \vspace{-20pt}
+    {\footnotesize 对于一个$\lambda_i$, 考虑 $n_1,...,n_{a_i}$:}
+    \[
+    \begin{aligned}
+        n_1 & = \text{dim}\ker(A-\lambda_iI) \\
+        n_2 & = \text{dim}\ker(A-\lambda_iI)^2 - n_1 \\
+        \vdots & \\
+        n_{a_i} & = \text{dim}\ker(A-\lambda_iI)^{a_i} - n_{a_i-1}
+    \end{aligned}
+    \]
+
+\columnbreak
+    \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+        \footnotesize
+        \item $n_1$ 代表size不小于1的Jordan block个数
+        \item $n_2$ 代表size不小于2的Jordan block个数
+        \item $\cdots$
+        \item $n_{a_i}$ 代表size不小于$a_i$的Jordan block个数
+    \end{enumerate}
+
+\columnbreak
+
+    \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+        \footnotesize
+        \item exact $n_1-n_2$ Jordan blocks of size 1
+        \item exact $n_2-n_3$ Jordan blocks of size 2
+        \item $\cdots$
+        \item exact $n_{a_i-1}-n_{a_i}$ Jordan blocks of size $a_i-1$
+    \end{enumerate}
+
+\end{multicols}
+
+\textbf{Relate to Exponential}: If $A=D+N$, $D$ diagonalisable, $N$ nilpotent, $DN=ND$. \quad Then: $e^A=e^De^N=P^{-1}\text{diag}(e^{\lambda_1},...,e^{\lambda_n})Pe^{N}$ and $e^{At}=P^{-1}\text{diag}(e^{t\lambda_1},...,e^{t\lambda_n})Pe^{tN}$
+
+\textbf{For Triangularisable}: 
 
 
 \section{Appendix} % Appendix
