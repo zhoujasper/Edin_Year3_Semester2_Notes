@@ -504,7 +504,7 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
     \item \textbf{Singularity of rational function|Isolated}: If $z_0$ is \textit{singularity} of \textit{rational function} $f$, then $z_0$ is \textit{isolated}.
     \item \np\textbf{Sequence$\to$Isolated}: If $\exists$ \textit{distinct} points $z_n\in U$ s.t. $z_n\to z_0$ and $z_n$ \textit{Singularity}, then $z_0$ cannot be a \textit{removable singularity}.
     \item \textbf{Extended}: {\scriptsize $f$ is holomorphic on $D_{R}'(z_0)$.} If $z_0$ is a \textit{removable singularity}, $f$ can be \textit{redefined} at $z_0$ to be \textit{holomorphic} at $z_0$. \qquad {\scriptsize ($f(z_0)=a_0$)}
-    \item \textbf{Functions}: If $f,g$ holomorphic at $z_0$, $z_0$ is a zero of $g$, with order $m$. Then:
+    \item \textbf{Functions}: If $f,g$ holomorphic at $z_0$, \quad $z_0$ is a zero of $g$, with order $m$. \quad Then:
     \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
         \item If $z_0$ is not a zero of $f$ \ \ $\Rightarrow$ \ \ $\frac{f}{g}$ has a \textit{pole of order} $m$ at $z_0$.
         \item If $z_0$ is a zero of order $k$ of $f$ and $k<m$ \ \ $\Rightarrow$ \ \ $\frac{f}{g}$ has a \textit{pole of order} $m-k$ at $z_0$.
@@ -548,6 +548,29 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \quad Then: $\int_{\Gamma}f(z)dz=2\pi i\sum^k_{j=1}\text{Res}(f,z_j)$ \quad {\footnotesize where $\text{Res}(f,z_j)$ is the \textit{residue} of $f$ at $z_j$.}
 
 
+\subsection{Argument Principle and Rouché's Theorem}
+
+\textbf{Meromorphic}: Let $D$ \textit{domain}, $f:D\to\mathbb{C}$ is \textit{meromorphic} if $\forall z\in D$ \ \ $f$ is \textit{holomorphic} \ or \ has a \textit{pole} of some \textit{finite order}.
+
+\quad \textbf{Lemma|Finite Zero \& Pole}: {\small Let $D$ \textit{domain}, $\Gamma$ \textit{loop} in $D$, $f$ is \textit{meromorphic} on $D$, $f\ne0$. \ \ $\Rightarrow$ \ \ $f$ has finite number of \textit{zeroes} and \textit{poles} $\in\text{Int}(\Gamma)$.}
+
+\textbf{Definition of $N_0$ and $N_\infty$}: Let $\Gamma$ \textit{loop}, $f$ be \textit{meromorphic} on $\text{Int}(\Gamma)$, with \quad \textit{zeros}: $z_1,...,z_n$ \ \ and \ \ \textit{poles}: $p_1,...,p_m$.
+
+\quad Then: $N_0(f):=\sum_j\text{order of }z_j$ \ \ and \ \ $N_\infty(f):=\sum_j\text{order of }p_j$.
+
+\textbf{Argument Principle}: {\small Let $\Gamma$ \textit{loop}, $f$ is \textit{meromorphic} in $\text{Int}(\Gamma)$, $f$ is \textit{holomorphic and non-zero} on $\Gamma$. \ \ Then: $\frac{1}{2\pi i}\int_{\Gamma}\frac{f'(z)}{f(z)}dz=N_0(f)-N_\infty(f)$}
+
+\quad \textbf{Corollary}: {\small Let $\Gamma$ \textit{loop}, if $f$ is holomorphic inside and on $\Gamma$, and \textit{non-zero} on $\Gamma$. {\tiny 可能在里面为0} \ \ \textit{Then}: $\frac{1}{2\pi i}\int_{\Gamma}\frac{f'(z)}{f(z)}dz=N_0(f)$}
+
+\textbf{Rouché's Theorem}: Let $\Gamma$ \textit{loop}, $f,g$ are \textit{holomorphic} inside and on $\Gamma$. \ \ If $|f(z)-g(z)|<|f(z)|$ for all $z\in\Gamma$. \ \ $\Rightarrow$ \ \ $N_0(f) = N_0(g)$.
+
+\textbf{Open Mapping Theorem}: $D$ \textit{domain}, $f$ \textit{non-constant} and \textit{holomorphic} on $D$ $\Rightarrow$ $f(D)$ is \textit{open} in $\mathbb{C}$.
+
+\quad \textbf{Corollary}: Let $D$ \textit{domain}, $f$ \textit{holomorphic} on $D$. \quad If $\text{Re}(f)$ \ or \ $\text{Im}(f)$ \ or \ $|f|$ \ or $\text{Arg}(f)$ is \textit{constant} on $D$. \ \ $\Rightarrow$ \ \ $f$ is \textit{constant} on $D$.
+
+·\textbf{Trigonometric Integrals}: {\small If $R$ is \textit{rational} function. Then $\int_0^{2\pi}R(\cos\theta,\sin\theta)d\theta = \int_{C_1(0)}f(z)dz$ \quad where $f(z)=\frac{1}{iz}R\left(\frac{z+z^{-1}}{2},\frac{z-z^{-1}}{2i}\right)$} {\tiny LHS is real int.}
+
+
 \section{Appendix}
 
 \subsection{Convergence Test for Real Series} % Convergence Test for Real Series
@@ -573,5 +596,9 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 
 \textbf{Taylor Series for Familiar functions}: {\scriptsize $\exp(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!}$ \quad $\sin(z)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}z^{2n+1}$ \quad $\cos(z)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}z^{2n}$ all of them have \textit{infinite radius of convergence}.}
 
+
+\subsection{Other}
+
+If $|f(z)-g(z)|<|f(z)|$ for all $z\in S$. \ \ $\Rightarrow$ \ \ $f,g(z) \ \ \ne \ \ 0$ for all $z\in S$. ($f,g$ non-zero on $S$)
 
 \end{document}
