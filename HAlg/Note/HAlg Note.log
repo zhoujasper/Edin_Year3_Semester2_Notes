@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  25 MAR 2025 12:21
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.22)  31 MAR 2025 15:00
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -793,32 +793,32 @@ Overfull \hbox (6.5489pt too wide) in alignment at lines 88--141
 [1
 
 ] [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
 
  []
 
 
-Overfull \hbox (3.64412pt too wide) in paragraph at lines 570--571
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 571--572
 [][] 
  []
 
 
-Overfull \hbox (3.64412pt too wide) in paragraph at lines 583--584
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 584--585
 [][] 
  []
 
 
-Overfull \hbox (3.64412pt too wide) in paragraph at lines 598--599
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 599--600
 [][] 
  []
 
 
-Overfull \hbox (3.64412pt too wide) in paragraph at lines 609--610
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 610--611
 [][] 
  []
 
 [5]
-Overfull \hbox (3.64412pt too wide) in paragraph at lines 628--629
+Overfull \hbox (3.64412pt too wide) in paragraph at lines 629--630
 [][] 
  []
 
@@ -826,7 +826,7 @@ Overfull \hbox (3.64412pt too wide) in paragraph at lines 628--629
 Here is how much of TeX's memory you used:
  13834 strings out of 476683
  304210 string characters out of 5795227
- 1948012 words of memory out of 5000000
+ 1949012 words of memory out of 5000000
  33849 multiletter control sequences out of 15000+600000
  521379 words of font info for 150 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
