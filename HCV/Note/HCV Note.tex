@@ -548,7 +548,7 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \quad Then: $\int_{\Gamma}f(z)dz=2\pi i\sum^k_{j=1}\text{Res}(f,z_j)$ \quad {\footnotesize where $\text{Res}(f,z_j)$ is the \textit{residue} of $f$ at $z_j$.}
 
 
-\subsection{Argument Principle and Rouché's Theorem}
+\subsection{Argument Principle and Rouché's Theorem} % Argument Principle and Rouché's Theorem
 
 \textbf{Meromorphic}: Let $D$ \textit{domain}, $f:D\to\mathbb{C}$ is \textit{meromorphic} if $\forall z\in D$ \ \ $f$ is \textit{holomorphic} \ or \ has a \textit{pole} of some \textit{finite order}.
 
@@ -569,6 +569,24 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \quad \textbf{Corollary}: Let $D$ \textit{domain}, $f$ \textit{holomorphic} on $D$. \quad If $\text{Re}(f)$ \ or \ $\text{Im}(f)$ \ or \ $|f|$ \ or $\text{Arg}(f)$ is \textit{constant} on $D$. \ \ $\Rightarrow$ \ \ $f$ is \textit{constant} on $D$.
 
 ·\textbf{Trigonometric Integrals}: {\small If $R$ is \textit{rational} function. Then $\int_0^{2\pi}R(\cos\theta,\sin\theta)d\theta = \int_{C_1(0)}f(z)dz$ \quad where $f(z)=\frac{1}{iz}R\left(\frac{z+z^{-1}}{2},\frac{z-z^{-1}}{2i}\right)$} {\tiny LHS is real int.}
+
+
+\subsection{Improper Integral} % Improper Integral
+
+\textbf{Def of Improper Integral}: Let $f:\mathbb{R}\to\mathbb{R}$ be \textit{continuous}, then:
+
+\qquad $\int_{\infty}^0 f(x)dx =\lim\limits_{R\to-\infty}\int_{R}^0 f(x)dx$ \quad $\int_{0}^{\infty}f(x)dx=\lim\limits_{R\to\infty}\int_0^R f(x)dx$ \quad $\int_{\infty}^{-\infty}f(x)dx=\lim\limits_{\substack{R_1\to\infty\\R_2\to-\infty}}\int_{R_2}^{R_1}f(x)dx$ \quad {\scriptsize $R_1,R_2$ 不一定一样}
+
+\vspace{-6pt}
+\quad \textbf{Remark}: If $\int_{-\infty}^{\infty}f(x)dx$ is \textit{convergent}, then $\int_{-\infty}^{\infty} f(x)=\lim\limits_{R\to\infty}\int_{-R}^{R}f(x)dx$.
+
+\quad \textbf{Cauchy Principal Value of the integral}: $\text{p.v. }\int_{-\infty}^{\infty}f(x)dx=\lim\limits_{R\to\infty}\int_{-R}^{R}f(x)dx$
+
+\textbf{Jordan Lemma}: {\small Let $P,Q$ be \textit{polynomial}, $\deg(Q)>\deg(P)$. \ \ $a\ne 0$} \ \ Then: $\lim_{R\to\infty}\int_{C_R^{\pm}} \frac{P(z)}{Q(z)}\exp(iaz)dz=0$ \ \ for $+:a>0$; $-:a<0$.
+
+\textbf{Useful Method in Improper Integral}: {\footnotesize For $cos(nx)$, consider $\text{Re}(\exp(inx))$; \quad for $sin(nx)$, consider $\text{Im}(\exp(inx))$.} \qquad {\scriptsize (i.e. $e^{inx}=\cos(nx)+i\sin(nx)$)}
+
+\textbf{Useful Method in Improper Integral}: {\footnotesize If denominator has $e^x$ $\Rightarrow$ Consider choose $\Gamma:-R\to R\to R+2\pi i\to -R+2\pi i\to -R$.} \qquad {\tiny 相当于通过纵向限制pole的数量}
 
 
 \section{Appendix}
