@@ -588,6 +588,29 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 
 \textbf{Useful Method in Improper Integral}: {\footnotesize If denominator has $e^x$ $\Rightarrow$ Consider choose $\Gamma:-R\to R\to R+2\pi i\to -R+2\pi i\to -R$.} \qquad {\tiny 相当于通过纵向限制pole的数量}
 
+\textbf{Def of Improper Integral}: Let $c\in(a,b)\subseteq\mathbb{R}$, $f$ is \textit{continuous} on $[a,b]\setminus\{c\}$, then: 
+
+\qquad $\int_{a}^{c}f(x)dx=\lim\limits_{r\downarrow 0}\int_{a}^{c-r}f(x)dx$ \quad $\int_{c}^{b}f(x)dx=\lim\limits_{s\downarrow 0}\int_{c+s}^{b}f(x)dx$ \quad $\int_{a}^{b}f(x)dx=\lim\limits_{r\downarrow 0}\int_{a}^{c-r}f(x)dx+\lim\limits_{s\downarrow 0}\int_{c+s}^{b}f(x)dx$
+
+\vspace{-3pt}
+\quad \textbf{Remark}: If $\int_{a}^{b}f(x)dx$ is \textit{convergent}, then $\int_{a}^{b}f(x)dx=\lim\limits_{r\downarrow0}\left(\int_{a}^{c-r}f(x)dx+\int_{c+r}^{b}f(x)dx\right)$
+
+\quad \textbf{Cauchy Principal Value of the integral}: $\text{p.v. }\int_{a}^{b}f(x)dx=\lim\limits_{r\downarrow0}\left(\int_{a}^{c-r}f(x)dx+\int_{c+r}^{b}f(x)dx\right)$
+
+\textbf{Lemma}: Let $D$ domain, $f$ is \textit{meromorphic} on $D$, with \textit{simple pole} at $c$. 
+
+\quad Let $S_r$ circular arc parametrized by $\gamma(t)=c+r\exp(it)$, $t\in[\theta_0,\theta_1]$, $0\leq\theta_0<\theta_1\leq2\pi$. Then: $\lim\limits_{r\downarrow0}\int_{S_r}f(z)dz=i(\theta_1-\theta_0)\text{Res}(f,c)$
+
+\textbf{Infinite Series}: {\tiny (这里提供一个例子,但一般的大体思路都差不多: 1. 构建一个矩形$\Gamma$:$(N+1/2)(\pm1\pm i)$, 2. 通过两种方式: LM计算$\int_{\Gamma}f(z)dz$, 3. 通过Residue定理计算$\int_{\Gamma}f(z)dz$, 4. 结合两者的结果,得到级数的值)}
+
+{\scriptsize e.g. Consider $f(z)=\frac{cot(\pi z)}{z^2}$ to calculate $\sum_{n=1}^{\infty}\frac{1}{n^2}$: \qquad Calculate $\text{Res}(f,n)=\cdots=\frac{1}{n^2},n\ne0$ \qquad Calculate $\text{Res}(f,0)=$ 通过直接计算它的Laurent展开式得到.}
+
+{\scriptsize \textbf{Important}: By using Geometric Expansion: $\frac{1}{1-(\square+\cdots)}=1+\square+\square^2+\cdots$. By L-M calculate $|\int_{\Gamma}f(z)dz|\leq\cdots\to0$ \quad \textbf{Important}: 寻找bounded: e.g. $cot(\pi z)$ is bounded at $\Gamma$.}
+
+\quad ps: 如果使用$\Gamma_N$:$(N+1/2)(\pm1\pm i)$, $\ell(\Gamma_N)=4(2N+1)$ and $|z|\geq N+\frac{1}{2}$
+
+\textbf{Theorem}: Let $\Gamma$ be \textit{loop} with $0\in\text{Int}(\Gamma)$. Then $\begin{pmatrix}n \\ k\end{pmatrix}=\frac{1}{2\pi i}\int_\Gamma\frac{(1+z)^n}{z^{k+1}}dz$
+
 
 \section{Appendix}
 
@@ -619,6 +642,7 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 
 If $|f(z)-g(z)|<|f(z)|$ for all $z\in S$. \ \ $\Rightarrow$ \ \ $f,g(z) \ \ \ne \ \ 0$ for all $z\in S$. ($f,g$ non-zero on $S$)
 
-\textbf{Trigonometric}: $sin(x)=\text{Im}(\exp({ix}))$ \quad $cos(x)=\text{Re}(\exp({ix}))$.
+\textbf{Trigonometric}: {\small $sin(x)=\text{Im}(\exp({ix}))$ \quad $cos(x)=\text{Re}(\exp({ix}))$. \quad \quad $cos(n\pi)=(-1)^n$ \quad $sin(n\pi)=0$ \quad $cos((n+1)\pi)=(-1)^{n+1}$}
+
 
 \end{document}
