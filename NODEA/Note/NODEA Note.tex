@@ -104,6 +104,8 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
 
 \textbf{Euler's Method Algorithm}: Approx $\frac{dy}{dt}=f(t,y),y(t_0)=y_0$ \quad Euler Method: $y_{n+1}=y_n+hf(t_0+nh,y_n)=y_n+hf(t_n,y_n)$
 
+\quad By Taylor Series, for Euler Method, we have: $|le_n|\le|y''(\tau)\cdot\frac{h^2}{2}|$ where $\tau\in[t_n,t_{n+1}]$
+
 \textbf{Lemma}: If $v_{n+1}\leq Av_n+B$ \quad $\Rightarrow$ \quad Then $v_n\leq A^nv_0+\frac{A^n-1}{A-1}B$ \qquad {\scriptsize If $|y''|<M$ and $v_{n}=e_n:=y_n-y(t_n)$, then $A=1+hL,B=h^2M/2$}
 
 \textbf{Boundedness Theorem|Euler Method}: For $\frac{dy}{dt}=f(t,y),y(a)=y_0$:
@@ -136,6 +138,8 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
 
 \subsection{Convergence | Consistent | Stable} % Convergence | Consistent | Stable
 \textbf{Global Error}: global error after $n$ steps: $e_n:=y_n-y(t_n)$ \quad \textbf{Local Error}: {\small For \textit{one-step} method is: $le(y,h)=\Psi_h(y)-\Phi_h(y)$}
+
+ps: More Exactly, $le_n=\Psi_h(y(t_n))-\Phi_h(y(t_n))$.
 
 \textbf{Consistent}: {\small If $||le(y,h)||\leq Ch^{p+1} (\leq \mathcal{O}(h^{p+1})), \ C>0$. $\Rightarrow$ Consistent at order $p$.} \quad \textbf{Stable}: If $||\Psi_h(u)-\Psi_h(v)||\leq(1+h\widehat{L})||u-v||$
 
@@ -172,6 +176,7 @@ $\quad$ $\Rightarrow$ \textbf{Then}, $\exists I:=(t_0-\delta,t_0+\delta)$ s.t. $
     \item Let $F_i=f(y(t_i))$, then we can get $\ell_i(x)$ which pass through $(c_i,F_i)$.
     \item Let weights: $b_i=\int_0^1\ell_i(x)dx$, and $a_{ij}=\int_0^{c_i}\ell_j(x)dx$. \quad \textbf{Then} $\star$ $y_{n+1}=y_n+h\sum_{i=1}^{s}b_iF_i$. $\star$
     \item Moreover, we can get: $F_i=f(Y_i)$, where $Y_i=y_n+h\sum_{j=1}^{s}a_{ij}F_j$. \\
+    ps: More Exactly, $Y_i=y_n+h\sum^s_{i=1}b_if(t_n+c_ih,Y_i)$ and $y_{n+1}=y_n+h\sum_{i=1}^sb_if(t_n+c_ih,Y_i)$ \\
     \textbf{Remark}: {\footnotesize For choice of $c_i$: The optimal choice is attained by \textit{Gauss-Legendre collocation methods}}. \\
     {\scriptsize e.g. $s=1$: $c_1=\frac{1}{2}$;\qquad $s=2$: $c_1=\frac{1}{2}-\frac{\sqrt{3}}{6},c_2=\frac{1}{2}+\frac{\sqrt{3}}{6}$;\qquad $s=3$: $c_1=\frac{1}{2}-\frac{\sqrt{15}}{10},c_2=\frac{1}{2},c_3=\frac{1}{2}+\frac{\sqrt{15}}{10}$}
 \end{enumerate}
@@ -319,7 +324,7 @@ If $J$ constant, write sol: $\mathbf{x}=c_1e^{r_1t}\xi_1+c_2e^{r_2t}\xi_2$ \ \ |
 
 \textbf{Stability function $R(\mu)$|Special Case}: For $\frac{dy}{dt}=\lambda y$ \quad {\footnotesize All RK methods can be written as:} \quad {\footnotesize where: $b^T,A$ are from \textit{Butcher Table}. \ \ $\mathbf{1}=[1,...,1]^T$}
 
-\quad \textbf{I}.$Y_i=y_n+\mu\sum^s_{j=1}a_{ij}Y_j$ \quad ($Y=y_n\mathbf{1}+\mu AY$) \qquad $y_{n+1}=y_n+\mu\sum^s_{b=1}b_iY_j=y_n+\mu b^TY$
+\quad \textbf{I}.$Y_i=y_n+\mu\sum^s_{j=1}a_{ij}Y_j$ \quad ($Y=y_n\mathbf{1}+\mu AY$) \qquad $y_{n+1}=y_n+\mu\sum^s_{j=1}b_jY_j=y_n+\mu b^TY$
 
 \quad \textbf{II}.$R(\mu)=1+\mu b^T(I-\mu A)^{-1}\mathbf{1}$ \hspace{80pt} \textbf{III}. $y_{n+1}=R(\mu)y_n$ \qquad where $\mu=h\lambda$
 
@@ -640,6 +645,21 @@ $\cdot$ ps: Usually, coefficients are \textit{normalized} to have $\alpha_k=1$ o
     \end{tabular}
 \end{table}
 \vspace{-10pt}
+
+If $R(z)-e^z=\mathcal{O}(z^{p+1})$, then we can \textit{assume} the order of the method is $p$.
+
+\newpage
+
+\textbf{Inverse of $2\times2$ Matrix}: {\small For $A=\begin{pmatrix} a & b \\ c & d \end{pmatrix}$, we have: $A^{-1}=\frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$}
+
+\textbf{Explain in one sentence what it means to say that Euler's Method is a first order method}:
+
+On a sufficiently smooth problem, with stepsize $h$ the local error behaves like $\mathcal{O}(h^2)$.
+
+\textbf{Perform a calculation to explain why one typically uses a log-log plot to determine the order $p$ of a numerical method}:
+
+If the global error satisfies $E(h)\approx\mathcal{O}(h^p)$, then taking the logarithm of both sides gives: $\log(E(h))\approx p\log(h)$. So, if we plot $\log(E(h))$ vs. $\log(h)$, the slope of the line will be $p$, indicating the order ($p$) of the method.
+
 
 
 \end{document}
