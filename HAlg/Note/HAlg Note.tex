@@ -54,6 +54,7 @@
 \newcommand{\onto}{\twoheadrightarrow}
 
 \newcommand{\np}{{\tiny $^{^{^\ominus}}$}}
+\newcommand{\ex}{{\tiny $^{^{^\oplus}}$}}
 
 \newcommand{\N}{\mathbb{N}}
 
@@ -73,13 +74,19 @@
 
 \textbf{\small Complement-wise Operations}: {\scriptsize $\phi:V_1\times V_2\to V_1\oplus V_2$ by \textbf{I}:$(\vec{v_1},\vec{u_1})+(\vec{v_2},\vec{u_2}):=(\vec{v_1}+\vec{v_1},\vec{u_1}+\vec{u_2}), \ \lambda(\vec{v},\vec{u}):=(\lambda\vec{v},\lambda\vec{u})$ {\tiny (ps:$V_1,V_2$通过$\phi$定义的map所形成的vector space记作$V_1\oplus V_2$)}}
 
-\textbf{External Direct Sum}: {\small 一个"代数结构"(Vector Space), 定义为set是$V_1\oplus\cdots\oplus V_n:=V_1\times\cdots\times V_n$且有一组运算法则component-wise operations}
+\fbox{\parbox[c]{0.98\textwidth}{
+\textbf{External Direct Sum}: {\footnotesize 一个"代数结构"(Vector Space), 定义为set是$V_1\oplus\cdots\oplus V_n:=V_1\times\cdots\times V_n$且有一组运算法则component-wise operations}
 
 \textbf{Projections}: $pr_i:X_1\times\cdots\times X_n\to X_i$ by $(x_1,...,x_n)\mapsto x_i$ \quad \textbf{Canonical Injections}: $in_i:X_i\to X_1\times\cdots\times X_n$ by $x\mapsto(0,...,0,x,0,...,0)$
+}}
 
 \textbf{Useful Way of Thinking Matrix}: {\scriptsize $A_{n\times m}B_{m\times n}=A\begin{pmatrix}\mathbf{b}_{*1} & \mathbf{b}_{*2} & \cdots \mathbf{b}_{*n} \end{pmatrix}=\begin{pmatrix}A\mathbf{b}_{*1} & A\mathbf{b}_{*2} & \cdots A\mathbf{b}_{*n} \end{pmatrix}$} \qquad\quad {\footnotesize $rank(\mathbf{a}_{*k}\mathbf{b}^T_{k*})\leq1$}
 
 \qquad\qquad {\scriptsize $A_{n\times m}B_{m\times n}=\begin{pmatrix} \mathbf{a}^T_{1*} \\ \vdots \\ \mathbf{a}^T_{n*}  \end{pmatrix}B=\begin{pmatrix} \mathbf{a}^T_{1*}B \\ \vdots \\ \mathbf{a}^T_{n*}B  \end{pmatrix}$ \qquad\qquad $A_{n\times m}=A_{n\times m}I_m \quad \begin{matrix} = A (\vec{e_1} & \vec{e_2} & \cdots & \vec{e_n}) \\ = (A \vec{e_1} & A \vec{e_2} & \cdots & A \vec{e_n}) \end{matrix}$ \qquad $A_{n\times m}B_{m\times n}=\begin{pmatrix} \mathbf{a}_{*1}\cdots \mathbf{a}_{*m}\end{pmatrix}\begin{pmatrix}\mathbf{b}^T_{1*} \\ \vdots \\ \mathbf{b}^T_{m*}\end{pmatrix}=\sum^m_{k=1}\mathbf{a}_{*k}\mathbf{b}^T_{k*}$}
+
+\fbox{\parbox[c]{0.98\textwidth}{
+\ex\textbf{Division Ring}: {\footnotesize If $R$ is ring and it's multiplicative inverse $\forall a\in R\setminus\{0_R\}$} \qquad \ex\textbf{Characteristic of Field}: {\footnotesize $F$ is field, $char(F)=p$ if 可以有$1/p$的操作.}
+}}
 
 
 \section{Summary}
@@ -142,46 +149,50 @@
 }
 \vspace{-8pt}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Normal $(H\lhd G)$}: {\small $H\subseteq G$ is normal if: $\forall g\in G$, $gH=Hg$} 
 
 \qquad \textbf{Property}: \textbf{I}: $Ker\phi\lhd G$ \quad \textbf{II}: $\phi$ is 1-1 $\Rightarrow$ $G\cong im\phi$
 
 \textbf{Ideal $(I\trianglelefteq R)$}: A subset $I\subseteq R$ (ring) is an ideal if: \quad \textbf{I}. $I\ne\emptyset$ \quad \textbf{II}. $\forall a,b\in I$, $a-b\in I$ \quad \textbf{III}. $\forall i\in I,\forall r\in R$, $ri,ir\in I$ \quad {\scriptsize e.g.$m\mathbb{Z}$}
 
-\qquad \textbf{Property}: If $I,J$ are \textit{ideals} of $R$. Then \ \ $I+J$ \ ; \ $I\cap J$ \ \ are also ideals.
+\qquad \textbf{Property}: If $I,J$ are \textit{ideals} of $R$. Then \ \ $I+J$ \ ; \ $I\cap J$ \ \ are also ideals. \quad || \quad {\tiny Property of $m\mathbb{Z}$: $a\mathbb{Z}+b\mathbb{Z}=\gcd(a,b)\mathbb{Z}; \ \ a\mathbb{Z}\cap b\mathbb{Z}=\text{lcm}(a,b)\mathbb{Z}$ \quad Not Principal Ideal: $_{\mathbb{Z}[X]}\langle2,X\rangle$}
 
 \textbf{Field $(F)$}: {\small A set $F$ is a field with two operators: \quad {\scriptsize(addition)}$+:F\times F\to F;(\lambda,\mu)\to\lambda+\mu$ \quad {\scriptsize(multiplication)}$\cdot:F\times F\to F;(\lambda,\mu)\to\lambda\mu$ \ \ if:}
 
 \quad \quad \quad \quad {\small $(F,+)$ and $(F\setminus\{0_F\}, \ \cdot \ )$ are abelian groups with identity $0_F,1_F$. \quad and \quad $\lambda(\mu+\nu)=\lambda\mu+\lambda\nu$ \quad \quad $e.g. Fields:\mathbb{R},\mathbb{C},\mathbb{Q},\mathbb{Z}/p\mathbb{Z}=\mathbb{F}_p$}
 
 \qquad \qquad  \textbf{Field}: For a ring $R$: Commutative ring + $R$ has multiplicative inverse = Field.
+}}
 
 
 \section{Vector Spaces/Subspaces | Generating Set | Linear Independent | Basis} % Vector Spaces | Subspaces | Generating Set | Linear Independent
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Linearly Independent}: $L=\{\vec{v_1},\vec{v_2},...,\vec{v_r}\}$ is linearly independent if: \ $\forall c_1,...,c_r\in F$, $c_1\vec{v_1}+\cdots+c_r\vec{v_r}=\vec{0}$ \ $\Rightarrow$ \ $c_1=\cdots =c_r=0$.
 
-$\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $L=\{\vec{v_1},...,\vec{v_n}\}$, $L$ is LI of $V$. Let $A=[\vec{v_1},...,\vec{v_n}]$ $\Rightarrow$ $\forall\vec{x}\in F^n$, $A\vec{x}=0$ $(or \ \vec{0})$ $\Rightarrow$ $\vec{x}=0 (or \ \vec{0})$ (i.e. linear map $\phi$:$\vec{x}\mapsto A\vec{x}$ is injective)}
-
 \textbf{Basis \& Dimension}: If $V$ is finitely generated. $\Rightarrow$ $\exists$ subset $B\subseteq V$ which is both LI and GS. ($B$ is basis) \quad \textbf{Dim}: $\dim V:=|B|$
+}}
 
-$\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v_n}\}$ is basis of $V$. Let $A=[\vec{v_1},...,\vec{v_n}]$ $\Rightarrow$ $\forall\vec{x}=(x_1,...,x_n)^T$ s.t. $\phi:\vec{x}\mapsto A\vec{x}$ is 1-1 \& onto (Bijection)}
-
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Relation|GS,LI,Basis,dim}: {\small Let $V$ be vector space. $L$ is linearly independent set, $E$ is generating set, $B$ is basis set.}
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{GS|LI}: $|L|\leq|E|$ {\scriptsize (can get: $\dim$ unique)} \quad \textbf{LI$\to$Basis}: If $V$ finite generate $\Rightarrow$ $\forall L$ can extend to a basis. {\scriptsize If $L=\emptyset$, prove $\exists B$} \quad \quad $ker f\cap im f=\{0\}$
+    \item \textbf{GS|LI}: $|L|\leq|E|$ {\scriptsize (can get: $\dim$ unique)} \quad \textbf{LI$\to$Basis}: If $V$ finite generate $\Rightarrow$ $\forall L$ can extend to a basis. {\scriptsize If $L=\emptyset$, prove $\exists B$} \quad $ker f\cap im f=\{0\}$
     \item \textbf{Basis|max,min}: $B$ $\Leftrightarrow$ $B$ is minimal GS $(E)$ $\Leftrightarrow$ $B$ is maximal LI $(L)$. \quad \textbf{Uniqueness|Basis}: {\small 每个元素都可以由basis唯一表示.}
     \item \textbf{Proper Subspaces}: {\small If $U\subset V$ is proper subspace, then $\dim U<\dim V$. \quad $\Rightarrow$ \quad If $U\subseteq V$ is subspace and $\dim U=\dim V$, then $U=V$.}
     \item \textbf{Dimension Theorem}: If $U,W\subseteq V$ are subspaces of $V$, then $\dim(U+W)=\dim U+\dim W-\dim(U\cap W)$ \qquad {\tiny $\downarrow$特别同构于$F^n$}
     \item \textbf{Isomorphism}: For \textit{finitely generated} vector spaces $V$ \ \ $\Rightarrow$ \ \ Two $F$-vector spaces $V,W$ are isomorphic $\Leftrightarrow$ $\dim V=\dim W$.
 \end{enumerate}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Complementary}: $U,W\subseteq V$,$U,V$ subspaces are complementary ($V=U\oplus W$) if: \quad $\exists\phi:U\times W\to V$ by $(\vec{u},\vec{w})\bij\vec{u}+\vec{w}$ is isom.
 
 \quad \quad \quad \quad \quad \quad \quad \quad i.e. $\forall\vec{v}\in V$, we have unique $\vec{u}\in U,\vec{w}\in W$ s.t. $\vec{v}=\vec{u}+\vec{w}$. \quad {\footnotesize ps: It's a linear map.}
 
-\textbf{Criteria Lemma}: If $U$, $W$ are subspace of $V$, then $V=U\oplus W$ $\Leftrightarrow$ $V=U+W$ and $U\cap W=\{0\}$. {\scriptsize (需要证明)}
+\textbf{Criteria Lemma}: If $U$, $W$ are subspace of $V$, then $V=U\oplus W$ $\Leftrightarrow$ $V=U+W$ and $U\cap W=\{0\}$. {\scriptsize (需要证明/只能两个向量空间)}
+}}
 
 
 \section{Linear Mapping | Rank-Nullity| Matrices | Change of Basis \quad {\tiny ps: 默认$V,W$ \ $F$-Vector Spaces.}}
@@ -191,12 +202,13 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
 \textbf{Property of Linear Map}: Let $f,g\in Hom$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Determined}: $f$ is determined by $f(\vec{b_i}),\vec{b_i}\in \mathcal{B}_{basis}$ {\footnotesize (\star \ \textbf{i.e.} $f(\sum_{i}\lambda_i\vec{v_i}):=\sum_{i}\lambda_if(\vec{v_i})$)}
+    \item \textcolor{red}{\textbf{Determined}: $f$ is determined by $f(\vec{b_i}),\vec{b_i}\in \mathcal{B}_{basis}$ {\footnotesize (\star \ \textbf{i.e.} $f(\sum_{i}\lambda_i\vec{v_i}):=\sum_{i}\lambda_if(\vec{v_i})$)}}
     \item \textbf{Classification of Vector Spaces}: $\dim V=n$ \ $\Leftrightarrow$ \ $f:F^n\bij V$ by $f(\lambda_1,...,\lambda_n)\mapsto\sum_{i=1}^{n}\lambda_i\vec{v_i}$ is isomorphism.
     \item \textbf{Left/Right Inverse}: $f$ is 1-1 $\Rightarrow$ $\exists$ left inverse $g$ s.t. $g\circ f=id$ {\scriptsize 考虑direct sum} \quad \quad $f$ is onto $\Rightarrow$ $\exists$ right inverse $g$ s.t. $f\circ g=id$
     \item \np\textbf{More of Left/Right Inverse}: $f\circ g=id$ $\Rightarrow$ $g$ is 1-1 and $f$ is onto. \quad {\scriptsize 使用kernel=0来证明}
 \end{enumerate}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Rank-Nullity Theorem}: For linear map $f:V\to W$, $\dim V=\dim(\ker f)+\dim(Im f)$ \quad \quad \quad {\footnotesize Following are properties:}
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -204,23 +216,25 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
     \item \textbf{Same Dimension}: {\small $f$ is isomorphism $\Rightarrow$ $\dim V=\dim W$} \quad \quad \quad \textbf{Matrix}: $\forall M$, column rank $c(M)$ = row rank $r(M)$.
     \item \textbf{Relation}: {\small If $V,W$ finite generate, and $\dim V=\dim W$, \quad Then: $f$ is isomorphism $\Leftrightarrow$ $f$ is 1-1 $\Leftrightarrow$ $f$ is onto.}
 \end{enumerate}
+}}
 
 
 \subsection{Matrices | Change of Basis | Similar Matrices | Trace} % Matrices | Change of Basis | Similar Matrices | Trace
 
-\textbf{Matrix}: For $A_{n\times m},B_{m\times p}$, $AB_{n\times p}:=(AB)_{ij}=\sum_{k=1}^{m}a_{ik}b_{kj}$ \quad \textbf{Transpose}: $A^T_{m\times n}:=(A^T)_{ij}=a_{ji}$
+\textbf{Matrix}: For $A_{n\times m},B_{m\times p}$, \textcolor{red}{$AB_{n\times p}:=(AB)_{ij}=\sum_{k=1}^{m}a_{ik}b_{kj}$} \quad \textbf{Transpose}: $A^T_{m\times n}:=(A^T)_{ij}=a_{ji}$
 
 \textbf{Invertible Matrices}: {\small $A$ is invertible if $\exists B,C$ s.t. $BA=I$ and $AC=I$ \quad || \quad $\exists B, \ BA=I$ $\Leftrightarrow$ $\exists C,AC=I$ $\Leftrightarrow \exists A^{-1}$} \quad {\small $_{\mathcal{B}}[f^{-1}]_{\mathcal{A}}=_{\mathcal{A}}[f]^{-1}_{\mathcal{B}}$}
 
 \textbf{Representing matrix of linear map $_{\mathcal{B}}[f]_{\mathcal{A}}$}: $f:V\to W$ be linear map, $\mathcal{A}=\{\vec{v_1},...,\vec{v_n}\}$ is basis of $V$, $\mathcal{B}=\{\vec{w_1},...,\vec{w_m}\}$ is basis of $W$.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item $_{\mathcal{B}}[f]_{\mathcal{A}}:=A$ {\small (matrix)} where $f(\vec{v}_{i})=\sum_{j}A_{ji}\vec{w}_j$ \quad \quad $\exists M^{\mathcal{A}}_{\mathcal{B}}:Hom_{F}(V,W)\bij Mat(n\times m;F)$
+    \item $_{\mathcal{B}}[f]_{\mathcal{A}}:=A$ {\small (matrix)} where \textcolor{red}{$f(\vec{v}_{i})=\sum_{j}A_{ji}\vec{w}_j$} \quad \quad $\exists M^{\mathcal{A}}_{\mathcal{B}}:Hom_{F}(V,W)\bij Mat(n\times m;F)$
     \item If $\vec{v}\in V$, then $_{\mathcal{A}}[\vec{v}]:=\mathbf{b}$ {\small (vector)} where $\vec{v}=\sum_{i}b_i\vec{v_i}$
-    \item \textbf{Theorems}: $[f\circ g]=[f]\circ[g]$ \quad \quad $_{\mathcal{C}}[f\circ g]_{\mathcal{A}}=_{\mathcal{C}}[f]_{\mathcal{B}}\circ_{\mathcal{B}}[g]_{\mathcal{A}}$ \quad \quad $_{\mathcal{B}}[f(\vec{v})]=_{\mathcal{B}}[f]_{\mathcal{A}}\circ_{\mathcal{A}}[\vec{v}]$ \quad \quad $_{\mathcal{A}}[f]_{\mathcal{A}}=I\Leftrightarrow f=id$
-    \item \textbf{Change of Basis}: {\small Define \textit{Change of Basis Matrix}$:=$$_{\mathcal{A}}[id_V]_{\mathcal{B}}$ \quad \quad {\footnotesize $_{\mathcal{B}'}[f]_{\mathcal{A}'}=_{\mathcal{B}'}[id_W]_{\mathcal{B}}\circ$$_{\mathcal{B}}[f]_{\mathcal{A}}\circ$$_{\mathcal{A}}[id_V]_{\mathcal{A}'}$ \quad \quad $_{\mathcal{A}'}[f]_{\mathcal{A'}}=_{\mathcal{A}}[id_V]_{\mathcal{A'}}^{-1}\circ$$_{\mathcal{A}}[f]_{\mathcal{A}}\circ$$_{\mathcal{A}}[id_V]_{\mathcal{A}'}$}}
+    \item \textcolor{red}{\textbf{Theorems}}: $[f\circ g]=[f]\circ[g]$ \quad \quad $_{\mathcal{C}}[f\circ g]_{\mathcal{A}}=_{\mathcal{C}}[f]_{\mathcal{B}}\circ_{\mathcal{B}}[g]_{\mathcal{A}}$ \quad \quad $_{\mathcal{B}}[f(\vec{v})]=_{\mathcal{B}}[f]_{\mathcal{A}}\circ_{\mathcal{A}}[\vec{v}]$ \quad \quad $_{\mathcal{A}}[f]_{\mathcal{A}}=I\Leftrightarrow f=id$
+    \item \textcolor{red}{\textbf{Change of Basis}}: {\small Define \textit{Change of Basis Matrix}$:=$$_{\mathcal{A}}[id_V]_{\mathcal{B}}$ \quad \quad {\footnotesize $_{\mathcal{B}'}[f]_{\mathcal{A}'}=_{\mathcal{B}'}[id_W]_{\mathcal{B}}\circ$$_{\mathcal{B}}[f]_{\mathcal{A}}\circ$$_{\mathcal{A}}[id_V]_{\mathcal{A}'}$ \quad \quad $_{\mathcal{A}'}[f]_{\mathcal{A'}}=_{\mathcal{A}}[id_V]_{\mathcal{A'}}^{-1}\circ$$_{\mathcal{A}}[f]_{\mathcal{A}}\circ$$_{\mathcal{A}}[id_V]_{\mathcal{A}'}$}}
 \end{enumerate}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Elementary Matrix}: $I+\lambda E_{ij}$ {\scriptsize (cannot $I-E_{ii}$)} {\footnotesize 就是初等矩阵,左乘代表$j$行乘$\lambda$倍加到第$i$行,右乘代表$j$列乘$\lambda$倍加到第$i$列} \quad $\Rightarrow$ \quad Invertible!
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -232,17 +246,22 @@ $\cdot$ \textbf{Connect to Matrix}: {\footnotesize Let $B=\{\vec{v_1},...,\vec{v
 \textbf{Smith Normal Form}: {\small $\forall A$, $\exists \ \text{invertible} \ P,Q$ s.t. $PAQ=S(n,m,r):=$ {\footnotesize $n\times m$的矩阵,对角线前$r$个是1,后面0}. \quad \textbf{Lemma}: $r=r(A)=c(A)$}
 
 $\cdot$ Every linear map $f:V\to W$ can be representing by $_{\mathcal{B}}[f]_{\mathcal{A}}=S(n,m,r)$ for some basis $\mathcal{A},\mathcal{B}$ of $V,W$.
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Similar Matrices}: $N=T^{-1}MT$ $\Leftrightarrow$ $M,N$ are similar. \quad {\small \textit{Special Case}: If $N=$$_{\mathcal{B}}[f]_{\mathcal{B}}$, $M=$$_{\mathcal{A}}[f]_{\mathcal{A}}$, then $N=T^{-1}MT$. where $T=$$_{\mathcal{A}}[id_V]_{\mathcal{B}}$}
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item If $A\sim B$ iff $A$ is similar to $B$, then $\sim$ is an equivalence relation. \quad \quad $_{\mathcal{A}'}[f]_{\mathcal{A'}}\sim_{\mathcal{A}}[f]_{\mathcal{A}}$
     \item If $\mathcal{B}=\{p(\vec{v_1}),...,p(\vec{v_n})\}$ and $\mathcal{A}=\{\vec{v_1},...,\vec{v_n}\}$ where $p:V\bij V$. Then $_{\mathcal{A}}[id_V]_{\mathcal{B}}=_{\mathcal{A}}[p]_{\mathcal{A}}$
     \item If $V$ is a vector space over $F$, [$A,B$ are \textit{similar} matrices. \ \ $\Leftrightarrow$ \ \ $A=_{\mathcal{A}}[f]_{\mathcal{A}},B=_{\mathcal{B}}[f]_{\mathcal{B}}$ for some basis $\mathcal{A},\mathcal{B}$; $f:V\to V$]
-    \item {\small Set of \textit{Endomorphism} is in a bijection correspondence with the equivalence class of matrices under $\sim$. } {\scriptsize \textbf{一个自同态End就对应一个相似矩阵的等价类}}
+    \item {\small Set of \textit{End} is in a bijection correspondence with the equivalence class of matrices under $\sim$.} {\scriptsize \textbf{一个自同态End就对应一个相似矩阵的等价类}}
 \end{enumerate}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Trace}: $tr(A):=\sum_{i}a_{ii}$ and $tr(f):=tr(_{\mathcal{A}}[f]_{\mathcal{A}})$ \ $\big|$ \ {\small $tr(AB)=tr(BA)$ \quad $tr(\lambda A+\mu B)=\lambda tr(A)+\mu tr(B)$ \quad $tr(N)=tr(M)$ if $M,N$ similar.}
+}}
 
 
 \section{Rings | Polynomials | Ideals | Subrings} % Rings | Polynomials | Ideals | Subrings
@@ -251,27 +270,35 @@ $\cdot$ Every linear map $f:V\to W$ can be representing by $_{\mathcal{B}}[f]_{\
 
 \textbf{2nd Def of Ring Homomorphism}: {\small $f$ is ring homomorphism if: \quad 1. $f:(R,+)\to (S,+)$ is group homomorphism \ \ and \ \ 2. $f(xy)=f(x)f(y)$.}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Unit}: $a\in R$ is unit if it's \textit{Invertible}. \quad i.e. $\exists a^{-1}\in R$ s.t. $aa^{-1}=a^{-1} a=1_R$ \qquad \textbf{Group of Unit} $(R^{\times},\ \cdot \ ):=\{a\in R:a$ is unit$\}$
 
 $\cdot$ \textbf{Lemma}: If $^1f:R\to S$ homo, $^2f(1_R)=1_S$, $^3x$ is \textit{unit} of $R$. \ \ $\Rightarrow$ \ \ $^1f(x)$ is \textit{unit} of $S$. \quad $^2f|_{R^\times}:R^\times\to S^\times$ is \textit{group homomorphism}.
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Zero-divisors}: $a\in R$ is \textit{zero-divisor} if $\exists b\in R,b\ne0$ s.t. $ab=0$ or $ba=0$ \qquad \textit{Field has no zero-divisors.}  \quad {\scriptsize $\cdot$ e.g. $\mathbb{Z}^{\times}=\{-1,1\}$ \ ; \ $1_R$ is a unit.}
+}}
 
-\textbf{Integral Domain}: A \textit{commutative} ring $R$ is an integral domain if it has no zero-divisors. \qquad \quad {\scriptsize e.g. $\mathbb{Z}/p\mathbb{Z},\mathbb{R},\mathbb{Q},\mathbb{Z},...$}
+\fbox{\parbox[c]{0.98\textwidth}{
+\textbf{Integral Domain}: A \textit{commutative} ring $R$ is an integral domain if it has no zero-divisors. \qquad \quad {\scriptsize e.g. $\mathbb{Z}/p\mathbb{Z},\mathbb{R},\mathbb{Q},\mathbb{Z},...$} \qquad {\scriptsize Cancellation Law: $\downarrow$}
 
-\textbf{Properties of Integral Domain}: $\forall a,b\in R$. \quad \textbf{I}. $ab=0$ $\Rightarrow$ $a=0$ or $b=0$ \quad \textbf{II}. $a,b\ne0$ $\Rightarrow$ $ab\ne0$ \qquad \textbf{III}. $ac=bc,a\ne0$ $\Rightarrow$ $b=c$
+\textbf{Properties of Integral Domain}: $\forall a,b\in R$. \quad \textbf{I}. $ab=0$ $\Rightarrow$ $a=0$ or $b=0$ \quad \textbf{II}. $a,b\ne0$ $\Rightarrow$ $ab\ne0$ \qquad \textbf{III}. $ab=ac,a\ne0$ $\Rightarrow$ $b=c$
 
 $\cdot$ \textit{Field is Integral Domain} \qquad \textbf{Every finite integral domain is a field} \qquad $\mathbb{Z}/p\mathbb{Z}$ is field iff $p$ is prime. \qquad {\scriptsize e.g.(integral domain) $\mathbb{Z};\mathbb{Z}/p\mathbb{Z}$}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Polynomial Ring $R[X]$}: $R[X]:=\{a_nX^n+\cdots+a_1X+a_0:a_i\in R,n\in\mathbb{N}\}$ where $X$ is \textbf{indeterminate} \ $\Leftarrow$ \ $X\notin R$ and $\forall x\in R,Xa=aX$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Degree}: $\deg(P):=\max\{n\in\mathbb{N}:a_n\ne0\}$ \quad \textbf{Leading Coefficient}: $a_n$ \quad \textbf{Monic}: $a_n=1$ \quad \quad \quad {\scriptsize ps: Polynomial NOT a function}
-    \item \textbf{Lemma}: {\small $^1$ $R$ \textit{integral domain|no zero-divisors} $\Rightarrow$ $R[X]$ also. \qquad $^2$ $R$ \textit{integral domain or no zero-divisor} $\Rightarrow\deg(PQ)=\deg(P)+\deg(P)$}
-    \item \textbf{Division and Remainder}: If $R$ is \textit{integral domain} and $P,Q\in R[X]$,{\scriptsize $Q$ \textbf{monic}} $\exists!$ $A,B\in R[X]$ s.t. $P=AQ+B$ and $\deg(B)<\deg(Q)$
+    \item \textbf{Lemma}: {\small $^1$ $R$ \textcolor{red}{\textit{integral domain|no zero-divisors}} $\Rightarrow$ $R[X]$ also. \ \ and \ \ $\deg(PQ)=\deg(P)+\deg(Q)$ if $P,Q\ne0$.}
+    \item \textcolor{red}{\textbf{Division and Remainder}}: If $R$ is \textit{integral domain} and $P,Q\in R[X]$,{\scriptsize $Q$ \textbf{monic}} $\exists!$ $A,B\in R[X]$ s.t. $P=AQ+B$ and $\deg(B)<\deg(Q)$
     \item \textbf{Function | Factorize}: If $R$ is \textit{commutative ring} \ $\Rightarrow$ \ $^1$ $R[X]\to Maps(R,R)$ {\scriptsize (可以视作函数)} \ $^2$ $\lambda\in R$ is root of $P$ $\Leftrightarrow$ $(X-\lambda) \ | \ P(X)$
     \item \textbf{Roots}: If $R$ is \textit{Integral domain}: $P$ has at most $\deg(P)$ roots.
 \end{enumerate}
+}}
 
 \textbf{Algebraically Closed}: $R=F$ field is \textit{algebraically closed} if every non-constant polynomial has a root in $F$. \qquad \qquad e.g. $\mathbb{C}$
 
@@ -280,16 +307,13 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \subsection{Equivalence Relation}
 
-\textbf{Equivalence Relation}: A relation $R$ on a set $X$ is a subset $R\subseteq X\times X$. If $(x,y)\in R$, we write $xRy$, {\footnotesize if $R$ is Equivalence Relation, then:}
+\textbf{Equivalence Relation}: {\small \textbf{Reflexive}: $xRx$ {\scriptsize ($x\sim x$)} \ \textbf{Symmetric}: $xRy\Rightarrow y Rx$ {\scriptsize ($x\sim y \Rightarrow y\sim x$)} \ \textbf{Transitive}: $xRy,yRz\Rightarrow xRz$ {\scriptsize ($x\sim y,y\sim z\Rightarrow x\sim z$)}}
 
-\quad \textbf{Reflexive}: $xRx$ {\scriptsize ($x\sim x$)} \quad \textbf{Symmetric}: $xRy\Rightarrow y Rx$ {\scriptsize ($x\sim y \Rightarrow y\sim x$)} \quad \textbf{Transitive}: $xRy,yRz\Rightarrow xRz$ {\scriptsize ($x\sim y,y\sim z\Rightarrow x\sim z$)}
-
-\textbf{Partial Order}: A relation $R$ on a set $X$, $xRy$. {\footnotesize If $R$ is partial order, then:}
-
-\quad \textbf{Reflexive}: $xRx$ {\scriptsize ($x\sim x$)} \quad \textbf{Anti-symmetric}: $xRy,yRx\Rightarrow x = y$ {\scriptsize ($x\sim y,y\sim x\Rightarrow x=y$)} \quad \textbf{Transitive}: $xRy,yRz\Rightarrow xRz$ {\scriptsize ($x\sim y,y\sim z\Rightarrow x\sim z$)}
+\textbf{Partial Order}: {\small \textbf{Reflexive}: $xRx$ {\scriptsize ($x\sim x$)} \ \textbf{Anti-symmetric}: $xRy,yRx\Rightarrow x = y$ {\scriptsize ($x\sim y,y\sim x\Rightarrow x=y$)} \ \textbf{Transitive}: $xRy,yRz\Rightarrow xRz$ {\scriptsize ($x\sim y,y\sim z\Rightarrow x\sim z$)}}
 
 \newpage
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Property of Equivalence Relation}: If $R$ $(\sim)$ is equivalence relation on $X$.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -297,32 +321,38 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \item $\sim$ \textbf{Partition} $X$ into disjoint subsets $X=\bigcup_{i}X_i$, $X_i$ is equivalence class of $x\in X$.
     \item $x\sim y$ \quad $\Leftrightarrow$ \quad $E(x)=E(y)$ \quad $\Leftrightarrow$ \quad $E(x)\cap E(y)\ne\emptyset$.
 \end{enumerate}
+}}
 
 \textbf{Set of Equivalence Classes $(X/\sim)$}: $(X/\sim):=\{E(x):x\in X\}$ \qquad \textbf{Canonical Projection}: $can:X\to (X/\sim)$ by $x\mapsto E(x)$
 
 \quad \textbf{System of Representatives}: $Z\subseteq X$ is a system of representatives if {\footnotesize 每个等价类都恰好有一个元素代表在$Z$中}
 
-\quad \textbf{Examples}: {\tiny $^1$ If $V$ $F-$vector space, $W$ subspace. Then $V/W$ is \textbf{quotient vector space}. \quad $^2$ If $G$ group, $H$ normal. Then $G/H$ is \textbf{quotient group}. \quad $^3$ If $R$ ring, $I$ ideal. Then $R/I$ is \textbf{quotient ring}.}
-
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Universal Property of the set of Equivalence Classes}: If $f:X\to Z$ is a map s.t. $x\sim y$ $\Leftrightarrow$ $f(x)=f(y)$. {\tiny ($\sim$ is Equivalence relation) \textbf{Important}}
 
 \quad Then, $\exists!$ map $\overline{f}:(X/\sim)\to Z$ s.t. $f=\overline{f}\circ can$ \quad with \quad $\overline{f}(E(x))=f(x)$ is \textit{well-defined}. \qquad Further more, $\overline{f}:(X/\sim)\bij Im(f)$
 
 \quad ps: Often, if we want to prove $g:(X/\sim)\to Z$ is well-defined, we need to prove $x\sim y$ $\Leftrightarrow$ $g(x)=g(y)$ holds.
+}}
 
 
 \subsection{Factor Ring | First Isomorphism Theorem} % Factor Ring | First Isomorphism Theorem
 
-\textbf{Coset of Ideal}: Let $I$ be an ideal of $R$. Then $a+I$ is a coset of $I$. \quad The $\sim$ is defined by $a\sim b$ $\Leftrightarrow$ $a-b\in I$ is an equivalence relation.
+\fbox{\parbox[c]{0.98\textwidth}{
+\textbf{Coset of Ideal}: Let $I$ be an ideal of $R$. Then $a+I$ is a coset of $I$. \quad \textcolor{red}{The $\sim$ is defined by $a\sim b$ $\Leftrightarrow$ $a-b\in I$ is an equivalence relation.}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Factor Ring}: Let $I$ be ideal of $R$. $R/I:=\{a+I:a\in R\}$ is the set of cosets of $I$. \ \ {\small (i.e. $R/I$ is the set of equivalence classes of $R$ under $\sim$) }
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item By \textit{well-defined} operators: $(x+I)\dotplus(y+I)=(x+y) + I$ and $(x+I)\cdot(y+I)=xy+I$ \quad $\Rightarrow$ \quad $R/I$ is a ring.
     \item $x+I=y+I \quad \Leftrightarrow \quad x\sim y \quad \Leftrightarrow \quad x-y\in I$ \qquad || \qquad {\footnotesize $R$ is commutative $\Rightarrow$ $R/I$ also.} \qquad || \qquad {\footnotesize $R/I\ne\{0+I\}$ iff $I\ne R$}
-    \item The Identity of $R/I$: $1_R+I$ \quad The Zero of $R/I$: $0_R+I$
+    \item \star The \underline{Identity} of $R/I$: $1_R+I$ \quad The \underline{Zero} of $R/I$: $0_R+I$
 \end{enumerate}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Universal Property of Factor Ring}: Let $R$ be a ring and $I$ be an ideal of $R$. \qquad {\scriptsize ps:$\overline{f}(x+I)=f(x)$}
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -330,6 +360,7 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \item \textbf{$\textbf{f}$}: If $^1f:R\to S$ is \textit{ring homomorphism} and $^2I\subseteq ker(f)$, then \ \ $\exists!$ $^1\overline{f}:R/I\to S$ s.t. $f=\overline{f}\circ can$ is \textit{ring homomorphism}.
     \item \textbf{First Isomorphism Theorem}: If $f:R\to S$ is \textit{ring homomorphism} $\Rightarrow$ $\exists!$ $\overline{f}:R/ker(f)\bij im(f)$ is  (\textit{ring isomorphism}).
 \end{enumerate}
+}}
 
 \textbf{Universal Property of Quotient Group}: Let $G$ be a group and $H$ be a normal subgroup of $G$. \qquad {\scriptsize ps:$\overline{f}(g+N)=f(g)$}
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -341,7 +372,7 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \subsection{Modules | Submodules | All of That} % Modules | Submodules | All of That
 
-\textbf{Restrict with Scalar}: Let $f:R\to S$ is a \textit{ring homomorphism}, $f(1_R)=1_S$ and $M$ is a $S-$Module, then $M$ is also a $R-$Module by:
+\textbf{Create Modules}: Let $f:R\to S$ is a \textit{ring homomorphism}, $f(1_R)=1_S$ and $M$ is a $S-$Module, then $M$ is also a $R-$Module by:
 
 \quad Define the restrict our scalar: $rm:=f(r)m$ \quad $\forall r\in R,m\in M$ \quad {\footnotesize ps: $f(1_R)=1_S$}
 
@@ -351,8 +382,7 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \textbf{Factor Module}: Let $N$ submodule of $M$. $M/N:=\{m+N:m\in M\}$ is the set of cosets of $N$.
 
-\quad {\small ps: All properties of $M/N$ are similar to $R/I$}
-
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Universal Property of Module Quotient}: Let $M$ be a module and $N$ be a submodule of $M$. \qquad {\scriptsize ps:$\overline{f}(x+N)=f(x)$}
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{can}: Mapping $can:M\to M/N$ by $x\mapsto x+N$ is $^1$ surjection, $^2$ $ker(can)=N$, $^3$ $can$ is module homomorphism.
@@ -363,27 +393,26 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \vspace{2pt}
 \np\textbf{Second Isomorphism Theorem for Modules}: Let $N,K$ be submodules of $R$-module $M$ \ \ $\Rightarrow$ \ \ $N/(N\cap K)\cong (N+K)/K$
 
-\quad ps: {\footnotesize consider $f:N\to (N+K)/K$ and then we can find $ker(f)=N\cap K$}
+\quad ps: {\scriptsize $\uparrow$ consider $f:N\to (N+K)/K$ and then we can find $ker(f)=N\cap K$ \qquad $\downarrow$ consider $f:M/K\to M/N$ and then we can find $ker(f)=N/K$}
 
 \vspace{2pt}
 \np\textbf{Third Isomorphism Theorem for Modules}: Let $N,K$ be submodules of $R$-module $M$ ; $K\subseteq N$ \ \ $\Rightarrow$ \ \ $\frac{M/K}{N/K}\cong M/N$
+}}
 
-\quad ps: {\footnotesize consider $f:M/K\to M/N$ and then we can find $ker(f)=N/K$}
+\np\textbf{For Vector Space}: $\dim(V/U)=\dim V-\dim U$ {\scriptsize Hint: Consider $can:V\to V/U$ by $v\mapsto v+U$ is surjection, $\ker(can)=U$}
 
 
 \section{Permutation | Determinants | Eigenvalues and Eigenvectors} % Permutation | Determinants | Eigenvalues and Eigenvectors
 
 \subsection{Permutation | Determinants} % Permutation | Determinants
 
-\textbf{Permutation}: A bijection $\sigma:\{1,...,n\}\bij\{1,...,n\}$ is a permutation. \qquad \qquad All permutations of $n$ elements form a group $\mathfrak{S}_n$.
+\textbf{Review of Permutation}: A bijection $\sigma:\{1,...,n\}\bij\{1,...,n\}$ is a permutation. \quad All permutations of $n$ elements form a group $\mathfrak{S}_n$.
 
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item {\scriptsize \textbf{Transposition}: A transposition is a permutation that exchanges two elements. \qquad \textbf{Inversion}: A pair of elements $(i,j)$ is an inversion of $\sigma\in\mathfrak{S}_n$ if $i<j$ but $\sigma(i)>\sigma(j)$}
-    \item {\scriptsize \textbf{Length}: The length of a permutation $\sigma$ is the number of inversions. (i.e. $\ell(\sigma):=\left|\ \{(i,j):i<j,\sigma(i)>\sigma(j)\}\ \right|$) \qquad \textbf{Sign}: $\text{sgn}(\sigma):=(-1)^{\ell(\sigma)}$ \qquad $\text{sgn}=1,even \ ; \ \text{sgn}=-1,odd$}
-    \item $\text{sgn}(a_1a_2)=-1$ \quad $\text{sgn}(a_1...a_n)=(-1)^{n-1}$ \quad $\text{sgn}(\sigma\tau)=\text{sgn}(\sigma)\text{sgn}(\tau)$ \quad $\big|$ \quad \textbf{Alternating Group}: $A_n:=\{\sigma\in\mathfrak{S}_n:\text{sgn}(\sigma)=1\}$
-    \item \textbf{Graph Meaning of Inversion}: {\small Inversion is \# edges that cross each other in the graph of permutation. {\footnotesize (i.e. 画出的图中,线段交叉的次数)}}
-\end{enumerate}
+\quad {\scriptsize \textbf{Transposition}: 交换两个元素. \qquad \textbf{Inversion}: A pair of elements $(i,j)$ is an inversion of $\sigma\in\mathfrak{S}_n$ if $i<j$ but $\sigma(i)>\sigma(j)$ \qquad $\text{sgn}(a_1a_2)=-1$ \qquad $\text{sgn}(a_1...a_n)=(-1)^{n-1}$}
 
+\quad {\scriptsize $\text{sgn}(\sigma\tau)=\text{sgn}(\sigma)\text{sgn}(\tau)$ \qquad \textbf{Alternating Group}: $A_n:=\{\sigma\in\mathfrak{S}_n:\text{sgn}(\sigma)=1\}$ \qquad \underline{\textbf{Graph Meaning of Inversion}}: Inversion is \# 画出的图中,线段交叉的次数}
+
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Determinant}: For matrix $A_{n\times n}$, with $A_{ij}=a_{ij}$. \quad $\det(A):=\sum_{\sigma\in\mathfrak{S}_n}\text{sgn}(\sigma)a_{1\sigma(1)}\cdots a_{n\sigma(n)}$ (\textbf{Leibniz Formula}) \qquad $\det(I_0):=1$
 
 \hspace{200pt} {\scriptsize or:} $\det(A):=\sum_{\sigma^{-1}\in\mathfrak{S}_n}\text{sgn}(\sigma^{-1})a_{\sigma^{-1}(1)1}\cdots a_{\sigma^{-1}(n)n}$
@@ -392,6 +421,7 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item {\footnotesize $\det(A)$ 对 U 操作后的面积|体积 = $|\det(A)|\times\text{area}(U)$} \quad 2. \ {\footnotesize $\text{sgn}(\det A)$ 决定了方向是否改变(+1不变,-1变). {\scriptsize (i.e. 顺逆时针变化,左右|上下变化,手性变化)}}
 \end{enumerate}
+}}
 
 \vspace{3pt}
 \textbf{Bilinear|Multilinear form}: {\small $U,V,V_i,W$ be F-vector space. \quad A mapping \ \ $H: U\times V\to W$ \ \ or \ \ $H:V_1\times \cdots\times V_n\to W$ \ \ is \ \ \textit{bilinear | multilinear} if:}
@@ -428,11 +458,13 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \quad \textbf{Lemma II}: If $H$ is \textit{alternating}, then \quad $H(v_1,...,v_n)=\text{sgn}(\sigma)H(v_{\sigma(1)},...,v_{\sigma(n)})$ \qquad {\scriptsize ($\sigma$ is a permutation)}
 
+\quad \textbf{Example}: If $H(\vec{u},\vec{v})=\vec{u}^TA\vec{v}$ $\Rightarrow$ multilinear form. \quad If $A^T=A$, symmetric. \quad If $A^T=-A$, antisymmetric.
+
 \textbf{Property of Determinant}: Let $A,B$ be $n\times n$ matrices. \quad $F$ be field. \quad $R$ be \textit{commutative ring}.
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Unique on Field}: $\det:F^n\times \cdots\times F^n\to F$ \textit{or} $\det: Mat(n;F) \to F$ is the $^1$\textit{unique} $^2$\textit{alternating} $^3$\textit{multilinear form} s.t. $\det(I_n)=1_F$
+    \item \textbf{Unique on Field}: $\det:F^n\times \cdots\times F^n\to F$ \textit{or} $\det: Mat(n;F) \to F$ is the \textcolor{red}{$^1$\textit{unique} $^2$\textit{alternating} $^3$\textit{multilinear form} s.t. $\det(I_n)=1_F$}
     \item \textbf{Invertible on Field}: For $Mat(n;F)$, $A$ is invertible $\Leftrightarrow$ $\det(A)\ne0$ \quad $\det(A^{-1})=\det(A)^{-1}$ \quad {\scriptsize 交换环, 结论成立如果$\det(A)$在$R$中有逆}
-    \item \textbf{Similar on Field}: For $F$ field. \quad $A\sim B$ $\Rightarrow$ $\det(A)=det(P^{-1}BP)=\det(B)$ \qquad Thus, we can define: $det(f)$ for $f:V\to V$
+    \item \textcolor{red}{\textbf{Similar on Field}}: For $F$ field. \quad $A\sim B$ $\Rightarrow$ $\det(A)=det(P^{-1}BP)=\det(B)$ \qquad Thus, we can define: $det(f)$ for $f:V\to V$
     \item \textbf{Operations}: {\scriptsize If $R$ is \textit{commutative ring}}, then $\det(AB)=\det(A)\det(B)$ \quad $\det(A^T)=\det(A)$  \quad $\det(A^{-1})=\det(A)^{-1}$ \quad $\det(\overline{A})=\overline{\det(A)}$
     \item \textbf{Block Triangular}: If $A$ is block triangular, then $\det(A)=\prod_{i=1}^n\det(A_i)$ \quad {\scriptsize 即矩阵分块后如果是对角阵,行列式等于各个块的行列式乘积}
 \end{enumerate}
@@ -440,10 +472,10 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \textbf{Common Theorems in Determinant}: Let $A$ be $n\times n$ matrix. \quad $F$ be field. \quad $R$ be \textit{commutative ring}.
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item {\small \textbf{Cofactor}: In $R$, \ \ $C_{ij}:=(-1)^{i+j}\det(A\langle i,j\rangle)$ \quad {\tiny where $A\langle i,j\rangle$ 是$A$去掉第$i$行第$j$列的矩阵.} \quad \textbf{Laplace's Expansion}: In $R$, \ \ $\det(A)=\sum_{j=1}^n a_{ij}C_{ij}= \sum_{i=1}^n a_{ij}C_{ij}$}
-    \item {\small \textbf{Adjugate Matrix}: In $R$ \ \ $\text{adj}(A)$ matrix, $\text{adj}(A)_{ij}:=C_{ji}$ \quad \textbf{Cramer's Rule}: In $R$ \ \ $A\cdot\text{adj}(A)=(\det A)I_n$ \quad In $F$, $x_i=\frac{\det(A_i)}{\det(A)}$ {\tiny $A_i$代表$A$的第$i$列替换为$b$}}
+    \item {\small \textbf{Adjugate Matrix}: In $R$ \ \ $\text{adj}(A)$ matrix, $\text{adj}(A)_{ij}:=C_{ji}$ \quad \textcolor{red}{\textbf{Cramer's Rule}: In $R$ \ \ $A\cdot\text{adj}(A)=(\det A)I_n$} \quad In $F$, $x_i=\frac{\det(A_i)}{\det(A)}$ {\tiny $A_i$代表$A$的第$i$列替换为$b$}}
     \item \np \textbf{Theorem|Need proof}: In $R$, \ \ $\text{adj}(A^T)=\text{adj}(A)^T$ \quad {\tiny Hint: $\text{adj}(A^T)_{ij}=C_{ij}^{A^T}=(-1)^{i+j}\det(A^T\langle i,j\rangle)=(-1)^{i+j}\det(A\langle j,i\rangle^T)=(-1)^{i+j}\det(A\langle j,i\rangle)=C_{ji}^{A}=\text{adj}(A)_{ji}=\text{adj}(A)_{ij}^T$}
-    \item $\star$ \textbf{Invertibility of Matrix}: In $R$, matrix $A$ is invertible $\Leftrightarrow$ $\det(A)\in R^\times$ \qquad {\scriptsize e.g. $\mathbb{Z}^\times=\{\pm 1\} \ \ ; \ \ \mathbb{C}^\times,\mathbb{R}^\times,\mathbb{Q}^\times=\mathbb{C}^*,\mathbb{R}^*,\mathbb{Q}^* \ \ ; \ \ \mathbb{F}_p^\times=\mathbb{F}_p\setminus\{0\} \ \ ; \ \ \mathbb{Z}[i]=\{\pm1,\pm i\}$}
-    \item \textbf{Jacobi's Formula}, Let matrix $A$ s.t. $a_{ij}(t)$ are functions of $t$. \quad Then, $\frac{d}{dt}\det(A)=\text{tr}\left(\text{adj}A\cdot\frac{dA}{dt}\right)$
+    \item \textcolor{red}{\textbf{Invertibility of Matrix}}: In $R$, matrix $A$ is invertible $\Leftrightarrow$ $\det(A)\in R^\times$ \qquad {\scriptsize e.g. $\mathbb{Z}^\times=\{\pm 1\} \ \ ; \ \ \mathbb{C}^\times,\mathbb{R}^\times,\mathbb{Q}^\times=\mathbb{C}^*,\mathbb{R}^*,\mathbb{Q}^* \ \ ; \ \ \mathbb{F}_p^\times=\mathbb{F}_p\setminus\{0\} \ \ ; \ \ \mathbb{Z}[i]=\{\pm1,\pm i\}$}
+    \item \textcolor{red}{\textbf{Jacobi's Formula}}, Let matrix $A$ s.t. $a_{ij}(t)$ are functions of $t$. \quad Then, $\frac{d}{dt}\det(A)=\text{tr}\left(\text{adj}A\cdot\frac{dA}{dt}\right)$
 \end{enumerate}
 
 
@@ -453,13 +485,14 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \quad ps: $\ker(f-\lambda id_V)$ is the eigenspace of $E(\lambda,f)$ and it has a basis of eigenvectors $\{\vec{v}_1,...,\vec{v}_r\}$.
 
-\textbf{Existence of Eigenvalues}: For all $f:V\to V$ linear map. \ \ $^1V$ is finite-dimensional. \ \ $^1F$ is \textit{algebraically closed}. \quad $\Rightarrow$ \quad $\exists$ eigenvalues.
+\textbf{Existence of Eigenvalues}: For all $f:V\to V$ linear map. \ \ $^1V$ is finite-dimensional. \ \ \underline{$^1F$ is \textit{algebraically closed}}. \quad $\Rightarrow$ \quad $\exists$ eigenvalues.
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Characteristic Polynomial $\chi_A(x)$}: Let $R$ be \textit{commutative ring}. $A\in Mat(n;R)$. \quad $\chi_A(x):=\det(xI_n-A)\in R[x]$
 
 \quad \textbf{Relation with Eigenvalues}: If $F$ is \textit{field}, \ $A\in Mat(n;F)$. \quad $\lambda$ is eigenvalue of $A$ $\Leftrightarrow$ $\chi_A(\lambda)=0$
 
-\quad \textbf{Similar Matrix}: If $R$ is \textit{commutative ring}, \ $A,B\in Mat(n;R)$ similar. \quad $\Rightarrow$ \quad $\chi_A(x)=\chi_B(x)$ \qquad Thus: $\chi_f(x):=\chi_{_{\mathcal{A}}[f]_{\mathcal{A}}}(x)$
+\quad \textcolor{red}{\textbf{Similar Matrix}}: If $R$ is \textit{commutative ring}, \ $A,B\in Mat(n;R)$ similar. \quad $\Rightarrow$ \quad \textcolor{red}{$\chi_A(x)=\chi_B(x)$} \qquad Thus: \textcolor{red}{$\chi_f(x):=\chi_{_{\mathcal{A}}[f]_{\mathcal{A}}}(x)$}
 
 \qquad \qquad \qquad \qquad \ Moreover, if $_{\mathcal{A}}[f]_{\mathcal{A}}=A$ and $A$ is similar to $B$. \quad Then, $\exists$ basis $\mathcal{B}$ s.t. $_{\mathcal{B}}[f]_{\mathcal{B}}=B$
 
@@ -468,23 +501,27 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \qquad \qquad \quad \ {\scriptsize Suppose $f(\vec{v_k})=\sum_{i=1}^m c_{ik}\vec{w_i}+\sum_{j=m+1}^n b_{jk}\vec{v_j}$ \quad  Let $g:W\to W$ by $w\mapsto f(w)$ \quad $h:V/W\to V/W$ by $v+W\mapsto f(v)+W$ \quad $e:V/W\to W$ by $v_k + W\mapsto \sum_{i=1}^m c_{ik}\vec{w_i}$}
 
 \qquad \qquad \quad \ {\scriptsize Then: \quad $\chi_{f}(x)=\chi_{g}(x)\chi_h(x)$ \quad and \quad $_{\mathcal{B}}[f]_{\mathcal{B}}=\begin{pmatrix} _{\mathcal{A}}[g]_{\mathcal{A}} & _{\mathcal{A}}[e]_{\mathcal{C}} \\ 0 & _{\mathcal{C}}[h]_{\mathcal{C}} \end{pmatrix}= \begin{pmatrix} a_{ij} & c_{ik} \\ 0 & b_{jk} \end{pmatrix}$ \qquad ps: $f(\vec{w_j})=\sum_{i=1}^m a_{ij}\vec{w_i}$}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Triangularisability|$A$}: Let $A\in Mat(n;F)$, it is \textit{triangularisable} if $\exists P$ invertible s.t. $P^{-1}AP=U$ is upper triangular.
 
 \textbf{Triangularisability|$f$}: Let $f:V\to V$ be End. $V$ is finite-dimensional. the following are equivalent:
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item $\exists \mathcal{B}=(\vec{v}_1,...,\vec{v}_n)$ basis s.t. $f(\vec{v}_i)=\sum_{j=1}^ia_{ji}\vec{v}_j$ \quad {\scriptsize (i.e. $_{\mathcal{B}}[f]_{\mathcal{B}}$ is upper triangular.)} \qquad we say $f$ is \textit{triangularisable}
-    \item The characteristic polynomial $\chi_f(x)$ can be factored into \underline{linear factors} over $F$. \qquad {\scriptsize (ps: If $F$ is algebraically closed, then $f$ is triangularisable)}
+    \item The characteristic polynomial \textcolor{red}{$\chi_f(x)$ can be factored into \underline{linear factors} over $F$.} \qquad {\scriptsize (ps: If $F$ is algebraically closed, then $f$ is triangularisable)}
 \end{enumerate}
 
-\quad \textbf{Corollary I}: Let $A,B \in Mat(n;F)$. \quad $A$ is \textit{triangularisable} $\Leftrightarrow$ $A$ is similar (Conjugate) to a \textit{upper triangular} matrix $B$.
+\quad \textbf{Corollary I}: Let $A,B \in Mat(n;F)$. \quad \textcolor{red}{$A$ is \textit{triangularisable}} $\Leftrightarrow$ \textcolor{red}{$A$ is similar (Conjugate) to a \textit{upper triangular} matrix $B$.}
 
-\quad \textbf{Corollary II}: {\small Let $f:V\to V$ be End. $V$ is finite-dimensional. \quad $f$ is \textit{triangularisable} $\Leftrightarrow$ $\exists$ subspaces $V_0=\{0\}\subset V_1\subset\cdots\subset V_n=V$ s.t. $f(V_i)\subseteq V_i$.}
+\quad \textbf{Corollary II}: {\small Let $f:V\to V$ be End. $V$ is finite-dim. \quad $f$ is \textit{triangularisable} $\Leftrightarrow$ $\exists$ subspaces $V_0=\{0\}\subset V_1\subset\cdots\subset V_n=V$ s.t. $f(V_i)\subseteq V_i$.}
 
-\quad \textbf{Corollary III|nilpotent}: For $A\in Mat(n;F)$. $A$ is \textit{nilpotent} (i.e. $A^k=0$ for some $k$) $\Leftrightarrow$ $\chi_A(x)=x^n$
+\quad \textcolor{red}{\textbf{Corollary III|nilpotent}: For $A\in Mat(n;F)$. $A$ is \textit{nilpotent} (i.e. $A^k=0$ for some $k$) $\Leftrightarrow$ $\chi_A(x)=x^n$}
 
 \quad \textbf{Application}: {\tiny 将矩阵$A$进行三角化,可以通过:1. 求特征值,特征向量; 2. 选择一个特征向量为基(通常选最大的); 3. 拓展为$V$的基; 4. 求$A$在新基下的矩阵$B$,此时$B$按分块矩阵看应有一部分三角化; 5.对$B$未三角化的部分重复.}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Diagonalisable|$A$}: Let $A\in Mat(n;F)$. $A$ is \textit{diagonalisable} iff $\exists$ matrix $P$ s.t. $P^{-1}AP=diag$
 
 \textbf{Diagonalisable|$f$}: Let $f:V\to V$ be End, $V$ is \textit{diagonalisable} iff $\exists$ basis of $V$ consisting of eigenvectors of $f$.
@@ -496,14 +533,33 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \quad \textbf{Corollary}: If all roots of $\chi_f(x)$ are distinct, then $f$ is \textit{diagonalisable}.
 
 \textbf{LI of Eigenvectors}: {\footnotesize Let $f:V\to V$ be End. $V$ is finite-dimensional. \quad If $\lambda_1,...,\lambda_n$ are distinct $\Rightarrow$ Corresponding eigenvectors are linearly independent.}
+}}
 
-\textbf{Cayley-Hamilton Theorem}: Let $R$ be \textit{commutative ring}. $A\in Mat(n;R)$. \quad Then: for $\chi_A(x)$ \quad $\chi_A(A)=0$
+\fbox{\parbox[c]{0.98\textwidth}{
+\textcolor{red}{\textbf{Cayley-Hamilton Theorem}: Let $R$ be \textit{commutative ring}. $A\in Mat(n;R)$. \quad Then: for $\chi_A(x)$ \quad $\chi_A(A)=0$}
 
+对于Jordan 块, 考虑$J-\lambda I\to$ nilpotent. 可以得到一些多项式的性质=0
+}}
+
+\fbox{\parbox[c]{0.98\textwidth}{
+\np\footnotesize 此框为一些有关前面Ring的性质: by Euclidean algorithm
+
+\textbf{Bézout's identity}: if $gcd(f,g)=1$, then $\exists$ $a,b\in R[x]$ s.t. $af+bg=1$. 
+
+\textbf{About Ideal}: $_{R[X]}\langle f,g\rangle=\gcd(f,g)R[X]$ \quad $_{R[X]}\langle f\rangle + _{R[X]}\langle g\rangle =_{R[X]}\langle \gcd(f,g)\rangle$ \quad $_{R[X]}\langle f\rangle \cap _{R[X]}\langle g\rangle =_{R[X]}\langle \text{lcm}(f,g)\rangle$
+
+\textbf{About Quotient}: {\scriptsize 通过欧几里得算法, 可以寻找到 商空间中的元素的代表.} \quad {\scriptsize e.g. $\mathbb{F}_2[X]/\langle X^2+1\rangle=\{I, 1+I, X+I, X+1+I\}$} {\scriptsize (即所有小于Ideal deg元素|欧几里得算法得到的余数)}
+
+\textbf{Find Units in Quotient}: $g\in R/I$ is a unit iff $\gcd(f,g)=1$ 
+
+\quad (Hint: ($\Rightarrow$) $fg+I=1+I\to fg-1\in I\to fg-1=h\cdot 1 |h\cdot i\to$Euclidean algorithm; $(\Leftarrow)$ Bézout's identity + Euclidean algorithm)
+}}
 
 \section{Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint} % Inner Product Spaces | Orthogonal Complement / Proj | Adjoints and Self-Adjoint
 
 \subsection{Inner Product Spaces | Orthogonal Complement / Proj} % Inner Product Spaces | Orthogonal Complement / Proj
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Real|Complex Inner Product Space}: Let $V$ vector space over $F=\mathbb{R}| \mathbb{C}$. It is an \textit{inner product space} if $\exists$ mapping $V\times V\to \mathbb{R}| \mathbb{C}$ s.t.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -512,23 +568,27 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \item \textbf{Positive Definite}: $(\vec{x},\vec{x})\ge0$ and $(\vec{x},\vec{x})=0$ iff $\vec{x}=\vec{0}$ \qquad \quad \quad $\big|$ \qquad \qquad \qquad \qquad \qquad \quad \ {\footnotesize Complex: $(\vec{z},\lambda \vec{x} + \mu \vec{y})=\overline{\lambda}(\vec{z},\vec{x})+\overline{\mu}(\vec{z},\vec{y})$} \\
     ps: \textbf{Standard Inner Product in $\mathbb{R}^n$|$\mathbb{C}^n$}: $(\vec{x},\vec{y})=\sum_{i=1}^n x_iy_i$ \quad $(\vec{x},\vec{y})=\sum_{i=1}^n x_i\overline{y_i}$ \qquad {\scriptsize (i.e. dot product $\vec{x}\cdot\vec{y}=\vec{x}^T\vec{y}$)}
 \end{enumerate}
+}}
 
 \textbf{Special Inner Product}: If $(\vec{x},\vec{y})=\sum_{i,j} a_{ij}x_i\overline{y_j}=\vec{x}^TA\overline{\vec{y}}$ \quad where $A_{ij}=a_{ij}$
 
 \hspace{103pt} $\Rightarrow$ It is an inner product if: \ \ $^1\overline{A^T}=A$ \quad $^2\vec{x}^TA\overline{\vec{x}}\ge0,\forall \vec{x}\in\mathbb{R}^n|\mathbb{C}^n$ \quad $^3(\vec{x},\vec{x})=0$ iff $\vec{x}=\vec{0}$
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Norms}: For $\vec{x},\vec{y}\in V$ in inner product space. \quad $\|\vec{x}\|:=\sqrt{(\vec{x},\vec{x})}\geq0$ \qquad \ \ \ \textbf{Orthogonal}: $\vec{x}\perp\vec{y}$ iff $(\vec{x},\vec{y})=0$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item \textbf{Pythagoras' Theorem}: If $\vec{x}\perp\vec{y}$, then $\|\vec{x}+\vec{y}\|^2=\|\vec{x}\|^2+\|\vec{y}\|^2$. \qquad \textbf{Metric Space}: $d(\vec{x},\vec{y}):=\|\vec{x}-\vec{y}\|$.
     \item \textbf{Cauchy-Schwarz Inequality}: $|(\vec{x},\vec{y})|\leq\|\vec{x}\|\|\vec{y}\|$ \qquad \textbf{Triangle Inequality}: $\|\vec{x}+\vec{y}\|\leq\|\vec{x}\|+\|\vec{y}\|$ \qquad \textbf{Scalar}: $\|\lambda\vec{x}\|=|\lambda|\|\vec{x}\|$ \\
-    \textbf{Remark}: {\scriptsize \textit{Cauchy-Schwarz Inequality}, "=" iff $\vec{x},\vec{y}$ are linearly dependent. \quad \textit{Triangle Inequality}, "=" iff $\vec{x},\vec{y}$ are linearly dependent, and they have same direction. (i.e. $\vec{x}=\lambda\vec{y},\lambda\ge0$)}
+    {\tiny ps: \textit{Cauchy-Schwarz Inequality}, "=" iff $\vec{x},\vec{y}$ are linearly dependent. \quad \textit{Triangle Inequality}, "=" iff $\vec{x},\vec{y}$ are linearly dependent, and they have same direction. (i.e. $\vec{x}=\lambda\vec{y},\lambda\ge0$)}
 \end{enumerate}
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Orthonormal Family}: $\{\vec{v}_1,...,\vec{v}_n\}$ is \textit{orthonormal} if $^1\|\vec{v}_i\|=1$ and $^2\vec{v}_i\perp\vec{v}_j$ for $i\ne j$. {\scriptsize (i.e. $(\vec{v}_i,\vec{v}_j)=\delta_{ij}$)} \quad {\scriptsize If it is basis, then it is \textbf{orthonormal basis}.}
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Observations}: \textbf{I}. {\small For $\{\vec{v}_1,...,\vec{v}_n\}$ orthonormal basis. \quad $\vec{v}=\sum_{i=1}^n(\vec{v},\vec{v}_i)\vec{v}_i$.} \qquad \textbf{II}. {\scriptsize For orthonormal Family, 可直接用勾股定理. $\Rightarrow$ 证明basis只需要证span.}
+    \item \textbf{Observations}: \textbf{I}. {\small For $\{\vec{v}_1,...,\vec{v}_n\}$ orthonormal basis. \quad \textcolor{red}{$\vec{v}=\sum_{i=1}^n(\vec{v},\vec{v}_i)\vec{v}_i$.}} \qquad \textbf{II}. {\scriptsize For orthonormal Family, 可直接用勾股定理, and 很明显LI}
     \item \textbf{Theorem}: {\small Every \underline{finite}-dimensional inner product space has an orthonormal basis.}
     \item \textbf{Gram-Schmidt Process}: Let $\{\vec{v}_1,...,\vec{v}_n\}$ be basis of $V$. By using following way to get orthonormal basis: \\
     \vspace{-25pt}
@@ -544,6 +604,7 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
     \end{multicols}
     \vspace{-10pt}
 \end{enumerate}
+}}
 
 \textbf{Orthogonal Set}: For subset $T$ of vector space $V$. \textbf{Set Orthogonal to $A$} is $A^\perp:=\{\vec{v}\in V:\vec{v}\perp\vec{a},\forall\vec{a}\in A\}$
 
@@ -555,10 +616,10 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 \textbf{Orthogonal Projection}: Let $V$ be inner product space. \quad $U$ be subspace of $V$, with orthonormal basis $\{\vec{e}_1,...,\vec{e}_m\}$. 
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item Then: \textit{orthogonal projection} $\pi_U:V\to V$ by $\vec{v}\mapsto\sum_{i=1}^m(\vec{v},\vec{e}_i)\vec{e}_i$
+    \item Then: \textcolor{red}{\textit{orthogonal projection} $\pi_U:V\to V$ by $\vec{v}\mapsto\sum_{i=1}^m(\vec{v},\vec{e}_i)\vec{e}_i$}
     \item \textbf{I}. $\pi^2_U=\pi_U$ \qquad \textbf{II}. $\ker(\pi_U)=U^\perp$ \quad and \quad $\text{Im}(\pi_U)=U$ \qquad \textbf{III}. $\pi_U|_U=id_U$
     \item \textbf{Orthogonal Decomposition}: For all $\vec{v}\in V$, $\vec{v}=(\vec{v}-\pi_U(\vec{v}))+\pi_U(\vec{v})$ where $(\vec{v}-\pi_U(\vec{v}))\perp \pi_U(\vec{v})$.
-    \item \textbf{Closest Approximation}: Since $\|\vec{v}-\vec{u}\|^2=\|\vec{v}-\pi_U(\vec{v})\|^2+\|\pi_U(\vec{v})-\vec{u}\|^2$ \quad $\Rightarrow$ \quad $\vec{u}=\pi_U(\vec{v})$ is the closest vector in $U$ to $\vec{v}$.
+    \item \textcolor{red}{\textbf{Closest Approximation}}: Since $\|\vec{v}-\vec{u}\|^2=\|\vec{v}-\pi_U(\vec{v})\|^2+\|\pi_U(\vec{v})-\vec{u}\|^2$ \quad $\Rightarrow$ \quad $\vec{u}=\pi_U(\vec{v})$ is the closest vector in $U$ to $\vec{v}$.
 \end{enumerate}
 
 
@@ -771,5 +832,6 @@ $\cdot$ \textbf{Decomposes}: If $F$ field is \textit{algebraically closed} $\Rig
 
 \textbf{Def of Direct Sum}: {\footnotesize $U_1,...,U_k$ subspaces of $V$. $V=U_1\oplus\cdots\oplus U_k$ \ \ if \ \ $^1V=U_1+U_2+\cdots+U_k$ \quad $^2u_1+u_2+\cdots+u_k=0$ \quad $\Rightarrow$ $u_1=u_2=\cdots=u_k=0$ \ $u_i\in U_i$}
 
+\star \textbf{Useful Tool}: \textcolor{red}{$A\vec{v}=\vec{0}$ for $\vec{v}\ne\vec{0} \Leftrightarrow \det(A)=0$}
 
 \end{document}
