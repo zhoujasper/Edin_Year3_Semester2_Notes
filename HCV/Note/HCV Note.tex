@@ -98,7 +98,7 @@ $\cdot$ \textbf{Operations on Argument}: $arg(z_1z_2)=arg(z_1)+arg(z_2)$ \quad $
 
 $\cdot$ \textbf{Lemma|Important}: $\lim_{z\to z_0} f(z)$ $\Leftrightarrow$ $\lim_{(x,y)\to(x_0,y_0)} u(x,y)=Re(a_0)$ and $\lim_{(x,y)\to(x_0,y_0)} v(x,y)=Im(a_0)$
 
-$\cdot$ \textbf{Useful Formula}: $\lim_{z\to z_0}g(\ \overline{z} \ )=\lim_{z\to\overline{z_0}}g(z)$
+$\cdot$ \textbf{Useful Formula}: $\lim_{z\to z_0}g(\ \overline{z} \ )=\lim_{z\to\overline{z_0}}g(z)$ \qquad $\lim_{z\to z_0}\overline{f(z)}=\overline{\lim_{z\to z_0}f(z)}$
 
 \textbf{continuous of Function}: $f$ is continuous at $z_0$ if: \ $\forall\varepsilon>0,\exists\delta>0$ s.t. $|z-z_0|<\delta\Rightarrow |f(z)-f(z_0)|<\varepsilon$ \quad {\scriptsize continuous rules 依旧成立}
 
@@ -211,7 +211,8 @@ $\cdot$ If $Log_{\phi}(z)$ is holomorphic on $D_{\phi}$, then $Log_{\phi}(z-a)$ 
 \textbf{Mobius Transformation}: A Mobius Transformation is a function form: $f(z)=\frac{az+b}{cz+d}$ where $a,b,c,d\in\mathbb{C} \ ; \ ad\ne bc$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Remark}: $g(z)=\frac{f(z)}{\sqrt{ad-bc}}$ satisfies $ad-bc=1$ \quad $\big|$ \quad If $a,b,c,d$ defined a mobius transformation, then $\lambda a,\lambda b,\lambda c,\lambda d$ also.
+    \item \textbf{Remark}: $g(z)=\frac{\frac{1}{\sqrt{ad-bc}}(az+b)}{\frac{1}{\sqrt{ad-bc}}(cz+d)}$ satisfies $ad-bc=1$ \quad $\big|$ \quad If $a,b,c,d$ defined a mobius transformation, then $\lambda a,\lambda b,\lambda c,\lambda d$ also.
+    \item \textbf{Useful Property}: For $f(z)=\frac{az+b}{cz+d}$, $M=\frac{1}{ad-bc}${\scriptsize $\begin{pmatrix} a & b \\  c & d\end{pmatrix}$} \qquad and $f^{-1}(z)=\frac{dz-b}{-cz+a}$ \quad $\big|$ \quad {\scriptsize Why $ad-bc\ne0$: $f'(z)\ne0 \ \forall z\in\mathbb{C}$ iff $ad-bc\ne0$}
     \item For Complex Matrix: $M=\begin{pmatrix}a & b \\ c & d\end{pmatrix}$ with $\det(M) = ad-bc=1$. \quad We define $f_{M}=\frac{az+b}{cz+d}$ \qquad $\begin{matrix}\textbf{I}. f_{M_1M_2}=f_{M_1}f_{M_2} \\ \textbf{II}. f_{M^{-1}}=f_M^{-1} \qquad \end{matrix}$
     \item Extended $f(z)$ from $\mathbb{C}$ to $\widetilde{\mathbb{C}}$ by: $f(-\frac{d}{c})=\infty$ and $f(\infty)=\frac{a}{c}$
     \item {\footnotesize \textbf{Translation}: $f(z)=z+b\Leftrightarrow \begin{pmatrix}1 & b \\ 0 & 1\end{pmatrix}$ \quad \textbf{Rotation}: $f(z)=az,a=e^{i\theta} \ (|a|=1)\Leftrightarrow \begin{pmatrix}e^{i\theta/2} & 0 \\ 0 & -e^{i\theta/2}\end{pmatrix}$ \quad \textbf{Dilation}: $f(z)=rz,r>0 \Leftrightarrow \begin{pmatrix}\sqrt{r} & 0 \\ 0 & 1/\sqrt{r}\end{pmatrix}$} \\
@@ -236,7 +237,7 @@ $\cdot$ If $Log_{\phi}(z)$ is holomorphic on $D_{\phi}$, then $Log_{\phi}(z-a)$ 
     \item \textbf{Rotation}: $f(z)=e^{-i\theta}z$ is a rotation by $\theta$ (anticlockwise) about the origin. \qquad Specially, $f(z)=iz$ is a rotation by $\frac{\pi}{2}$
     \item \textbf{Extend}: $f(z)=\exp(\alpha z)$ {\small 原来的图像进行拉长,以及旋转(如果带$\theta$带$i$时)} e.g. $\{z:0<Im(z)<1\}$ {\small 可以被拉长到$\{z:0<Im(z)\}$}
     \item \textbf{Angle Extend}: $f(z)=z^{\alpha}$ {\small 原来的图像辐角范围收缩或放大}
-    \item \textbf{Circlines}: {\small \textbf{I}. 单位圆到实轴, $f(z)=\frac{z-i}{z+i}$ \quad \textbf{II}. 实轴到单位圆, $f(z)=i\frac{1+z}{1-z}$ \textbf{III}. 单位圆到虚轴, $f(z)=\frac{z-1}{z+1}$ \quad \textbf{IV}. 虚轴到单位圆, $f(z)=\frac{1+iz}{1-iz}$}
+    \item \textbf{Circlines}: {\small \textbf{I}. 实轴到单位圆, $f(z)=\frac{z-i}{z+i}$ \quad \textbf{II}. 单位圆到实轴, $f(z)=i\frac{1+z}{1-z}$ \textbf{III}. 虚轴到单位圆, $f(z)=\frac{z-1}{z+1}$ \quad \textbf{IV}. 单位圆到虚轴, $f(z)=\frac{1+z}{1-z}$}
 \end{enumerate} 
 
 \textbf{Cross-Ratio}: cross-ratio $[z_1,z_2,z_3,z_4]:=f(z_1)$ where $f$ is mobius transformation s.t. $f(z_2)=1,f(z_3)=0,f(z_4)=\infty$
@@ -379,14 +380,14 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \textbf{Criteria Constant Function}: If $f:\mathbb{C}(or \ D)\to\mathbb{C}$ is \textit{holomorphic} and \textit{bounded} on: \qquad\qquad $D$ domain
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item \textbf{Liouville's Theorem}: $|f(z)|<M$ \textit{bounded} on $\forall z \in \mathbb{C}$, \ $\Rightarrow$ \ $f(z)$ is \textit{constant}.
+    \item \textbf{Liouville's Theorem}: $|f(z)|<M$ \textit{bounded} on $\forall z \in \mathbb{C}$, \ $\Rightarrow$ \ $f(z)$ is \textit{constant}. \qquad {\scriptsize ps: 此定理通过Generalised Cauchy Formula + ML Lemma 得到}
     \item \textbf{Maximum Modulus Principle}: $|f(z)|$ \textit{bounded} on $\forall z \in D$, and $|f(z)|$ has \textit{maximum} at $z_0\in D$. \ $\Rightarrow$ \ $f(z)$ is \textit{constant}. \\
     \textbf{Remark I}: {\footnotesize 意思是对于$f(z)$ holomorphic且在domain上bounded,如果 $|f(z)|$ 在domain上有最大值(非边界),那么$f(z)$是constant.} \\
     \textbf{Remark II} : $\star$ If function $f$ is \textit{holomorphic} on a \textit{bounded domain} $D$ and \textit{continuous} up to the boundary of $D$. \\
     $\Rightarrow$ \ $f$ has \textit{maximum} modulus on the boundary of $D$. \qquad {\tiny 若\( f \) 在 \( D \) 内全纯,且在 \( \partial D \) 上连续,则 \( f \) 在$D\cup\partial D$最大值一定在边界上.特别地,若 \( f \) 不是常数,则最大值只能在边界上取到.}
     \item {\small \textbf{Maximum/Minimum Principle for Harmonic Functions}: If $D$ domain, $\phi:D\to\mathbb{R}$ is \textit{harmonic}, and $\phi$ is \textit{bounded above/below} on $D$ by $M$,} \\
     {\small with $\phi(z_0)=M$ for some $z_0\in D$.} \ $\Rightarrow$ \ $\phi$ is \textit{constant} on $D$. \\
-    \textbf{Remark}: {\footnotesize 对于调和函数$\phi:D\to\mathbb{R}$,如果$f$不是常数,那么最大值只能在边界上取到.}
+    \textbf{Remark}: {\footnotesize 对于调和函数$\phi:D\to\mathbb{R}$,如果$f$不是常数,那么最大值/最小值,只能在边界上取到.}
 \end{enumerate}
 
 \textbf{Fundamental Theorem of Algebra}: If $P:\mathbb{C}\to\mathbb{C}$ is a non-constant \textit{polynomial}. \ $\Rightarrow$ \ $P$ has a at least one \textit{root} in $\mathbb{C}$.
@@ -516,6 +517,8 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
     \end{enumerate}
 \end{enumerate}
 
+\star\textbf{Singularities at Infinity}: In order to study the \textit{singularities of $f(z)$ at infinity}, we can consider $f(\frac{1}{z})$ at point $z=0$.
+
 \textbf{Analytic Continuation}: Let $D\subseteq\widetilde{D}\subseteq\mathbb{C}$, $f:D\to\mathbb{C}$ is \textit{holomorphic}, and $F:\widetilde{D}\to\mathbb{C}$ is \textit{holomorphic}.\quad $F(z)=f(z)$ for all $z\in D$.
 
 \textbf{Identity Theorem|Disk-zero}: Let $D$ \textit{domain}, $z_0\in D$, $f$ is \textit{holomorphic} on $D$, $f(z)=0,\forall z\in D_{R}(z_0)$ \ \ $\Rightarrow$ \ \ $f(z)=0,\forall z\in D$.
@@ -616,22 +619,7 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 \textbf{Theorem}: Let $\Gamma$ be \textit{loop} with $0\in\text{Int}(\Gamma)$. Then $\begin{pmatrix}n \\ k\end{pmatrix}=\frac{1}{2\pi i}\int_\Gamma\frac{(1+z)^n}{z^{k+1}}dz$
 
 
-\section{Appendix}
-
-\subsection{Convergence Test for Real Series} % Convergence Test for Real Series
-
-\textbf{Divergence Test}: If $\lim a_n\ne 0 \Rightarrow \sum a_n$ diverges. \ \ (If $\sum a_n$ convergent $\Rightarrow \lim a_n=0.$) \qquad \textbf{p-Test}: $\sum \frac{1}{n^p}$ convergent iff $p>1$
-
-\textbf{Comparison Test}: If $0<a_n<b_n$, $\sum b_n$ convergent $\Rightarrow \sum a_n$ also ; $\sum a_n$ divergent $\Rightarrow \sum b_n$ also.
-
-\textbf{Integral Test}: Let $f:[1,\infty)\rightarrow\mathbb{R}$ is 非负递减, $a_n=f(n)$. Then $\sum a_n$ converges iff $\int_{1}^{\infty}f(x)dx<\infty.$
-
-\textbf{Absolutely Convergence}: $\sum a_n$ convergent absolutely iff $\sum |a_n|$ convergent. \ \ \textbf{If convergent abs $\Rightarrow$ convergent.}
-
-\textbf{Alternating Series Test}: If $a_n$ decreasing, $a_n\geq 0,\lim a_n = 0$. Then $\sum (-1)^{n-1}a_n$ convergent.
-
-\textbf{Cauchy's Condensation Test}: If $a_n\geq 0,a_n$ decreasing, $\Rightarrow \ [\ \sum a_n convergent \Leftrightarrow \sum 2^na_{2^n} \ also \ ]$
-
+\section{Appendix} % Appendix
 
 \subsection{Series}
 
@@ -640,6 +628,8 @@ $\cdot$ \textbf{Positive-Oriented}: {\small If $\Gamma$ is a \textit{loop}, then
 {\scriptsize \qquad Moreover, need try to construct $\frac{1}{1-(\frac{z-z_0}{R})}$ if it's holomorphic on $D_{R}(z_0)$. \qquad or: $\frac{1}{1-\frac{1}{z-z_0}}$ if it's holomorphic on $A_{1,\infty}(z_0)$.}
 
 \textbf{Taylor Series for Familiar functions}: {\scriptsize $\exp(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!}$ \quad $\sin(z)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}z^{2n+1}$ \quad $\cos(z)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}z^{2n}$ all of them have \textit{infinite radius of convergence}.}
+
+\textbf{Check sin/cos answer}: If $a^2>b^2+c^2$ $\int_0^{2\pi}\frac{1}{a+b\sin(\theta)+c\cos(\theta)}d\theta=\frac{2\pi}{\sqrt{a^2-b^2-c^2}}$ \qquad If $a>|b|$, $\int^\pi_0\frac{1}{(a+b\cos(\theta))^2}d\theta=\frac{\pi a}{(a^2-b^2)^{\frac{3}{2}}}$
 
 
 \subsection{Other}
