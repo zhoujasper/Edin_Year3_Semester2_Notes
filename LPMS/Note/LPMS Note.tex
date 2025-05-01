@@ -58,10 +58,11 @@
 \fontsize{10pt}{11pt}\selectfont
 \setlength{\parindent}{8pt}
 
+\section{Definition of LP and General LP} % Definition of LP and General LP
 
-\section{General LP} % General Linear Programming Problem
+\subsection{Definition of LP}
 
-\textbf{General LP Problem}: {\small \textbf{Decision Variables}: $x_i$ \quad \textbf{parameters}: $a_{ij},b_i,c_i$ \quad \textbf{Objective Function}: $f$ \quad \textbf{Constraints}: {\small subject to 后边的部分}}
+\textbf{Linear Programming (LP)}: {\small Let \ \ $x_i$: \textbf{Decision Variables} \quad $a_{ij},b_i,c_i$: \textbf{parameters} \quad $f$: \textbf{Objective Function} \quad} {\scriptsize\textbf{Constraints}: subject 后的限制条件}
 
 \vspace{-9pt}
 \begin{multicols}{2}
@@ -117,13 +118,22 @@
     \end{aligned}
     \]
 \end{multicols}
+\vspace{-9pt}
 
-\vspace{-15pt}
-\textbf{Feasible Solution}: If $\mathbf{x}$ satisfies all constraints (i.e. $A\mathbf{x}\leq\mathbf{b}$), then $\mathbf{x}$ is a feasible solution. {\footnotesize (可行解)}\quad \textbf{Optimal Sol}: {\footnotesize (最优解) (可多个)}
+At this time, we have the following definitions:
 
-\textbf{Find Optimal Solution}: \textbf{Graphical Method}: {\footnotesize 略.} \quad \textbf{Vertex Enumeration}: {\footnotesize 所有顶点检查, 找出最优解.} \quad \textbf{Simplex Method}: {\footnotesize 后面详述.}
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Feasible Solution}: 可行解, 满足所有约束条件的解. (i.e. $A\mathbf{x}\leq\mathbf{b}$)
+    \item \textbf{Optimal Solution}: 最优解 (可多个)
+    \item \textbf{Feasible Region}: 可行域, 所有可行解的集合.
+\end{enumerate}
 
-\textbf{Slack Variables}: For each inequality constraint, we introduce a slack variable $x_i$ ($i>n$) to convert it to an equation. {\footnotesize (松弛变量)}
+\textbf{Find Optimal Solution}: \textbf{Graphical Method} \quad or \quad \textbf{Simplex Method}
+
+
+\subsection{General LP Problem}
+
+\textbf{Slack Variables}: 对每个不等式约束, 各引入(Slack Variables) $x_i$ ($i>n$) 来将其转化为\textit{等式}约束. (i.e. $A\mathbf{x}\leq\mathbf{b}$ $\Rightarrow$ $\overline{A}\mathbf{x}=\mathbf{b}$)
 
 \vspace{-9pt}
 \begin{multicols}{2}
@@ -132,10 +142,10 @@
     \[
     \begin{aligned}
         \text{maximize} \quad \ \ f = & c_1x_1 + c_2x_2 + \cdots + c_nx_n & \\
-        \text{subject to} \quad \qquad & a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n + x_{n+1} = b_1 & \\
-                                & a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n + x_{n+2} = b_2 & \\
+        \text{subject to} \quad \qquad & a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n + \textcolor{red}{x_{n+1}} = b_1 & \\
+                                & a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n + \textcolor{red}{x_{n+2}} = b_2 & \\
                                 & \vdots & \\
-                                & a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n + x_{n+m} = b_m & \\
+                                & a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n + \textcolor{red}{x_{n+m}} = b_m & \\
                                 & x_1 \geq 0, x_2 \geq 0, \cdots, x_{n+m} \geq 0 &
     \end{aligned}
     \]
@@ -168,73 +178,147 @@
     \end{aligned}
     \]
 
-    \vspace{-20pt}
-    \textbf{Solving}: $\mathbf{x}=\mathbf{x}_b+\mathbf{v}$ where $\overline{A}\mathbf{v}=0$ and $\mathbf{x}_b=[\mathbf{0} \ \mathbf{b}]^T$
-
 \end{multicols}
+\vspace{-5pt}
 
-\vspace{-15pt}
-\textbf{Feasible Region}: {\small It's the set $K$ of the solutions to $\overline{A}\mathbf{x}=\mathbf{b}$} \quad \textbf{Convex Set}: {\small The set $K$ is convex if $\forall \mathbf{x},\mathbf{x'}\in K$, $\forall\theta\in[0,1],\mathbf{x}_{\theta}=(1-\theta)\mathbf{x}+\theta\mathbf{x'}\in K$.}
+\fbox{\parbox[c]{0.98\textwidth}{
+At this time, we have the following definitions:
 
-\textbf{Vertex on Convex Set}: {\footnotesize A vertex of the convex set $K$ is a point $\mathbf{x}\in K$ which doesn't lie strictly inside any line segment connecting two points in $K$.}
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Basic Solution}: Solution of $\overline{A}\mathbf{x}=\mathbf{b}$. \ \ $\rightarrow$ \ \ 得到: $\mathbf{x}_B,\quad \mathbf{x_N}=0${\scriptsize (要求)} \quad (不一定$\mathbf{x}\geq\mathbf{0}$, \quad $\mathbf{x}_B$不一定$\geq0$) \\
+    {\scriptsize ps: 只有 把某一组 $m$ 个线性无关列选为基，令其余变量固定为 $0$ 后求得的那一个唯一向量 才叫 Basic Solution}
+    \item \textbf{Basic Feasible Solution (BFS)}: If a Basic Solution $\mathbf{x}_B,\mathbf{x_N=0}$ have: $\mathbf{x}_B\geq0$, then $\mathbf{x}$ is a Basic Feasible Solution.
+    \item {\small \textbf{Basic Variables}: $\mathbf{x}_B$ \quad \textbf{Nonbasic Variables}: $\mathbf{x}_N$ \quad \textbf{Basic Matrix}: $B$ \quad \textbf{Nonbasic Matrix}: $N$ \quad \textbf{Basic Index}: $\mathcal{B}$ \quad \textbf{Nonbasic Index}: $\mathcal{N}$} \\
+    {\scriptsize ps: 均为人为规定 $\mathcal{B}$ 和 $\mathcal{N}$ 后得到.}
+\end{enumerate}
+}}
 
-$\cdot$ \textbf{Theorem}: {\small If LP has a unique optimal solution is a vertex.} \quad \quad \textbf{Theorem}: {\small If LP has a non-unique solution, $\exists$ optimal solution at vertex}
+\fbox{\parbox[c]{0.98\textwidth}{
+For the LP problem, we consider the following:
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{Convex Set}: Set $K$ is convex if, for any two points $\mathbf{x},\mathbf{x'}\in K$, the line segment $\mathbf{x}_\theta=\theta\mathbf{x}+(1-\theta)\mathbf{x'}$ for $\theta\in[0,1]$ is also in $K$.
+    \item \textbf{Vertex of a Convex Set}: A vertex of a convex set $K$ is a point $\mathbf{x}\in K$ such that it does not lie strictly within any line segment joining two points in $K$. \qquad ({\scriptsize ps: there are $\frac{(m+n)!}{m!n!}$ vertices for LP problem})
+    \item \textbf{Theorem I}: If LP has a unique optimal solution, then it is a vertex. \qquad \textcolor{red}{(optimal $\leftrightarrow$ vertex)}
+    \item \textbf{Theorem II}: If LP has a non-unique solution, $\exists$ optimal solution at vertex. \qquad \textcolor{red}{(optimal $\leftrightarrow$ vertex)}
+\end{enumerate}
+
+\textbf{Remark}: \textcolor{red}{BFS and Vertices are NOT 1-1} (与它是否是唯一optimal solution 无关!) \\ \star \ Happened if one of \textit{basic variables} of \textit{optimal solution} is zero. $\rightarrow$ Referred as \textbf{degenerate}.
+}}
 
 
 \section{Simplex Method} % Simplex Method
 
+\subsection{Some Definitions}
+
+For LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}\le\mathbf{b}$ \quad $\mathbf{x}\geq0$
+
+By adding slack variables, we can write it as: max $f=\overline{\mathbf{c}}^T\mathbf{x}$ \quad s.t. $\overline{A}\mathbf{x}=\mathbf{b}$ \quad $\mathbf{x}\geq0$
+
+\fbox{\parbox[c]{0.98\textwidth}{
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{We can define Index}: $\mathcal{B},\mathcal{N}$
+    \item \textbf{Basic Matrix}: $B$ (整个 $\overline{A}$ 中在 index $\mathcal{B}$ 中的列) \quad \textbf{Nonbasic Matrix}: $N$ (整个 $\overline{A}$ 中在 index $\mathcal{N}$ 中的列) \quad \textcolor{red}{$\overline{A}\rightarrow[B \ N]$}
+    \item \textbf{Basic Variables}: $\mathbf{x}_B$ (对应 $B$ 列因有的变量) \quad \textbf{Nonbasic Variables}: $\mathbf{x}_N$ (对应 $N$ 列因有的变量) \quad {\scriptsize \textcolor{red}{$\mathbf{x}\to\begin{pmatrix}\mathbf{x}_B \\ \mathbf{x}_N\end{pmatrix}$}}
+    \vspace{-5pt}
+    \item \textbf{Matrix Cost}: $\mathbf{c}_B$ ($f$中对应 $\mathbf{B}$ 变量的系数) \quad \textbf{Nonbasic Cost}: $\mathbf{c}_N$ ($f$中对应 $\mathbf{N}$ 变量的系数) \quad {\scriptsize \textcolor{red}{$\overline{\mathbf{c}}\rightarrow\begin{pmatrix}\mathbf{c}_B \\ \mathbf{c}_N\end{pmatrix}$}}
+    \vspace{-5pt}
+    \item \textbf{Other}: \textcolor{red}{$\overline{A}\mathbf{x}=\mathbf{b}\Leftrightarrow B\mathbf{x}_B+N\mathbf{x}_N=\mathbf{b}$} \quad || \quad Let \textcolor{red}{$\widehat{\mathbf{b}}=B^{-1}\mathbf{b}$ \quad $\widehat{N}=B^{-1}N$} \quad || \quad Thus \textcolor{red}{$\mathbf{x}_B=\widehat{\mathbf{b}}-\widehat{N}\mathbf{x}_N$}
+    \item \textbf{Objective Value}: \textcolor{red}{$f=\overline{\mathbf{c}}^T\mathbf{x}=\mathbf{c}_B^T\mathbf{x}_B+\mathbf{c}_N^T\mathbf{x}_N=\widehat{f}+\widehat{c}^T_N\mathbf{x}_N$} \qquad where \textcolor{red}{$\widehat{f}=\mathbf{c}^T_B\widehat{b}$ \quad $\widehat{\mathbf{c}}_N=\mathbf{c}_N-\widehat{N}\mathbf{c}_B=\mathbf{c}_N-N^TB^{-T}\mathbf{c}_B$}
+\end{enumerate}
+}}
+
+\star \ {\small \textbf{Remark}: For \textit{Basic Solution}, we let $\mathbf{x_B}=\widehat{\mathbf{b}}$ and $\mathbf{x_N}=\mathbf{0}$. \qquad \textbf{Remark}: If basic Solution have $\widehat{\mathbf{b}}\geq0$, it is a \textbf{Basic Feasible Solution (BFS)}.}
+
+\star \ {\small \textcolor{red}{\textbf{Theorem}: If BFS have: $\widehat{\mathbf{c}}_N\leq0$, it is an \textbf{Optimal Solution}}}
+
+\newpage
+
+
 \subsection{Simplex Algorithm}
 
-\textbf{Solve LP Problem}: Assume $f=\overline{\mathbf{c}}^T\mathbf{x}$ with $\overline{A}\mathbf{x}=\mathbf{b}$ and $\mathbf{x}\geq0$.
+\fbox{\parbox[c]{0.98\textwidth}{
+\textbf{An Initial BFS}: Try $\mathcal{B}=\{n+1,...,n+m\}$ and $\mathcal{N}=\{1,...,n\}$ \ \ $\Rightarrow$ \ \ $B=I,N=A$ , $\mathbf{x}_B=\widehat{\mathbf{b}}=\mathbf{b}$, $\mathbf{x}_N=\mathbf{0}$, $\mathbf{c}_B=\mathbf{0}$, $\mathbf{c}_N=\mathbf{c}$
 
-\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item {\footnotesize 修改$x_i$/列顺序,$A$中换顺序后得到可逆的$B_{m\times m}$ \ \ $\Rightarrow$ \ \ $\overline{A}\mathbf{x}=\mathbf{b}\Leftrightarrow B\mathbf{x}_B+N\mathbf{x}_N=\mathbf{b}$ \quad $\overline{\mathbf{c}}\rightarrow[\mathbf{c}_B \ \mathbf{c}_N]^T$ \ \ $\overline{A}\rightarrow[B \ N]$ \ \ $\mathbf{x}\to[\mathbf{x}_B \ \mathbf{x}_N]^T$ \quad Let $\widehat{\mathbf{b}}=B^{-1}\mathbf{b}$ \ \ $\widehat{N}=B^{-1}N$}
-    \item \textbf{Solution}: $\mathbf{x}_B=\widehat{\mathbf{b}}-\widehat{N}\mathbf{x}_N$ \quad \quad If $\mathbf{x}_N=0$ $\Rightarrow$ It's a basic solution. {\scriptsize (But we need to check whether $\mathbf{x}_B\geq0$)} \quad \quad {\scriptsize Using $\mathcal{B},\mathcal{N}$: Index set of independent/else.}
-    \item \textbf{Basic Variables}: $\mathbf{x}_B$ \quad \textbf{Nonbasic Variables}: $\mathbf{x}_N$
-    \item \textbf{At Basic Solution}: $\mathbf{x}_B=\widehat{\mathbf{b}},\mathbf{x}_N=\mathbf{0}$ \quad $\Rightarrow$ \quad If $\widehat{\mathbf{b}}\geq0$. Corresponding $\mathbf{x}$ is: $^1$ vertex of $K$; \ \ $^2$ \textbf{Basic Feasible Solution (BFS)}
-    \item \textbf{Basic Costs}: $\mathbf{c}^T_B$ \quad \textbf{Nonbasic Costs}:$\mathbf{c}^T_N$ \quad \textbf{Reduced Costs}: $\widehat{\mathbf{c}}_N=\mathbf{c}_N -\widehat{N}^T\mathbf{c}_B=\mathbf{c}_N-N^TB^{-T}\mathbf{c}_B$ \quad $\widehat{f}=\mathbf{c}_B^T\widehat{\mathbf{b}}$ \quad \quad $\mathbf{x}_B,\mathbf{x}_N\geq0$
-    \item \textbf{Objective Value}: $f=\overline{\mathbf{c}}^T\mathbf{x}=\mathbf{c}^T_B\mathbf{x}_B+\mathbf{c}^T_N\mathbf{x}_N=\widehat{f}+\widehat{\mathbf{c}}_N^T\mathbf{x}_N$ \quad \quad If $\widehat{\mathbf{c}}_N\leq0$, then $f\leq\widehat{f}$ \ \ $\Rightarrow$ \ \ Corresponding $\mathbf{x}$ is optimal.
-    \item If $\widehat{\mathbf{c}}_N\leq0$ doesn't hold, we using \textbf{Simplex Algorithm}.
-\end{enumerate}
+\qquad \textbf{Corollary}: If $\widehat{\mathbf{b}}=\mathbf{b}\geq0$, it's a BFS.
+}}
 
+
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Simplex Algorithm}:
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item {\small \textbf{Initial Basic Feasible Solution}: Try $\mathcal{B}=\{n+1,...,n+m\}$ and $\mathcal{N}=\{1,...,n\}$ \ \ $\Rightarrow$ \ \ $B=I,N=A$ , $\mathbf{x}_B=\widehat{\mathbf{b}}=\mathbf{b}$, $\mathbf{x}_N=\mathbf{0}$, $\mathbf{c}_B=\mathbf{0}$, $\mathbf{c}_N=\mathbf{c}$}
-    \item If $\mathbf{b}\geq0$. $\Rightarrow$ Basis is feasible + cont. \qquad Else: Basis $B$ is not feasible. \quad Go to ``Cases If $\mathbf{b}\ngeq0$``
-    \item If $\widehat{\mathbf{c}}_N\leq0. \Rightarrow$ Optimal Solution \qquad Else: cont.
-    \item Let $q'\in\mathcal{N}$ {\small 对应$\widehat{\mathbf{c}}_N$中最大positive分量的index} \quad {\small 同理,对应的最大正分量值为$\widehat{c_q}$} \quad {\small 对应的variable为$x_{q'}$} \quad {\small 对应$N$中的[$q$]列为$\mathbf{a}_q$}
-    \item Let $\widehat{\mathbf{a}_q}=B^{-1}\mathbf{a_q}$. \qquad If $\widehat{\mathbf{a}_q}\leq0$ $\Rightarrow$ LP is unbounded. \qquad Else: LP is bounded + cont.
-    \item Let $p'\in\mathcal{B}$ \ be the index corresponding to $p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$ {\scriptsize $p$是对应的index,not value} \qquad \quad {\small 用$\overline{\alpha}=\frac{\widehat{b_p}}{\widehat{a}_{pq}}$代表值}\\
-    $\widehat{b_i},\widehat{a}_{iq}$ {\small 代表$\widehat{\mathbf{b}}$的第$i$个分量, $\widehat{\mathbf{a}_q}$的第$i$个分量} \\
-    {\small $p'$代表能使$\frac{\widehat{b_i}}{\widehat{a}_{iq}}$的值最小的index,前提条件是$\widehat{a}_{iq}>0$} \qquad \qquad {对应的variable为$x_{p'}$}
-    \item Exchange $p'$ and $q'$ between $\mathcal{B}$ and $\mathcal{N}$ \ \ $\Rightarrow$ \qquad Update $\mathcal{B},\mathcal{N},B,N,\widehat{\mathbf{b}},...$ \quad {\scriptsize ps: New $B := B + (a_q - B e_p) e_p^T$}
-    \item Go to 3.
+    \item If \textbf{An Initial BFS} is BFS$\to$\ref{simplex.2} \quad || \quad If we have an BFS$\to$\ref{simplex.2} \quad || \quad Else: Go to \textbf{Phase I Problem}
+    \item\label{simplex.2} If $\widehat{\mathbf{c}}_N\leq0. \Rightarrow$ Optimal Solution \quad || \quad Else: Go to \ref{simplex.3}
+    \item\label{simplex.3} Let $q\in$ (local index in $N$) \ \ ; \ \ $q'\in \mathcal{N}$ (global index) \quad || \quad $\widehat{c}_i:=\widehat{\mathbf{c}}_N$中第i个分量($\widehat{c}_i:=\widehat{\mathbf{c}}_N^T\mathbf{e}_i$) \quad || \quad such that: 
+    
+    $\widehat{c}_q=\widehat{\mathbf{c}}_N$中最大的正的分量 {\scriptsize ($c_q=\arg\max_{i=1,...,n \ ; \ c_i>0} \widehat{c}_i$)} \quad ; \quad $q'$ is the index corresponding to $q$ in $\mathcal{N}$ {\footnotesize (对应的在$\mathcal{N}$的index(global index))}
+    
+    Thus, we find $q,q'$ \qquad Go to \ref{simplex.4}
+
+    \item\label{simplex.4} Let $p\in$ (local index in $B$) \ \ ; \ \ $p'\in\mathcal{B}$ (global index) \quad || \quad $\mathbf{a}_q:=N$中的第q列($\mathbf{a}_q=N\mathbf{e}_q$) \quad || \quad Let $\widehat{\mathbf{a}_q}=B^{-1}\mathbf{a_q}$:
+    
+    If $\widehat{\mathbf{a}_q}\leq0$ \ \ $\Rightarrow$ \ \ LP is unbounded. \quad || \quad Else: LP is bounded$\to$\ref{simplex.5}
+    
+    \item\label{simplex.5} Let $p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$ {\scriptsize $p$是对应的 local index,not value, \star 用$\overline{\alpha}=\frac{\widehat{b_p}}{\widehat{a}_{pq}}$代表值} \qquad {\scriptsize $\widehat{b_i}$ 代表$\widehat{\mathbf{b}}$的第$i$个分量; \quad $\widehat{a}_{iq}$ 代表 $\widehat{\mathbf{a}_q}$的第$i$个分量}
+    
+    Let $p'$ \ be (global) index corresponding to $p$.
+    
+    Thus, we find $p,p'$ \qquad Go to \ref{simplex.6}
+
+    \item\label{simplex.6} Exchange $p'$ and $q'$ between $\mathcal{B}$ and $\mathcal{N}$ \ \ $\Rightarrow$ \qquad Update $\mathcal{B},\mathcal{N},B,N,\widehat{\mathbf{b}},...$ \quad {\scriptsize ps: New $B := B + (a_q - B e_p) e_p^T$}
+    \item Calculate $\widehat{\mathbf{c}}_N$. Go to \ref{simplex.2}
 \end{enumerate}
+}}
+
+\textcolor{red}{\textbf{Remark}}: If we consider using $\mathbf{x}+\alpha\mathbf{d}$ where $\mathbf{d}\to[\mathbf{d}_B \ \mathbf{d}_N]^T$; $\mathbf{d}_N=\mathbf{e}_q$ $\mathbf{d}_B=-\widehat{\mathbf{a}}_q$, then:
+
+We have: {\scriptsize $\begin{pmatrix}\mathbf{x}_B \\ \mathbf{x}_N\end{pmatrix}=\begin{pmatrix}\widehat{\mathbf{b}} \\ 0\end{pmatrix}+\alpha\begin{pmatrix}-\widehat{\mathbf{a}}_q \\ \mathbf{e}_q\end{pmatrix}$} and $f=\mathbf{c}^T_B\mathbf{x}_B+\mathbf{c}^T_N\mathbf{x}_N=\mathbf{c}^T_B(\widehat{\mathbf{b}}-\alpha\widehat{\mathbf{a}}_q)+\mathbf{c}^T_N(\alpha\mathbf{e}_q)=\widehat{f}-\alpha(\mathbf{c}^T_N\mathbf{e}_q-\mathbf{c}_B^TB^{-1}N\mathbf{e}_q)=\widehat{f}+\alpha\widehat{\mathbf{c}}_N\mathbf{e}_q=\widehat{f}+\alpha\widehat{c}_q$
 
 
-\textbf{Case: If $\mathbf{b}\ngeq0$}: \textbf{Phase I Problem}
+\fbox{\parbox[c]{0.98\textwidth}{
+
+\textbf{Phase I Problem}: (If $\mathbf{b}\ngeq0$ \& No BFS)
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
     \item Subtract \textbf{artificial variables} $x_{n+m+1},...,x_{n+m+m}\geq0$ and change objective function $f$ to: \\    
     {\centering \includegraphics[width=0.6\textwidth]{formula.png}}
-    \item Let {\small Basic Variables: $\mathbf{x}_{B}=$ 第i个元素是: $x_{n+i}=b_i$ (if $b_i\geq0$) \quad 是:$x_{n+m+i}=-b_i$ (if $b_i<0$) $\star$} \\
-    {\small Let Nonbasic Variables: $\mathbf{x}_{N}=$ 第i个元素是: $x_{n+m+i}=0$ (if $b_i\geq0$)} \quad  是:$x_{n+i}=b_i$ (if $b_i<0$)\\
-    {\small Let Basic Matrix $B=$ 第i列是: $\mathbf{e}_i$ (if $b_i\geq0$) 否则: $-\mathbf{e}_i$ 其他列是$N$的对应列 \qquad \quad Let $\widehat{\mathbf{b}}=B^{-1}\mathbf{b}=|\mathbf{b}|\geq0$} \\
-    {\small Let $\mathbf{c}_B=$ $x_B$对应的$f$中的系数  \qquad $\mathbf{c}_N=$同理 \qquad $\widehat{\mathbf{c}}_N=\mathbf{c}_N-N^TB^{-T}\mathbf{c}_B$}
-    \item \textbf{Size of Infeasibility}: is $\sum^m_{i=1}x_{n+m+i}$ \qquad $f=-\sum^m_{i=1}x_{n+m+i}\leq0$
-    \item If $f=0$, $\mathbf{x}$ is a BFS. $\Rightarrow$ Go to \textbf{Phase II Problem}{\small (恢复到之前的$f$并删除artificial variables)} \\
-    Else: Go to \textbf{Simplex Algorithm} {\small 得到辅助问题Phase I的最优解.} \quad \textbf{If $f<0$}: LP is infeasible. \quad \textbf{If $f=0$}: LP is feasible. $\Rightarrow$ \textbf{Phase II}
+    \item Let $b_i:=\mathbf{b}$ 的第i个分量. (i.e. $b_i=\mathbf{b}^T\mathbf{e}_i$)
+    
+    Case I: $b_i\ge0$: $x_{n+i}=b_i$ is a Basic Variables. \quad and $x_{n+m+i}=0$ is a Nonbasic Variables.
+
+    Case II: $b_i<0$: $x_{n+m+i}=-b_i$ is a Basic Variables. \quad and $x_{n+i}=0$ is a Nonbasic Variables.
+    
+    Other: We put $x_1,...,x_n$ as Nonbasic Variables.
+
+    Thus we can find $\mathcal{B},\mathcal{N},B,N,\mathbf{x}_B=\widehat{\mathbf{b}}=B^{-1}\mathbf{b}=|\mathbf{b}|,\mathbf{x}_N=\mathbf{0},\mathbf{c}_B,\mathbf{c}_N$
+
+    \item Let \textbf{Size of Infeasibility}: is $\sum^m_{i=1}x_{n+m+i}$ \qquad $f=-\sum^m_{i=1}x_{n+m+i}\leq0$
+    
+    \item Consider this modified LP problem, by using Simplex Algorithm, we can find an optimal solution $\mathbf{x}$ and the value of $f$.
+    
+    ps: 使用刚刚我们选好的$\mathcal{B},\mathcal{N}$ 作为初始的BFS.
+    \item Case I: If $f=0$ (\textcolor{red}{等价于 artificial variables都是Nonbasic Variables}), $\mathbf{x}$ is a BFS for the original LP problem. (去除artificial variables,并回到原问题(也叫Phase II Problem))
+    
+    Case II: \textbf{If $f<0$}: LP is infeasible (\textcolor{red}{等价于存在artificial variables是Basic Variables}).
+\end{enumerate}
+}}
+
+
+\section{Degeneracy | Termination | Cycling | Sparsity}
+
+\subsection{Degeneracy \& Termination}
+
+\textcolor{red}{\textbf{Degeneracy}: If $\widehat{\mathbf{b}}$ has any zero component, then $\mathbf{x}$ is a \textbf{degenerate vertex}. (等价于$\widehat{\mathbf{b}}>0$)}
+
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item If a point is \textit{degenerate}, then there may be multiple \textit{BFS} at that point.
+    \item \star \ If $\widehat{b}_p=0$, then $\overline{\alpha}=0$, simplex algorithm may not terminate. \\ {\scriptsize ps:对于simplex algorithm 我们依靠$\widehat{\mathbf{a}}_q$中大于0的元素来决定下一个要交换的变量, 但是如果$\widehat{b}_p=0$, 那么$\overline{\alpha}=0$, 可能会导致我们在这个点上循环}
 \end{enumerate}
 
-\textbf{Case: If $\mathbf{b}\ngeq0$}: \textbf{Phase II Problem}
+\textcolor{red}{\textbf{Termination of Simplex Algorithm in the absence of degeneracy}: If no degenerate situation, then Simplex Algorithm will terminate in a finite number of steps.}
 
 
-\subsection{More thing about Simplex Algorithm}
-
-\textbf{Degeneracy}: If $\widehat{\mathbf{b}}$ has any zero component, then $\mathbf{x}$ is a \textbf{degenerate vertex}. \qquad {\scriptsize 如果$\widehat{\mathbf{b}}$的第$p$个分量$\widehat{\mathbf{b}}_p=0$,那么单纯形法可能会陷入循环.}
-
-\quad \textbf{Theorem}: If no degenerate situation, then Simplex Algorithm will terminate in a finite number of steps.
-
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Examples}: 1.The worst case of Simplex Algorithm. \ \ 2. Cyclic case of Simplex Algorithm.
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
@@ -242,27 +326,32 @@ $\cdot$ \textbf{Theorem}: {\small If LP has a unique optimal solution is a verte
     has $2^n$ vertices. \quad \textbf{Worst Case}: $2^n-1$ iterations.
     \item \textbf{Hall-McKinnon Problem}: max $f=x_1-5.5x_2+0.75x_3-5.75x_4$ \quad ; \quad {\scriptsize s.t.} {\tiny $2.5x-19.5x_2-3.5x_3+19.5x_4+x_5=0$ ; $0.5x_1-3.5x_2-0.5x_3+3.5x_4+x_6=0$ ; $x_i\geq0$}
 \end{enumerate}
+}}
+
+\newpage
 
 
 \subsection{Sparsity LP Problem}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Implementation}: 计算/编程中的计算化简 \qquad Consider: $\widehat{\mathbf{b}}=B^{-1}\mathbf{b}$ \ \ $\widehat{\mathbf{c}}_N=\mathbf{c}_N-N^TB^{-T}\mathbf{c}_B$ \ \ $\widehat{\mathbf{a}}_q=B^{-1}\mathbf{a}_q$
 
 \begin{enumerate}[itemsep=-2pt, topsep=-2pt]
-    \item Solve: \( B \hat{b} = b \) \quad to get: \(\hat{b} = B^{-1}b\)
-    \item Solve: \( B^T \pi = c_B \) \quad to get: \(\pi = B^{-T}c_B\)
-    \item Solve: \(\hat{c}_N = c_N - N^T\pi\) \quad to get: \(\hat{c}_N = c_N - N^TB^{-T}c_B\)
-    \item Solve: \( B^T \hat{a}_q = a_q \) \quad to get: \(\hat{a}_q = B^{-T}a_q\)
+    \item Solve: \( B \widehat{\mathbf{b}} = \mathbf{b} \) \quad to get: \(\widehat{\mathbf{b}} = B^{-1}\mathbf{b}\)
+    \item Solve: \( B^T \pi = \mathbf{c}_B \) \quad to get: \(\pi = B^{-T}\mathbf{c}_B\)
+    \item Solve: \(\widehat{\mathbf{c}}_N = \mathbf{c}_N - N^T\pi\) \quad to get: \(\widehat{\mathbf{c}}_N = c_N - N^TB^{-T}\mathbf{c}_B\)
+    \item Solve: \( B^T \widehat{\mathbf{a}}_q = \mathbf{a}_q \) \quad to get: \(\widehat{\mathbf{a}}_q = B^{-T}\mathbf{a}_q\)
     \item Matrix $B$ is \textbf{sparse} and \textbf{invertible}. And in Simplex Algorithm, the next matrix $B$ obtained by $B := B + (a_q - B e_p) e_p^T$
 \end{enumerate}
+}}
 
 \textbf{Sparse LP Problem}: For LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}=\mathbf{b}$ \quad $\mathbf{x}\geq0$
 
 \qquad It is \textbf{sparse} if the matrix $A$ is sparse. (i.e. Most of the elements of $A$ are zero)
 
-\textbf{Find Inverse of $B$}: Use \textbf{Guassian Elimination} to decomposition $B$ into $LU$ where $L$ is lower triangular and $U$ is upper triangular.
+\textbf{Find Inverse of $B$}: Decomposition $B$ into $LU$ where $L$ is lower triangular and $U$ is upper triangular.
 
-\quad Then we can solve $B\mathbf{x}=\mathbf{b}$ by solving $^1$ $L\mathbf{y}=\mathbf{b}$ and $^2$ $U\mathbf{x}=\mathbf{y}$
+\quad Then we can \textcolor{red}{solve $B\mathbf{x}=\mathbf{b}$ by solving $^1$ $L\mathbf{y}=\mathbf{b}$ and $^2$ $U\mathbf{x}=\mathbf{y}$}
 
 \vspace{-5pt}
 {\scriptsize 
@@ -302,23 +391,35 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 
 \section{Sensitive Analysis} % Sensitive Analysis
 
-\textbf{RHS Sensitivity}: {\small Consider $b_i\to b_i+\delta$ \quad $\big|$ \quad $\max f=\mathbf{c}^T\mathbf{x}$ subject to $A\mathbf{x}\leq \mathbf{b},\mathbf{x}\geq0$ \quad $\Rightarrow$ {\tiny (Add Slack variables)} \quad $\max f=\overline{\mathbf{c}}^T\mathbf{x}$ subject to $\overline{A}\mathbf{x}=\mathbf{b},\mathbf{x}\geq0$}
+\subsection{RHS Sensitivity {\scriptsize Consider \textcolor{red}{$b_i\to b_i+\delta$}}}
 
-\qquad Assume $\mathcal{B},\mathcal{N},B,N$ yield an \textit{optimal solution}, with $\mathbf{x}_B=\widehat{\mathbf{b}},\mathbf{x}_N=\mathbf{0}$
+\textbf{RHS Sensitivity}: $\max f=\mathbf{c}^T\mathbf{x}$ s.t. $A\mathbf{x}\leq \mathbf{b},\mathbf{x}\geq0$ \quad $\Rightarrow$ \quad $\max f=\overline{\mathbf{c}}^T\mathbf{x}$ s.t. $\overline{A}\mathbf{x}=\mathbf{b},\mathbf{x}\geq0$
 
-\qquad Then, the new optimal values is: \quad $\mathbf{x}_B=B^{-1}(\mathbf{b}+\delta \mathbf{e}_i)=\widehat{\mathbf{b}}+\delta B^{-1}\mathbf{e_i}$ \quad if $\mathbf{x}_B\geq0$
+\qquad ps: Assume $\mathcal{B},\mathcal{N},B,N$ yield an \textit{optimal solution}, with $\mathbf{x}_B=\widehat{\mathbf{b}},\mathbf{x}_N=\mathbf{0}$
 
-\qquad With range of $\delta\in[ \ \underline{\delta} \ , \ \overline{\delta} \ ]$ \quad $\underline{\delta}=\max\limits_{[B^{-1}]_{ij}>0}-\frac{\widehat{b}_j}{[B^{-1}]_{ij}}$ \quad $\overline{\delta}=\min\limits_{[B^{-1}]_{ij}<0}-\frac{\widehat{b}_j}{[B^{-1}]_{ij}}$ \hspace{30pt} {\tiny $\Downarrow \text{nonbasic slack}:\pi_i=-\widehat{c_i}$, $\widehat{c_i}$ 指 reduced cost $\widehat{\mathbf{c}}_N$ 的第$i$个分量;basic slack: $\pi_i=0$}
+\fbox{\parbox[c]{0.98\textwidth}{
+\qquad Then, the new optimal values is: \quad \textcolor{red}{$\mathbf{x}_B=B^{-1}(\mathbf{b}+\delta \mathbf{e}_i)=\widehat{\mathbf{b}}+\delta B^{-1}\mathbf{e}_i$} \quad if $\mathbf{x}_B\geq0$
 
-\qquad \textbf{Fair Prices}: The objective function will change by $\delta$ as: $f=\widehat{f}+\delta\pi_i$ \quad where $\widehat{f}=\mathbf{c}_B^T\widehat{\mathbf{b}}$ \quad $\pi_i=\mathbf{c}_B^TB^{-1}\mathbf{e}_i$ (fair price)
+\qquad With \textcolor{red}{range of $\delta\in[ \ \underline{\delta} \ , \ \overline{\delta} \ ]$ \quad $\underline{\delta}=\max\limits_{[B^{-1}]_{ij}>0}-\frac{\widehat{b}_j}{[B^{-1}]_{ij}}$ \quad $\overline{\delta}=\min\limits_{[B^{-1}]_{ij}<0}-\frac{\widehat{b}_j}{[B^{-1}]_{ij}}$}
+}}
 
-\qquad If \textit{price of unit amount} $<$ $\pi_i$, buying more of the resource is attractive. \qquad If $>$, is unattractive.
+\fbox{\parbox[c]{0.98\textwidth}{
+\textbf{Fair Prices}: The objective function: \textcolor{red}{$f=\mathbf{c}^T_B\mathbf{x}_B=\mathbf{c}^T_B(\mathbf{\widehat{b}}+\delta B^{-1}\mathbf{e}_i)=\widehat{f}+\delta\pi_i$} \quad where $\widehat{f}=\mathbf{c}_B^T\widehat{\mathbf{b}}$ \quad \textcolor{red}{$\pi_i=\mathbf{c}_B^TB^{-1}\mathbf{e}_i$ (fair price)}
 
-\qquad ps: 如果$b_i\to b_i+\delta$ 对应的$\mathcal{B}$中的第$i$个变量是basic slack, 那么$\pi_i=0$. (simply no fair price price for more of the resource)
+\begin{enumerate}[itemsep=-2pt, topsep=-2pt]
+    \item \textbf{If \textit{price of unit amount} $> \ \pi_i$}: Buying more of the resource is \textit{unattractive}.
+    \item \textbf{If \textit{price of unit amount} $< \ \pi_i$}: Buying more of the resource is \textit{attractive}.
+    \item \textbf{For Basic Slack}: If $n+i\in\mathcal{B}$ (slack variable $x_{n+i}$ 是basic slack) \ \ $\rightarrow$ \ \ $\pi_i=0$ \qquad {\tiny (Proof: \textcolor{red}{$\pi_i=(B^{-T}\mathbf{c}_B)^T\mathbf{e}_i=\mathbf{c}_B^TB^{-1}\mathbf{e}_i$}$=0$)}
+    \item \textbf{For Nonbasic Slack}: If $n+i\in\mathcal{N}$ (slack variable $x_{n+i}$ 是nonbasic slack) \ \ $\rightarrow$ \ \ $\pi_i=-\widehat{c_i}$ \\ {\tiny (Proof: Assume $n+i\in\mathcal{N}$ 在 $N$ 中的 (local) index 为 $j$. Since \textcolor{red}{$\widehat{c}_j=[\mathbf{c}_N]_j-[N]^T_j\pi$}, $[\mathbf{c}_N]_j=0$, $[N]^T_j=\mathbf{e}_i$; we have: $\pi_i=-\widehat{c_i}$)}
+\end{enumerate}
+}}
 
-\qquad ps: 如果$b_i\to b_i+\delta$ 对应的$\mathcal{B}$中的第$i$个变量不是slack, {\tiny (Same as $x_{n+i}$ is nonbasic slack)}, 那么$\pi_i=-\widehat{c_i}$.
+\qquad $\star$ Range of $\delta$ is \textit{lower|upper bound Sensitivity}
 
-\qquad $\star$ Range of $\delta$ is \textit{lower|upper bound Sensitivity}, \quad $\star$ \textit{Feasible Region} increases when $\overline{\delta}$ increases and $\underline{\delta}$ decreases.
+\qquad $\star$ \textit{Feasible Region} increases when $\overline{\delta}$ increases and $\underline{\delta}$ decreases.
+
+
+\subsection{Cost and Coefficient Sensitivity {\scriptsize Consider \textcolor{red}{$c_i\to c_i+\delta$} \& \textcolor{red}{$a_{ij}\to a_{ij}+\delta$}}}
 
 \textbf{Cost Sensitivity}: 即$c_i\to c_i+\delta$. \quad $\max f=\mathbf{c}^T\mathbf{x}$ subject to $A\mathbf{x}\leq \mathbf{b},\mathbf{x}\geq0$
 
@@ -338,6 +439,7 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 
 \section{Duality} % Duality
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Duality}: For LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}\leq \mathbf{b}, \quad\mathbf{x}\geq0$ \quad \textbf{Primal} problem \qquad $(P)$
 
 \qquad \ \ The \textbf{dual} problem is: min $f=\mathbf{b}^T\mathbf{y}$ \quad s.t. $A^T\mathbf{y}\geq \mathbf{c}, \quad\mathbf{y}\geq0$ \quad \textbf{Dual} problem \qquad $(D)$
@@ -347,14 +449,19 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \qquad \ \ The \textbf{dual} of $(D)$ is: min $f=-\mathbf{c}^T\mathbf{z}$ \quad s.t. $(-A^T)^T\mathbf{z}\geq (-\mathbf{b}), \ \ (\text{i.e.} \ -A\mathbf{z}\geq -\mathbf{b})$, $\quad\mathbf{z}\geq0$
 
 \qquad \ \ - It is \textit{equivalence} to: max $f=\mathbf{c}^T\mathbf{z}$ \quad s.t. $A\mathbf{z}\leq \mathbf{b}, \quad\mathbf{z}\geq0$, which is the \textbf{Primal} problem $(P)$.
+}}
 
+\fbox{\parbox[c]{0.98\textwidth}{
 \textbf{Weak Duality Theorem}: If $\mathbf{x}$ is feasible for $(P)$ and $\mathbf{y}$ is feasible for $(D)$, then $\mathbf{c}^T\mathbf{x}\leq\mathbf{b}^T\mathbf{y}$.
 
-\quad \textbf{Corollary}: {\footnotesize If $\mathbf{x}$ for $(P)$ and $\mathbf{y}$ for $(D)$}, then: \qquad If $(P)$ is unbounded \ \ $\Rightarrow$ \ \ $(D)$ is infeasible. \qquad If $(D)$ is unbounded \ \ $\Rightarrow$ \ \ $(P)$ is infeasible.
+\quad \textbf{Corollary}: If $(P)$ is unbounded \ \ $\Rightarrow$ \ \ $(D)$ is infeasible. \quad || \quad If $(D)$ is unbounded \ \ $\Rightarrow$ \ \ $(P)$ is infeasible.
 
 \textbf{Strong Duality Theorem}: If $\mathbf{x}^*$ is optimal (basic) solution for $(P)$, then:
 
 \qquad $\mathbf{y}^*=\pi=B^{-T}\mathbf{c}_B$ is optimal solution for $(D)$, \quad and $\mathbf{c}^T\mathbf{x}^*=\mathbf{b}^T\mathbf{y}^*$.
+}}
+
+\newpage
 
 \textbf{Application}: If LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}\leq \mathbf{b}, \quad\mathbf{x}\geq0$ \quad $(P)$
 
@@ -444,10 +551,42 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \vspace{-10pt}
 
 
-\section{Additional Definition/Theorem}:
+\section{Additional Proofs}
 
-\textbf{Definition of a Convex Set}: The set $K$ is convex if, for any two points $\mathbf{x},\mathbf{x'}\in K$, the line segment $\mathbf{x}_\theta=\theta\mathbf{x}+(1-\theta)\mathbf{x'}$ for $\theta\in[0,1]$ is also in $K$.
+\scriptsize
 
-\textbf{Definition of a Vertex of a Convex Set}: A vertex of a convex set $K$ is a point $\mathbf{x}\in K$ such that it does not lie strictly within any line segment joining two points in $K$.
+\textbf{If BFS has $\widehat{\mathbf{c}}_N\leq0$, it is an \textbf{Optimal Solution} | Show that $f=\widehat{f}+\widehat{\mathbf{c}}_N^T\mathbf{x}_N$}
+
+Proof: As $\mathbf{x}_B=\widehat{b}-\widehat{N}\mathbf{x}_N$, we have $f=\mathbf{c}_B^T\mathbf{x}_B+\mathbf{c}_N^T\mathbf{x}_N=\mathbf{c}_B^T(\widehat{b}-\widehat{N}\mathbf{x}_N)+\mathbf{c}_N^T\mathbf{x}_N=\cdots=\widehat{f}+\widehat{\mathbf{c}}_N^T\mathbf{x}_N$.
+Since $\widehat{\mathbf{c}}_N\leq0$, we have $f\leq\widehat{f}$, so it is an Optimal Solution.
+
+~
+
+\textbf{Why is the LP unbounded if $\widehat{\mathbf{a}}_q\leq0$? | What is $\widehat{\mathbf{a}}_q$?}
+
+Proof: At $\mathbf{x}$, the most positive reduced cost is $\widehat{c}_q$. Now we construct a direction vector $\mathbf{d}$, such that $\mathbf{d}\Leftrightarrow\begin{pmatrix}\mathbf{d}_B \\ \mathbf{d}_N\end{pmatrix}$ where $\mathbf{d}_B=-B^{-1}N\mathbf{e}_q=-\widehat{\mathbf{a}}_q$ and $\mathbf{d}_N=\mathbf{e}_q$.
+Then, we have $\mathbf{x}+\alpha\mathbf{d}$ can be partitioned as $\begin{pmatrix}\mathbf{x}_B \\ \mathbf{x}_N\end{pmatrix}=\begin{pmatrix}\widehat{\mathbf{b}} \\ 0\end{pmatrix}+\alpha\begin{pmatrix}-\widehat{\mathbf{a}}_q \\ \mathbf{e}_q\end{pmatrix}$
+We can see that the objective function is $f=\widehat{f}+\alpha\widehat{c}_q$ increasing strictly if $\widehat{c}_q>0$. \qquad \qquad If $\widehat{\mathbf{a}}_q\le0$, then $-\widehat{\mathbf{a}}_q\ge0$, so $\mathbf{x}+\alpha\mathbf{d}$ is feasible for all $\alpha\ge0$. Thus, the LP is unbounded.
+
+~
+
+\textbf{(Cont.) What is $p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$?}
+
+Proof: (Cont.) As $\begin{pmatrix}\mathbf{x}_B \\ \mathbf{x}_N\end{pmatrix}=\begin{pmatrix}\widehat{\mathbf{b}} \\ 0\end{pmatrix}+\alpha\begin{pmatrix}-\widehat{\mathbf{a}}_q \\ \mathbf{e}_q\end{pmatrix}$, we can see that, for the component of $\widehat{\mathbf{a}}_q$, if $\widehat{a}_{iq}>0$, then $\widehat{b}_i-\alpha\widehat{a}_{iq}\ge0$, objective function is strictly increasing; if $\widehat{a}_{iq}<0$, then $\widehat{b}_i-\alpha\widehat{a}_{iq}\le0$, objective function is strictly decreasing; if $\widehat{a}_{iq}=0$, then $\widehat{b}_i-\alpha\widehat{a}_{iq}=\widehat{b}_i$, objective function is constant. 
+Thus, we can see that, the most negative component of $\widehat{\mathbf{b}}$ is $\widehat{b}_p$ and the most positive component of $\widehat{\mathbf{a}}_q$ is $\widehat{a}_{pq}$, so we have $p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$.
+
+~
+
+\textbf{Why in the Simplex Algorithm, we exchange $p'$ and $q'$ can get a new BFS?}
+
+Proof: 1. It's clear that new index $\mathcal{B}$ and $\mathcal{N}$ form a partition of $\{1,2,...,n+m\}$. \qquad 2. Only $x_{q'}$ is increased from 0 and $q'$ leaves $\mathcal{N}$, and $x_{p'}$ is decreased to 0. So that they can be consider as new nonbasic variables and basic variables. \qquad 3. The new basis B is nonsingular (invertible): New Basic matrix is $B_{New}=B+(\mathbf{a}_q-B\mathbf{e}_p)e_p^T=BE$ where $E=I+(\widehat{\mathbf{a}}_q-B\mathbf{e}_p)e_p^T$ \ ; \ $B\widehat{\mathbf{a}}_q=\mathbf{a}_q$
+Thus $B_{New}$ is nonsingular if and only if $E$ is nonsingular. \quad By {Sherman-Morrison Formula}, $E$ is nonsingular iff $\widehat{a}_{pq}$ is nonzero. But we have $\widehat{a}_{pq}>0$ so that $B_{New}$ is nonsingular.
+
+~
+
+\textbf{Termination of Simplex Algorithm in the absence of degeneracy}
+
+Proof: If no degenerate situation, $\widehat{\mathbf{b}}>0$. Thus $\widehat{\alpha}=\frac{\widehat{b}_p}{\widehat{a}_{pq}}>0$, and hence the objective function is strictly increasing. (By $\overline{\alpha}\widehat{c}_q>0$) So the algorithm cannot return to a basic feasible solution previously visited. Thus the algorithm will terminate in a finite number of steps. (As it's bounded)
+
 
 \end{document}
