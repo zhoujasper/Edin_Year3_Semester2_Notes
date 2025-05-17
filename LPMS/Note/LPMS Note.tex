@@ -256,17 +256,17 @@ By adding slack variables, we can write it as: max $f=\overline{\mathbf{c}}^T\ma
     
     Thus, we find $q,q'$ \qquad Go to \ref{simplex.4}
 
-    \item\label{simplex.4} Let $p\in$ (local index in $B$) \ \ ; \ \ $p'\in\mathcal{B}$ (global index) \quad || \quad $\mathbf{a}_q:=N$中的第q列($\mathbf{a}_q=N\mathbf{e}_q$) \quad || \quad Let $\widehat{\mathbf{a}_q}=B^{-1}\mathbf{a_q}$:
+    \item\label{simplex.4} Let $p\in$ (local index in $B$) \ \ ; \ \ $p'\in\mathcal{B}$ (global index) \quad || \quad \textcolor{red}{$\mathbf{a}_q:=N$中的第q列}($\mathbf{a}_q=N\mathbf{e}_q$) \quad || \quad Let \textcolor{red}{$\widehat{\mathbf{a}_q}=B^{-1}\mathbf{a_q}$}:
     
     If $\widehat{\mathbf{a}_q}\leq0$ \ \ $\Rightarrow$ \ \ LP is unbounded. \quad || \quad Else: LP is bounded$\to$\ref{simplex.5}
     
-    \item\label{simplex.5} Let $p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$ {\scriptsize $p$是对应的 local index,not value, \star 用$\overline{\alpha}=\frac{\widehat{b_p}}{\widehat{a}_{pq}}$代表值} \qquad {\scriptsize $\widehat{b_i}$ 代表$\widehat{\mathbf{b}}$的第$i$个分量; \quad $\widehat{a}_{iq}$ 代表 $\widehat{\mathbf{a}_q}$的第$i$个分量}
+    \item\label{simplex.5} Let \textcolor{red}{$p=\arg\min_{i=1,...,m \ ; \ \widehat{a}_{iq}>0}\frac{\widehat{b_i}}{\widehat{a}_{iq}}$} {\scriptsize $p$是对应的 local index,not value, \star 用$\overline{\alpha}=\frac{\widehat{b_p}}{\widehat{a}_{pq}}$代表值} \qquad {\scriptsize $\widehat{b_i}$ 代表$\widehat{\mathbf{b}}$的第$i$个分量; \quad $\widehat{a}_{iq}$ 代表 $\widehat{\mathbf{a}_q}$的第$i$个分量}
     
     Let $p'$ \ be (global) index corresponding to $p$.
     
     Thus, we find $p,p'$ \qquad Go to \ref{simplex.6}
 
-    \item\label{simplex.6} Exchange $p'$ and $q'$ between $\mathcal{B}$ and $\mathcal{N}$ \ \ $\Rightarrow$ \qquad Update $\mathcal{B},\mathcal{N},B,N,\widehat{\mathbf{b}},...$ \quad {\scriptsize ps: New $B := B + (a_q - B e_p) e_p^T$}
+    \item\label{simplex.6} Exchange $p'$ and $q'$ between $\mathcal{B}$ and $\mathcal{N}$ \ \ $\Rightarrow$ \qquad Update $\mathcal{B},\mathcal{N},B,N,\widehat{\mathbf{b}},...$ \quad {\scriptsize ps: \textcolor{red}{New $B := B + (a_q - B e_p) e_p^T$}}
     \item Calculate $\widehat{\mathbf{c}}_N$. Go to \ref{simplex.2}
 \end{enumerate}
 }}
@@ -400,7 +400,7 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \fbox{\parbox[c]{0.98\textwidth}{
 \qquad Then, the new optimal values is: \quad \textcolor{red}{$\mathbf{x}_B=B^{-1}(\mathbf{b}+\delta \mathbf{e}_i)=\widehat{\mathbf{b}}+\delta B^{-1}\mathbf{e}_i$} \quad if $\mathbf{x}_B\geq0$
 
-\qquad With \textcolor{red}{range of $\delta\in[ \ \underline{\delta} \ , \ \overline{\delta} \ ]$ \quad $\underline{\delta}=\max\limits_{[B^{-1}]_{ij}>0}-\frac{\widehat{b}_j}{[B^{-1}]_{ij}}$ \quad $\overline{\delta}=\min\limits_{[B^{-1}]_{ij}<0}-\frac{\widehat{b}_j}{[B^{-1}]_{ij}}$}
+\qquad With \textcolor{red}{range of $\delta\in[ \ \underline{\delta} \ , \ \overline{\delta} \ ]$ \quad $\underline{\delta}=\max\limits_{[B^{-1}]_{ji}>0}-\frac{\widehat{b}_j}{[B^{-1}]_{ji}}$ \quad $\overline{\delta}=\min\limits_{[B^{-1}]_{ji}<0}-\frac{\widehat{b}_j}{[B^{-1}]_{ji}}$}
 }}
 
 \fbox{\parbox[c]{0.98\textwidth}{
@@ -440,25 +440,25 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \section{Duality} % Duality
 
 \fbox{\parbox[c]{0.98\textwidth}{
-\textbf{Duality}: For LP problem: max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}\leq \mathbf{b}, \quad\mathbf{x}\geq0$ \quad \textbf{Primal} problem \qquad $(P)$
+\textbf{Duality}: For LP problem: \textcolor{red}{max $f=\mathbf{c}^T\mathbf{x}$ \quad s.t. $A\mathbf{x}\leq \mathbf{b}, \quad\mathbf{x}\geq0$} \quad \textbf{Primal} problem \qquad $(P)$
 
-\qquad \ \ The \textbf{dual} problem is: min $f=\mathbf{b}^T\mathbf{y}$ \quad s.t. $A^T\mathbf{y}\geq \mathbf{c}, \quad\mathbf{y}\geq0$ \quad \textbf{Dual} problem \qquad $(D)$
+\qquad \ \ The \textbf{dual} problem is: \textcolor{red}{min $f=\mathbf{b}^T\mathbf{y}$ \quad s.t. $A^T\mathbf{y}\geq \mathbf{c}, \quad\mathbf{y}\geq0$} \quad \textbf{Dual} problem \qquad $(D)$
 
 \qquad \ \ - It is \textit{equivalence} to: max $f=-\mathbf{b}^T\mathbf{y}$ \quad s.t. $-A^T\mathbf{y}\leq -\mathbf{c}, \quad\mathbf{y}\geq0$
 
-\qquad \ \ The \textbf{dual} of $(D)$ is: min $f=-\mathbf{c}^T\mathbf{z}$ \quad s.t. $(-A^T)^T\mathbf{z}\geq (-\mathbf{b}), \ \ (\text{i.e.} \ -A\mathbf{z}\geq -\mathbf{b})$, $\quad\mathbf{z}\geq0$
+\qquad \ \ The \textbf{dual} of $(D)$ is: \textcolor{red}{min $f=-\mathbf{c}^T\mathbf{z}$ \quad s.t. $(-A^T)^T\mathbf{z}\geq (-\mathbf{b}), \ \ (\text{i.e.} \ -A\mathbf{z}\geq -\mathbf{b})$, $\quad\mathbf{z}\geq0$}
 
 \qquad \ \ - It is \textit{equivalence} to: max $f=\mathbf{c}^T\mathbf{z}$ \quad s.t. $A\mathbf{z}\leq \mathbf{b}, \quad\mathbf{z}\geq0$, which is the \textbf{Primal} problem $(P)$.
 }}
 
 \fbox{\parbox[c]{0.98\textwidth}{
-\textbf{Weak Duality Theorem}: If $\mathbf{x}$ is feasible for $(P)$ and $\mathbf{y}$ is feasible for $(D)$, then $\mathbf{c}^T\mathbf{x}\leq\mathbf{b}^T\mathbf{y}$.
+\textbf{Weak Duality Theorem}: If $\mathbf{x}$ is feasible for $(P)$ and $\mathbf{y}$ is feasible for $(D)$, then \textcolor{red}{$\mathbf{c}^T\mathbf{x}\leq\mathbf{b}^T\mathbf{y}$}.
 
 \quad \textbf{Corollary}: If $(P)$ is unbounded \ \ $\Rightarrow$ \ \ $(D)$ is infeasible. \quad || \quad If $(D)$ is unbounded \ \ $\Rightarrow$ \ \ $(P)$ is infeasible.
 
 \textbf{Strong Duality Theorem}: If $\mathbf{x}^*$ is optimal (basic) solution for $(P)$, then:
 
-\qquad $\mathbf{y}^*=\pi=B^{-T}\mathbf{c}_B$ is optimal solution for $(D)$, \quad and $\mathbf{c}^T\mathbf{x}^*=\mathbf{b}^T\mathbf{y}^*$.
+\qquad \textcolor{red}{$\mathbf{y}^*=\pi=B^{-T}\mathbf{c}_B$} is optimal solution for $(D)$, \quad and $\mathbf{c}^T\mathbf{x}^*=\mathbf{b}^T\mathbf{y}^*$.
 }}
 
 \newpage
@@ -550,6 +550,39 @@ u_{11} & u_{12} & u_{13} & u_{14} \\
 \end{quote}
 \vspace{-10pt}
 
+\textbf{Example|Iteration in Simplex Method|\textcolor{red}{Phase I, II}}:
+\vspace{-10pt}
+\begin{multicols}{2}
+\begin{quote}
+    \color{gray}
+    \fontsize{7pt}{4pt}\selectfont
+    \vspace{5pt}
+    \textbf{The original LP Problem is}:
+    
+    \qquad maximize \( f= -3x_1 - 5x_2 \)
+
+    \qquad subject to \( -2x_1 -3x_2 + x_3 = -6 \)
+
+    \qquad \( x_1, x_2, x_3 \geq 0 \)
+    
+    \textbf{Phase I Problem is}:
+    
+    \qquad minimize \( f= -x_4 \)
+    
+    \qquad subject to \( -2x_1 -3x_2 + x_3 + x_4 = -6 \)
+    
+    \qquad \( x_1, x_2, x_3, x_4 \geq 0 \)
+
+    \columnbreak
+
+    We start from the basic feasible solution given by $\mathcal{B}=\{4\}$ and $\mathcal{N}=\{1,2,3\}$. Hence $B=[-1], N = [-2 \ \ -3 \ \ 1 ],...$ (开始普通的Simplex Method) 算出optimal solution/\textcolor{red}{或者如果什么时候artificial variable都是nonbasic variables}
+
+    去除artificial variable, 变成Phase II Problem (即变成原来的LP Problem), 我们在Phase I 找到的Basic feasible solution是Phase II Problem的一个Basic feasible solution.
+
+\end{quote}
+\end{multicols}
+\vspace{-10pt}
+
 
 \section{Additional Proofs}
 
@@ -577,10 +610,19 @@ Thus, we can see that, the most negative component of $\widehat{\mathbf{b}}$ is 
 
 ~
 
+\textbf{Why $B_{new}=B+(\mathbf{a}_q-B\mathbf{e}_p)\mathbf{e}_p^T$}
+
+Since the new $\mathcal{B}$ is the old $\mathcal{B}$ with entry $p$ replaced by the $q$ th index from $\mathcal{N}$, the new basis matrix is the old basis matrix with column p replaced by the vector $\mathbf{a_q}$, which is column $q$ of $N$. 
+\qquad \qquad Moreover, $[B+(\mathbf{a}_q-B\mathbf{e}_p)\mathbf{e}_p^T]\mathbf{e}_j=\{ B\mathbf{e}_j, \text{if} \ j\ne p \ \ ; \ \ \mathbf{a}_q , \text{if} \ j=p$
+
+~
+
 \textbf{Why in the Simplex Algorithm, we exchange $p'$ and $q'$ can get a new BFS?}
 
-Proof: 1. It's clear that new index $\mathcal{B}$ and $\mathcal{N}$ form a partition of $\{1,2,...,n+m\}$. \qquad 2. Only $x_{q'}$ is increased from 0 and $q'$ leaves $\mathcal{N}$, and $x_{p'}$ is decreased to 0. So that they can be consider as new nonbasic variables and basic variables. \qquad 3. The new basis B is nonsingular (invertible): New Basic matrix is $B_{New}=B+(\mathbf{a}_q-B\mathbf{e}_p)e_p^T=BE$ where $E=I+(\widehat{\mathbf{a}}_q-B\mathbf{e}_p)e_p^T$ \ ; \ $B\widehat{\mathbf{a}}_q=\mathbf{a}_q$
+Proof: 1. It's clear that new index $\mathcal{B}$ and $\mathcal{N}$ form a partition of $\{1,2,...,n+m\}$. \qquad 2. Only $x_{q'}$ is increased from 0 and $q'$ leaves $\mathcal{N}$, and $x_{p'}$ is decreased to 0. So that they can be consider as new nonbasic variables and basic variables. \qquad 3. The new basis B is nonsingular (invertible): New Basic matrix is $B_{New}=B+(\mathbf{a}_q-B\mathbf{e}_p)e_p^T=BE$ where $E=I+(\widehat{\mathbf{a}}_q-\mathbf{e}_p)e_p^T$ \ ; \ $B\widehat{\mathbf{a}}_q=\mathbf{a}_q$
 Thus $B_{New}$ is nonsingular if and only if $E$ is nonsingular. \quad By {Sherman-Morrison Formula}, $E$ is nonsingular iff $\widehat{a}_{pq}$ is nonzero. But we have $\widehat{a}_{pq}>0$ so that $B_{New}$ is nonsingular.
+
+(ps: Sherman-Morrison Formula: If $A=I+uv^T$, then $A^{-1}=I-\frac{1}{1+v^Tu}uv^T$)
 
 ~
 
@@ -588,5 +630,19 @@ Thus $B_{New}$ is nonsingular if and only if $E$ is nonsingular. \quad By {Sherm
 
 Proof: If no degenerate situation, $\widehat{\mathbf{b}}>0$. Thus $\widehat{\alpha}=\frac{\widehat{b}_p}{\widehat{a}_{pq}}>0$, and hence the objective function is strictly increasing. (By $\overline{\alpha}\widehat{c}_q>0$) So the algorithm cannot return to a basic feasible solution previously visited. Thus the algorithm will terminate in a finite number of steps. (As it's bounded)
 
+~
+
+\textbf{Proof of Week Duality Theorem}
+
+Proof(Inequality): $\mathbf{c}^T\mathbf{x}=(\mathbf{c}^T\mathbf{x})^T=\mathbf{x}^T\mathbf{c}\leq\mathbf{x}^T(A^T\mathbf{y})=(A\mathbf{x})^T\mathbf{y}\leq\mathbf{b}^T\mathbf{y}$
+
+Proof(Corollary): If $(P)$ is unbounded, but $(D)$ is feasible: Let $\mathbf{y}$ be feasible for $(D)$, then $\mathbf{c}^T\mathbf{x}\leq\mathbf{b}^T\mathbf{y}$, $\mathbf{b}^T\mathbf{y}$ is an upper bound for $(P)$, but $(P)$ is unbounded, which is a contradiction. So $(D)$ is infeasible.
+\quad \ \quad If $(D)$ is unbounded, but $(P)$ is feasible: Let $\mathbf{x}$ be feasible for $(P)$, then $\mathbf{c}^T\mathbf{x}\leq\mathbf{b}^T\mathbf{y}$, $\mathbf{c}^T\mathbf{x}$ is an lower bound for $(D)$, but $(D)$ is unbounded, which is a contradiction. So $(P)$ is infeasible.
+
+~
+
+\textbf{Proof of Strong Duality Theorem}
+
+Proof: 
 
 \end{document}
