@@ -1,14 +1,42 @@
+# Keep this repository focused on note sources and release-ready materials
 */
 
 !/HAlg/
 !/HAlg/Note/
-
 !/HCV/
 !/HCV/Note/
-
 !/NODEA/
 !/NODEA/Note/
-
 !/LPMS/
 !/LPMS/Note/
-.Rproj.user
+
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# R / editor and OS files
+.Rproj.user/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
